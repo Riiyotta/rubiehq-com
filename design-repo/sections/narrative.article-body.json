@@ -1,0 +1,59 @@
+{
+  "id": "narrative.article-body",
+  "category": "NARRATIVE",
+  "label": "article-body",
+  "tag": "section",
+  "purpose": "The long-form article body — all prose, subheadings, lists, pull-quotes and the sources list, in one section.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/blog/migration-revenue-killer/index.html:405-590"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 7
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 29,
+        "maxWords": 58
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 10,
+        "titleMaxWords": 8,
+        "bodyMaxWords": 58
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 5,
+        "maxWords": 7
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1021.jsx > section[1]",
+  "scope": "The 1 /blog/<slug> route."
+}

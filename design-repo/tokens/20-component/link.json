@@ -1,0 +1,16 @@
+{
+  "$description": "Component tokens for link: the most common measured style (630 instances). Values in {braces} reference semantic/foundation tokens.",
+  "component": "link",
+  "tokens": {
+    "color": {
+      "$value": "{color.neutral.04}"
+    },
+    "textDecoration": {
+      "$value": "none"
+    },
+    "fontWeight": {
+      "$value": "400"
+    }
+  },
+  "unresolvedLiterals": []
+}

@@ -1,0 +1,63 @@
+{
+  "id": "features.capability-grid",
+  "category": "FEATURES",
+  "label": "capability-grid",
+  "tag": "section",
+  "purpose": "A heading plus a three-item capability grid with supporting icons — the 'what you get' block.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 2,
+    "routes": 2,
+    "measuredFrom": [
+      "src/solutions/migration-playbooks/index.html:1138-1221",
+      "src/solutions/integration-playbooks/index.html:1848-1980"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 8
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 6,
+        "maxWords": 27
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 3,
+        "titleMaxWords": 5,
+        "bodyMaxWords": 27
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 4,
+        "assetRoles": [
+          "icon"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "icon"
+  ],
+  "implementedBy": "src/sections/Z108.jsx > section[3]",
+  "scope": "The 2 /solutions/* routes."
+}

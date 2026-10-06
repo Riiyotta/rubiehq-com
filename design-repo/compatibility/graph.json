@@ -1,0 +1,105 @@
+{
+  "version": "0.2.0",
+  "derivedFrom": "templates/templates.json and sections/*.json constraints (recomputed by verify_all.py)",
+  "rules": [
+    {
+      "id": "ONE_HERO_PER_PAGE",
+      "severity": "error",
+      "kind": "maxCategoryPerPage",
+      "category": "HERO",
+      "max": 1,
+      "exceptions": [],
+      "description": "A page has at most one HERO section. Templates that genuinely carry more are named in `exceptions`."
+    },
+    {
+      "id": "SECTION_PER_PAGE_LIMITS",
+      "severity": "error",
+      "kind": "perPageLimits",
+      "limits": {
+        "cta.book-demo-band": 1,
+        "faq.accordion": 1,
+        "features.any-source": 1,
+        "features.automation-samples": 1,
+        "features.capability-grid": 1,
+        "features.enterprise-pillars": 1,
+        "features.pipeline-steps": 1,
+        "features.platform-primitives": 1,
+        "features.playbook-cta-cards": 1,
+        "features.solution-anatomy": 1,
+        "features.solution-outcomes": 1,
+        "features.use-case-teasers": 1,
+        "hero.article": 1,
+        "hero.customer-story": 1,
+        "hero.home": 1,
+        "hero.page-title": 1,
+        "hero.solution": 1,
+        "hero.use-case": 1,
+        "index.blog-roll": 1,
+        "narrative.article-body": 1,
+        "narrative.legal-body": 1,
+        "narrative.problem-statement": 1,
+        "narrative.result-callout": 1,
+        "narrative.solution-statement": 1,
+        "narrative.story-beat": 1,
+        "proof.compliance-badges": 1,
+        "proof.story-grid": 1,
+        "proof.story-metrics": 1,
+        "proof.testimonials": 1,
+        "shell.consent-banner-root": 1,
+        "shell.footer": 1,
+        "shell.header": 1,
+        "shell.spacer": 1
+      },
+      "description": "No section appears more often on one page than it does in any measured template."
+    },
+    {
+      "id": "SHELL_MUST_BE_FIRST",
+      "severity": "error",
+      "kind": "mustBeFirst",
+      "sections": [
+        "shell.header"
+      ],
+      "description": "Sections that opened every template they appear in must be the first node."
+    },
+    {
+      "id": "SHELL_MUST_BE_LAST",
+      "severity": "error",
+      "kind": "mustBeLast",
+      "sections": [
+        "shell.consent-banner-root"
+      ],
+      "description": "Sections that closed every template they appear in must be the last node."
+    },
+    {
+      "id": "NO_CONSECUTIVE_SAME_SECTION",
+      "severity": "warn",
+      "kind": "noConsecutive",
+      "sections": [],
+      "description": "These sections were never observed back-to-back."
+    },
+    {
+      "id": "NO_ADJACENT_SAME_CATEGORY",
+      "severity": "warn",
+      "kind": "noAdjacentSameCategory",
+      "exceptions": [
+        "features.any-source+features.platform-primitives",
+        "features.capability-grid+features.solution-outcomes",
+        "features.platform-primitives+features.playbook-cta-cards",
+        "features.playbook-cta-cards+features.use-case-teasers",
+        "features.solution-anatomy+features.automation-samples",
+        "features.solution-outcomes+features.solution-anatomy",
+        "narrative.problem-statement+narrative.result-callout",
+        "narrative.problem-statement+narrative.solution-statement",
+        "shell.footer+shell.consent-banner-root"
+      ],
+      "description": "Two different sections of the same category should not sit next to each other unless that exact pair was observed (named exceptions)."
+    },
+    {
+      "id": "MOTION_BUDGET",
+      "severity": "warn",
+      "kind": "maxAnimatedSections",
+      "max": 9,
+      "description": "No page has more animated sections than the most animated measured page."
+    }
+  ]
+}

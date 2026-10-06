@@ -1,0 +1,52 @@
+{
+  "id": "hero.article",
+  "category": "HERO",
+  "label": "article",
+  "tag": "section",
+  "purpose": "Blog-post masthead: the article h1, byline/date and hero illustration.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/blog/migration-revenue-killer/index.html:285-404"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 12
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 3,
+        "maxWords": 50
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 2
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1021.jsx > section[0]",
+  "scope": "The 1 /blog/<slug> route."
+}

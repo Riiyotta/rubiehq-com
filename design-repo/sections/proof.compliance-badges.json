@@ -1,0 +1,55 @@
+{
+  "id": "proof.compliance-badges",
+  "category": "PROOF",
+  "label": "compliance-badges",
+  "tag": "section",
+  "purpose": "A row of compliance and security badges (SOC 2 Type II and peers) under a short assurance heading.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/enterprise/index.html:350-397"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 5
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 6,
+        "maxWords": 22
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 6,
+        "assetRoles": [
+          "icon"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "icon"
+  ],
+  "implementedBy": "src/sections/Z103.jsx > section[1]",
+  "scope": "The /enterprise route only."
+}

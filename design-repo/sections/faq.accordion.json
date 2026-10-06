@@ -1,0 +1,50 @@
+{
+  "id": "faq.accordion",
+  "category": "FAQ",
+  "label": "accordion",
+  "tag": "section",
+  "purpose": "'Your questions answered' — a question-and-answer accordion. Byte-identical on all six use-case routes, so the same questions are asked regardless of vertical.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 6,
+    "routes": 6,
+    "measuredFrom": [
+      "src/use-cases/sales/index.html:741-811",
+      "src/use-cases/customer-success/index.html:741-811",
+      "src/use-cases/product/index.html:741-811",
+      "src/use-cases/healthcare/index.html:739-809",
+      "src/use-cases/financial-services/index.html:740-810"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 3
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 6,
+        "maxWords": 31
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1013.jsx > section[3]",
+  "scope": "The 6 /use-cases/* routes."
+}

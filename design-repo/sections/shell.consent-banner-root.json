@@ -1,0 +1,45 @@
+{
+  "id": "shell.consent-banner-root",
+  "category": "SHELL",
+  "label": "consent-banner-root",
+  "tag": "div",
+  "purpose": "The c15t cookie-consent banner mount point and its Accept/Reject card. Third-party vendor UI mounted outside <main>, not Rubie design surface.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 21,
+    "routes": 21,
+    "measuredFrom": [
+      "src/index.html:8833-8849",
+      "src/product/index.html:2278-2294",
+      "src/enterprise/index.html:2842-2858",
+      "src/customers/index.html:1904-1920",
+      "src/blog/index.html:1854-1870"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 3,
+        "maxWords": 2
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustBeLast": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/C15tUiRootHE9Kz.jsx",
+  "scope": "All 21 routes."
+}

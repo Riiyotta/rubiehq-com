@@ -1,0 +1,62 @@
+{
+  "id": "shell.header",
+  "category": "SHELL",
+  "label": "header",
+  "tag": "header",
+  "purpose": "Fixed top header: Rubie wordmark, primary nav (Product, Solutions, Use Cases, Resources) with hover mega-panels, and a Book a Demo button.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 21,
+    "routes": 21,
+    "measuredFrom": [
+      "src/index.html:150-281",
+      "src/product/index.html:149-280",
+      "src/enterprise/index.html:150-281",
+      "src/customers/index.html:150-281",
+      "src/blog/index.html:149-280"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "listItems": {
+        "type": "string[]",
+        "required": false,
+        "maxItems": 5,
+        "maxWords": 12
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 15,
+        "maxWords": 8
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 1,
+        "assetRoles": [
+          "logo"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustBeFirst": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "logo"
+  ],
+  "implementedBy": "src/sections/Z10.jsx > header",
+  "scope": "All 21 routes. Byte-identical on every one."
+}

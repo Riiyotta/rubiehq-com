@@ -1,0 +1,28 @@
+{
+  "id": "nav.pill-link",
+  "name": "Nav pill link",
+  "tag": "a",
+  "purpose": "A header or footer navigation link that reveals a tinted pill background on hover.",
+  "composedOf": [
+    "link"
+  ],
+  "props": {
+    "label": {
+      "type": "string",
+      "maxWords": 4,
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "occurrences": 42,
+    "routes": 21,
+    "measuredFrom": [
+      "src/blog/index.html:162-162"
+    ]
+  }
+}

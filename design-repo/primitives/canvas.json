@@ -1,0 +1,10 @@
+{
+  "id": "canvas",
+  "purpose": "Scripted drawing surface.",
+  "observedCount": 3,
+  "tokens": null,
+  "evidence": {
+    "level": "measured",
+    "source": "element census over all crawled pages"
+  }
+}

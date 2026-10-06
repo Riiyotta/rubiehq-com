@@ -1,0 +1,3641 @@
+{
+  "irVersion": "0.1.0",
+  "kind": "design-repo-remix",
+  "designRepo": {
+    "repositoryId": "rubiehq-com-design-repo",
+    "repositoryVersion": "0.1.0",
+    "pageSpecVersion": "0.1.0",
+    "theme": "light",
+    "themeMode": "light",
+    "productionApprovalGate": false,
+    "contracts": {
+      "manifest": "registry.manifest.json",
+      "pageSpecSchema": "schema/pagespec.schema.json",
+      "templates": "templates/templates.json",
+      "tokenCatalog": "tokens/llm/token-catalog.json",
+      "tokenPolicy": "tokens/llm/token-policy.json",
+      "componentAllowlist": "tokens/llm/component-allowlist.json",
+      "compatibilityGraph": "compatibility/graph.json",
+      "assetContract": "assets/asset-roles.json",
+      "motionSpec": "motion/motion-contract.json",
+      "semanticValidator": "schema/semantic_validate.py"
+    }
+  },
+  "intent": {
+    "category": "uncategorized",
+    "sitePurpose": "Marketing site for Rubie | Rip and Replace Your Competition (https://www.rubiehq.com/). Inferred from the page title: \"Rubie | Rip and Replace Your Competition\".",
+    "primaryConversion": "inferred from the HERO section's call-to-action: \"Solutions\"",
+    "motionIntent": "inherit-design-repo",
+    "themeDirective": {
+      "source": "measured",
+      "theme": "light",
+      "evidence": [
+        "the only theme measured on https://www.rubiehq.com/"
+      ]
+    }
+  },
+  "runtime": {
+    "target": "n0-tenant-web",
+    "framework": "react-router-v6",
+    "renderMode": "csr",
+    "strictDesignRepo": true,
+    "allowCrossFamilyMixing": false
+  },
+  "pages": [
+    {
+      "pageId": "home",
+      "route": "/",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "conversion",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Rip and Replace your Competition",
+              "subheading": "Product",
+              "body": [
+                "Rubie makes it easy for you to offer zero-effort data migrations. Close deals faster and automate onboarding with agentic integrations."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "Authenticate"
+                },
+                {
+                  "label": "Navigate"
+                },
+                {
+                  "label": "Clean"
+                },
+                {
+                  "label": "Transform"
+                },
+                {
+                  "label": "Review"
+                },
+                {
+                  "label": "Load"
+                },
+                {
+                  "label": "Migration Playbooks",
+                  "href": "/solutions/migration-playbooks"
+                },
+                {
+                  "label": "Integration Playbooks",
+                  "href": "/solutions/integration-playbooks"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Your customers' data is locked up in legacy systems.",
+                  "body": "Vendor portals, dead spreadsheets, and uncooperative software. Your customers don't care — they just want their data."
+                },
+                {
+                  "title": "Any source. Your platform.",
+                  "body": "One-time migration or hourly portal pull — Rubie gets the data, in the format you need. Predictable. Observable. Reliable at any scale."
+                },
+                {
+                  "title": "Platform primitives",
+                  "body": "Rubie signs in, handles sessions, and reaches the systems your customers already use."
+                },
+                {
+                  "title": "Build data playbooks with Rubie",
+                  "body": "One-time, high-stakes data moves."
+                },
+                {
+                  "title": "How teams are using Rubie today"
+                },
+                {
+                  "title": "What our customers are saying",
+                  "body": "Rubie makes customer data migration reliable, repeatable, and source-agnostic."
+                },
+                {
+                  "title": "Your customers are waiting on data that lives behind a login."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "logo",
+                  "alt": "Granum"
+                },
+                {
+                  "assetRole": "hero-image"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo",
+                  "alt": "Cariina"
+                },
+                {
+                  "assetRole": "logo",
+                  "alt": "Granum"
+                },
+                {
+                  "assetRole": "hero-image"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo",
+                  "alt": "Cariina"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "product",
+      "route": "/product",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "standard",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/product",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Product",
+              "subheading": "Your customers are waiting on data that lives behind a login.",
+              "body": [
+                "Rubie decomposes every data workflow into six discrete, production-hardened operations. Each primitive can be used in isolation or chained into a Playbook. Together, they cover every step between a locked portal and a clean system of record."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "Visit trust center (opens in a new tab)"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "01 — Authenticate",
+                  "body": "The entry point for every Rubie workflow. Authenticate handles getting in (and staying in) across the full range of enterprise login patterns. All credentials are AES-256 encrypted at rest, scoped to a single workflow run, and never exposed."
+                },
+                {
+                  "title": "02 — Navigate",
+                  "body": "Navigate drives the agent through multi-step flows the way an experienced operator would — clicking, filtering, drilling down, and handling pagination no matter how many layers deep the data sits. Unlike traditional RPA, Rubie navigates by semantic context rather than pure CSS selectors. When a portal updates its UI, Rubie adapts without re-scripting."
+                },
+                {
+                  "title": "03 — Clean",
+                  "body": "Raw portal data is rarely usable as-is. Rubie normalizes it before anything downstream is affected — dates, phone numbers, currency, names, and any field that arrives inconsistently across rows or sources. Every operation is rule-based and auditable. Define the target format once and Rubie enforces it consistently across every record, every run."
+                },
+                {
+                  "title": "04 — Transform",
+                  "body": "Clean data still needs to fit somewhere. Rubie reshapes records to match the exact schema of your target system. This goes beyond formatting: direct field mapping, type coercion, calculated fields, conditional logic, lookup tables, and nested object construction. The step that makes extracted data usable."
+                },
+                {
+                  "title": "05 — Review",
+                  "body": "A human-in-the-loop checkpoint before anything gets written. Review routes transformed records through your validation rules, automatically advancing clean data while sending flagged records to a review queue for approval, correction, or rejection. You decide how much human oversight each run needs, from full auto-approval to selective review to mandatory sign-off."
+                },
+                {
+                  "title": "06 — Load",
+                  "body": "Rubie writes transformed, reviewed records precisely into your target system — transactionally, with full auditability. Supports REST API writes and flat-file handoffs. Every operation produces a full write receipt: record count, field confirmations, and any system-generated IDs returned from the target."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "enterprise",
+      "route": "/enterprise",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "standard",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/enterprise",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Enterprise Ready",
+              "subheading": "SOC 2 Type II Compliant",
+              "body": [
+                "Built for enterprise-scale operations with world-class security, compliance, and support that you can depend on.",
+                "Rubie is SOC 2 Type II compliant, demonstrating our commitment to robust security and data protection standards that enterprise organizations demand.",
+                "Seamless integration with your existing identity providers using SAML or OIDC protocols, enhancing security while simplifying user management across your organization.",
+                "Dedicated support team available via email, Slack, or phone with escalation procedures for mission-critical operations.",
+                "Enterprise-grade disaster recovery with automated daily backups, point-in-time recovery, and geographically distributed storage for maximum data protection.",
+                "Comprehensive APIs for seamless integration into your existing technology stack and workflows.",
+                "Comprehensive HIPAA compliance with secure PHI handling, audit logging, access controls, and encrypted data storage that meets all healthcare data protection requirements.",
+                "Built from the ground up with enterprise security requirements in mind. Our compliance certifications and security practices ensure your data is protected according to the highest industry standards."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "Visit trust center (opens in a new tab)"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Dedicated support"
+                },
+                {
+                  "title": "SOC 2 Type II Compliant"
+                },
+                {
+                  "title": "HIPAA Compliant"
+                },
+                {
+                  "title": "SSO"
+                },
+                {
+                  "title": "Uptime SLA"
+                },
+                {
+                  "title": "Regular Security Audits"
+                },
+                {
+                  "title": "Data Encryption"
+                },
+                {
+                  "title": "Role Based Access"
+                },
+                {
+                  "title": "Human-in-the-loop"
+                },
+                {
+                  "title": "CCPA Ready"
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "customers",
+      "route": "/customers",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "content",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/customers",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Customer Stories",
+              "subheading": "Your customers are waiting on data that lives behind a login.",
+              "body": [
+                "Learn about how our customers use Rubie to power seamless data migrations and unlock growth"
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Curbwaste cuts data transformation time by 50%+ and reduces 8-hour upload time to 1 hour with Rubie"
+                },
+                {
+                  "title": "Granum reduces data entry from 2+ hours to under 3 minutes per account and cuts customer graduation time by 10 days with Rubie"
+                },
+                {
+                  "title": "Bound triples customer base while staying lean, cutting setup from 1 week to under 12 hours with Rubie"
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "hero-image"
+                },
+                {
+                  "assetRole": "logo",
+                  "alt": "Curbwaste"
+                },
+                {
+                  "assetRole": "hero-image"
+                },
+                {
+                  "assetRole": "logo",
+                  "alt": "Cariina"
+                },
+                {
+                  "assetRole": "hero-image"
+                },
+                {
+                  "assetRole": "logo",
+                  "alt": "Granum"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo",
+                  "alt": "Brivity"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo",
+                  "alt": "Bound"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "blog",
+      "route": "/blog",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "content",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/blog",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Blog",
+              "subheading": "The Hidden Revenue Killer: Why Data Migration Is Sabotaging Your SaaS Growth",
+              "body": [
+                "According to the 2025 Revenera Monetization Monitor report, 43% of software vendors need one to three years to complete a migration. For every enterprise deal your sales team closes, there's a hidden tax that delays time to value and causes customers to churn before they ever truly adopt your product.",
+                "Rubie Team"
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Product"
+                },
+                {
+                  "title": "Security"
+                },
+                {
+                  "title": "Socials"
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "privacy-policy",
+      "route": "/privacy-policy",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "legal",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/privacy-policy",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Privacy Policy",
+              "subheading": "Product",
+              "body": [
+                "Effective: August 20, 2025",
+                "This Privacy Policy for Nightly Data, Inc. (doing business as Rubie) (\"we,\" \"us,\" or \"our\") explains how and why we may collect, store, use, and/or share (\"process\") your information when you use our services (\"Services\"), such as when you: (a) Visit our website at rubiehq.com, or any site of ours that links to this Privacy Policy, or (b) Engage with us in other related ways, including sales, marketing, or events. Except where otherwise expressly indicated in this Privacy Policy, this Privacy Po",
+                "\"Personal Data\" as it is called in some countries, is information that can personally identify you. We maintain one or more databases in the United States to store your Personal Data and may retain it as reasonably required to fulfill the purposes identified herein. Personal Data that we collect depends on how you use the Site or Services. For example, we may collect your name, email address, IP address, information about other software that you use and the email addresses that you provide to us",
+                "Except as specified in this Privacy Policy, We do not rent, sell, trade or disclose your Personal Data to third parties without your informed prior consent. Some specific examples of how We may use your Personal Data are:",
+                "a) to customize, analyze, adjust and improve the Site and Services to better meet your needs;",
+                "b) to facilitate communication between Us and you;",
+                "c) to provide you with information that may interest you, such as our newsletters or emails about our products and services (this information contains a subscriber link allowing you to opt out);",
+                "d) to provide you with marketing and promotional information about products and services we believe may interest you (this information contains a subscriber link allowing you to opt out);",
+                "e) to administer a survey (if you consent to participate in the survey via a response email);",
+                "f) in a customer testimonial posted on the Site;",
+                "g) to enforce Our agreements with you;",
+                "h) to provide you with important administrative information regarding the Site and Services, such as changes to this Privacy Policy, our Terms of Use and our other policies;",
+                "i) And to prevent fraud and other prohibited or illegal activities.",
+                "Unless you have consented or as otherwise described in this Privacy Policy, we will not disclose your Personal Data except for:",
+                "a) Affiliates. We may share your information with our Affiliates who perform services or functions for Us and who may use your information for purposes similar to the purposes for which We collect such information. We require all such companies to comply with the terms of this Privacy Policy. For purposes of the foregoing an \"Affiliate\" means any corporation, partnership or other entity now existing or hereafter organized that directly or indirectly controls, is controlled by or under common con",
+                "b) Business Partners. We may share your information with our business partners who may provide services that integrate with the Service. The sharing of this information would be predicated on your use of the integration. We do not control our Business Partners' use of the information and their use of the information would be in accordance with their own privacy policies. If you do not want your information shared with these business partners, you can choose not to use the applicable integration.",
+                "c) Fulfillment of Services. We may retain other companies and individuals to perform functions consistent with our Privacy Policy on our behalf. Examples include customer support specialists, web hosting companies, fulfillment companies (e.g., companies that fill product orders or coordinate mailings), data analysis firms, payment services firms and email service providers. Such third parties may be provided with access to Personal Data needed to perform their functions, but may not use such inf",
+                "d) Compliance with Law and Fraud Protection. We may disclose any information, including, without limitation, Personal Data, we deem necessary, in our sole discretion and without your prior permission, to comply with any applicable law such as to comply with a subpoena, regulation, binding orders of a data protection agency, legal process or governmental request. We also may be required to disclose an individual's Personal Data in response to a lawful request by public authorities, including to m",
+                "e) Sale or Transfer of Information. In the event of a sale, merger, liquidation, dissolution or sale or transfer of substantially all of the assets of Rubie or the Site, Personal Data and/or other information collected through the Site or the Services may be sold, assigned or transferred to the party acquiring all or substantially all of the equity and/or assets of Rubie, the Site and/or Services. In the unlikely event of an insolvency, bankruptcy or receivership, your information also may be tr",
+                "The Site and/or Services may allow you to connect with other websites, products, or services that we do not control. If you visit or use such services, we recommend that you review and understand their privacy practices before sharing your information with those services. We are not responsible for the information collection practices of any website that we do not own or control.",
+                "We do not ask for access or track any location-based information. Providing your Personal Data to us is your choice. If you choose not to provide us with certain Personal Data, you may not be able to take advantage of certain features of the Site. We may use cookies and other tracking technologies to collect and store your information. We may also use mobile analytics software to allow us to better understand the functionality of our applications on your phone. This software may record informati",
+                "If you choose to register or log in to our Services using a social media account, we may access certain information about you.",
+                "We retain your information as long as needed to fulfill the purposes in this Privacy Policy, unless required by law to retain it longer.",
+                "We have implemented technical, administrative and physical security measures to protect your information from unauthorized access and use as described. While We strive to protect your information, no data transmission over the Internet is 100% secure and, consequently, we cannot ensure the security of any information.",
+                "We do not knowingly collect information from minors (individuals below 18 years). To use the Site and Services, you must be the age of legal majority in your place of residence. By using the Site and Services, you hereby represent that you are at least the age of legal majority in your place of residence. We do not use an application or other mechanism to determine the age of users of the Site and Services. All information provided will be treated as if it was provided by an adult. If, however, ",
+                "If you tell us that you do not want us to use your Personal Data to contact you, We will comply with the applicable law. In certain cases We will only contact you if instructed to do so. In either case, you may instruct Us to stop sending you emails, newsletters, or other information. We may, however, continue to use your Personal Data to contact you to service your account in conjunction with your use of the Service. We will also provide an individual opt-out or opt-in choice before we share yo",
+                "We currently do not respond to DNT signals or similar mechanisms.",
+                "California law permits individuals who provide Personal Data and who are California residents to request certain information regarding our disclosure of Personal Data to third parties for their direct marketing purposes. We do not, at this time, disclose Personal Data to third parties for their direct marketing purposes. If We change this policy, we will update this provision and provide instructions on how you may make a request for details concerning such information. The Site is hosted in the",
+                "We may occasionally update this Privacy Policy to reflect changes in our practices. When we post modifications to this Privacy Policy, we will revise the \"Effective Date\" date at the top of this web page. The modified Privacy Policy will be effective immediately upon posting on the Site. Your continued use of the Site or Services after the posting of the modified Privacy Policy constitutes your agreement to abide and be bound by it. We encourage you to periodically review this page for the lates",
+                "In the event that you wish to inquire about how we process your Personal Data, please contact us and we will endeavor to deal with your request. This is without prejudice to your right to raise a complaint with the data protection supervisory authority in the state in which you live or work where you think we have infringed data protection laws. If you have questions, contact us at admin@rubiehq.com or by post at:"
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "1. WHAT INFORMATION DO WE COLLECT?"
+                },
+                {
+                  "title": "2. HOW DO WE PROCESS YOUR INFORMATION?"
+                },
+                {
+                  "title": "3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?"
+                },
+                {
+                  "title": "4. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?"
+                },
+                {
+                  "title": "5. HOW DO WE HANDLE YOUR SOCIAL LOGINS?"
+                },
+                {
+                  "title": "6. HOW LONG DO WE KEEP YOUR INFORMATION?"
+                },
+                {
+                  "title": "7. HOW DO WE KEEP YOUR INFORMATION SAFE?"
+                },
+                {
+                  "title": "8. DO WE COLLECT INFORMATION FROM MINORS?"
+                },
+                {
+                  "title": "9. WHAT ARE YOUR PRIVACY RIGHTS?"
+                },
+                {
+                  "title": "10. CONTROLS FOR DO-NOT-TRACK FEATURES"
+                },
+                {
+                  "title": "11. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?"
+                },
+                {
+                  "title": "12. DO WE MAKE UPDATES TO THIS POLICY?"
+                },
+                {
+                  "title": "13. HOW CAN YOU CONTACT US ABOUT THIS POLICY?"
+                },
+                {
+                  "title": "14. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?"
+                },
+                {
+                  "title": "15. COOKIE POLICY."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "terms",
+      "route": "/terms",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "legal",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/terms",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Terms of Use",
+              "subheading": "Product",
+              "body": [
+                "Last Updated: August 13, 2025",
+                "Nightly Data, Inc. DBA Rubie and its affiliates (individually and collectively, \"we\", \"our\", \"us\", or \"Rubie\") designed and maintain www.rubiehq.com (the \"Site\") as a means of providing information regarding our company and various products and services that we sell or provide. As used on the Site, the terms \"you\" and \"your\" means any person who views, accesses, uses, or obtains information from the Site, who obtains information by monitoring activity to and from the Site or who makes a purchase",
+                "This Terms of Use Agreement (the \"Agreement\") states the terms and conditions under which you may access and use the Site. This Site also may contain various information in the form of reports, data, text and other materials about us, as well as third-party content that is licensed to us (collectively, the \"Content\"). By accessing and/or otherwise using this Site and its Content or by purchasing any products from us on this Site, you acknowledge that you have read, understood and agree to be leg",
+                "Please read this Agreement carefully. We reserve the right to amend this Agreement at any time and from time to time by posting a revised Agreement on the Site. This Agreement was last revised on the date provided below. If you use the Site after an amended Agreement has been posted, you will be deemed to have agreed to such amended Agreement. You may want to periodically visit this page to view the most recent Agreement.",
+                "You will access and use the Site solely for your personal purposes. You will not post, publish, reproduce, transmit, distribute or otherwise view, use or exploit the Site or any Rubie products or Content in a manner that: (1) is inconsistent with this Agreement; (2) violates any federal, state or local law, rule, regulation or order, (3) violates and/or circumvents the terms and conditions of any third party platform or application; (4) would infringe or otherwise violate the intellectual proper",
+                "You agree that you will not interrupt or attempt to interrupt the operation of this Site in any way. You will not impersonate any person or entity, or misrepresent your affiliation with a person or entity, or misrepresent the origin of any information that you provide to us. You agree that your use of the Site and/or any Rubie products will at all times be for a lawful purpose and you agree to comply with all applicable laws and regulations in your use of the Site. Possible evidence of use of th",
+                "You will not transmit, distribute, introduce or otherwise make available in any manner through the Site any computer virus, keyloggers, spyware, worms, Trojan horses, timebombs or other malicious or harmful programming (collectively, \"Viruses\"). We do not have an obligation to detect the presence of such Viruses. If you download software or any other Content from the Site, you do so at your own risk.",
+                "You shall ensure that all equipment, hardware, software, products and/or sites you use to access, visit, or use the Site does not disturb or interfere with our operation of the Site, or impede or interfere with others' access, visitation and/or use of the Site. We reserve the right, in addition to our other remedies, with or without notice, to immediately disconnect from the Site any equipment, hardware, software, product and/or Sites causing interference with us, our licensors, vendors, service",
+                "You are solely responsible for all usage of, or activities on, the Site or with any Rubie products by you and by those you authorize or allow to use, or provide access to, the Site or any Rubie products, for example, by authorizing or allowing access to your account/profile or any computer, mobile or other device on which the Site resides or is accessible.",
+                "You acknowledge that we have not reviewed and do not necessarily endorse the Content of sites, applications, destinations or sites linked to or accessible from this Site and are not responsible for the Content or actions of any other sites, applications, destinations or sites. Your linking to or accessing any other site, application, destination or site is at your sole risk.",
+                "You must comply with all local, state, federal, provincial, national, international, and foreign laws, rules, and regulations (including applicable import and export control laws, rules, and regulations of the United States and other countries) in accessing and using the Site and/or any Rubie products, and will immediately notify us if you learn of or suspect a security breach or any illegal activity in connection with the Site. You represent and warrant that (i) you are not located in a country",
+                "Content that is provided by us, our licensors, vendors and/or providers, including without limitation photos, images, text, music, audio, videos, podcasts, trademarks, trade names, Site marks and other brand identifiers, the organization, design, compilation, and \"look and feel\" of the Site, and all advertising thereon, is protected by local, state, federal, provincial, national, international, and foreign copyright, trademark and other intellectual property laws, rules, and regulations, and is ",
+                "You acknowledge that this Site and various elements contained therein are protected by copyrights, trademarks, trade secrets, patents, or other proprietary rights, and that these worldwide rights are valid and protected in all forms, media, and technologies existing now and hereinafter developed. You also acknowledge that the Content is and shall remain our property or the property of our licensors. You agree to comply with all intellectual property laws and you shall not encumber any interest i",
+                "The trademarks, logos and service marks appearing on this Site, including, but not limited to, the trademarks: \"Rubie\" are trademarks and service marks of Rubie. Other company, product, and service names and logos used and displayed on this Site may be trademarks or service marks of their respective owners who may or may not endorse or be affiliated with or connected to us. Nothing on this Site should be construed as granting, by implication or otherwise, any license or right to use any of trade",
+                "The Content of this Site is protected by copyright law. All such Content is also copyrighted as a collective work under the copyright laws, and we own a copyright in the selection, coordination, arrangement, and enhancement of such Content.",
+                "If you believe this Site contains Content that infringes your copyright, please provide the information listed below to our designated agent (listed below) for claims of copyright infringement:",
+                "Our designated agent may be contacted as follows:",
+                "Website Manager",
+                "Rubie",
+                "169 Madison Ave STE 2721",
+                "New York, New York 10016",
+                "Email: admin@rubiehq.com",
+                "Unless we specifically provided otherwise, all feedback or submissions of any kind that you submit to this Site (the \"Contributions\") are hereby received on a non-confidential basis and shall, to the fullest extent permissible under applicable law, become our property. To the extent that applicable law does not provide us with an ownership interest in any Contributions, you agree that by providing us with the Contributions you are granting us any of our affiliated companies and sublicensees a pe",
+                "This Site may periodically provide links to third-party websites (\"Third-Party Sites\"). This Agreement governs only this Site and not any Third-Party Sites. Our decision to link to a Third-Party Site is not an endorsement of the content, products or services in the Third-Party Site. We do not control these Third-Party Sites and expressly disclaims any responsibility for the content, the accuracy of the information and any products or services available on the Third-Party Sites. We have not inves",
+                "Our Privacy Policy hereby incorporated by reference into this Agreement, explains the policy applicable to the information that is collected through the Site or received directly from you.",
+                "We protect your privacy related to this Site. We maintain appropriate administrative and technical controls to safeguard the security and privacy of your personal information.",
+                "YOU ACKNOWLEDGE AND AGREE THAT THIS SITE AND CONTENT ARE PROVIDED ON AN \"AS IS\" AND \"AS AVAILABLE\" BASIS. NONE OF RUBIE, ITS AFFILIATES, SUBSIDIARIES OR ITS OR THEIR OFFICERS, MANAGERS, DIRECTORS, EMPLOYEES OR AGENTS (COLLECTIVELY THE \"RUBIE PARTIES\") GUARANTEES THE ACCURACY, COMPLETENESS, TIMELINESS, RELIABILITY, SUITABILITY OR USEFULNESS OF ANY PORTION OF THE SITE. NONE OF THE RUBIE PARTIES WARRANT THAT THIS SITE WILL BE UNINTERRUPTED OR ERROR FREE, THAT ANY SPECIFIC INFORMATION THAT IS REQUES",
+                "NONE OF THE RUBIE PARTIES MAKES ANY, AND HEREBY SPECIFICALLY DISCLAIMS ANY AND ALL, REPRESENTATIONS, ENDORSEMENTS, GUARANTEES, AND WARRANTIES, EXPRESS OR IMPLIED, REGARDING THIS SITE, CONTENT AND PRODUCTS INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT OF THIRD-PARTY RIGHTS.",
+                "YOU UNDERSTAND AND AGREE THAT ANY CONTENT, MATERIAL AND/OR DATA DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SITE IS USED AT YOUR OWN RISK AND THAT YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OF SUCH CONTENT, MATERIAL AND/OR DATA.",
+                "UNDER NO CIRCUMSTANCES WILL ANY OF THE RUBIE PARTIES BE LIABLE FOR ANY LOSS OR DAMAGE CAUSED BY YOUR USE OR MISUSE OF THE SITE AND/OR ANY RUBIE PRODUCTS, OR ANY RELIANCE ON INFORMATION OBTAINED THROUGH THIS SITE OR ANY THIRD PARTY SITE USING THE RUBIE PRODUCTS. IT IS YOUR SOLE RESPONSIBILITY TO EVALUATE THE COMPLIANCE, ACCURACY, COMPLETENESS, OR USEFULNESS OF THIS SITE AND/OR YOUR USE OF ANY RUBIE PRODUCTS. IN NO EVENT SHALL ANY OF THE RUBIE PARTIES BE LIABLE FOR ANY DIRECT, INDIRECT, PUNITIVE, "
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "A. This Site"
+                },
+                {
+                  "title": "B. Acceptance of the Terms and Conditions"
+                },
+                {
+                  "title": "C. Permitted Use of the Site; Restrictions"
+                },
+                {
+                  "title": "D. Intellectual Property Rights"
+                },
+                {
+                  "title": "E. Copyrights/Trademarks"
+                },
+                {
+                  "title": "F. Copyright Complaints"
+                },
+                {
+                  "title": "G. Restrictions. You may not, nor may you allow others, to directly or indirectly, do any of the following for any reason:"
+                },
+                {
+                  "title": "H. Feedback and Submissions."
+                },
+                {
+                  "title": "I. Links to Other Web Sites."
+                },
+                {
+                  "title": "J. Privacy Policy."
+                },
+                {
+                  "title": "K. Security"
+                },
+                {
+                  "title": "L. Disclaimer of Warranties"
+                },
+                {
+                  "title": "M. Limitation of Liability"
+                },
+                {
+                  "title": "N. Governing Law; Disputes"
+                },
+                {
+                  "title": "O. Language"
+                },
+                {
+                  "title": "P. Minors"
+                },
+                {
+                  "title": "Q. Miscellaneous"
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "solutions-migration-playbooks",
+      "route": "/solutions/migration-playbooks",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "standard",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/solutions/migration-playbooks",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Migration Playbooks",
+              "subheading": "Product",
+              "body": [
+                "Rip and replace your competition.",
+                "Complex, one-time data migrations without the army of consultants or the six-month timeline. Rubie makes migration a revenue lever, not a bottleneck.",
+                "// THE RESULT //",
+                "Migrations become the longest, most expensive, and most brittle part of onboarding"
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "1. Discovery & Onboarding Rubie maps the source systems, required fields, and cu"
+                },
+                {
+                  "label": "2. Playbook Configuration"
+                },
+                {
+                  "label": "3. Execution at Scale"
+                },
+                {
+                  "label": "4. Transformation & Delivery"
+                },
+                {
+                  "label": "5. Full Observability"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Migrations are where deals go to die",
+                  "body": "Every B2B SaaS company has heard it: \"We love the product — but we can't move off [legacy system] without losing our historical data.\""
+                },
+                {
+                  "title": "Smarter migrations, built for the systems ETL forgot",
+                  "body": "Portal-locked AMS, PMS, and EHR platforms. Carrier portals. Distributor dashboards. Legacy systems your ETL vendor quietly unsupports. Rubie extracts from all of them."
+                },
+                {
+                  "title": "What changes when migrations just work",
+                  "body": "Complex migrations that took months now complete in days or weeks. Customers go live faster. Time-to-value collapses."
+                },
+                {
+                  "title": "The anatomy of a Rubie migration"
+                },
+                {
+                  "title": "Your customers are waiting on data that lives behind a login."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "solutions-integration-playbooks",
+      "route": "/solutions/integration-playbooks",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "standard",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/solutions/integration-playbooks",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Integration Playbooks",
+              "subheading": "Product",
+              "body": [
+                "Ongoing data flows from any source, no API required.",
+                "Your customers run on a long tail of systems your product will never natively integrate with. Rubie connects them all, and keeps them connected.",
+                "Meanwhile, your competitors are shipping product while your engineers maintain the 47th connector."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "The integration backlog that never ends",
+                  "body": "Every enterprise customer wants one more connector. Every sales rep promises it in the deal. Every product team says \"next quarter\" for the next six quarters."
+                },
+                {
+                  "title": "Unlock every system your customers already use",
+                  "body": "Rubie reaches the systems that matter — portal-locked platforms, legacy software, vendor dashboards, and internal tools that were never designed to be integrated with."
+                },
+                {
+                  "title": "Ship the integrations your customers actually want",
+                  "body": "No API? No problem. Rubie reaches the systems that matter — portal-locked platforms, legacy software, vendor dashboards, and internal tools that were never designed to be integrated with."
+                },
+                {
+                  "title": "Engineering-grade infrastructure, no engineering required",
+                  "body": "OAuth, SSO, MFA handling — across every customer, without custom work."
+                },
+                {
+                  "title": "A sampling of what Integration Playbooks automate today"
+                },
+                {
+                  "title": "Your customers are waiting on data that lives behind a login."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "icon"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "customers-granum",
+      "route": "/customers/granum",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "content",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/customers/granum",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Granum reduces data entry from 2+ hours to under 3 minutes per account and cuts customer graduation time by 10 days with Rubie",
+              "subheading": "Granum",
+              "body": [
+                "Jennie McMillan",
+                "Director of Onboarding",
+                "3 min",
+                "Per account data entry (down from 2+ hrs)",
+                "10 days",
+                "Faster customer graduation",
+                "<1 month",
+                "To full implementation",
+                "“Rubie is an easy, streamlined tool that saves you hours with data transformation. You get an answer immediately, and they're there for us.”",
+                "Granum provides business management software for landscapers and arborists, uniting Landscape Management Network, SingleOps, and Greenius under one platform.",
+                "// HEADQUARTERS //",
+                "// EMPLOYEES //",
+                "// INDUSTRY //",
+                "// PREVIOUS SOLUTION //",
+                "See why teams at high growth companies use Rubie."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "Get started"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Manual PDF data extraction consumed hours per account and limited customer capacity",
+                  "body": "// CHALLENGE //"
+                },
+                {
+                  "title": "AI-powered PDF extraction and data transformation that runs in the background",
+                  "body": "// SOLUTION //"
+                },
+                {
+                  "title": "Dramatic time savings, faster customer graduation, and the ability to say yes",
+                  "body": "// OUTCOME //"
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "customers-brivity",
+      "route": "/customers/brivity",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "content",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/customers/brivity",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Brivity cuts import turnaround time by 50% and eliminates backlog with Rubie",
+              "subheading": "Brivity",
+              "body": [
+                "Hannah Wion",
+                "Director of Implementation",
+                "50%",
+                "Faster import turnaround",
+                "80 → 0",
+                "Ticket backlog eliminated",
+                "4,500",
+                "Business hours saved",
+                "“It's been truly eye-opening how many areas we have uncovered to optimize, standardize, and uplevel our client experience in ways that when we started this process, we didn't know were going to be so impactful.”",
+                "Brivity is a real estate SaaS platform providing CRMs, websites, AI solutions, and lead generation tools for real estate teams of all sizes.",
+                "// HEADQUARTERS //",
+                "// EMPLOYEES //",
+                "// INDUSTRY //",
+                "// PREVIOUS SOLUTION //",
+                "See why teams at high growth companies use Rubie."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "Get started"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Manual data imports consumed 10 days of a 14-day onboarding window, anchoring the entire process",
+                  "body": "// CHALLENGE //"
+                },
+                {
+                  "title": "Dynamic Playbooks, Rubie's customer support team, and file combining capabilities built for their workflow",
+                  "body": "// SOLUTION //"
+                },
+                {
+                  "title": "Backlog eliminated, busy season conquered, and thousands of hours freed for higher-value work",
+                  "body": "// OUTCOME //"
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "customers-cariina",
+      "route": "/customers/cariina",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "content",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/customers/cariina",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Cariina scales SIS integrations from 3 to 23+ systems while growing school partnerships from 40 to 113 with Rubie",
+              "subheading": "Cariina",
+              "body": [
+                "Dani Manzur",
+                "Head of Product Success",
+                "7x+",
+                "Increase in SIS integrations",
+                "3x",
+                "Growth in school partnerships",
+                "1 Day",
+                "Typical playbook turnaround",
+                "“It's a no brainer to use Rubie. If you were to take Rubie away, I think I would quit that part of my job.”",
+                "Cariina is an education technology platform that helps schools streamline student, parent, and staff data management through seamless integrations with Student Information Systems (SIS).",
+                "// HEADQUARTERS //",
+                "// EMPLOYEES //",
+                "// INDUSTRY //",
+                "// PREVIOUS SOLUTION //",
+                "See why teams at high growth companies use Rubie."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "Get started"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Manual processes and fragmented integrations blocked growth",
+                  "body": "// CHALLENGE //"
+                },
+                {
+                  "title": "A single integration layer that normalizes any SIS data automatically",
+                  "body": "// SOLUTION //"
+                },
+                {
+                  "title": "Unlocked market expansion and transformed operational efficiency",
+                  "body": "// OUTCOME //"
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "use-cases-sales",
+      "route": "/use-cases/sales",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "standard",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/use-cases/sales",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Close Competitive Deals Faster without migration fear",
+              "subheading": "Product",
+              "body": [
+                "Migration objections kill deals. Rubie eliminates them so you can rip and replace your competition today, not next quarter."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "\"How long will the migration take?\"",
+                  "body": "It's the question that stalls every deal. Prospects love your product but dread the switch. Your sales cycle stretches. Competitors with inferior products win on ease of switching."
+                },
+                {
+                  "title": "Repeat migrations from the same competitor in minutes, not weeks.",
+                  "body": "Once you've migrated one customer from a competitor, Rubie remembers everything: the mapping rules, transformation logic, and validation checks."
+                },
+                {
+                  "title": "Your questions answered",
+                  "body": "Rubie operates portals through a browser, the way a human would, so teams can extract, transform, and load data even when an API or pre-built integration is not available."
+                },
+                {
+                  "title": "Your customers are waiting on data that lives behind a login."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "use-cases-customer-success",
+      "route": "/use-cases/customer-success",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "standard",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/use-cases/customer-success",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Onboard Customers 10x Faster without support tickets",
+              "subheading": "Product",
+              "body": [
+                "Eliminate data migration bottlenecks. Get customers to value immediately, without the support tickets."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Onboarding is your bottleneck.",
+                  "body": "Customers upload messy spreadsheets. Your team spends hours cleaning and mapping data. Back-and-forth emails drag on for weeks. Customers ghost. Time-to-value suffers."
+                },
+                {
+                  "title": "Customers onboard themselves. You focus on success.",
+                  "body": "Embed a white-label upload experience directly in your product. Customers drag, drop, and go live, while Rubie handles the complexity behind the scenes."
+                },
+                {
+                  "title": "Your questions answered",
+                  "body": "Rubie operates portals through a browser, the way a human would, so teams can extract, transform, and load data even when an API or pre-built integration is not available."
+                },
+                {
+                  "title": "Your customers are waiting on data that lives behind a login."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "use-cases-product",
+      "route": "/use-cases/product",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "standard",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/use-cases/product",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Ship Better Data Imports without building them",
+              "subheading": "Product",
+              "body": [
+                "Embed enterprise-grade data ingestion in your product. No engineering lift required."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Building imports is a distraction.",
+                  "body": "Your engineers should be building core features, not CSV parsers, field mappers, and validation logic. But customers expect seamless data imports on day one."
+                },
+                {
+                  "title": "Embedded migrations: drop in a complete migration experience.",
+                  "body": "Rubie's white-label widget gives customers an intelligent, self-serve upload experience that matches your brand. You control the look. We handle the logic."
+                },
+                {
+                  "title": "Your questions answered",
+                  "body": "Rubie operates portals through a browser, the way a human would, so teams can extract, transform, and load data even when an API or pre-built integration is not available."
+                },
+                {
+                  "title": "Your customers are waiting on data that lives behind a login."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "use-cases-healthcare",
+      "route": "/use-cases/healthcare",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "standard",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/use-cases/healthcare",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "HIPAA-Compliant Data Migration for Healthcare",
+              "subheading": "Product",
+              "body": [
+                "Extract records from legacy EHR/EMR systems without compromising security or compliance."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Patient data is siloed.",
+                  "body": "Records are trapped in legacy systems with proprietary formats. HL7, FHIR, CSV exports, nothing matches. Switching platforms means risking data loss or compliance violations."
+                },
+                {
+                  "title": "Onboard new practices in days with complete patient records.",
+                  "body": "Rubie extracts patient data from any legacy EHR/EMR system, transforms it to your schema, and loads it securely while maintaining HIPAA compliance."
+                },
+                {
+                  "title": "Your questions answered",
+                  "body": "Rubie operates portals through a browser, the way a human would, so teams can extract, transform, and load data even when an API or pre-built integration is not available."
+                },
+                {
+                  "title": "Your customers are waiting on data that lives behind a login."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "use-cases-financial-services",
+      "route": "/use-cases/financial-services",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "standard",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/use-cases/financial-services",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Migrate Financial Data without the risk",
+              "subheading": "Product",
+              "body": [
+                "Securely extract and transform financial data from legacy systems and competitors. SOC 2 Type 2 certified."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Client data is trapped.",
+                  "body": "Portfolios, transaction histories, and account records are locked in legacy platforms or competitor systems. Manual migration means compliance risk, data errors, and weeks of delay."
+                },
+                {
+                  "title": "Extract financial data from anywhere, even systems without APIs.",
+                  "body": "Rubie's AI agents access data from legacy wealth management platforms, banking systems, and proprietary databases. No pre-built integrations required."
+                },
+                {
+                  "title": "Your questions answered",
+                  "body": "Rubie operates portals through a browser, the way a human would, so teams can extract, transform, and load data even when an API or pre-built integration is not available."
+                },
+                {
+                  "title": "Your customers are waiting on data that lives behind a login."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "use-cases-education",
+      "route": "/use-cases/education",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "standard",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/use-cases/education",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Migrate Student Records from legacy SIS",
+              "subheading": "Product",
+              "body": [
+                "Extract enrollment data, transcripts, and course histories even from systems built in the '90s."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Student data is locked in legacy systems.",
+                  "body": "Schools and districts have decades of records trapped in outdated SIS and LMS platforms. Complex relationships make migration a nightmare."
+                },
+                {
+                  "title": "Win the deal in spring. Go live before fall.",
+                  "body": "Rubie extracts complete student records from any legacy SIS, handling the complex academic hierarchies that make education data uniquely challenging."
+                },
+                {
+                  "title": "Your questions answered",
+                  "body": "Rubie operates portals through a browser, the way a human would, so teams can extract, transform, and load data even when an API or pre-built integration is not available."
+                },
+                {
+                  "title": "Your customers are waiting on data that lives behind a login."
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "customers-curbwaste",
+      "route": "/customers/curbwaste",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "content",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/customers/curbwaste",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Curbwaste cuts data transformation time by 50%+ and reduces 8-hour upload time to 1 hour with Rubie",
+              "subheading": "Curbwaste",
+              "body": [
+                "Kevin Boyd",
+                "Head of Implementation",
+                "8 hrs -> 1 hr",
+                "Final upload time",
+                "50%+",
+                "Reduction in data transformation time",
+                "6 mo -> 1 wk",
+                "New hire ramp time",
+                "“The transformation piece for Rubie is what really took us to the next level...Anyone can technically just type in what they want it to do and have Rubie actually work for it.”",
+                "Curbwaste is an all-in-one operations platform for private haulers, covering everything from order intake and dispatching to driver apps, billing, and reporting.",
+                "// HEADQUARTERS //",
+                "// EMPLOYEES //",
+                "// INDUSTRY //",
+                "// PREVIOUS SOLUTION //",
+                "See why teams at high growth companies use Rubie."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "Get started"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "Manual formatting, rigid templates, and no way to automate the final upload created implementation bottlenecks",
+                  "body": "// CHALLENGE //"
+                },
+                {
+                  "title": "Dynamic playbooks with business logic transformation and conversational mapping that anyone can leverage",
+                  "body": "// SOLUTION //"
+                },
+                {
+                  "title": "Largest account migration completed, implementation time cut in half, and faster new hire ramp",
+                  "body": "// OUTCOME //"
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "customers-bound",
+      "route": "/customers/bound",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "content",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/customers/bound",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "Bound triples customer base while staying lean, cutting setup from 1 week to under 12 hours with Rubie",
+              "subheading": "Bound",
+              "body": [
+                "Lori Pleiness",
+                "Data Team Manager",
+                "1 wk → 12 hrs",
+                "New customer setup time",
+                "3x",
+                "Customer growth",
+                "20 → 1",
+                "Number of steps per migration",
+                "“It has been a game changer in how we work efficiently. Everything that we stand for as a company and how we want to operate has been very evident with Rubie.”",
+                "Bound is an all-in-one software platform with over 20 solutions designed to help athletic directors, activities directors, and schools simplify operations.",
+                "// HEADQUARTERS //",
+                "// EMPLOYEES //",
+                "// INDUSTRY //",
+                "// PREVIOUS SOLUTION //",
+                "See why teams at high growth companies use Rubie."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "Get started"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "A 20-step manual process that took a week per state and a sales team waiting 2-3 weeks for answers",
+                  "body": "// CHALLENGE //"
+                },
+                {
+                  "title": "Three playbooks that handle everything from state setup to schedule entry to facility imports",
+                  "body": "// SOLUTION //"
+                },
+                {
+                  "title": "Tripled customer base while staying lean and states are now live before contracts are signed",
+                  "body": "// OUTCOME //"
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pageId": "blog-migration-revenue-killer",
+      "route": "/blog/migration-revenue-killer",
+      "templateId": "template.group",
+      "routeKind": "concrete",
+      "pageRole": "content",
+      "pageSpec": {
+        "pageSpecVersion": "0.1.0",
+        "template": "template.group",
+        "route": "/blog/migration-revenue-killer",
+        "nodes": [
+          {
+            "type": "hero.main",
+            "content": {
+              "heading": "The Hidden Revenue Killer: Why Data Migration Is Sabotaging Your SaaS Growth",
+              "subheading": "Your customers are waiting on data that lives behind a login.",
+              "body": [
+                "And What Product Teams Can Do About It",
+                "Rubie Team",
+                "According to the 2025 Revenera Monetization Monitor report, 43% of software vendors need one to three years to complete a migration. For every enterprise deal your sales team closes, there's a hidden tax that delays time to value and causes customers to churn before they ever truly adopt your product."
+              ],
+              "ctas": [
+                {
+                  "label": "Solutions"
+                },
+                {
+                  "label": "Use Cases"
+                },
+                {
+                  "label": "Resources"
+                },
+                {
+                  "label": "Open menu"
+                },
+                {
+                  "label": "All systems normal"
+                }
+              ],
+              "items": [
+                {
+                  "title": "The Uncomfortable Truth Nobody Talks About",
+                  "body": "Here's a number that should keep every SaaS product leader up at night: according to the 2025 Revenera Monetization Monitor report, 43% of software vendors need one to three years to complete a migration to a new platform."
+                },
+                {
+                  "title": "Why Product Teams Keep Getting This Wrong",
+                  "body": "Most product teams treat data migration as an implementation problem. It's not. It's a product problem."
+                },
+                {
+                  "title": "The Anatomy of a Migration Disaster",
+                  "body": "Let's walk through what actually happens when a new customer needs to migrate their data:"
+                },
+                {
+                  "title": "The New Paradigm: Migration as Product",
+                  "body": "The companies that are winning the migration game have made a fundamental mindset shift: they treat migration as a first class product capability, not an afterthought. Here's what that looks like in practice:"
+                },
+                {
+                  "title": "The Bottom Line",
+                  "body": "Data migration is one of those problems that hides in plain sight. It's not sexy. It doesn't make demo videos. It's not going to get covered in TechCrunch."
+                },
+                {
+                  "title": "Sources",
+                  "body": "2025 Revenera Monetization Monitor: Industry report on software vendor migration timelines"
+                }
+              ],
+              "images": [
+                {
+                  "assetRole": "logo"
+                },
+                {
+                  "assetRole": "logo"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          },
+          {
+            "type": "shell.consent-banner-root",
+            "content": {
+              "body": [
+                "We value your privacy",
+                "This site uses cookies to improve your browsing experience, analyze site traffic, and show personalized content."
+              ],
+              "ctas": [
+                {
+                  "label": "Reject all"
+                },
+                {
+                  "label": "Customize"
+                },
+                {
+                  "label": "Accept all"
+                }
+              ]
+            },
+            "motion": {
+              "pattern": "css-transition",
+              "reducedMotionFallback": "disable-animation"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "notes": {
+    "generatedBy": "website-builder (heuristic; intent fields are inferred, not authored)",
+    "sourceStack": "React+Next.js+Rive",
+    "scrapedAt": "2026-10-06T07:05:09Z",
+    "composedRoutes": 21
+  }
+}

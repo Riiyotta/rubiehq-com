@@ -1,0 +1,55 @@
+{
+  "id": "features.playbook-cta-cards",
+  "category": "FEATURES",
+  "label": "playbook-cta-cards",
+  "tag": "section",
+  "purpose": "'Build data playbooks with Rubie' — two linked cards routing to Migration Playbooks and Integration Playbooks.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/index.html:6725-6814"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 5
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 4,
+        "maxWords": 20
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 4,
+        "maxWords": 2
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "canvas-animation",
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "disable-animation"
+  },
+  "assetRoles": [
+    "animation"
+  ],
+  "implementedBy": "src/sections/Z10.jsx > section[4]",
+  "scope": "The / route only."
+}

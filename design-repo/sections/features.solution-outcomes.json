@@ -1,0 +1,63 @@
+{
+  "id": "features.solution-outcomes",
+  "category": "FEATURES",
+  "label": "solution-outcomes",
+  "tag": "section",
+  "purpose": "The long outcome-explainer block ('What changes when migrations just work' / 'Engineering-grade infrastructure, no engineering required') with an animated supporting visual.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 2,
+    "routes": 2,
+    "measuredFrom": [
+      "src/solutions/migration-playbooks/index.html:1222-1746",
+      "src/solutions/integration-playbooks/index.html:1981-2011"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 7
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 3,
+        "maxWords": 28
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 3,
+        "titleMaxWords": 8,
+        "bodyMaxWords": 28
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 3,
+        "assetRoles": [
+          "icon"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "icon"
+  ],
+  "implementedBy": "src/sections/Z108.jsx > section[4]",
+  "scope": "The 2 /solutions/* routes."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "features.pipeline-steps",
+  "category": "FEATURES",
+  "label": "pipeline-steps",
+  "tag": "section",
+  "purpose": "A numbered walkthrough of the data pipeline ('01 — Authenticate' through Load), one stage per heading with an illustration each.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/product/index.html:341-743"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 3
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 16,
+        "maxWords": 56
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z102.jsx > section[1]",
+  "scope": "The /product route only."
+}

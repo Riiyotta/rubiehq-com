@@ -1,0 +1,45 @@
+{
+  "id": "light",
+  "mode": "light",
+  "$description": "The only theme measured (the page as served). Every semantic token resolves to a real foundation value.",
+  "resolves": {
+    "surface.default": "rgb(248,249,252)",
+    "surface.alt": "rgb(255,255,255)",
+    "surface.inverse": "rgb(0,10,39)",
+    "surface.accent": "rgb(2,99,255)",
+    "text.primary": "rgb(2,6,24)",
+    "text.secondary": "rgb(0,10,39)",
+    "text.inverse": "rgb(187,194,204)",
+    "text.accent": "rgb(16,102,241)",
+    "border.default": "rgb(231,234,238)",
+    "accent.primary": "rgb(16,102,241)",
+    "typography.display": {
+      "fontFamily": "Geist",
+      "fontSize": "52px",
+      "fontWeight": "600",
+      "lineHeight": "54.6px"
+    },
+    "typography.heading": {
+      "fontFamily": "Geist",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px"
+    },
+    "typography.body": {
+      "fontFamily": "Geist",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "24px"
+    },
+    "typography.label": {
+      "fontFamily": "Geist",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px"
+    },
+    "radius.surface": "8px",
+    "elevation.default": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(16, 102, 241, 0.05) 0px 12px 12px -6px, rgba(16, 102, 241, 0.05) 0px 8px 8px -4px, rgba(16, 102, 241, 0.05) 0px 6px 6px -3px, rgba(16, 102, 241, 0.05) 0px 4px 4px -2px",
+    "motion.duration.default": "0.15s",
+    "motion.easing.default": "cubic-bezier(0.4, 0, 0.2, 1)"
+  }
+}

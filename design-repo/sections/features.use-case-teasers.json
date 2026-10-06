@@ -1,0 +1,40 @@
+{
+  "id": "features.use-case-teasers",
+  "category": "FEATURES",
+  "label": "use-case-teasers",
+  "tag": "section",
+  "purpose": "'How teams are using Rubie today' — a grid teasing the six /use-cases/* routes.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/index.html:6815-7184"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 6
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-animation",
+      "none"
+    ],
+    "reducedMotionFallback": "disable-animation"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z10.jsx > section[5]",
+  "scope": "The / route only."
+}

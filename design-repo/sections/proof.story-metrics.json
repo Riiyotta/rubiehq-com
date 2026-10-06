@@ -1,0 +1,44 @@
+{
+  "id": "proof.story-metrics",
+  "category": "PROOF",
+  "label": "story-metrics",
+  "tag": "section",
+  "purpose": "The customer-story metric strip — three named outcome numbers with a caption each (e.g. '3 min / Per account data entry (down from 2+ hrs)'). No heading of its own.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 5,
+    "routes": 5,
+    "measuredFrom": [
+      "src/customers/granum/index.html:395-412",
+      "src/customers/brivity/index.html:395-412",
+      "src/customers/cariina/index.html:395-412",
+      "src/customers/curbwaste/index.html:395-412",
+      "src/customers/bound/index.html:395-412"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 6,
+        "maxWords": 8
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1010.jsx > section[1]",
+  "scope": "The 5 /customers/<name> routes."
+}

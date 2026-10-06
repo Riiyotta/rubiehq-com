@@ -1,0 +1,71 @@
+{
+  "id": "hero.home",
+  "category": "HERO",
+  "label": "home",
+  "tag": "section",
+  "purpose": "Homepage hero: h1 'Rip and Replace your Competition', the zero-effort-migrations sub-paragraph, dual CTAs, the Rive product animation and the 58-logo customer plate.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/index.html:283-4697"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 5
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 28
+      },
+      "listItems": {
+        "type": "string[]",
+        "required": false,
+        "maxItems": 9,
+        "maxWords": 28
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 9
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 58,
+        "assetRoles": [
+          "content-image",
+          "customer-logo"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-animation",
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "disable-animation"
+  },
+  "assetRoles": [
+    "content-image",
+    "customer-logo"
+  ],
+  "implementedBy": "src/sections/Z10.jsx > section[0]",
+  "scope": "The / route only."
+}

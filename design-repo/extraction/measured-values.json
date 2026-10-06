@@ -1,0 +1,2711 @@
+{
+  "version": "0.1.0",
+  "sourceProject": {
+    "url": "https://www.rubiehq.com/",
+    "framework": "React+Next.js+Rive",
+    "scrapedAt": "2026-10-06T07:05:09Z",
+    "snapshotFolder": "recon/mirror/src/"
+  },
+  "note": "Citation ledger. `lines` are line ranges in the rendered-HTML snapshots under recon/mirror/src/; verify_all.py resolves them and degrades to a warning when that tree is absent. Section ranges are <main>'s direct children plus every top-level <section> inside a wrapper div; shell.consent-banner-root sits outside <main> and is cited separately. Re-extracted 2026-10-06 after the first pass mis-classified <main> itself as a single hero section.",
+  "viewport": {
+    "desktop": "1440x900",
+    "mobile": "390x844"
+  },
+  "histograms": {
+    "colors": [
+      [
+        "rgba(0,0,0,0)",
+        26917
+      ],
+      [
+        "rgb(2,6,24)",
+        17736
+      ],
+      [
+        "rgb(187,194,204)",
+        2943
+      ],
+      [
+        "rgb(219,223,229)",
+        2096
+      ],
+      [
+        "rgb(255,255,255)",
+        1964
+      ],
+      [
+        "rgb(0,10,39)",
+        1015
+      ],
+      [
+        "rgb(121,129,141)",
+        833
+      ],
+      [
+        "rgb(60,66,74)",
+        682
+      ],
+      [
+        "rgb(16,102,241)",
+        367
+      ],
+      [
+        "rgb(93,100,110)",
+        326
+      ],
+      [
+        "rgb(17,16,41)",
+        324
+      ],
+      [
+        "rgb(248,249,252)",
+        214
+      ],
+      [
+        "rgb(231,234,238)",
+        192
+      ],
+      [
+        "rgb(47,50,69)",
+        190
+      ],
+      [
+        "rgb(102,102,102)",
+        149
+      ],
+      [
+        "rgb(0,3,10)",
+        137
+      ],
+      [
+        "rgb(227,231,235)",
+        136
+      ],
+      [
+        "rgb(10,10,10)",
+        126
+      ],
+      [
+        "rgb(2,99,255)",
+        121
+      ],
+      [
+        "rgb(223,227,232)",
+        98
+      ],
+      [
+        "rgb(0,0,0)",
+        93
+      ],
+      [
+        "rgb(13,95,226)",
+        86
+      ],
+      [
+        "rgb(238,241,245)",
+        85
+      ],
+      [
+        "rgba(5,35,52,0.07)",
+        73
+      ],
+      [
+        "rgb(170,179,191)",
+        72
+      ],
+      [
+        "rgb(48,122,243)",
+        68
+      ],
+      [
+        "rgb(77,140,249)",
+        32
+      ],
+      [
+        "rgb(248,249,250)",
+        26
+      ],
+      [
+        "rgb(230,239,254)",
+        22
+      ],
+      [
+        "rgb(209,213,220)",
+        21
+      ],
+      [
+        "rgb(229,229,229)",
+        21
+      ],
+      [
+        "rgb(130,175,251)",
+        16
+      ],
+      [
+        "rgb(248,250,252)",
+        11
+      ],
+      [
+        "rgb(135,142,153)",
+        8
+      ],
+      [
+        "rgb(41,118,242)",
+        8
+      ],
+      [
+        "rgb(163,171,182)",
+        7
+      ],
+      [
+        "rgb(214,219,225)",
+        7
+      ],
+      [
+        "rgba(255,255,255,0.24)",
+        7
+      ],
+      [
+        "rgb(245,247,250)",
+        6
+      ],
+      [
+        "rgba(255,255,255,0.15)",
+        6
+      ],
+      [
+        "rgb(180,207,253)",
+        4
+      ],
+      [
+        "rgba(255,255,255,0.22)",
+        3
+      ],
+      [
+        "rgba(255,255,255,0.82)",
+        3
+      ],
+      [
+        "rgb(153,153,153)",
+        2
+      ],
+      [
+        "rgb(215,221,228)",
+        2
+      ],
+      [
+        "rgb(238,241,244)",
+        2
+      ],
+      [
+        "rgb(252,253,254)",
+        2
+      ],
+      [
+        "rgb(4,53,133)",
+        2
+      ],
+      [
+        "rgba(255,255,255,0.2)",
+        2
+      ],
+      [
+        "rgb(184,192,202)",
+        1
+      ],
+      [
+        "rgb(197,204,213)",
+        1
+      ],
+      [
+        "rgb(217,217,217)",
+        1
+      ],
+      [
+        "rgb(9,77,185)",
+        1
+      ],
+      [
+        "rgba(255,255,255,0.18)",
+        1
+      ]
+    ],
+    "radii": [
+      [
+        "8px",
+        977
+      ],
+      [
+        "16px",
+        60
+      ],
+      [
+        "10px",
+        30
+      ],
+      [
+        "24px",
+        26
+      ],
+      [
+        "12px",
+        7
+      ],
+      [
+        "7px",
+        3
+      ]
+    ],
+    "spacing": [
+      [
+        "16px",
+        1058
+      ],
+      [
+        "12px",
+        998
+      ],
+      [
+        "8px",
+        929
+      ],
+      [
+        "24px",
+        836
+      ],
+      [
+        "32px",
+        571
+      ],
+      [
+        "4px",
+        552
+      ],
+      [
+        "10px",
+        526
+      ],
+      [
+        "48px",
+        400
+      ],
+      [
+        "6px",
+        300
+      ],
+      [
+        "20px",
+        202
+      ],
+      [
+        "64px",
+        142
+      ],
+      [
+        "36px",
+        126
+      ],
+      [
+        "56px",
+        119
+      ],
+      [
+        "40px",
+        105
+      ],
+      [
+        "80px",
+        31
+      ],
+      [
+        "28px",
+        28
+      ],
+      [
+        "96px",
+        27
+      ],
+      [
+        "88px",
+        19
+      ],
+      [
+        "128px",
+        11
+      ],
+      [
+        "90px",
+        5
+      ],
+      [
+        "100px",
+        4
+      ],
+      [
+        "112px",
+        4
+      ],
+      [
+        "2px",
+        4
+      ],
+      [
+        "9px",
+        4
+      ],
+      [
+        "104px",
+        2
+      ],
+      [
+        "150px",
+        2
+      ],
+      [
+        "168px",
+        2
+      ],
+      [
+        "72px",
+        2
+      ],
+      [
+        "140px",
+        1
+      ],
+      [
+        "200px",
+        1
+      ],
+      [
+        "58px",
+        1
+      ]
+    ],
+    "breakpoints": [
+      [
+        "640px",
+        231
+      ],
+      [
+        "768px",
+        84
+      ],
+      [
+        "1024px",
+        63
+      ],
+      [
+        "1280px",
+        42
+      ],
+      [
+        "1350px",
+        21
+      ],
+      [
+        "1536px",
+        21
+      ],
+      [
+        "400px",
+        21
+      ],
+      [
+        "420px",
+        21
+      ],
+      [
+        "480px",
+        21
+      ]
+    ],
+    "durations": [
+      [
+        "0.15s",
+        1001
+      ],
+      [
+        "0.2s",
+        571
+      ],
+      [
+        "0.08s",
+        168
+      ],
+      [
+        "1.4s",
+        92
+      ],
+      [
+        "0.3s",
+        39
+      ],
+      [
+        "0.5s",
+        21
+      ],
+      [
+        "90s",
+        14
+      ],
+      [
+        "34s",
+        4
+      ],
+      [
+        "36s",
+        4
+      ],
+      [
+        "38s",
+        4
+      ],
+      [
+        "0.62s",
+        2
+      ]
+    ],
+    "easings": [
+      [
+        "cubic-bezier(0.4, 0, 0.2, 1)",
+        1779
+      ],
+      [
+        "linear",
+        73
+      ],
+      [
+        "ease-out",
+        46
+      ],
+      [
+        "cubic-bezier(0.34, 1.56, 0.64, 1)",
+        21
+      ],
+      [
+        "cubic-bezier(0.16, 1, 0.3, 1)",
+        1
+      ]
+    ],
+    "cssVariables": {
+      "--tw-translate-x": "0",
+      "--tw-translate-y": "0",
+      "--tw-translate-z": "0",
+      "--tw-scale-x": "1",
+      "--tw-scale-y": "1",
+      "--tw-scale-z": "1",
+      "--tw-rotate-x": "initial",
+      "--tw-rotate-y": "initial",
+      "--tw-rotate-z": "initial",
+      "--tw-skew-x": "initial",
+      "--tw-skew-y": "initial",
+      "--tw-space-y-reverse": "0",
+      "--tw-border-style": "solid",
+      "--tw-gradient-position": "initial",
+      "--tw-gradient-from": "rgba(0,0,0,0)",
+      "--tw-gradient-via": "rgba(0,0,0,0)",
+      "--tw-gradient-to": "rgba(0,0,0,0)",
+      "--tw-gradient-stops": "initial",
+      "--tw-gradient-via-stops": "initial",
+      "--tw-gradient-from-position": "0%",
+      "--tw-gradient-via-position": "50%",
+      "--tw-gradient-to-position": "100%",
+      "--tw-leading": "initial",
+      "--tw-font-weight": "initial",
+      "--tw-tracking": "initial",
+      "--tw-shadow": "0 0 #0000",
+      "--tw-shadow-color": "initial",
+      "--tw-shadow-alpha": "100%",
+      "--tw-inset-shadow": "0 0 #0000",
+      "--tw-inset-shadow-color": "initial",
+      "--tw-inset-shadow-alpha": "100%",
+      "--tw-ring-color": "initial",
+      "--tw-ring-shadow": "0 0 #0000",
+      "--tw-inset-ring-color": "initial",
+      "--tw-inset-ring-shadow": "0 0 #0000",
+      "--tw-ring-inset": "initial",
+      "--tw-ring-offset-width": "0px",
+      "--tw-ring-offset-color": "rgb(255,255,255)",
+      "--tw-ring-offset-shadow": "0 0 #0000",
+      "--tw-blur": "initial",
+      "--tw-brightness": "initial",
+      "--tw-contrast": "initial",
+      "--tw-grayscale": "initial",
+      "--tw-hue-rotate": "initial",
+      "--tw-invert": "initial",
+      "--tw-opacity": "initial",
+      "--tw-saturate": "initial",
+      "--tw-sepia": "initial",
+      "--tw-drop-shadow": "initial",
+      "--tw-drop-shadow-color": "initial",
+      "--tw-drop-shadow-alpha": "100%",
+      "--tw-drop-shadow-size": "initial",
+      "--tw-duration": "initial",
+      "--tw-ease": "initial",
+      "--tw-content": "\"\"",
+      "--tw-outline-style": "solid",
+      "--font-sans": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "--font-mono": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "--color-slate-950": "lab(1.769741.32743-9.28855)",
+      "--color-gray-50": "lab(98.2596-0.247031-0.706708)",
+      "--color-gray-100": "lab(96.1596-0.0823438-1.13575)",
+      "--color-gray-200": "lab(91.6229-0.159115-2.26791)",
+      "--color-gray-300": "lab(85.1236-0.612259-3.7138)",
+      "--color-gray-500": "lab(47.7841-0.393182-10.0268)",
+      "--color-gray-600": "lab(35.6337-1.58697-10.8425)",
+      "--color-gray-700": "lab(27.1134-0.956401-12.3224)",
+      "--color-gray-900": "lab(8.118970.811279-12.254)",
+      "--color-black": "rgb(0,0,0)",
+      "--color-white": "rgb(255,255,255)",
+      "--spacing": ".25rem",
+      "--breakpoint-sm": "640px",
+      "--container-xs": "20rem",
+      "--container-sm": "24rem",
+      "--container-md": "28rem",
+      "--container-lg": "32rem",
+      "--container-xl": "36rem",
+      "--container-2xl": "42rem",
+      "--container-3xl": "48rem",
+      "--container-4xl": "56rem",
+      "--container-5xl": "64rem",
+      "--container-6xl": "72rem",
+      "--text-xs": ".75rem",
+      "--text-xs--line-height": "calc(1 / .75)",
+      "--text-sm": ".875rem",
+      "--text-sm--line-height": "calc(1.25 / .875)",
+      "--text-base": "1rem",
+      "--text-base--line-height": "calc(1.5 / 1)",
+      "--text-lg": "1.125rem",
+      "--text-lg--line-height": "calc(1.75 / 1.125)",
+      "--text-xl": "1.25rem",
+      "--text-xl--line-height": "calc(1.75 / 1.25)",
+      "--text-2xl": "1.5rem",
+      "--text-2xl--line-height": "calc(2 / 1.5)",
+      "--text-3xl": "1.875rem",
+      "--text-3xl--line-height": "calc(2.25 / 1.875)",
+      "--text-4xl": "2.25rem",
+      "--text-4xl--line-height": "calc(2.5 / 2.25)",
+      "--text-5xl": "3rem",
+      "--text-5xl--line-height": "1",
+      "--text-6xl": "3.75rem",
+      "--text-6xl--line-height": "1",
+      "--font-weight-normal": "400",
+      "--font-weight-medium": "500",
+      "--font-weight-semibold": "600",
+      "--font-weight-bold": "700",
+      "--tracking-tight": "-.025em",
+      "--tracking-normal": "0em",
+      "--leading-tight": "1.25",
+      "--leading-snug": "1.375",
+      "--leading-relaxed": "1.625",
+      "--radius-md": "calc(.5rem - 2px)",
+      "--radius-lg": ".5rem",
+      "--radius-xl": ".75rem",
+      "--radius-2xl": "1rem",
+      "--radius-3xl": "1.5rem",
+      "--ease-out": "cubic-bezier(0, 0, .2, 1)",
+      "--default-transition-duration": ".15s",
+      "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+      "--default-font-family": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "--default-mono-font-family": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "--color-foreground": "rgb(10,10,10)",
+      "--color-border": "rgb(229,229,229)",
+      "--color-ring": "rgb(10,10,10)",
+      "--color-rubie-deep": "rgb(16,103,243)",
+      "--color-rubie-bright": "rgb(66,133,244)",
+      "--site-bg-rgb": "248 249 252",
+      "--site-background": "rgb(248,249,252)",
+      "--site-background-95": "rgba(248,249,252,0.95)",
+      "--site-background-85": "rgba(248,249,252,0.85)",
+      "--gray-300": "rgb(231,234,238)",
+      "--gray-400": "rgb(223,227,232)",
+      "--gray-600": "rgb(187,194,204)",
+      "--gray-700": "rgb(135,142,153)",
+      "--gray-800": "rgb(121,129,141)",
+      "--gray-900": "rgb(93,100,110)",
+      "--background": "0 0% 100%",
+      "--foreground": "0 0% 3.9%",
+      "--card": "0 0% 100%",
+      "--card-foreground": "0 0% 3.9%",
+      "--popover": "0 0% 100%",
+      "--popover-foreground": "0 0% 3.9%",
+      "--primary": "0 0% 9%",
+      "--primary-foreground": "0 0% 98%",
+      "--secondary": "0 0% 96.1%",
+      "--secondary-foreground": "0 0% 9%",
+      "--muted": "0 0% 96.1%",
+      "--muted-foreground": "0 0% 45.1%",
+      "--accent": "0 0% 96.1%",
+      "--accent-foreground": "0 0% 9%",
+      "--destructive": "0 84.2% 60.2%",
+      "--destructive-foreground": "0 0% 98%",
+      "--border": "0 0% 89.8%",
+      "--input": "0 0% 89.8%",
+      "--ring": "0 0% 3.9%",
+      "--chart-1": "12 76% 61%",
+      "--chart-2": "173 58% 39%",
+      "--chart-3": "197 37% 24%",
+      "--chart-4": "43 74% 66%",
+      "--chart-5": "27 87% 67%",
+      "--radius": ".5rem",
+      "--rubie-deep": "rgb(16,103,243)",
+      "--rubie-bright": "rgb(66,133,244)",
+      "--rubie-medium": "rgb(87,151,255)",
+      "--rubie-indigo": "rgb(50,86,131)",
+      "--rubie-cyan": "rgb(51,211,255)",
+      "--rubie-light": "rgb(90,182,255)",
+      "--rubie-sky": "rgb(116,165,255)",
+      "--rubie-vivid": "rgb(80,51,255)",
+      "--rubie-royal": "rgb(51,99,255)",
+      "--rubie-electric": "rgb(51,156,255)",
+      "--rubie-ice": "rgb(246,250,254)",
+      "--rubie-soft": "rgb(221,228,237)",
+      "--rubie-card": "rgb(253,254,255)",
+      "--rubie-muted": "rgb(204,212,220)",
+      "--rubie-dark": "rgb(67,76,92)",
+      "--accordion-padding": "1rem",
+      "--accordion-radius": "0.5rem",
+      "--accordion-duration": "150ms",
+      "--accordion-ease": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--accordion-icon-size": "1.25rem",
+      "--accordion-background-color": "rgb(255,255,255)",
+      "--accordion-background-color-dark": "rgb(255,255,255)",
+      "--accordion-background-hover": "rgb(250,250,250)",
+      "--accordion-background-hover-dark": "rgb(250,250,250)",
+      "--accordion-border-color": "rgb(227,231,235)",
+      "--accordion-border-color-dark": "rgb(227,231,235)",
+      "--accordion-text-color": "rgb(0,3,10)",
+      "--accordion-text-color-dark": "rgb(0,3,10)",
+      "--accordion-icon-color": "rgb(93,100,110)",
+      "--accordion-icon-color-dark": "rgb(93,100,110)",
+      "--accordion-arrow-color": "rgb(93,100,110)",
+      "--accordion-arrow-color-dark": "rgb(93,100,110)",
+      "--accordion-content-color": "rgb(93,100,110)",
+      "--accordion-content-color-dark": "rgb(93,100,110)",
+      "--accordion-focus-ring": "rgb(2,99,255)",
+      "--accordion-focus-ring-dark": "rgb(2,99,255)",
+      "--accordion-focus-shadow": "0 0 0 2px #0263ff",
+      "--accordion-focus-shadow-dark": "0 0 0 2px #0263ff",
+      "--button-primary": "rgb(2,99,255)",
+      "--button-primary-dark": "rgb(2,99,255)",
+      "--button-primary-hover": "rgb(0,86,223)",
+      "--button-primary-hover-dark": "rgb(0,86,223)",
+      "--button-neutral": "rgb(93,100,110)",
+      "--button-neutral-dark": "rgb(93,100,110)",
+      "--button-neutral-hover": "rgb(0,3,10)",
+      "--button-neutral-hover-dark": "rgb(0,3,10)",
+      "--button-neutral-soft": "rgb(250,250,250)",
+      "--button-neutral-soft-dark": "rgb(250,250,250)",
+      "--button-focus-ring": "rgb(2,99,255)",
+      "--button-focus-ring-dark": "rgb(2,99,255)",
+      "--button-text": "rgb(0,3,10)",
+      "--button-text-dark": "rgb(0,3,10)",
+      "--button-text-hover": "rgb(0,3,10)",
+      "--button-text-hover-dark": "rgb(0,3,10)",
+      "--button-background-color": "rgb(255,255,255)",
+      "--button-background-color-dark": "rgb(255,255,255)",
+      "--button-border": "rgb(227,231,235)",
+      "--button-border-dark": "rgb(227,231,235)",
+      "--button-hover-overlay": "rgb(250,250,250)",
+      "--button-hover-overlay-dark": "rgb(250,250,250)",
+      "--button-primary-hover-tint": "color(srgb0.007843140.3882351/0.1)",
+      "--button-neutral-hover-tint": "color(srgb00.01176470.0392157/0.1)",
+      "--button-font": "system-ui, -apple-system, sans-serif",
+      "--button-border-width": "1px",
+      "--button-border-style": "solid",
+      "--button-border-color": "rgb(227,231,235)",
+      "--button-border-radius": "0.5rem",
+      "--button-font-weight": "500",
+      "--button-font-size": "0.875rem",
+      "--button-line-height": "1.25",
+      "--button-transition": "opacity 80ms cubic-bezier(0.4, 0, 0.2, 1), transform 80ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "--button-hover-transition-color": "background-color 80ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "--button-hover-transition-full": "background-color 80ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 80ms cubic-bezier(0.4, 0, 0.2, 1), color 80ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "--button-cursor": "pointer",
+      "--button-shadow": "0 1px 2px hsla(0, 0%, 0%, 0.05)",
+      "--button-shadow-dark": "0 1px 2px hsla(0, 0%, 0%, 0.05)",
+      "--button-shadow-primary-focus": "0 0 0 2px #0263ff",
+      "--button-shadow-neutral-focus": "0 0 0 2px #0263ff",
+      "--button-shadow-primary-focus-dark": "0 0 0 2px #0263ff",
+      "--button-shadow-neutral-focus-dark": "0 0 0 2px #0263ff",
+      "--button-shadow-primary": "0 1px 2px hsla(0, 0%, 0%, 0.05), inset 0 0 0 1px #0263ff",
+      "--button-shadow-primary-dark": "0 1px 2px hsla(0, 0%, 0%, 0.05), inset 0 0 0 1px #0263ff",
+      "--button-shadow-primary-hover": "none",
+      "--button-shadow-primary-hover-dark": "none",
+      "--button-shadow-neutral": "0 1px 2px hsla(0, 0%, 0%, 0.05), inset 0 0 0 1px hsl(0, 0%, 98%)",
+      "--button-shadow-neutral-dark": "0 1px 2px hsla(0, 0%, 0%, 0.05), inset 0 0 0 1px hsl(0, 0%, 98%)",
+      "--button-shadow-neutral-hover": "none",
+      "--button-shadow-neutral-hover-dark": "none",
+      "--collapsible-duration": "150ms",
+      "--collapsible-ease": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--collapsible-content-color": "rgb(93,100,110)",
+      "--collapsible-gap": "0",
+      "--legal-links-gap": ".75rem",
+      "--legal-links-font-size": ".875rem",
+      "--legal-links-transition": "text-decoration .2s ease",
+      "--legal-links-text-decoration": "none",
+      "--legal-links-text-decoration-hover": "underline",
+      "--legal-links-outline": "2px solid currentColor",
+      "--legal-links-outline-offset": "2px",
+      "--legal-links-color": "rgb(71,108,255)",
+      "--legal-links-focus-color": "rgb(71,108,255)",
+      "--legal-links-focus-color-dark": "rgb(37,71,208)",
+      "--preference-item-gap": ".75rem",
+      "--preference-item-leading-gap": ".5rem",
+      "--preference-item-content-color": "rgb(93,100,110)",
+      "--preference-item-duration": "150ms",
+      "--preference-item-ease": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--preference-item-focus-ring": "rgb(2,99,255)",
+      "--tabs-list-background": "rgb(255,255,255)",
+      "--tabs-list-border": "rgb(227,231,235)",
+      "--tabs-trigger-color": "rgb(93,100,110)",
+      "--tabs-trigger-active-color": "rgb(0,3,10)",
+      "--tabs-trigger-active-background": "rgb(250,250,250)",
+      "--tabs-focus-ring": "rgb(2,99,255)",
+      "--consent-banner-font-family": "system-ui, -apple-system, sans-serif",
+      "--consent-banner-line-height": "1.5",
+      "--consent-banner-text-size-adjust": "100%",
+      "--consent-banner-tab-size": "4",
+      "--consent-banner-border-radius-sm": "0.25rem",
+      "--consent-banner-border-radius": "0.75rem",
+      "--consent-banner-max-width": "440px",
+      "--consent-banner-branding-tag-offset": "2rem",
+      "--consent-banner-animation-duration": "80ms",
+      "--consent-banner-animation-timing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--consent-banner-entry-animation": "c15t-ui-enter-EoZFn 80ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "--consent-banner-exit-animation": "c15t-ui-exit-Z4gI_ 80ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "--consent-banner-border-width": "1px",
+      "--consent-banner-border-width-hairline": ".5px",
+      "--consent-banner-shadow": "0 8px 24px hsla(0, 0%, 0%, 0.12)",
+      "--consent-banner-shadow-dark": "0 8px 24px hsla(0, 0%, 0%, 0.12)",
+      "--consent-banner-background-color": "rgb(255,255,255)",
+      "--consent-banner-background-color-dark": "rgb(255,255,255)",
+      "--consent-banner-footer-background-color": "rgb(250,250,250)",
+      "--consent-banner-footer-background-color-dark": "rgb(250,250,250)",
+      "--consent-banner-text-color": "rgb(0,3,10)",
+      "--consent-banner-text-color-dark": "rgb(0,3,10)",
+      "--consent-banner-border-color": "rgb(227,231,235)",
+      "--consent-banner-border-color-dark": "rgb(227,231,235)",
+      "--consent-banner-title-color": "rgb(0,3,10)",
+      "--consent-banner-title-color-dark": "rgb(0,3,10)",
+      "--consent-banner-description-color": "rgb(93,100,110)",
+      "--consent-banner-description-color-dark": "rgb(93,100,110)",
+      "--consent-banner-overlay-background-color": "rgba(0,0,0,0.5)",
+      "--consent-banner-overlay-background-color-dark": "rgba(0,0,0,0.5)",
+      "--consent-dialog-font-family": "system-ui, -apple-system, sans-serif",
+      "--consent-dialog-line-height": "1.25",
+      "--consent-dialog-title-font-size": "0.875rem",
+      "--consent-dialog-title-font-weight": "600",
+      "--consent-dialog-title-letter-spacing": "-.025em",
+      "--consent-dialog-description-font-size": "1rem",
+      "--consent-dialog-description-font-weight": "400",
+      "--consent-dialog-description-line-height": "1.5",
+      "--consent-dialog-footer-gap": "0.5rem",
+      "--consent-dialog-footer-font-size": "14px",
+      "--consent-dialog-branding-font-size": "1rem",
+      "--consent-dialog-branding-font-weight": "500",
+      "--consent-dialog-branding-line-height": "1.75",
+      "--consent-dialog-branding-letter-spacing": "-.01em",
+      "--consent-dialog-stroke-color": "rgb(227,231,235)",
+      "--consent-dialog-stroke-color-dark": "rgb(227,231,235)",
+      "--consent-dialog-branding-focus-color": "rgb(2,99,255)",
+      "--consent-dialog-branding-focus-color-dark": "rgb(2,99,255)",
+      "--consent-dialog-link-text-color": "rgb(0,3,10)",
+      "--consent-dialog-link-text-color-dark": "rgb(0,3,10)",
+      "--consent-dialog-border-color": "rgb(227,231,235)",
+      "--consent-dialog-border-color-dark": "rgb(227,231,235)",
+      "--consent-dialog-background-color": "rgb(255,255,255)",
+      "--consent-dialog-background-color-dark": "rgb(255,255,255)",
+      "--consent-dialog-foreground-color": "rgb(0,3,10)",
+      "--consent-dialog-foreground-color-dark": "rgb(0,3,10)",
+      "--consent-dialog-muted-color": "rgb(93,100,110)",
+      "--consent-dialog-muted-color-dark": "rgb(93,100,110)",
+      "--consent-dialog-overlay-background-color": "rgba(0,0,0,0.5)",
+      "--consent-dialog-overlay-background-color-dark": "rgba(0,0,0,0.5)",
+      "--consent-dialog-card-padding": "1.5rem",
+      "--consent-dialog-card-padding-mobile": "1rem",
+      "--consent-dialog-card-gap": "0.25rem",
+      "--consent-dialog-header-gap": "0.25rem",
+      "--consent-dialog-content-gap": "1rem",
+      "--consent-dialog-footer-padding-y": "1rem",
+      "--consent-dialog-card-radius": "0.75rem",
+      "--consent-dialog-max-width": "28rem",
+      "--consent-dialog-height": "100%",
+      "--consent-dialog-z-index": "1000000000",
+      "--consent-dialog-overlay-z-index": "1000000000",
+      "--consent-dialog-card-shadow": "0 1px 2px 0 #0000000d",
+      "--consent-dialog-border-width": "1px",
+      "--consent-dialog-border-width-hairline": ".5px",
+      "--consent-dialog-border-style": "solid",
+      "--consent-dialog-animation-duration": "150ms",
+      "--consent-dialog-animation-timing": "ease-out",
+      "--consent-dialog-branding-gap": ".5rem",
+      "--consent-dialog-branding-icon-height": "1.25rem",
+      "--consent-dialog-branding-icon-width": "auto",
+      "--consent-dialog-branding-label-size": ".6875rem",
+      "--consent-widget-background-color": "rgb(255,255,255)",
+      "--consent-widget-background-color-dark": "rgb(255,255,255)",
+      "--consent-widget-border-color": "rgb(227,231,235)",
+      "--consent-widget-border-color-dark": "rgb(227,231,235)",
+      "--consent-widget-text-color": "rgb(0,3,10)",
+      "--consent-widget-text-color-dark": "rgb(0,3,10)",
+      "--consent-widget-text-muted-color": "rgb(93,100,110)",
+      "--consent-widget-text-muted-color-dark": "rgb(93,100,110)",
+      "--consent-widget-footer-background-color": "rgba(0,0,0,0)",
+      "--consent-widget-footer-background-color-dark": "rgba(0,0,0,0)",
+      "--consent-widget-link-text-color": "rgb(0,3,10)",
+      "--consent-widget-link-text-color-dark": "rgb(0,3,10)",
+      "--consent-widget-branding-link-color": "rgb(2,99,255)",
+      "--consent-widget-padding": "0",
+      "--consent-widget-radius": "0",
+      "--consent-widget-gap": "0.25rem",
+      "--consent-widget-border-width": "0",
+      "--consent-widget-max-width": "32rem",
+      "--consent-widget-z-index": "50",
+      "--consent-widget-footer-padding": "1.5rem 0 0 0",
+      "--consent-widget-title-size": "0.875rem",
+      "--consent-widget-title-line-height": "1.25",
+      "--consent-widget-title-tracking": "-.006em",
+      "--consent-widget-title-weight": "600",
+      "--consent-widget-entry-animation": "c15t-ui-enter-oqaf_ 80ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "--consent-widget-exit-animation": "c15t-ui-exit-Yh5ig 80ms cubic-bezier(0.4, 0, 0.2, 1)",
+      "--consent-widget-accordion-padding": "0.5rem",
+      "--consent-widget-accordion-stack-gap": ".75rem",
+      "--consent-widget-accordion-radius": "0.5rem",
+      "--consent-widget-accordion-duration": "150ms",
+      "--consent-widget-accordion-ease": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--consent-widget-accordion-icon-size": "1.25rem",
+      "--consent-widget-accordion-background-color": "rgb(255,255,255)",
+      "--consent-widget-accordion-background-color-dark": "rgb(255,255,255)",
+      "--consent-widget-accordion-background-hover": "rgb(250,250,250)",
+      "--consent-widget-accordion-background-hover-dark": "rgb(250,250,250)",
+      "--consent-widget-accordion-border-color": "rgb(227,231,235)",
+      "--consent-widget-accordion-border-color-dark": "rgb(227,231,235)",
+      "--consent-widget-accordion-text-color": "rgb(0,3,10)",
+      "--consent-widget-accordion-text-color-dark": "rgb(0,3,10)",
+      "--consent-widget-accordion-icon-color": "rgb(93,100,110)",
+      "--consent-widget-accordion-icon-color-dark": "rgb(93,100,110)",
+      "--consent-widget-accordion-arrow-color": "rgb(163,163,163)",
+      "--consent-widget-accordion-arrow-color-dark": "rgb(204,204,204)",
+      "--consent-widget-accordion-content-color": "rgb(92,92,92)",
+      "--consent-widget-accordion-content-color-dark": "rgb(153,153,153)",
+      "--consent-widget-accordion-focus-ring": "rgb(71,108,255)",
+      "--consent-widget-accordion-focus-ring-dark": "rgb(37,71,208)",
+      "--consent-widget-accordion-focus-shadow": "0 0 0 2px #476cff",
+      "--consent-widget-accordion-focus-shadow-dark": "0 0 0 2px #2547d0",
+      "--consent-widget-font-family": "system-ui, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+      "--consent-widget-line-height": "1.15",
+      "--frame-font-family": "system-ui, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+      "--frame-line-height": "1.5",
+      "--frame-placeholder-gap": "1rem",
+      "--frame-placeholder-border-radius": "1.25rem",
+      "--frame-placeholder-border-width": "1px",
+      "--frame-placeholder-border-color": "rgb(235,235,235)",
+      "--frame-placeholder-border-color-dark": "rgb(51,51,51)",
+      "--frame-placeholder-background-color": "rgb(255,255,255)",
+      "--frame-placeholder-background-color-dark": "rgb(23,23,23)",
+      "--frame-placeholder-text-color": "rgb(23,23,23)",
+      "--frame-placeholder-text-color-dark": "rgb(230,230,230)",
+      "--frame-placeholder-title-color": "rgb(23,23,23)",
+      "--frame-placeholder-title-color-dark": "rgb(230,230,230)",
+      "--frame-placeholder-shadow": "0 16px 32px -12px #0e121b1a",
+      "--frame-placeholder-shadow-dark": "0 16px 32px -12px #0e121b1a",
+      "--frame-placeholder-opacity": "0",
+      "--frame-placeholder-animation": "c15t-ui-fadeIn-moBzd .15s cubic-bezier(.165, .84, .44, 1) forwards",
+      "--c15t-primary": "rgb(2,99,255)",
+      "--c15t-primary-hover": "rgb(0,86,223)",
+      "--c15t-surface": "rgb(255,255,255)",
+      "--c15t-surface-hover": "rgb(250,250,250)",
+      "--c15t-border": "rgb(227,231,235)",
+      "--c15t-border-hover": "rgb(217,217,217)",
+      "--c15t-text": "rgb(0,3,10)",
+      "--c15t-text-muted": "rgb(93,100,110)",
+      "--c15t-text-on-primary": "rgb(255,255,255)",
+      "--c15t-overlay": "rgba(0,0,0,0.5)",
+      "--c15t-switch-track": "rgb(217,217,217)",
+      "--c15t-switch-track-active": "rgb(51,92,255)",
+      "--c15t-switch-thumb": "rgb(255,255,255)",
+      "--c15t-font-family": "system-ui, -apple-system, sans-serif",
+      "--c15t-font-size-sm": "0.875rem",
+      "--c15t-font-size-base": "1rem",
+      "--c15t-font-size-lg": "1.125rem",
+      "--c15t-font-weight-normal": "400",
+      "--c15t-font-weight-medium": "500",
+      "--c15t-font-weight-semibold": "600",
+      "--c15t-line-height-tight": "1.25",
+      "--c15t-line-height-normal": "1.5",
+      "--c15t-line-height-relaxed": "1.75",
+      "--c15t-space-xs": "0.25rem",
+      "--c15t-space-sm": "0.5rem",
+      "--c15t-space-md": "1rem",
+      "--c15t-space-lg": "1.5rem",
+      "--c15t-space-xl": "2rem",
+      "--c15t-radius-sm": "0.25rem",
+      "--c15t-radius-md": "0.5rem",
+      "--c15t-radius-lg": "0.75rem",
+      "--c15t-radius-full": "9999px",
+      "--c15t-shadow-sm": "0 1px 2px hsla(0, 0%, 0%, 0.05)",
+      "--c15t-shadow-md": "0 4px 12px hsla(0, 0%, 0%, 0.08)",
+      "--c15t-shadow-lg": "0 8px 24px hsla(0, 0%, 0%, 0.12)",
+      "--c15t-duration-fast": "80ms",
+      "--c15t-duration-normal": "150ms",
+      "--c15t-duration-slow": "200ms",
+      "--c15t-easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "--c15t-easing-out": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "--c15t-easing-in-out": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      "--c15t-easing-spring": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+    }
+  },
+  "routes": [
+    {
+      "route": "/",
+      "title": "Rubie | Rip and Replace Your Competition",
+      "h1": "Rip and Replaceyour Competition",
+      "template": "template.home",
+      "file": "src/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            150,
+            281
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.home",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            283,
+            4697
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "narrative.problem-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            4698,
+            4882
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "features.any-source",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            4883,
+            5652
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "features.platform-primitives",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            5653,
+            6724
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "features.playbook-cta-cards",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            6725,
+            6814
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "features.use-case-teasers",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            6815,
+            7184
+          ]
+        },
+        {
+          "idx": 7,
+          "id": "proof.testimonials",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            7185,
+            7298
+          ]
+        },
+        {
+          "idx": 8,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            7299,
+            8445
+          ]
+        },
+        {
+          "idx": 9,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            8450,
+            8829
+          ]
+        },
+        {
+          "idx": 10,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            8833,
+            8849
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/product",
+      "title": "Product | Rubie",
+      "h1": "Product",
+      "template": "template.product",
+      "file": "src/product/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.page-title",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            283,
+            340
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "features.pipeline-steps",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            341,
+            743
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            744,
+            1890
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1895,
+            2274
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2278,
+            2294
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/enterprise",
+      "title": "Enterprise | Rubie",
+      "h1": "Enterprise Ready",
+      "template": "template.enterprise",
+      "file": "src/enterprise/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            150,
+            281
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.page-title",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            284,
+            349
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "proof.compliance-badges",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            350,
+            397
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "features.enterprise-pillars",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            398,
+            1305
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1307,
+            2453
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            2459,
+            2838
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2842,
+            2858
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/customers",
+      "title": "Customer Stories | Rubie",
+      "h1": "Customer Stories",
+      "template": "template.story-index",
+      "file": "src/customers/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            150,
+            281
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.page-title",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            284,
+            293
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "proof.story-grid",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            294,
+            369
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            370,
+            1516
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1521,
+            1900
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            1904,
+            1920
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/blog",
+      "title": "Blog | Rubie",
+      "h1": "Blog",
+      "template": "template.blog-index",
+      "file": "src/blog/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.page-title",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            283,
+            287
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "index.blog-roll",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            288,
+            313
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "shell.spacer",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            314,
+            319
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            320,
+            1466
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1471,
+            1850
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            1854,
+            1870
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/privacy-policy",
+      "title": "Privacy Policy | Rubie",
+      "h1": "Privacy Policy",
+      "template": "template.legal",
+      "file": "src/privacy-policy/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "narrative.legal-body",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            282,
+            350
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            354,
+            733
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            737,
+            753
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/terms",
+      "title": "Terms of Use | Rubie",
+      "h1": "Terms of Use",
+      "template": "template.legal",
+      "file": "src/terms/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "narrative.legal-body",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            282,
+            383
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            387,
+            766
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            770,
+            786
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/solutions/migration-playbooks",
+      "title": "Migration Playbooks | Rubie",
+      "h1": "Migration Playbooks",
+      "template": "template.migration-playbooks",
+      "file": "src/solutions/migration-playbooks/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            150,
+            281
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.solution",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            284,
+            1031
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "narrative.problem-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1032,
+            1073
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.result-callout",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1074,
+            1137
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "features.capability-grid",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1138,
+            1221
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "features.solution-outcomes",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1222,
+            1746
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "features.solution-anatomy",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1747,
+            1874
+          ]
+        },
+        {
+          "idx": 7,
+          "id": "shell.spacer",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1875,
+            1876
+          ]
+        },
+        {
+          "idx": 8,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1877,
+            3023
+          ]
+        },
+        {
+          "idx": 9,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            3028,
+            3407
+          ]
+        },
+        {
+          "idx": 10,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            3411,
+            3427
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/solutions/integration-playbooks",
+      "title": "Integration Playbooks | Rubie",
+      "h1": "Integration Playbooks",
+      "template": "template.integration-playbooks",
+      "file": "src/solutions/integration-playbooks/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.solution",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            283,
+            1420
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "narrative.problem-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1421,
+            1456
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.result-callout",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1457,
+            1847
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "features.capability-grid",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1848,
+            1980
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "features.solution-outcomes",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            1981,
+            2011
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "features.solution-anatomy",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            2012,
+            2646
+          ]
+        },
+        {
+          "idx": 7,
+          "id": "features.automation-samples",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            2647,
+            2972
+          ]
+        },
+        {
+          "idx": 8,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            2975,
+            4121
+          ]
+        },
+        {
+          "idx": 9,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            4126,
+            4505
+          ]
+        },
+        {
+          "idx": 10,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            4509,
+            4525
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/customers/granum",
+      "title": "Granum Customer Story | Rubie",
+      "h1": "Granum reduces data entry from 2+ hours to under 3 minutes per account and cuts customer graduation time by 10 days with Rubie",
+      "template": "template.customer-story",
+      "file": "src/customers/granum/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.customer-story",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            283,
+            394
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "proof.story-metrics",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            395,
+            412
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.story-beat",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            413,
+            575
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            577,
+            1723
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1729,
+            2108
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2112,
+            2128
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/customers/brivity",
+      "title": "Brivity Customer Story | Rubie",
+      "h1": "Brivity cuts import turnaround time by 50% and eliminates backlog with Rubie",
+      "template": "template.customer-story",
+      "file": "src/customers/brivity/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.customer-story",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            283,
+            394
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "proof.story-metrics",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            395,
+            412
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.story-beat",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            413,
+            575
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            577,
+            1723
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1729,
+            2108
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2112,
+            2128
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/customers/cariina",
+      "title": "Cariina Customer Story | Rubie",
+      "h1": "Cariina scales SIS integrations from 3 to 23+ systems while growing school partnerships from 40 to 113 with Rubie",
+      "template": "template.customer-story",
+      "file": "src/customers/cariina/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.customer-story",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            283,
+            394
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "proof.story-metrics",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            395,
+            412
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.story-beat",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            413,
+            570
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            572,
+            1718
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1724,
+            2103
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2107,
+            2123
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/use-cases/sales",
+      "title": "Sales Teams | Rubie",
+      "h1": "Close Competitive Deals Faster without migration fear",
+      "template": "template.use-case",
+      "file": "src/use-cases/sales/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.use-case",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            282,
+            570
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "narrative.problem-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            571,
+            615
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.solution-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            616,
+            740
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "faq.accordion",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            741,
+            811
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            814,
+            1960
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1965,
+            2344
+          ]
+        },
+        {
+          "idx": 7,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2348,
+            2364
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/use-cases/customer-success",
+      "title": "Customer Success Teams | Rubie",
+      "h1": "Onboard Customers 10x Faster without support tickets",
+      "template": "template.use-case",
+      "file": "src/use-cases/customer-success/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.use-case",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            282,
+            570
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "narrative.problem-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            571,
+            615
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.solution-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            616,
+            740
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "faq.accordion",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            741,
+            811
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            814,
+            1960
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1965,
+            2344
+          ]
+        },
+        {
+          "idx": 7,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2348,
+            2364
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/use-cases/product",
+      "title": "Product Teams | Rubie",
+      "h1": "Ship Better Data Imports without building them",
+      "template": "template.use-case",
+      "file": "src/use-cases/product/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.use-case",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            282,
+            570
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "narrative.problem-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            571,
+            615
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.solution-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            616,
+            740
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "faq.accordion",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            741,
+            811
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            814,
+            1960
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1965,
+            2344
+          ]
+        },
+        {
+          "idx": 7,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2348,
+            2364
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/use-cases/healthcare",
+      "title": "Healthcare | Rubie",
+      "h1": "HIPAA-Compliant Data Migration for Healthcare",
+      "template": "template.use-case",
+      "file": "src/use-cases/healthcare/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.use-case",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            282,
+            570
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "narrative.problem-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            571,
+            615
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.solution-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            616,
+            738
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "faq.accordion",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            739,
+            809
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            812,
+            1958
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1963,
+            2342
+          ]
+        },
+        {
+          "idx": 7,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2346,
+            2362
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/use-cases/financial-services",
+      "title": "Financial Services | Rubie",
+      "h1": "Migrate Financial Data without the risk",
+      "template": "template.use-case",
+      "file": "src/use-cases/financial-services/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.use-case",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            282,
+            570
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "narrative.problem-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            571,
+            615
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.solution-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            616,
+            739
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "faq.accordion",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            740,
+            810
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            813,
+            1959
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1964,
+            2343
+          ]
+        },
+        {
+          "idx": 7,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2347,
+            2363
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/use-cases/education",
+      "title": "Education | Rubie",
+      "h1": "Migrate Student Records from legacy SIS",
+      "template": "template.use-case",
+      "file": "src/use-cases/education/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.use-case",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            282,
+            570
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "narrative.problem-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            571,
+            615
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.solution-statement",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            616,
+            740
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "faq.accordion",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            741,
+            811
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            814,
+            1960
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1965,
+            2344
+          ]
+        },
+        {
+          "idx": 7,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2348,
+            2364
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/customers/curbwaste",
+      "title": "Curbwaste Customer Story | Rubie",
+      "h1": "Curbwaste cuts data transformation time by 50%+ and reduces 8-hour upload time to 1 hour with Rubie",
+      "template": "template.customer-story",
+      "file": "src/customers/curbwaste/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.customer-story",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            283,
+            394
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "proof.story-metrics",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            395,
+            412
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.story-beat",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            413,
+            572
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            574,
+            1720
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1726,
+            2105
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2109,
+            2125
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/customers/bound",
+      "title": "Bound Customer Story | Rubie",
+      "h1": "Bound triples customer base while staying lean, cutting setup from 1 week to under 12 hours with Rubie",
+      "template": "template.customer-story",
+      "file": "src/customers/bound/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            149,
+            280
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.customer-story",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            283,
+            394
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "proof.story-metrics",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            395,
+            412
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "narrative.story-beat",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            413,
+            572
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            574,
+            1720
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1726,
+            2105
+          ]
+        },
+        {
+          "idx": 6,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2109,
+            2125
+          ]
+        }
+      ]
+    },
+    {
+      "route": "/blog/migration-revenue-killer",
+      "title": "Why Data Migration Is Sabotaging SaaS Growth | Rubie",
+      "h1": "The Hidden Revenue Killer: Why Data Migration Is Sabotaging Your SaaS Growth",
+      "template": "template.article",
+      "file": "src/blog/migration-revenue-killer/index.html",
+      "sections": [
+        {
+          "idx": 0,
+          "id": "shell.header",
+          "tag": "header",
+          "anchor": null,
+          "lines": [
+            152,
+            283
+          ]
+        },
+        {
+          "idx": 1,
+          "id": "hero.article",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            285,
+            404
+          ]
+        },
+        {
+          "idx": 2,
+          "id": "narrative.article-body",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            405,
+            590
+          ]
+        },
+        {
+          "idx": 3,
+          "id": "cta.book-demo-band",
+          "tag": "section",
+          "anchor": null,
+          "lines": [
+            592,
+            1738
+          ]
+        },
+        {
+          "idx": 4,
+          "id": "shell.footer",
+          "tag": "footer",
+          "anchor": null,
+          "lines": [
+            1744,
+            2123
+          ]
+        },
+        {
+          "idx": 5,
+          "id": "shell.consent-banner-root",
+          "tag": "div",
+          "anchor": "c15t-ui-root-hE9Kz",
+          "lines": [
+            2127,
+            2143
+          ]
+        }
+      ]
+    }
+  ]
+}

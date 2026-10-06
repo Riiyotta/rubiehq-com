@@ -1,0 +1,59 @@
+{
+  "$description": "Foundation breakpoint tokens: the values observed on the site, ordered by usage. Not referenced directly by generators; semantic tokens reference these.",
+  "tokens": {
+    "breakpoint.400": {
+      "$type": "dimension",
+      "$value": "400px",
+      "usage": 21,
+      "source": "CSS @media width conditions"
+    },
+    "breakpoint.420": {
+      "$type": "dimension",
+      "$value": "420px",
+      "usage": 21,
+      "source": "CSS @media width conditions"
+    },
+    "breakpoint.480": {
+      "$type": "dimension",
+      "$value": "480px",
+      "usage": 21,
+      "source": "CSS @media width conditions"
+    },
+    "breakpoint.640": {
+      "$type": "dimension",
+      "$value": "640px",
+      "usage": 231,
+      "source": "CSS @media width conditions"
+    },
+    "breakpoint.768": {
+      "$type": "dimension",
+      "$value": "768px",
+      "usage": 84,
+      "source": "CSS @media width conditions"
+    },
+    "breakpoint.1024": {
+      "$type": "dimension",
+      "$value": "1024px",
+      "usage": 63,
+      "source": "CSS @media width conditions"
+    },
+    "breakpoint.1280": {
+      "$type": "dimension",
+      "$value": "1280px",
+      "usage": 42,
+      "source": "CSS @media width conditions"
+    },
+    "breakpoint.1350": {
+      "$type": "dimension",
+      "$value": "1350px",
+      "usage": 21,
+      "source": "CSS @media width conditions"
+    },
+    "breakpoint.1536": {
+      "$type": "dimension",
+      "$value": "1536px",
+      "usage": 21,
+      "source": "CSS @media width conditions"
+    }
+  }
+}

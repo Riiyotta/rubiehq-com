@@ -1,0 +1,28 @@
+{
+  "id": "button.primary",
+  "name": "Primary button",
+  "tag": "a",
+  "purpose": "The site's main call-to-action: solid blue pill with a white label and a trailing arrow glyph.",
+  "composedOf": [
+    "link"
+  ],
+  "props": {
+    "label": {
+      "type": "string",
+      "maxWords": 8,
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "occurrences": 21,
+    "routes": 21,
+    "measuredFrom": [
+      "src/blog/index.html:1840-1840"
+    ]
+  }
+}

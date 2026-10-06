@@ -1,0 +1,41 @@
+{
+  "id": "narrative.result-callout",
+  "category": "NARRATIVE",
+  "label": "result-callout",
+  "tag": "section",
+  "purpose": "A kicker-labelled callout ('// The Result //') above one summarising sentence of at most 13 words.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 2,
+    "routes": 2,
+    "measuredFrom": [
+      "src/solutions/migration-playbooks/index.html:1074-1137",
+      "src/solutions/integration-playbooks/index.html:1457-1847"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 2,
+        "maxWords": 13
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z108.jsx > section[2]",
+  "scope": "The 2 /solutions/* routes."
+}

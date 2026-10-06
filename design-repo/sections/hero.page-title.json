@@ -1,0 +1,55 @@
+{
+  "id": "hero.page-title",
+  "category": "HERO",
+  "label": "page-title",
+  "tag": "section",
+  "purpose": "Minimal title-only hero — an h1 and a short standfirst, for pages whose value is the body below rather than the opening pitch.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 4,
+    "routes": 4,
+    "measuredFrom": [
+      "src/product/index.html:283-340",
+      "src/enterprise/index.html:284-349",
+      "src/customers/index.html:284-293",
+      "src/blog/index.html:283-287"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 2
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 37
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 2,
+        "maxWords": 9
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z102.jsx > section[0]",
+  "scope": "4 routes: /product, /enterprise, /customers and /blog."
+}

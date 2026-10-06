@@ -1,0 +1,6 @@
+<svg width="210" height="54" viewBox="0 0 210 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="27" cy="27" r="25" fill="#197B3E"/>
+  <circle cx="27" cy="27" r="17" fill="none" stroke="white" stroke-width="1.8"/>
+  <polygon points="22,17 22,37 37,27" fill="white"/>
+  <text x="62" y="36" font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="27" letter-spacing="1.5" fill="#197B3E">GOLF LIVE</text>
+</svg>

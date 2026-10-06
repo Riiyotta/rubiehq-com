@@ -1,0 +1,28 @@
+{
+  "id": "nav.pill-button",
+  "name": "Nav pill button",
+  "tag": "button",
+  "purpose": "A header nav trigger that opens a hover mega-panel; same pill treatment as nav.pill-link plus a chevron.",
+  "composedOf": [
+    "button"
+  ],
+  "props": {
+    "label": {
+      "type": "string",
+      "maxWords": 3,
+      "required": true
+    },
+    "expanded": {
+      "type": "boolean",
+      "required": false
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "occurrences": 63,
+    "routes": 21,
+    "measuredFrom": [
+      "src/blog/index.html:165-165"
+    ]
+  }
+}

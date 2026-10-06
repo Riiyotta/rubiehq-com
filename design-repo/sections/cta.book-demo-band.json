@@ -1,0 +1,50 @@
+{
+  "id": "cta.book-demo-band",
+  "category": "CTA",
+  "label": "book-demo-band",
+  "tag": "section",
+  "purpose": "Full-bleed dark-navy conversion band: the arced 'rubie' wordmark, the headline 'Your customers are waiting on data that lives behind a login.' and one Book a Demo button.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 19,
+    "routes": 19,
+    "measuredFrom": [
+      "src/index.html:7299-8445",
+      "src/product/index.html:744-1890",
+      "src/enterprise/index.html:1307-2453",
+      "src/customers/index.html:370-1516",
+      "src/blog/index.html:320-1466"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 11
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 8
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z10.jsx > section[7]",
+  "scope": "19 routes — all but /privacy-policy and /terms, which end at their legal body."
+}

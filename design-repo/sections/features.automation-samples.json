@@ -1,0 +1,40 @@
+{
+  "id": "features.automation-samples",
+  "category": "FEATURES",
+  "label": "automation-samples",
+  "tag": "section",
+  "purpose": "'A sampling of what Integration Playbooks automate today' — a list of concrete automations shipped.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/solutions/integration-playbooks/index.html:2647-2972"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 8
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-animation",
+      "none"
+    ],
+    "reducedMotionFallback": "disable-animation"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z109.jsx > section[6]",
+  "scope": "The /solutions/integration-playbooks route only."
+}

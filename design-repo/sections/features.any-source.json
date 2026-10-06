@@ -1,0 +1,48 @@
+{
+  "id": "features.any-source",
+  "category": "FEATURES",
+  "label": "any-source",
+  "tag": "section",
+  "purpose": "'Any source. Your platform.' — the source-connector capability block with its animated source-to-target diagram.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/index.html:4883-5652"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 4
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 28
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "canvas-animation",
+      "none"
+    ],
+    "reducedMotionFallback": "disable-animation"
+  },
+  "assetRoles": [
+    "animation"
+  ],
+  "implementedBy": "src/sections/Z10.jsx > section[2]",
+  "scope": "The / route only."
+}

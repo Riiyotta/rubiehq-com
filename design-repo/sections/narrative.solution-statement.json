@@ -1,0 +1,66 @@
+{
+  "id": "narrative.solution-statement",
+  "category": "NARRATIVE",
+  "label": "solution-statement",
+  "tag": "section",
+  "purpose": "The paired answer to narrative.problem-statement — an h2 resolution plus a large supporting animated visual.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 6,
+    "routes": 6,
+    "measuredFrom": [
+      "src/use-cases/sales/index.html:616-740",
+      "src/use-cases/customer-success/index.html:616-740",
+      "src/use-cases/product/index.html:616-740",
+      "src/use-cases/healthcare/index.html:616-738",
+      "src/use-cases/financial-services/index.html:616-739"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 10
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 4,
+        "maxWords": 23
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 3,
+        "titleMaxWords": 4,
+        "bodyMaxWords": 23
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 1,
+        "assetRoles": [
+          "customer-logo"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "customer-logo"
+  ],
+  "implementedBy": "src/sections/Z1013.jsx > section[2]",
+  "scope": "The 6 /use-cases/* routes."
+}

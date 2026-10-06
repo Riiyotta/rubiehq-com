@@ -1,0 +1,11 @@
+{
+  "$description": "Semantic radius roles. Each role points at a foundation token; `basis` states the measurement that chose it. Role NAMES are a heuristic vocabulary, the values are measured.",
+  "inferred": true,
+  "tokens": {
+    "radius.surface": {
+      "$type": "radius",
+      "$value": "{radius.8}",
+      "basis": "most-used radius other than radius.control (977 uses)"
+    }
+  }
+}

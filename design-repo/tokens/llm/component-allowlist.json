@@ -1,0 +1,223 @@
+{
+  "version": 2,
+  "sections": [
+    "cta.book-demo-band",
+    "faq.accordion",
+    "features.any-source",
+    "features.automation-samples",
+    "features.capability-grid",
+    "features.enterprise-pillars",
+    "features.pipeline-steps",
+    "features.platform-primitives",
+    "features.playbook-cta-cards",
+    "features.solution-anatomy",
+    "features.solution-outcomes",
+    "features.use-case-teasers",
+    "hero.article",
+    "hero.customer-story",
+    "hero.home",
+    "hero.page-title",
+    "hero.solution",
+    "hero.use-case",
+    "index.blog-roll",
+    "narrative.article-body",
+    "narrative.legal-body",
+    "narrative.problem-statement",
+    "narrative.result-callout",
+    "narrative.solution-statement",
+    "narrative.story-beat",
+    "proof.compliance-badges",
+    "proof.story-grid",
+    "proof.story-metrics",
+    "proof.testimonials",
+    "shell.consent-banner-root",
+    "shell.footer",
+    "shell.header",
+    "shell.spacer"
+  ],
+  "components": [
+    "button.primary",
+    "button.primary-sm",
+    "card.surface",
+    "nav.pill-button",
+    "nav.pill-link"
+  ],
+  "primitives": [
+    "button",
+    "canvas",
+    "form",
+    "heading",
+    "image",
+    "input",
+    "link",
+    "list",
+    "paragraph",
+    "svg"
+  ],
+  "nodeProperties": [
+    "content",
+    "motion",
+    "type"
+  ],
+  "contentFields": {
+    "cta.book-demo-band": [
+      "ctas",
+      "heading"
+    ],
+    "faq.accordion": [
+      "body",
+      "heading"
+    ],
+    "features.any-source": [
+      "body",
+      "heading"
+    ],
+    "features.automation-samples": [
+      "heading"
+    ],
+    "features.capability-grid": [
+      "body",
+      "heading",
+      "images",
+      "items"
+    ],
+    "features.enterprise-pillars": [
+      "body",
+      "heading",
+      "items"
+    ],
+    "features.pipeline-steps": [
+      "body",
+      "heading"
+    ],
+    "features.platform-primitives": [
+      "body",
+      "ctas",
+      "heading"
+    ],
+    "features.playbook-cta-cards": [
+      "body",
+      "ctas",
+      "heading"
+    ],
+    "features.solution-anatomy": [
+      "body",
+      "ctas",
+      "heading",
+      "items"
+    ],
+    "features.solution-outcomes": [
+      "body",
+      "heading",
+      "images",
+      "items"
+    ],
+    "features.use-case-teasers": [
+      "heading"
+    ],
+    "hero.article": [
+      "body",
+      "ctas",
+      "heading"
+    ],
+    "hero.customer-story": [
+      "body",
+      "ctas",
+      "heading"
+    ],
+    "hero.home": [
+      "body",
+      "ctas",
+      "heading",
+      "images",
+      "listItems"
+    ],
+    "hero.page-title": [
+      "body",
+      "ctas",
+      "heading"
+    ],
+    "hero.solution": [
+      "body",
+      "ctas",
+      "heading"
+    ],
+    "hero.use-case": [
+      "body",
+      "ctas",
+      "heading",
+      "images",
+      "listItems"
+    ],
+    "index.blog-roll": [
+      "body",
+      "heading"
+    ],
+    "narrative.article-body": [
+      "body",
+      "ctas",
+      "heading",
+      "items"
+    ],
+    "narrative.legal-body": [
+      "body",
+      "ctas",
+      "heading",
+      "listItems"
+    ],
+    "narrative.problem-statement": [
+      "body",
+      "heading",
+      "images",
+      "items"
+    ],
+    "narrative.result-callout": [
+      "body"
+    ],
+    "narrative.solution-statement": [
+      "body",
+      "heading",
+      "images",
+      "items"
+    ],
+    "narrative.story-beat": [
+      "body",
+      "ctas",
+      "heading",
+      "images"
+    ],
+    "proof.compliance-badges": [
+      "body",
+      "heading",
+      "images"
+    ],
+    "proof.story-grid": [
+      "heading",
+      "images"
+    ],
+    "proof.story-metrics": [
+      "body"
+    ],
+    "proof.testimonials": [
+      "body",
+      "ctas",
+      "heading",
+      "images"
+    ],
+    "shell.consent-banner-root": [
+      "ctas"
+    ],
+    "shell.footer": [
+      "ctas",
+      "heading",
+      "images",
+      "items"
+    ],
+    "shell.header": [
+      "ctas",
+      "images",
+      "listItems"
+    ],
+    "shell.spacer": []
+  }
+}

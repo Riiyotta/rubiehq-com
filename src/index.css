@@ -1,0 +1,16 @@
+@import "./styles/tokens.css";
+
+/* The site's own stylesheet (src/styles/01-*.css) is Tailwind v4 output: everything it
+   ships lives inside @layer properties / theme / site-base / site-components /
+   site-utilities. Unlayered CSS always beats layered CSS regardless of source order, so
+   Tailwind v3's utilities — emitted unlayered — were overriding the site's own rules.
+   That is why e.g. `h-[117.25vw] sm:h-152.25` rendered at 117.25vw (1688px) at every
+   width instead of 609px: the arbitrary value is a v3 utility, the sm: override is the
+   site's, and the v3 one won.
+   Declaring the order here puts v3's utilities in a layer that sorts BEFORE the site's,
+   so the site's captured CSS wins — which is what we want, since it is the ground truth. */
+@layer clone-utilities, properties, theme, site-base, site-components, site-utilities;
+
+@layer clone-utilities {
+  @tailwind utilities;
+}

@@ -1,0 +1,24 @@
+{
+  "id": "button.primary-sm",
+  "name": "Compact primary button",
+  "tag": "button",
+  "purpose": "The denser blue button used inside the consent banner and inline forms.",
+  "composedOf": [
+    "button"
+  ],
+  "props": {
+    "label": {
+      "type": "string",
+      "maxWords": 4,
+      "required": true
+    }
+  },
+  "evidence": {
+    "level": "measured",
+    "occurrences": 21,
+    "routes": 21,
+    "measuredFrom": [
+      "src/blog/index.html:1866-1866"
+    ]
+  }
+}

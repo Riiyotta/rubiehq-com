@@ -1,0 +1,45 @@
+{
+  "$description": "Foundation elevation tokens: the values observed on the site, ordered by usage. Not referenced directly by generators; semantic tokens reference these.",
+  "tokens": {
+    "elevation.01": {
+      "$type": "shadow",
+      "$value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(16, 102, 241, 0.05) 0px 12px 12px -6px, rgba(16, 102, 241, 0.05) 0px 8px 8px -4px, rgba(16, 102, 241, 0.05) 0px 6px 6px -3px, rgba(16, 102, 241, 0.05) 0px 4px 4px -2px",
+      "usage": 100
+    },
+    "elevation.02": {
+      "$type": "shadow",
+      "$value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.5) 0px 0px 4px 0px inset, rgba(255, 255, 255, 0.2) 0px 0px 8px 0px inset",
+      "usage": 100
+    },
+    "elevation.03": {
+      "$type": "shadow",
+      "$value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(227, 231, 235) 0px 0px 0px 1px",
+      "usage": 42
+    },
+    "elevation.04": {
+      "$type": "shadow",
+      "$value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 10, 39, 0.04) 0px 0px 0px 1px, rgba(0, 10, 39, 0.02) 0px 1px 2px 0px, rgba(0, 10, 39, 0.02) 0px 2px 4px 0px, rgba(0, 10, 39, 0.02) 0px 8px 16px 0px, rgba(0, 10, 39, 0.03) 0px 32px 44px -12px",
+      "usage": 21
+    },
+    "elevation.05": {
+      "$type": "shadow",
+      "$value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(14, 43, 79, 0.08) 0px 40px 40px -20px, rgba(14, 43, 79, 0.08) 0px 24px 24px -12px, rgba(14, 43, 79, 0.08) 0px 12px 12px -6px, rgba(14, 43, 79, 0.08) 0px 4px 4px -2px, rgba(15, 45, 85, 0.06) 0px 0px 0px 1px",
+      "usage": 21
+    },
+    "elevation.06": {
+      "$type": "shadow",
+      "$value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.5) 0px 0px 4px 0px inset, rgba(255, 255, 255, 0.2) 0px 0px 8px 0px inset, rgba(16, 102, 241, 0.05) 0px 12px 12px -6px, rgba(16, 102, 241, 0.05) 0px 8px 8px -4px, rgba(16, 102, 241, 0.05) 0px 6px 6px -3px, rgba(16, 102, 241, 0.05) 0px 4px 4px -2px",
+      "usage": 21
+    },
+    "elevation.07": {
+      "$type": "shadow",
+      "$value": "rgba(0, 39, 80, 0.06) 0px 4px 12px 0px, rgba(0, 39, 80, 0.06) 0px 4px 4px -2px",
+      "usage": 12
+    },
+    "elevation.08": {
+      "$type": "shadow",
+      "$value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.35) 0px 0px 0px 1px inset",
+      "usage": 7
+    }
+  }
+}

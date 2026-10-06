@@ -1,0 +1,1651 @@
+{
+  "version": "0.1.0",
+  "sourceIsLiveSite": true,
+  "defaultPolicy": "Assets are evidence from a real, live site. Do not reuse without licence review; never reproduce real logos, real people's photos or proprietary content.",
+  "roles": {
+    "logo": {
+      "generationPolicy": "must-reuse-exact",
+      "pinned": true,
+      "description": "The site's own brand mark.",
+      "licensing": "Use the exact supplied file. Never redraw, recolour, or invent a variant.",
+      "observed": 18
+    },
+    "customer-logo": {
+      "generationPolicy": "must-not-fabricate",
+      "pinned": true,
+      "description": "Third-party company logos shown as social proof.",
+      "licensing": "Real trademarks. A generator must never create or reproduce a real company's logo; use an explicit placeholder.",
+      "observed": 0
+    },
+    "avatar": {
+      "generationPolicy": "must-not-fabricate",
+      "pinned": true,
+      "description": "Photos of real people (customers, team, authors).",
+      "licensing": "Real people's likeness. Never generate or reuse a real person's photo; use a neutral placeholder.",
+      "observed": 0
+    },
+    "icon": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Small glyphs (<=48px) used as UI or feature markers.",
+      "licensing": "Generic glyphs may be generated; do not copy a proprietary icon set verbatim.",
+      "observed": 109
+    },
+    "illustration": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Large vector artwork.",
+      "licensing": "May be regenerated in the same style; do not reproduce the original artwork.",
+      "observed": 2
+    },
+    "background": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Full-bleed or decorative backgrounds.",
+      "licensing": "May be regenerated; do not reuse the original file.",
+      "observed": 0
+    },
+    "hero-image": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Large image in the page-opening block.",
+      "licensing": "May be regenerated; do not reproduce real product or customer content.",
+      "observed": 4
+    },
+    "content-image": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Other in-page imagery (screenshots, photos, cards).",
+      "licensing": "May be regenerated; never include real customer data, names or proprietary UI.",
+      "observed": 39
+    },
+    "animation": {
+      "generationPolicy": "must-reuse-exact",
+      "pinned": false,
+      "description": "Rive / Lottie animation files that drive canvas animations.",
+      "licensing": "The site's own animation assets. Reuse only the supplied file; never recreate or imitate it for a different brand.",
+      "observed": 1
+    },
+    "video": {
+      "generationPolicy": "must-reuse-exact",
+      "pinned": false,
+      "description": "Video files or embeds.",
+      "licensing": "Reuse only the supplied file; never fabricate footage of real products or people.",
+      "observed": 0
+    },
+    "font": {
+      "generationPolicy": "must-reuse-exact",
+      "pinned": true,
+      "description": "Web font files.",
+      "licensing": "Fonts carry their own licence; reuse only as shipped and review the licence before redistribution.",
+      "observed": 4
+    },
+    "live-embed": {
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "pinned": true,
+      "description": "Live third-party iframes and form endpoints.",
+      "licensing": "Never point generated pages at the original site's live endpoints (forms, widgets).",
+      "observed": 0
+    },
+    "founder-contact-email": {
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "pinned": true,
+      "description": "A real mailto contact address (e.g. a founder or support email) exposed in page copy.",
+      "licensing": "A real, live inbox. Generated pages must not reuse the original address; use a placeholder.",
+      "observed": 3
+    }
+  },
+  "generationPolicies": [
+    "may-generate-new",
+    "must-reuse-exact",
+    "must-not-fabricate",
+    "must-not-reuse-live-endpoint"
+  ],
+  "assets": [
+    {
+      "path": "_next/static/media/cariina-customer-success.2a1hayhhm0suf.png",
+      "bytes": 1572152,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/static/media/customer-testimonials-bg.1po45s9a62gk6.png",
+      "bytes": 1356780,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/errors/404-artwork.png",
+      "bytes": 617084,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__3dd6dd88",
+      "bytes": 507141,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__1eb267f7",
+      "bytes": 507141,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__c5efbc63",
+      "bytes": 507141,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__ed20d944",
+      "bytes": 507141,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__f63cf502",
+      "bytes": 507141,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__b5cdfed3",
+      "bytes": 507141,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__16f4d317",
+      "bytes": 507141,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "opengraph-image.png",
+      "bytes": 368835,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/home/rubie-home-animations.riv",
+      "bytes": 280580,
+      "role": "animation",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__81ddc379",
+      "bytes": 147957,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__887b3fee",
+      "bytes": 141676,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "fonts/andale-mono.ttf",
+      "bytes": 109700,
+      "role": "font",
+      "evidence": {
+        "note": "loaded by the page's CSS"
+      }
+    },
+    {
+      "path": "_next/image__7a888e73",
+      "bytes": 90162,
+      "role": "hero-image",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "489x497"
+      }
+    },
+    {
+      "path": "_next/image__14fe2306",
+      "bytes": 71105,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "fonts/satoshi-bold.otf",
+      "bytes": 49668,
+      "role": "font",
+      "evidence": {
+        "note": "loaded by the page's CSS"
+      }
+    },
+    {
+      "path": "_next/static/media/cariina-customer-success-blue.42izqdgmbv-pz.png",
+      "bytes": 48571,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9__0dc0adc0.woff2",
+      "bytes": 29288,
+      "role": "font",
+      "evidence": {
+        "note": "loaded by the page's CSS"
+      }
+    },
+    {
+      "path": "_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+      "bytes": 29288,
+      "role": "font",
+      "evidence": {
+        "note": "loaded by the page's CSS"
+      }
+    },
+    {
+      "path": "_next/static/media/orderco-logo.2b76ym9qcviat.png",
+      "bytes": 28553,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/static/media/curbwaste-logo.04g5ue_s48djw.png",
+      "bytes": 27466,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/static/media/granum-logo.1fs9uumwwi4vo.png",
+      "bytes": 25306,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "favicon__f0291b9e.ico",
+      "bytes": 21814,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__3db0fdf6",
+      "bytes": 19558,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/home/migrate-graphic-mobile__0dc0adc0.svg",
+      "bytes": 16749,
+      "role": "icon",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "0x0"
+      }
+    },
+    {
+      "path": "images/home/migrate-graphic-mobile.svg",
+      "bytes": 16749,
+      "role": "illustration",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/home/integrate-graphic-mobile__0dc0adc0.svg",
+      "bytes": 16576,
+      "role": "icon",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "0x0"
+      }
+    },
+    {
+      "path": "images/home/integrate-graphic-mobile.svg",
+      "bytes": 16576,
+      "role": "illustration",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/static/media/arketa-logo.1zxk8k8ikvnsa.png",
+      "bytes": 14452,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/static/media/cariina-logo.02cxjp3gfsn0n.png",
+      "bytes": 14224,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__949274e7",
+      "bytes": 11616,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__9a827f43",
+      "bytes": 10500,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/static/media/bound-logo.35tf5ql66he9y.png",
+      "bytes": 8648,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/bound-logo.png",
+      "bytes": 8648,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/integrations-submenu-gray__0dc0adc0.svg",
+      "bytes": 7915,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/integrations-submenu-gray.svg",
+      "bytes": 7915,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/integrations-submenu-blue__0dc0adc0.svg",
+      "bytes": 7802,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/integrations-submenu-blue.svg",
+      "bytes": 7802,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__3a7d810e",
+      "bytes": 7414,
+      "role": "logo",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "137x25"
+      }
+    },
+    {
+      "path": "images/logos/brivity-logo__0dc0adc0.svg",
+      "bytes": 7250,
+      "role": "logo",
+      "evidence": {
+        "route": "/customers",
+        "section": "hero.main",
+        "rendered": "666x389"
+      }
+    },
+    {
+      "path": "images/logos/brivity-logo.svg",
+      "bytes": 7250,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__4d86610a",
+      "bytes": 6197,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__671b2b6a",
+      "bytes": 5722,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/static/media/brivity-logo.0oe0otbbpg2v0.png",
+      "bytes": 5585,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__23d4d84e",
+      "bytes": 5526,
+      "role": "logo",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "132x32"
+      }
+    },
+    {
+      "path": "_next/image__c119ed89",
+      "bytes": 5470,
+      "role": "logo",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "138x19"
+      }
+    },
+    {
+      "path": "images/marks/customer-hover-cariina-mark__0dc0adc0.svg",
+      "bytes": 4823,
+      "role": "hero-image",
+      "evidence": {
+        "route": "/customers",
+        "section": "hero.main",
+        "rendered": "623x446"
+      }
+    },
+    {
+      "path": "images/marks/customer-hover-cariina-mark.svg",
+      "bytes": 4823,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/marks/customer-hover-granum-mark__0dc0adc0.svg",
+      "bytes": 4533,
+      "role": "hero-image",
+      "evidence": {
+        "route": "/customers",
+        "section": "hero.main",
+        "rendered": "512x558"
+      }
+    },
+    {
+      "path": "images/marks/customer-hover-granum-mark.svg",
+      "bytes": 4533,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/migrations-submenu-gray__0dc0adc0.svg",
+      "bytes": 4462,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/migrations-submenu-gray.svg",
+      "bytes": 4462,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/migrations-submenu-blue__0dc0adc0.svg",
+      "bytes": 4417,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/migrations-submenu-blue.svg",
+      "bytes": 4417,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__45ba493b",
+      "bytes": 4286,
+      "role": "logo",
+      "evidence": {
+        "route": "/customers",
+        "section": "hero.main",
+        "rendered": "928x485"
+      }
+    },
+    {
+      "path": "_next/image__c0cf0449",
+      "bytes": 4126,
+      "role": "logo",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "138x27"
+      }
+    },
+    {
+      "path": "_next/image__399bddc8",
+      "bytes": 4126,
+      "role": "logo",
+      "evidence": {
+        "route": "/customers",
+        "section": "hero.main",
+        "rendered": "143x28"
+      }
+    },
+    {
+      "path": "images/marks/customer-hover-curbwaste-mark__0dc0adc0.svg",
+      "bytes": 3695,
+      "role": "hero-image",
+      "evidence": {
+        "route": "/customers",
+        "section": "hero.main",
+        "rendered": "554x422"
+      }
+    },
+    {
+      "path": "images/marks/customer-hover-curbwaste-mark.svg",
+      "bytes": 3695,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__2f6ceab4",
+      "bytes": 3632,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__b4d7a361",
+      "bytes": 2819,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/logos/curbwaste-black-white-logo__0dc0adc0.svg",
+      "bytes": 2811,
+      "role": "logo",
+      "evidence": {
+        "route": "/customers",
+        "section": "hero.main",
+        "rendered": "115x65"
+      }
+    },
+    {
+      "path": "images/logos/curbwaste-black-white-logo.svg",
+      "bytes": 2811,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__53579f81",
+      "bytes": 2796,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__56d2ada9",
+      "bytes": 2756,
+      "role": "logo",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "122x24"
+      }
+    },
+    {
+      "path": "_next/image__f466d905",
+      "bytes": 2518,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__7925302f",
+      "bytes": 2478,
+      "role": "logo",
+      "evidence": {
+        "route": "/use-cases/product",
+        "section": "hero.main",
+        "rendered": "120x32"
+      }
+    },
+    {
+      "path": "_next/image__674b2bfd",
+      "bytes": 2422,
+      "role": "logo",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "112x28"
+      }
+    },
+    {
+      "path": "images/logos/cariina-black-white-logo__0dc0adc0.svg",
+      "bytes": 2401,
+      "role": "logo",
+      "evidence": {
+        "route": "/customers",
+        "section": "hero.main",
+        "rendered": "190x40"
+      }
+    },
+    {
+      "path": "images/logos/cariina-black-white-logo.svg",
+      "bytes": 2401,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/logos/rubie-logo__0dc0adc0.svg",
+      "bytes": 2361,
+      "role": "logo",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "91x20"
+      }
+    },
+    {
+      "path": "images/logos/rubie-logo.svg",
+      "bytes": 2361,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__8dfaca3d",
+      "bytes": 2257,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__28388b2d",
+      "bytes": 2257,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__17c5a0ce",
+      "bytes": 2257,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__dff1729b",
+      "bytes": 2010,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__9f5f9718",
+      "bytes": 1946,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/home/three-dots-circle-icon__0dc0adc0.svg",
+      "bytes": 1839,
+      "role": "icon",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/home/three-dots-circle-icon.svg",
+      "bytes": 1839,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__2e7feff4",
+      "bytes": 1801,
+      "role": "content-image",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/logos/rillet-logo__0dc0adc0.svg",
+      "bytes": 1793,
+      "role": "logo",
+      "evidence": {
+        "route": "/use-cases/financial-services",
+        "section": "hero.main",
+        "rendered": "147x32"
+      }
+    },
+    {
+      "path": "images/logos/rillet-logo.svg",
+      "bytes": 1793,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "icon__7f084192.svg",
+      "bytes": 1754,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "icon.svg",
+      "bytes": 1754,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/logos/granum-black-white-logo__0dc0adc0.svg",
+      "bytes": 1594,
+      "role": "logo",
+      "evidence": {
+        "route": "/customers",
+        "section": "hero.main",
+        "rendered": "180x33"
+      }
+    },
+    {
+      "path": "images/logos/granum-black-white-logo.svg",
+      "bytes": 1594,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "_next/image__13251b03",
+      "bytes": 1566,
+      "role": "logo",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "102x24"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/keyboard__0dc0adc0.svg",
+      "bytes": 1524,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/integration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/keyboard.svg",
+      "bytes": 1524,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/buoy-blue__0dc0adc0.svg",
+      "bytes": 1405,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/buoy-gray__0dc0adc0.svg",
+      "bytes": 1405,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/buoy-gray.svg",
+      "bytes": 1405,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/buoy-blue.svg",
+      "bytes": 1405,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/home/stacking-layers-icon__0dc0adc0.svg",
+      "bytes": 1318,
+      "role": "icon",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/home/stacking-layers-icon.svg",
+      "bytes": 1318,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/spaceship-gray__0dc0adc0.svg",
+      "bytes": 1208,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/spaceship-blue__0dc0adc0.svg",
+      "bytes": 1208,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/spaceship-gray.svg",
+      "bytes": 1208,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/spaceship-blue.svg",
+      "bytes": 1208,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/home/human-laptop-icon__0dc0adc0.svg",
+      "bytes": 1026,
+      "role": "icon",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/home/human-laptop-icon.svg",
+      "bytes": 1026,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/logos/rubie-logo-icon__0dc0adc0.svg",
+      "bytes": 999,
+      "role": "logo",
+      "evidence": {
+        "route": "/customers/granum",
+        "section": "hero.main",
+        "rendered": "32x32"
+      }
+    },
+    {
+      "path": "images/logos/rubie-logo-icon.svg",
+      "bytes": 999,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/textbook-blue__0dc0adc0.svg",
+      "bytes": 961,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/textbook-gray__0dc0adc0.svg",
+      "bytes": 961,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/textbook-gray.svg",
+      "bytes": 961,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/textbook-blue.svg",
+      "bytes": 961,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/home/warning-icon__0dc0adc0.svg",
+      "bytes": 891,
+      "role": "icon",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/home/warning-icon.svg",
+      "bytes": 891,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/hierarchy-tree__0dc0adc0.svg",
+      "bytes": 858,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/integration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/hierarchy-tree.svg",
+      "bytes": 858,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/web-frame-blue__0dc0adc0.svg",
+      "bytes": 796,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/web-frame-gray__0dc0adc0.svg",
+      "bytes": 796,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/web-frame-gray.svg",
+      "bytes": 796,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/web-frame-blue.svg",
+      "bytes": 796,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/bar-graph-up__0dc0adc0.svg",
+      "bytes": 783,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/migration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/bar-graph-up.svg",
+      "bytes": 783,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/check-shield__0dc0adc0.svg",
+      "bytes": 734,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/integration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/check-shield.svg",
+      "bytes": 734,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/bar-graph-gray__0dc0adc0.svg",
+      "bytes": 733,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/bar-graph-blue__0dc0adc0.svg",
+      "bytes": 733,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/bar-graph-gray.svg",
+      "bytes": 733,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/bar-graph-blue.svg",
+      "bytes": 733,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/line-graph-window__0dc0adc0.svg",
+      "bytes": 723,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/integration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/line-graph-window.svg",
+      "bytes": 723,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/check-box-with-shadow__0dc0adc0.svg",
+      "bytes": 691,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/integration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/check-box-with-shadow.svg",
+      "bytes": 691,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/lock-unlocked__0dc0adc0.svg",
+      "bytes": 614,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/integration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/lock-unlocked.svg",
+      "bytes": 614,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/lock__0dc0adc0.svg",
+      "bytes": 607,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/migration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/lock.svg",
+      "bytes": 607,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/book-gray__0dc0adc0.svg",
+      "bytes": 598,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/book-blue__0dc0adc0.svg",
+      "bytes": 598,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/book-gray.svg",
+      "bytes": 598,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/book-blue.svg",
+      "bytes": 598,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/wallet-gray__0dc0adc0.svg",
+      "bytes": 565,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/wallet-blue__0dc0adc0.svg",
+      "bytes": 565,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/wallet-gray.svg",
+      "bytes": 565,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/wallet-blue.svg",
+      "bytes": 565,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/wand-gray__0dc0adc0.svg",
+      "bytes": 552,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/wand-blue__0dc0adc0.svg",
+      "bytes": 552,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/wand-gray.svg",
+      "bytes": 552,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/wand-blue.svg",
+      "bytes": 552,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/flame__0dc0adc0.svg",
+      "bytes": 489,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/migration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/flame.svg",
+      "bytes": 489,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/minimal-lock__0dc0adc0.svg",
+      "bytes": 483,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/migration-playbooks",
+        "section": "hero.main",
+        "rendered": "20x20"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/minimal-lock.svg",
+      "bytes": 483,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/sparkle__0dc0adc0.svg",
+      "bytes": 466,
+      "role": "icon",
+      "evidence": {
+        "route": "/enterprise",
+        "section": "hero.main",
+        "rendered": "20x20"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/sparkle.svg",
+      "bytes": 466,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/golf-live-logo__0dc0adc0.svg",
+      "bytes": 462,
+      "role": "logo",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "rendered": "93x24"
+      }
+    },
+    {
+      "path": "images/golf-live-logo.svg",
+      "bytes": 462,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/person__0dc0adc0.svg",
+      "bytes": 415,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/migration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/person.svg",
+      "bytes": 415,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/stacked-bar-chart__0dc0adc0.svg",
+      "bytes": 408,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/migration-playbooks",
+        "section": "hero.main",
+        "rendered": "20x20"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/stacked-bar-chart.svg",
+      "bytes": 408,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/dash-in-box__0dc0adc0.svg",
+      "bytes": 390,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/integration-playbooks",
+        "section": "hero.main",
+        "rendered": "24x24"
+      }
+    },
+    {
+      "path": "images/icons/integration-playbooks/dash-in-box.svg",
+      "bytes": 390,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/auto-flash__0dc0adc0.svg",
+      "bytes": 384,
+      "role": "icon",
+      "evidence": {
+        "route": "/enterprise",
+        "section": "hero.main",
+        "rendered": "20x20"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/auto-flash.svg",
+      "bytes": 384,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/heart-gray__0dc0adc0.svg",
+      "bytes": 374,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/heart-blue__0dc0adc0.svg",
+      "bytes": 374,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/heart-gray.svg",
+      "bytes": 374,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/site-header/heart-blue.svg",
+      "bytes": 374,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/diamond__0dc0adc0.svg",
+      "bytes": 354,
+      "role": "icon",
+      "evidence": {
+        "route": "/enterprise",
+        "section": "hero.main",
+        "rendered": "20x20"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/diamond.svg",
+      "bytes": 354,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/burst__0dc0adc0.svg",
+      "bytes": 329,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/migration-playbooks",
+        "section": "hero.main",
+        "rendered": "20x20"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/burst.svg",
+      "bytes": 329,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/icon-loading-circle__0dc0adc0.svg",
+      "bytes": 313,
+      "role": "icon",
+      "evidence": {
+        "route": "/solutions/migration-playbooks",
+        "section": "hero.main",
+        "rendered": "20x20"
+      }
+    },
+    {
+      "path": "images/icons/migration-playbooks/icon-loading-circle.svg",
+      "bytes": 313,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/shield__0dc0adc0.svg",
+      "bytes": 289,
+      "role": "icon",
+      "evidence": {
+        "route": "/enterprise",
+        "section": "hero.main",
+        "rendered": "20x20"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/shield.svg",
+      "bytes": 289,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/blocks__0dc0adc0.svg",
+      "bytes": 244,
+      "role": "icon",
+      "evidence": {
+        "route": "/enterprise",
+        "section": "hero.main",
+        "rendered": "20x20"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/blocks.svg",
+      "bytes": 244,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/capsule__0dc0adc0.svg",
+      "bytes": 237,
+      "role": "icon",
+      "evidence": {
+        "route": "/enterprise",
+        "section": "hero.main",
+        "rendered": "20x20"
+      }
+    },
+    {
+      "path": "images/icons/enterprise/capsule.svg",
+      "bytes": 237,
+      "role": "icon",
+      "evidence": {
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+      }
+    },
+    {
+      "path": "mailto:help@rubiehq.com",
+      "bytes": 0,
+      "role": "founder-contact-email",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "note": "mailto: link found in page content"
+      }
+    },
+    {
+      "path": "mailto:hello@rubiehq.com",
+      "bytes": 0,
+      "role": "founder-contact-email",
+      "evidence": {
+        "route": "/",
+        "section": "hero.main",
+        "note": "mailto: link found in page content"
+      }
+    },
+    {
+      "path": "mailto:admin@rubiehq.com",
+      "bytes": 0,
+      "role": "founder-contact-email",
+      "evidence": {
+        "route": "/privacy-policy",
+        "section": "hero.main",
+        "note": "mailto: link found in page content"
+      }
+    }
+  ],
+  "embeds": []
+}

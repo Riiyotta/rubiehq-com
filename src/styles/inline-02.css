@@ -1,0 +1,19 @@
+
+          @media (prefers-reduced-motion: no-preference) {
+            [data-migration-anatomy-artwork="true"] [id*="active-tile-"] {
+              transform-box: fill-box;
+              transform-origin: center;
+              animation: migration-anatomy-active-tile-lift 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+            }
+
+            @keyframes migration-anatomy-active-tile-lift {
+              from {
+                transform: translateY(16px);
+              }
+
+              to {
+                transform: translateY(0);
+              }
+            }
+          }
+        

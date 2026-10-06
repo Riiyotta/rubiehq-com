@@ -1,0 +1,34 @@
+{
+  "id": "shell.spacer",
+  "category": "SHELL",
+  "label": "spacer",
+  "tag": "section",
+  "purpose": "A decorative aria-hidden=\"true\" band with no content at all — a bordered gap the layout uses as a rule between sections. Measured copy on both instances is zero words; it must never be given any.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 2,
+    "routes": 2,
+    "measuredFrom": [
+      "src/blog/index.html:314-319",
+      "src/solutions/migration-playbooks/index.html:1875-1876"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {}
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z105.jsx > section[2]",
+  "scope": "2 routes: /blog and /solutions/migration-playbooks. Each sits in its own template now, so template membership and real route count agree."
+}

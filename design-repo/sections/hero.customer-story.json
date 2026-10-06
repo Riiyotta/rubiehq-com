@@ -1,0 +1,56 @@
+{
+  "id": "hero.customer-story",
+  "category": "HERO",
+  "label": "customer-story",
+  "tag": "section",
+  "purpose": "Customer-story hero: one long outcome-metric h1 ('X cuts Y by Z% with Rubie'), the customer's logo and a back-link to /customers.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 5,
+    "routes": 5,
+    "measuredFrom": [
+      "src/customers/granum/index.html:283-394",
+      "src/customers/brivity/index.html:283-394",
+      "src/customers/cariina/index.html:283-394",
+      "src/customers/curbwaste/index.html:283-394",
+      "src/customers/bound/index.html:283-394"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 23
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 2,
+        "maxWords": 29
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 3
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1010.jsx > section[0]",
+  "scope": "The 5 /customers/<name> routes."
+}

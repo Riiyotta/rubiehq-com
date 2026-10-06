@@ -1,0 +1,73 @@
+{
+  "id": "hero.use-case",
+  "category": "HERO",
+  "label": "use-case",
+  "tag": "section",
+  "purpose": "Use-case hero: a two-part h1 (a bold claim plus a lighter 'without ...' qualifier), supporting paragraph, CTA and the 54-logo customer plate. Identical structure on all six routes; only copy changes.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 6,
+    "routes": 6,
+    "measuredFrom": [
+      "src/use-cases/sales/index.html:282-570",
+      "src/use-cases/customer-success/index.html:282-570",
+      "src/use-cases/product/index.html:282-570",
+      "src/use-cases/healthcare/index.html:282-570",
+      "src/use-cases/financial-services/index.html:282-570"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 7
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 28
+      },
+      "listItems": {
+        "type": "string[]",
+        "required": false,
+        "maxItems": 9,
+        "maxWords": 28
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 8
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 54,
+        "assetRoles": [
+          "customer-logo"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-animation",
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "disable-animation"
+  },
+  "assetRoles": [
+    "customer-logo"
+  ],
+  "implementedBy": "src/sections/Z1013.jsx > section[0]",
+  "scope": "The 6 /use-cases/* routes."
+}

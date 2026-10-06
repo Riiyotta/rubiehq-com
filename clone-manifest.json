@@ -1,0 +1,457 @@
+{
+  "generatedBy": "website-builder lib/clone.mjs",
+  "source": "https://www.rubiehq.com/",
+  "routes": [
+    {
+      "route": "/",
+      "page": "src/pages/HomePage.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/product",
+      "page": "src/pages/Product.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/enterprise",
+      "page": "src/pages/Enterprise.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/customers",
+      "page": "src/pages/Customers.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/blog",
+      "page": "src/pages/Blog.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/privacy-policy",
+      "page": "src/pages/PrivacyPolicy.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/terms",
+      "page": "src/pages/Terms.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/solutions/migration-playbooks",
+      "page": "src/pages/SolutionsMigrationPlaybooks.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/solutions/integration-playbooks",
+      "page": "src/pages/SolutionsIntegrationPlaybooks.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/customers/granum",
+      "page": "src/pages/CustomersGranum.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/customers/brivity",
+      "page": "src/pages/CustomersBrivity.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/customers/cariina",
+      "page": "src/pages/CustomersCariina.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/use-cases/sales",
+      "page": "src/pages/UseCasesSales.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/use-cases/customer-success",
+      "page": "src/pages/UseCasesCustomerSuccess.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/use-cases/product",
+      "page": "src/pages/UseCasesProduct.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/use-cases/healthcare",
+      "page": "src/pages/UseCasesHealthcare.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/use-cases/financial-services",
+      "page": "src/pages/UseCasesFinancialServices.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/use-cases/education",
+      "page": "src/pages/UseCasesEducation.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/customers/curbwaste",
+      "page": "src/pages/CustomersCurbwaste.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/customers/bound",
+      "page": "src/pages/CustomersBound.jsx",
+      "sections": 2
+    },
+    {
+      "route": "/blog/migration-revenue-killer",
+      "page": "src/pages/BlogMigrationRevenueKiller.jsx",
+      "sections": 2
+    }
+  ],
+  "components": [
+    {
+      "component": "Z10",
+      "file": "src/sections/Z10.jsx",
+      "usedBy": [
+        {
+          "route": "/",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "C15tUiRootHE9Kz",
+      "file": "src/sections/C15tUiRootHE9Kz.jsx",
+      "usedBy": [
+        {
+          "route": "/",
+          "idx": 1
+        },
+        {
+          "route": "/product",
+          "idx": 1
+        },
+        {
+          "route": "/enterprise",
+          "idx": 1
+        },
+        {
+          "route": "/customers",
+          "idx": 1
+        },
+        {
+          "route": "/blog",
+          "idx": 1
+        },
+        {
+          "route": "/privacy-policy",
+          "idx": 1
+        },
+        {
+          "route": "/terms",
+          "idx": 1
+        },
+        {
+          "route": "/solutions/migration-playbooks",
+          "idx": 1
+        },
+        {
+          "route": "/solutions/integration-playbooks",
+          "idx": 1
+        },
+        {
+          "route": "/customers/granum",
+          "idx": 1
+        },
+        {
+          "route": "/customers/brivity",
+          "idx": 1
+        },
+        {
+          "route": "/customers/cariina",
+          "idx": 1
+        },
+        {
+          "route": "/use-cases/sales",
+          "idx": 1
+        },
+        {
+          "route": "/use-cases/customer-success",
+          "idx": 1
+        },
+        {
+          "route": "/use-cases/product",
+          "idx": 1
+        },
+        {
+          "route": "/use-cases/healthcare",
+          "idx": 1
+        },
+        {
+          "route": "/use-cases/financial-services",
+          "idx": 1
+        },
+        {
+          "route": "/use-cases/education",
+          "idx": 1
+        },
+        {
+          "route": "/customers/curbwaste",
+          "idx": 1
+        },
+        {
+          "route": "/customers/bound",
+          "idx": 1
+        },
+        {
+          "route": "/blog/migration-revenue-killer",
+          "idx": 1
+        }
+      ]
+    },
+    {
+      "component": "Z102",
+      "file": "src/sections/Z102.jsx",
+      "usedBy": [
+        {
+          "route": "/product",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z103",
+      "file": "src/sections/Z103.jsx",
+      "usedBy": [
+        {
+          "route": "/enterprise",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z104",
+      "file": "src/sections/Z104.jsx",
+      "usedBy": [
+        {
+          "route": "/customers",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z105",
+      "file": "src/sections/Z105.jsx",
+      "usedBy": [
+        {
+          "route": "/blog",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z106",
+      "file": "src/sections/Z106.jsx",
+      "usedBy": [
+        {
+          "route": "/privacy-policy",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z107",
+      "file": "src/sections/Z107.jsx",
+      "usedBy": [
+        {
+          "route": "/terms",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z108",
+      "file": "src/sections/Z108.jsx",
+      "usedBy": [
+        {
+          "route": "/solutions/migration-playbooks",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z109",
+      "file": "src/sections/Z109.jsx",
+      "usedBy": [
+        {
+          "route": "/solutions/integration-playbooks",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1010",
+      "file": "src/sections/Z1010.jsx",
+      "usedBy": [
+        {
+          "route": "/customers/granum",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1011",
+      "file": "src/sections/Z1011.jsx",
+      "usedBy": [
+        {
+          "route": "/customers/brivity",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1012",
+      "file": "src/sections/Z1012.jsx",
+      "usedBy": [
+        {
+          "route": "/customers/cariina",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1013",
+      "file": "src/sections/Z1013.jsx",
+      "usedBy": [
+        {
+          "route": "/use-cases/sales",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1014",
+      "file": "src/sections/Z1014.jsx",
+      "usedBy": [
+        {
+          "route": "/use-cases/customer-success",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1015",
+      "file": "src/sections/Z1015.jsx",
+      "usedBy": [
+        {
+          "route": "/use-cases/product",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1016",
+      "file": "src/sections/Z1016.jsx",
+      "usedBy": [
+        {
+          "route": "/use-cases/healthcare",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1017",
+      "file": "src/sections/Z1017.jsx",
+      "usedBy": [
+        {
+          "route": "/use-cases/financial-services",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1018",
+      "file": "src/sections/Z1018.jsx",
+      "usedBy": [
+        {
+          "route": "/use-cases/education",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1019",
+      "file": "src/sections/Z1019.jsx",
+      "usedBy": [
+        {
+          "route": "/customers/curbwaste",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1020",
+      "file": "src/sections/Z1020.jsx",
+      "usedBy": [
+        {
+          "route": "/customers/bound",
+          "idx": 0
+        }
+      ]
+    },
+    {
+      "component": "Z1021",
+      "file": "src/sections/Z1021.jsx",
+      "usedBy": [
+        {
+          "route": "/blog/migration-revenue-killer",
+          "idx": 0
+        }
+      ]
+    }
+  ],
+  "stills": [
+    {
+      "route": "/",
+      "key": "still0",
+      "w": 1200,
+      "h": 609,
+      "file": "/stills/7f4712aa.png",
+      "lit": 1
+    },
+    {
+      "route": "/",
+      "key": "still1",
+      "w": 565,
+      "h": 319,
+      "file": "/stills/1d7e0f32.png",
+      "lit": 1
+    },
+    {
+      "route": "/",
+      "key": "still2",
+      "w": 564,
+      "h": 318,
+      "file": "/stills/06a3c1bf.png",
+      "lit": 1
+    }
+  ],
+  "rive": [
+    {
+      "riv": "images/home/rubie-home-animations.riv",
+      "replacedBy": null
+    }
+  ],
+  "dropped": [
+    "../media/fef07dbb0973bf53-s.3p2_lha1f2xer.woff2?dpl=dpl_2d3hLjbrHXQq9RcEkwQwggyw5riS (CSS url not in the mirror: the font or image it points at is missing)",
+    "../media/8a480f0b521d4e75-s.1qq4vpdcun5oj.woff2?dpl=dpl_2d3hLjbrHXQq9RcEkwQwggyw5riS (CSS url not in the mirror: the font or image it points at is missing)",
+    "../media/53b9e256198e5412-s.390ncx5urfkfu.woff2?dpl=dpl_2d3hLjbrHXQq9RcEkwQwggyw5riS (CSS url not in the mirror: the font or image it points at is missing)",
+    "../media/7178b3e590c64307-s.21jp631_3pja2.woff2?dpl=dpl_2d3hLjbrHXQq9RcEkwQwggyw5riS (CSS url not in the mirror: the font or image it points at is missing)"
+  ],
+  "motionNotReproduced": {
+    "pinnedSections": [],
+    "libraries": [
+      "Rive runtime"
+    ]
+  }
+}

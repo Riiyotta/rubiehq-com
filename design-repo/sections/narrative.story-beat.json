@@ -1,0 +1,67 @@
+{
+  "id": "narrative.story-beat",
+  "category": "NARRATIVE",
+  "label": "story-beat",
+  "tag": "section",
+  "purpose": "The customer-story body — the problem, the solution and the results told as one continuous block under a single h2.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 5,
+    "routes": 5,
+    "measuredFrom": [
+      "src/customers/granum/index.html:413-575",
+      "src/customers/brivity/index.html:413-575",
+      "src/customers/cariina/index.html:413-570",
+      "src/customers/curbwaste/index.html:413-572",
+      "src/customers/bound/index.html:413-572"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 19
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 24,
+        "maxWords": 95
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 2
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 1,
+        "assetRoles": [
+          "logo"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none",
+      "scroll-linked"
+    ],
+    "reducedMotionFallback": "disable-animation"
+  },
+  "assetRoles": [
+    "logo"
+  ],
+  "implementedBy": "src/sections/Z1010.jsx > section[2]",
+  "scope": "The 5 /customers/<name> routes."
+}

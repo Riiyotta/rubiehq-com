@@ -1,0 +1,52 @@
+{
+  "id": "proof.story-grid",
+  "category": "PROOF",
+  "label": "story-grid",
+  "tag": "section",
+  "purpose": "A grid of customer-story cards linking to each /customers/<name> route, each carrying the customer logo and its headline outcome metric.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/customers/index.html:294-369"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 23
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 10,
+        "assetRoles": [
+          "content-image",
+          "customer-logo"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "content-image",
+    "customer-logo"
+  ],
+  "implementedBy": "src/sections/Z104.jsx > section[1]",
+  "scope": "The /customers route only."
+}

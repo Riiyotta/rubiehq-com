@@ -1,0 +1,53 @@
+{
+  "id": "hero.solution",
+  "category": "HERO",
+  "label": "solution",
+  "tag": "section",
+  "purpose": "Solutions hero: h1 naming the playbook family, supporting copy, CTA and a large inline animated diagram of the playbook pipeline.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 2,
+    "routes": 2,
+    "measuredFrom": [
+      "src/solutions/migration-playbooks/index.html:284-1031",
+      "src/solutions/integration-playbooks/index.html:283-1420"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 2
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 2,
+        "maxWords": 24
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 8
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z108.jsx > section[0]",
+  "scope": "The 2 /solutions/* routes."
+}

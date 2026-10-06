@@ -1,0 +1,189 @@
+{
+  "gate": 0.8,
+  "average": 0.897,
+  "rows": [
+    {
+      "route": "/",
+      "reference": "original crawl screenshot",
+      "sections": 2,
+      "compared": 2,
+      "sectionsInClone": 2,
+      "mirrorPageHeight": 7219,
+      "clonePageHeight": 8452,
+      "score": 0.562,
+      "below": [
+        "0:Z10 55%"
+      ],
+      "secRows": [
+        {
+          "idx": 0,
+          "component": "Z10",
+          "mirrorHeight": 7219,
+          "cloneHeight": 8452,
+          "pixelMatch": 0.646,
+          "score": 0.552
+        },
+        {
+          "idx": 1,
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 189,
+          "cloneHeight": 189,
+          "pixelMatch": 0.951,
+          "score": 0.951
+        }
+      ],
+      "pass": false
+    },
+    {
+      "route": "/customers",
+      "reference": "original crawl screenshot",
+      "sections": 2,
+      "compared": 2,
+      "sectionsInClone": 2,
+      "mirrorPageHeight": 2865,
+      "clonePageHeight": 2865,
+      "score": 0.974,
+      "below": [],
+      "secRows": [
+        {
+          "idx": 0,
+          "component": "Z104",
+          "mirrorHeight": 2865,
+          "cloneHeight": 2865,
+          "pixelMatch": 0.972,
+          "score": 0.972
+        },
+        {
+          "idx": 1,
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 189,
+          "cloneHeight": 189,
+          "pixelMatch": 0.998,
+          "score": 0.998
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/solutions/migration-playbooks",
+      "reference": "original crawl screenshot",
+      "sections": 2,
+      "compared": 2,
+      "sectionsInClone": 2,
+      "mirrorPageHeight": 4927,
+      "clonePageHeight": 4887,
+      "score": 0.968,
+      "below": [],
+      "secRows": [
+        {
+          "idx": 0,
+          "component": "Z108",
+          "mirrorHeight": 4927,
+          "cloneHeight": 4887,
+          "pixelMatch": 0.969,
+          "score": 0.969
+        },
+        {
+          "idx": 1,
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 189,
+          "cloneHeight": 189,
+          "pixelMatch": 0.93,
+          "score": 0.93
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/customers/brivity",
+      "reference": "original crawl screenshot",
+      "sections": 2,
+      "compared": 2,
+      "sectionsInClone": 2,
+      "mirrorPageHeight": 4715,
+      "clonePageHeight": 4705,
+      "score": 0.899,
+      "below": [],
+      "secRows": [
+        {
+          "idx": 0,
+          "component": "Z1011",
+          "mirrorHeight": 4715,
+          "cloneHeight": 4705,
+          "pixelMatch": 0.897,
+          "score": 0.897
+        },
+        {
+          "idx": 1,
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 189,
+          "cloneHeight": 189,
+          "pixelMatch": 0.936,
+          "score": 0.936
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/use-cases/product",
+      "reference": "original crawl screenshot",
+      "sections": 2,
+      "compared": 2,
+      "sectionsInClone": 2,
+      "mirrorPageHeight": 4352,
+      "clonePageHeight": 4352,
+      "score": 0.989,
+      "below": [],
+      "secRows": [
+        {
+          "idx": 0,
+          "component": "Z1015",
+          "mirrorHeight": 4352,
+          "cloneHeight": 4352,
+          "pixelMatch": 0.989,
+          "score": 0.989
+        },
+        {
+          "idx": 1,
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 189,
+          "cloneHeight": 189,
+          "pixelMatch": 1,
+          "score": 1
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/use-cases/education",
+      "reference": "original crawl screenshot",
+      "sections": 2,
+      "compared": 2,
+      "sectionsInClone": 2,
+      "mirrorPageHeight": 4328,
+      "clonePageHeight": 4328,
+      "score": 0.992,
+      "below": [],
+      "secRows": [
+        {
+          "idx": 0,
+          "component": "Z1018",
+          "mirrorHeight": 4328,
+          "cloneHeight": 4328,
+          "pixelMatch": 0.992,
+          "score": 0.992
+        },
+        {
+          "idx": 1,
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 189,
+          "cloneHeight": 189,
+          "pixelMatch": 1,
+          "score": 1
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "pass": false
+}

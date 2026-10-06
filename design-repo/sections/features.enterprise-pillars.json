@@ -1,0 +1,53 @@
+{
+  "id": "features.enterprise-pillars",
+  "category": "FEATURES",
+  "label": "enterprise-pillars",
+  "tag": "section",
+  "purpose": "'Security & Compliance First' — the enterprise assurance block covering compliance, residency, access control and audit, over a large animated backdrop.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/enterprise/index.html:398-1305"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 4
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 28
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 10,
+        "titleMaxWords": 5,
+        "bodyMaxWords": 28
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z103.jsx > section[2]",
+  "scope": "The /enterprise route only."
+}

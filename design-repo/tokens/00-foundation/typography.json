@@ -1,0 +1,210 @@
+{
+  "$description": "Foundation typography tokens: the values observed on the site, ordered by usage. Not referenced directly by generators; semantic tokens reference these.",
+  "tokens": {
+    "fontFamily.01": {
+      "$type": "fontFamily",
+      "$value": "Geist",
+      "usage": 2495
+    },
+    "fontFamily.02": {
+      "$type": "fontFamily",
+      "$value": "ui-monospace",
+      "usage": 189
+    },
+    "fontFamily.03": {
+      "$type": "fontFamily",
+      "$value": "system-ui",
+      "usage": 105
+    },
+    "fontSize.11": {
+      "$type": "dimension",
+      "$value": "11px",
+      "usage": 5
+    },
+    "fontSize.12": {
+      "$type": "dimension",
+      "$value": "12px",
+      "usage": 295
+    },
+    "fontSize.13": {
+      "$type": "dimension",
+      "$value": "13px",
+      "usage": 4
+    },
+    "fontSize.14": {
+      "$type": "dimension",
+      "$value": "14px",
+      "usage": 1615
+    },
+    "fontSize.16": {
+      "$type": "dimension",
+      "$value": "16px",
+      "usage": 598
+    },
+    "fontSize.18": {
+      "$type": "dimension",
+      "$value": "18px",
+      "usage": 116
+    },
+    "fontSize.20": {
+      "$type": "dimension",
+      "$value": "20px",
+      "usage": 2
+    },
+    "fontSize.24": {
+      "$type": "dimension",
+      "$value": "24px",
+      "usage": 24
+    },
+    "fontSize.25": {
+      "$type": "dimension",
+      "$value": "25px",
+      "usage": 1
+    },
+    "fontSize.26": {
+      "$type": "dimension",
+      "$value": "26px",
+      "usage": 6
+    },
+    "fontSize.30": {
+      "$type": "dimension",
+      "$value": "30px",
+      "usage": 1
+    },
+    "fontSize.36": {
+      "$type": "dimension",
+      "$value": "36px",
+      "usage": 4
+    },
+    "fontSize.40": {
+      "$type": "dimension",
+      "$value": "40px",
+      "usage": 3
+    },
+    "fontSize.42": {
+      "$type": "dimension",
+      "$value": "42px",
+      "usage": 12
+    },
+    "fontSize.44": {
+      "$type": "dimension",
+      "$value": "44px",
+      "usage": 15
+    },
+    "fontSize.48": {
+      "$type": "dimension",
+      "$value": "48px",
+      "usage": 31
+    },
+    "fontSize.52": {
+      "$type": "dimension",
+      "$value": "52px",
+      "usage": 47
+    },
+    "fontSize.60": {
+      "$type": "dimension",
+      "$value": "60px",
+      "usage": 10
+    },
+    "fontWeight.400": {
+      "$type": "fontWeight",
+      "$value": "400",
+      "usage": 1895
+    },
+    "fontWeight.500": {
+      "$type": "fontWeight",
+      "$value": "500",
+      "usage": 602
+    },
+    "fontWeight.600": {
+      "$type": "fontWeight",
+      "$value": "600",
+      "usage": 257
+    },
+    "fontWeight.700": {
+      "$type": "fontWeight",
+      "$value": "700",
+      "usage": 35
+    },
+    "lineHeight.12": {
+      "$type": "dimension",
+      "$value": "12px",
+      "usage": 191
+    },
+    "lineHeight.14": {
+      "$type": "dimension",
+      "$value": "14px",
+      "usage": 48
+    },
+    "lineHeight.18": {
+      "$type": "dimension",
+      "$value": "18px",
+      "usage": 148
+    },
+    "lineHeight.20": {
+      "$type": "dimension",
+      "$value": "20px",
+      "usage": 896
+    },
+    "lineHeight.22": {
+      "$type": "dimension",
+      "$value": "22px",
+      "usage": 10
+    },
+    "lineHeight.24": {
+      "$type": "dimension",
+      "$value": "24px",
+      "usage": 1159
+    },
+    "lineHeight.26": {
+      "$type": "dimension",
+      "$value": "26px",
+      "usage": 109
+    },
+    "lineHeight.28": {
+      "$type": "dimension",
+      "$value": "28px",
+      "usage": 65
+    },
+    "lineHeight.32": {
+      "$type": "dimension",
+      "$value": "32px",
+      "usage": 17
+    },
+    "lineHeight.36": {
+      "$type": "dimension",
+      "$value": "36px",
+      "usage": 9
+    },
+    "lineHeight.42": {
+      "$type": "dimension",
+      "$value": "42px",
+      "usage": 6
+    },
+    "lineHeight.46_2": {
+      "$type": "dimension",
+      "$value": "46.2px",
+      "usage": 6
+    },
+    "lineHeight.54_6": {
+      "$type": "dimension",
+      "$value": "54.6px",
+      "usage": 12
+    },
+    "lineHeight.56": {
+      "$type": "dimension",
+      "$value": "56px",
+      "usage": 64
+    },
+    "lineHeight.57_2": {
+      "$type": "dimension",
+      "$value": "57.2px",
+      "usage": 12
+    },
+    "lineHeight.60": {
+      "$type": "dimension",
+      "$value": "60px",
+      "usage": 12
+    }
+  }
+}

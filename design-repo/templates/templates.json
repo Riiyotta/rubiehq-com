@@ -1,0 +1,600 @@
+{
+  "version": "0.2.0",
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Homepage",
+      "routeCount": 1,
+      "chrome": "full",
+      "routes": [
+        "/"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.home",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.problem-statement",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.any-source",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.platform-primitives",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.playbook-cta-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.use-case-teasers",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.testimonials",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.book-demo-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (1 route(s))"
+      }
+    },
+    {
+      "id": "template.use-case",
+      "name": "Use case",
+      "routeCount": 6,
+      "chrome": "full",
+      "routes": [
+        "/use-cases/sales",
+        "/use-cases/customer-success",
+        "/use-cases/product",
+        "/use-cases/healthcare",
+        "/use-cases/financial-services",
+        "/use-cases/education"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.use-case",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.problem-statement",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.solution-statement",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "faq.accordion",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.book-demo-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (6 route(s))"
+      }
+    },
+    {
+      "id": "template.customer-story",
+      "name": "Customer story",
+      "routeCount": 5,
+      "chrome": "full",
+      "routes": [
+        "/customers/granum",
+        "/customers/brivity",
+        "/customers/cariina",
+        "/customers/curbwaste",
+        "/customers/bound"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.customer-story",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.story-metrics",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.story-beat",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.book-demo-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (5 route(s))"
+      }
+    },
+    {
+      "id": "template.migration-playbooks",
+      "name": "Migration Playbooks",
+      "routeCount": 1,
+      "chrome": "full",
+      "routes": [
+        "/solutions/migration-playbooks"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.solution",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.problem-statement",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.result-callout",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.capability-grid",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.solution-outcomes",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.solution-anatomy",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.spacer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.book-demo-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (1 route(s))"
+      }
+    },
+    {
+      "id": "template.integration-playbooks",
+      "name": "Integration Playbooks",
+      "routeCount": 1,
+      "chrome": "full",
+      "routes": [
+        "/solutions/integration-playbooks"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.solution",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.problem-statement",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.result-callout",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.capability-grid",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.solution-outcomes",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.solution-anatomy",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.automation-samples",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.book-demo-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (1 route(s))"
+      }
+    },
+    {
+      "id": "template.product",
+      "name": "Product",
+      "routeCount": 1,
+      "chrome": "full",
+      "routes": [
+        "/product"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.page-title",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.pipeline-steps",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.book-demo-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (1 route(s))"
+      }
+    },
+    {
+      "id": "template.enterprise",
+      "name": "Enterprise",
+      "routeCount": 1,
+      "chrome": "full",
+      "routes": [
+        "/enterprise"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.page-title",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.compliance-badges",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.enterprise-pillars",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.book-demo-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (1 route(s))"
+      }
+    },
+    {
+      "id": "template.story-index",
+      "name": "Customer story index",
+      "routeCount": 1,
+      "chrome": "full",
+      "routes": [
+        "/customers"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.page-title",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.story-grid",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.book-demo-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (1 route(s))"
+      }
+    },
+    {
+      "id": "template.blog-index",
+      "name": "Blog index",
+      "routeCount": 1,
+      "chrome": "full",
+      "routes": [
+        "/blog"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.page-title",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "index.blog-roll",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.spacer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.book-demo-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (1 route(s))"
+      }
+    },
+    {
+      "id": "template.article",
+      "name": "Article (long-form)",
+      "routeCount": 1,
+      "chrome": "full",
+      "routes": [
+        "/blog/migration-revenue-killer"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "hero.article",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.article-body",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.book-demo-band",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (1 route(s))"
+      }
+    },
+    {
+      "id": "template.legal",
+      "name": "Legal document",
+      "routeCount": 2,
+      "chrome": "full",
+      "routes": [
+        "/privacy-policy",
+        "/terms"
+      ],
+      "nodes": [
+        {
+          "section": "shell.header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.legal-body",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "shell.consent-banner-root",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": {
+        "level": "measured",
+        "note": "every route of this template was parsed from its rendered HTML snapshot and collapses to this exact section sequence (2 route(s))"
+      }
+    }
+  ]
+}

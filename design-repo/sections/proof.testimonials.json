@@ -1,0 +1,64 @@
+{
+  "id": "proof.testimonials",
+  "category": "PROOF",
+  "label": "testimonials",
+  "tag": "section",
+  "purpose": "'What our customers are saying' — a grid of quote cards, each with an avatar, a name, a role and the customer's logo.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/index.html:7185-7298"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 5
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 9
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 6,
+        "maxWords": 3
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 8,
+        "assetRoles": [
+          "avatar",
+          "customer-logo"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "avatar",
+    "customer-logo"
+  ],
+  "implementedBy": "src/sections/Z10.jsx > section[6]",
+  "scope": "The / route only."
+}

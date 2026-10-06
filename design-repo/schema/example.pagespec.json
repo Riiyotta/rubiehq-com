@@ -1,0 +1,470 @@
+{
+  "pageSpecVersion": "0.2.0",
+  "template": "template.home",
+  "route": "/",
+  "nodes": [
+    {
+      "type": "shell.header",
+      "content": {
+        "listItems": [
+          "Product",
+          "Solutions",
+          "Use Cases",
+          "Resources",
+          "Enterprise"
+        ],
+        "ctas": [
+          {
+            "label": "Product",
+            "href": "/product"
+          },
+          {
+            "label": "Solutions"
+          },
+          {
+            "label": "Use Cases"
+          },
+          {
+            "label": "Resources"
+          },
+          {
+            "label": "Enterprise",
+            "href": "/enterprise"
+          },
+          {
+            "label": "Login"
+          },
+          {
+            "label": "Book a demo (opens in a new tab)"
+          },
+          {
+            "label": "Book a demo (opens in a new tab)"
+          },
+          {
+            "label": "Product",
+            "href": "/product"
+          },
+          {
+            "label": "Solutions"
+          },
+          {
+            "label": "Use Cases"
+          },
+          {
+            "label": "Resources"
+          },
+          {
+            "label": "Enterprise",
+            "href": "/enterprise"
+          },
+          {
+            "label": "Login"
+          },
+          {
+            "label": "Book a demo (opens in a new tab)"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "logo",
+            "alt": ""
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "css-transition",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "hero.home",
+      "content": {
+        "heading": "Rip and Replace your Competition",
+        "body": [
+          "// INTEGRATE // Rip and Replace your Competition Rubie makes it easy for you to offer zero-effort data migrations. Close deals faster and automate onboarding with agentic integrations."
+        ],
+        "listItems": [
+          "Order.co",
+          "Rillet",
+          "CurbWaste",
+          "Granum",
+          "Brivity",
+          "Cariina",
+          "Arketa",
+          "Bound",
+          "Golf Live"
+        ],
+        "ctas": [
+          {
+            "label": "See Rubie in action (opens in a new tab)"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "content-image",
+            "alt": ""
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "css-animation",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "narrative.problem-statement",
+      "content": {
+        "heading": "Your customers' data is locked up in legacy systems.",
+        "body": [
+          "The Challenge Your customers' data is locked up in legacy systems. Vendor portals, dead spreadsheets, and uncooperative software. Your customers don't care — they just want their data.",
+          "Prebuilt connectors cover 15% of the long tail — and none of the systems your enterprise customers actually use.",
+          "Custom API work puts engineering on a treadmill building one-off integrations instead of shipping product.",
+          "Manual processes turn your ops and onboarding teams into full-time data clerks.",
+          "Traditional ETL doesn't work when there's no API to read from."
+        ],
+        "items": [
+          {
+            "title": "Item"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "icon",
+            "alt": ""
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "features.any-source",
+      "content": {
+        "heading": "Any source. Your platform.",
+        "body": [
+          "The Solution Any source. Your platform. One-time migration or hourly portal pull — Rubie gets the data, in the format you need. Predictable. Observable. Reliable at any scale."
+        ]
+      },
+      "motion": {
+        "pattern": "canvas-animation",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "features.platform-primitives",
+      "content": {
+        "heading": "Platform primitives",
+        "body": [
+          "Authenticate Navigate Clean Transform Review Load Rubie signs in, handles sessions, and reaches the systems your customers already use."
+        ],
+        "ctas": [
+          {
+            "label": "Authenticate"
+          },
+          {
+            "label": "Navigate"
+          },
+          {
+            "label": "Clean"
+          },
+          {
+            "label": "Transform"
+          },
+          {
+            "label": "Review"
+          },
+          {
+            "label": "Load"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "css-transition",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "features.playbook-cta-cards",
+      "content": {
+        "heading": "Build data playbooks with Rubie",
+        "body": [
+          "One-time, high-stakes data moves.",
+          "Rip and replace a customer's legacy system in a fraction of the time. Turn painful onboarding into a competitive advantage.",
+          "Ongoing data flows from sources without APIs.",
+          "Every new customer add-on, every long-tail source, every gated portal — connected, monitored, and maintained without taking engineering off product."
+        ],
+        "ctas": [
+          {
+            "label": "Migration Playbooks",
+            "href": "/solutions/migration-playbooks"
+          },
+          {
+            "label": "Explore migrations",
+            "href": "/solutions/migration-playbooks"
+          },
+          {
+            "label": "Integration Playbooks",
+            "href": "/solutions/integration-playbooks"
+          },
+          {
+            "label": "Explore integrations",
+            "href": "/solutions/integration-playbooks"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "canvas-animation",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "features.use-case-teasers",
+      "content": {
+        "heading": "How teams are using Rubie today"
+      },
+      "motion": {
+        "pattern": "css-animation",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "proof.testimonials",
+      "content": {
+        "heading": "What our customers are saying",
+        "body": [
+          "Rubie makes customer data migration reliable, repeatable, and source-agnostic."
+        ],
+        "ctas": [
+          {
+            "label": "Read their story",
+            "href": "/customers/granum"
+          },
+          {
+            "label": "Read their story",
+            "href": "/customers/brivity"
+          },
+          {
+            "label": "Read their story",
+            "href": "/customers/cariina"
+          },
+          {
+            "label": "Read their story",
+            "href": "/customers/granum"
+          },
+          {
+            "label": "Read their story",
+            "href": "/customers/brivity"
+          },
+          {
+            "label": "Read their story",
+            "href": "/customers/cariina"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "avatar",
+            "alt": ""
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "css-transition",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "cta.book-demo-band",
+      "content": {
+        "heading": "Your customers are waiting on data that lives behind a login.",
+        "ctas": [
+          {
+            "label": "Book a Demo (opens in a new tab)"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "css-transition",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.footer",
+      "content": {
+        "heading": "Product",
+        "items": [
+          {
+            "title": "Product"
+          },
+          {
+            "title": "Resources"
+          },
+          {
+            "title": "Security"
+          },
+          {
+            "title": "Company"
+          },
+          {
+            "title": "Socials"
+          },
+          {
+            "title": "Product"
+          },
+          {
+            "title": "Resources"
+          },
+          {
+            "title": "Security"
+          },
+          {
+            "title": "Company"
+          },
+          {
+            "title": "Socials"
+          }
+        ],
+        "ctas": [
+          {
+            "label": "Integration Playbooks",
+            "href": "/solutions/integration-playbooks"
+          },
+          {
+            "label": "Migration Playbooks",
+            "href": "/solutions/migration-playbooks"
+          },
+          {
+            "label": "Documentation"
+          },
+          {
+            "label": "Customer Stories",
+            "href": "/customers"
+          },
+          {
+            "label": "News and Updates",
+            "href": "/blog"
+          },
+          {
+            "label": "Support"
+          },
+          {
+            "label": "Overview",
+            "href": "/enterprise"
+          },
+          {
+            "label": "Trust Center"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy-policy"
+          },
+          {
+            "label": "Terms",
+            "href": "/terms"
+          },
+          {
+            "label": "Careers"
+          },
+          {
+            "label": "Contact"
+          },
+          {
+            "label": "LinkedIn"
+          },
+          {
+            "label": "X / Twitter"
+          },
+          {
+            "label": "GitHub"
+          },
+          {
+            "label": "Integration Playbooks",
+            "href": "/solutions/integration-playbooks"
+          },
+          {
+            "label": "Migration Playbooks",
+            "href": "/solutions/migration-playbooks"
+          },
+          {
+            "label": "Documentation"
+          },
+          {
+            "label": "Customer Stories",
+            "href": "/customers"
+          },
+          {
+            "label": "News and Updates",
+            "href": "/blog"
+          },
+          {
+            "label": "Support"
+          },
+          {
+            "label": "Overview",
+            "href": "/enterprise"
+          },
+          {
+            "label": "Trust Center"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy-policy"
+          },
+          {
+            "label": "Terms",
+            "href": "/terms"
+          },
+          {
+            "label": "Careers"
+          },
+          {
+            "label": "Contact"
+          },
+          {
+            "label": "LinkedIn"
+          },
+          {
+            "label": "X / Twitter"
+          },
+          {
+            "label": "GitHub"
+          },
+          {
+            "label": "All systems normal"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "logo",
+            "alt": ""
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "css-transition",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.consent-banner-root",
+      "content": {
+        "ctas": [
+          {
+            "label": "Reject all"
+          },
+          {
+            "label": "Customize"
+          },
+          {
+            "label": "Accept all"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    }
+  ]
+}

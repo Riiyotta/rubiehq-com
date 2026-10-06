@@ -1,0 +1,16 @@
+{
+  "id": "card.surface",
+  "name": "Surface card",
+  "tag": "div",
+  "purpose": "The generic bordered, rounded panel used to frame a block of content on the page background.",
+  "composedOf": [],
+  "props": {},
+  "evidence": {
+    "level": "measured",
+    "occurrences": 3,
+    "routes": 2,
+    "measuredFrom": [
+      "src/index.html:6745-6745"
+    ]
+  }
+}

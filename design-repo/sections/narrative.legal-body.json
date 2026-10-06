@@ -1,0 +1,58 @@
+{
+  "id": "narrative.legal-body",
+  "category": "NARRATIVE",
+  "label": "legal-body",
+  "tag": "section",
+  "purpose": "The full legal document body — an h1 followed by numbered clauses with nested lists.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 2,
+    "routes": 2,
+    "measuredFrom": [
+      "src/privacy-policy/index.html:282-350",
+      "src/terms/index.html:282-383"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 3
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 37,
+        "maxWords": 410
+      },
+      "listItems": {
+        "type": "string[]",
+        "required": false,
+        "maxItems": 28,
+        "maxWords": 410
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 9,
+        "maxWords": 2
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z106.jsx > section[0]",
+  "scope": "The 2 legal routes, /privacy-policy and /terms."
+}

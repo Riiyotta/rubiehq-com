@@ -1,0 +1,57 @@
+{
+  "repositoryId": "rubiehq-com-design-repo",
+  "site": "rubiehq-com",
+  "status": "design-review-pending",
+  "productionApproved": false,
+  "repositoryVersion": "0.2.0",
+  "pageSpecVersion": "0.2.0",
+  "allowlistVersion": 2,
+  "versionFieldNote": "allowlistVersion is machine-checked (verify_all.py fails if it differs from tokens/llm/component-allowlist.json). repositoryVersion and pageSpecVersion are documentation-only markers; pageSpecVersion is additionally pinned as a const in the schema.",
+  "defaultTheme": "light",
+  "schemaValidatedThemes": [
+    "light"
+  ],
+  "theme": {
+    "id": "light",
+    "file": "tokens/themes/light.json"
+  },
+  "sourceProject": {
+    "url": "https://www.rubiehq.com/",
+    "framework": "React+Next.js+Rive",
+    "scrapedAt": "2026-10-06T07:05:09Z"
+  },
+  "generatedBy": "website-builder (heuristic extraction; see README)",
+  "counts": {
+    "sections": 33,
+    "templates": 11,
+    "routes": 21,
+    "primitives": 10,
+    "components": 5,
+    "assets": 180,
+    "themes": 1,
+    "rules": 7,
+    "tokens": {
+      "foundation": 161,
+      "semantic": 18,
+      "component": 23,
+      "layout": 6
+    }
+  },
+  "entryPoints": {
+    "tokenCatalog": "tokens/llm/token-catalog.json",
+    "tokenPolicy": "tokens/llm/token-policy.json",
+    "componentAllowlist": "tokens/llm/component-allowlist.json",
+    "compatibilityGraph": "compatibility/graph.json",
+    "assetContract": "assets/asset-roles.json",
+    "motionContract": "motion/motion-contract.json",
+    "templates": "templates/templates.json",
+    "pagespecSchema": "schema/pagespec.schema.json",
+    "examplePageSpec": "schema/example.pagespec.json",
+    "semanticValidate": "schema/semantic_validate.py",
+    "adversarialSuite": "schema/tests/adversarial_test.py",
+    "admission": "extraction/verify_all.py",
+    "driftProof": "extraction/prove_drift.py",
+    "measuredValues": "extraction/measured-values.json",
+    "defaultTheme": "tokens/themes/light.json"
+  }
+}

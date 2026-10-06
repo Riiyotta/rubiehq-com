@@ -1,0 +1,66 @@
+{
+  "id": "narrative.problem-statement",
+  "category": "NARRATIVE",
+  "label": "problem-statement",
+  "tag": "section",
+  "purpose": "A short, punchy problem framing under the hero — one h2 claim ('Your customers' data is locked up in legacy systems.', 'Onboarding is your bottleneck.') with brief elaborations.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 9,
+    "routes": 9,
+    "measuredFrom": [
+      "src/index.html:4698-4882",
+      "src/solutions/migration-playbooks/index.html:1032-1073",
+      "src/solutions/integration-playbooks/index.html:1421-1456",
+      "src/use-cases/sales/index.html:571-615",
+      "src/use-cases/customer-success/index.html:571-615"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 9
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 8,
+        "maxWords": 28
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 3,
+        "titleMaxWords": 7,
+        "bodyMaxWords": 28
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 4,
+        "assetRoles": [
+          "icon"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "icon"
+  ],
+  "implementedBy": "src/sections/Z10.jsx > section[1]",
+  "scope": "9 routes: /, the six /use-cases/* routes and the two /solutions/* routes."
+}

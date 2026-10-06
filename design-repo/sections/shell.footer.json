@@ -1,0 +1,67 @@
+{
+  "id": "shell.footer",
+  "category": "SHELL",
+  "label": "footer",
+  "tag": "footer",
+  "purpose": "Site footer: four link columns (Product, Solutions, Company, Legal), the arced 'rubie' SVG wordmark and the copyright line.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 21,
+    "routes": 21,
+    "measuredFrom": [
+      "src/index.html:8450-8829",
+      "src/product/index.html:1895-2274",
+      "src/enterprise/index.html:2459-2838",
+      "src/customers/index.html:1521-1900",
+      "src/blog/index.html:1471-1850"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 1
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 10,
+        "titleMaxWords": 1,
+        "bodyMaxWords": 1
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 31,
+        "maxWords": 3
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 1,
+        "assetRoles": [
+          "logo"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "logo"
+  ],
+  "implementedBy": "src/sections/Z10.jsx > footer",
+  "scope": "All 21 routes. Identical apart from generated SVG arc ids."
+}

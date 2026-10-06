@@ -1,0 +1,61 @@
+{
+  "id": "features.solution-anatomy",
+  "category": "FEATURES",
+  "label": "solution-anatomy",
+  "tag": "section",
+  "purpose": "An interactive stepped anatomy of a Rubie migration — buttons stepping through the pipeline stages.",
+  "purposeIsInferred": false,
+  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "evidence": {
+    "level": "measured",
+    "instances": 2,
+    "routes": 2,
+    "measuredFrom": [
+      "src/solutions/migration-playbooks/index.html:1747-1874",
+      "src/solutions/integration-playbooks/index.html:2012-2646"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 6
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 4,
+        "maxWords": 16
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 4,
+        "titleMaxWords": 4,
+        "bodyMaxWords": 16
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 4,
+        "maxWords": 5
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-animation",
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "disable-animation"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z108.jsx > section[5]",
+  "scope": "The 2 /solutions/* routes."
+}

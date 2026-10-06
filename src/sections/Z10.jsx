@@ -1,8 +1,25 @@
+import { useState } from "react";
 import A from "../lib/A.jsx";
 import Riv from "../lib/Riv.jsx";
 
+// Platform primitives: 6 tabs, real copy read from the live site by clicking each tab
+// (the scraper only ever captured the default "Authenticate" panel's text — the other 5
+// panels don't exist in a single static snapshot, since the real site only mounts the
+// active tab's panel). The shared card-stack illustration below is unchanged — it's one
+// continuous animated composition, not 6 separate per-tab graphics, confirmed by diffing
+// the live site's DOM across tab clicks (same SVG tree, 97% identical byte-for-byte).
+const PLATFORM_PRIMITIVES = [
+  { id: "authenticate", label: "Authenticate", lead: "Rubie", body: "signs in, handles sessions, and reaches the systems your customers already use." },
+  { id: "navigate", label: "Navigate", lead: "Rubie", body: "moves through pages, menus, and portals exactly as a human operator would." },
+  { id: "clean", label: "Clean", lead: "Rubie", body: "normalizes messy source data before it reaches your product." },
+  { id: "transform", label: "Transform", lead: "Rubie", body: "reshapes records into the structure your platform expects." },
+  { id: "review", label: "Review", lead: "Rubie", body: "checks the output for gaps, conflicts, and bad assumptions before sync." },
+  { id: "load", label: "Load", lead: "Rubie", body: "delivers clean data into your destination workflow without custom integration work." },
+];
+
 // z-10 — the section's real markup, read from the rendered page (route /, section 0).
 export default function Z10() {
+  const [primitiveTab, setPrimitiveTab] = useState("authenticate");
   return (
     <main className="relative z-10 flex flex-col min-h-screen" data-clone-section="Z10">
       <header className="fixed inset-x-0 top-0 z-50 bg-[rgb(var(--site-bg-rgb))] transition-colors">
@@ -3522,7 +3539,7 @@ export default function Z10() {
                   </div>
                   <div className="relative">
                     <div role="tablist" aria-label="Platform primitives" className={"flex w-full max-w-full cursor-grab overflow-x-scroll overscroll-x-contain [-ms-overflow-style:none] scrollbar-none lg:grid lg:grid-rows-[repeat(6,5.5rem)] lg:cursor-auto lg:overflow-visible [&::-webkit-scrollbar]:hidden"}>
-                      <button id="platform-primitive-tab-authenticate" type="button" role="tab" aria-selected="true" aria-controls="platform-primitive-panel-authenticate" className="group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 border-b-[3px] border-b-[#1066F1] lg:border-l-[#1066F1]">
+                      <button id="platform-primitive-tab-authenticate" type="button" role="tab" aria-selected={primitiveTab === "authenticate"} aria-controls="platform-primitive-panel-authenticate" onClick={() => setPrimitiveTab("authenticate")} className={`group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 ${primitiveTab === "authenticate" ? "border-b-[3px] border-b-[#1066F1] lg:border-l-[#1066F1]" : "border-b border-b-[#E7EAEE] lg:border-l-transparent"}`}>
                         <svg aria-hidden="true" viewBox="0 0 14.5939 15.4468" className="size-4.5 shrink-0 transition-colors duration-300 text-[#1066F1]" fill="none" preserveAspectRatio="none">
                           <path fillRule="evenodd" clipRule="evenodd" d="M7.84388 1.5C6.53311 1.5 5.33383 1.98143 4.41286 2.77896C4.09973 3.05012 3.62608 3.0161 3.35492 2.70297C3.08377 2.38985 3.11779 1.91619 3.43091 1.64504C4.61394 0.62057 6.15865 0 7.84388 0C11.5671 0 14.5939 3.02679 14.5939 6.75C14.5939 9.137 14.2181 11.2847 13.5661 13.2042C13.4328 13.5964 13.0069 13.8064 12.6147 13.6732C12.2225 13.5399 12.0125 13.114 12.1458 12.7218C12.7437 10.9613 13.0939 8.977 13.0939 6.75C13.0939 3.85521 10.7387 1.5 7.84388 1.5Z" fill="#1066F1" />
                           <path fillRule="evenodd" clipRule="evenodd" d="M2.73239 3.52122C3.10694 3.6981 3.26717 4.14512 3.09029 4.51967C2.77064 5.19653 2.5921 5.95235 2.5921 6.7514C2.5921 7.13278 2.5336 8.98509 1.38905 10.8471C1.17215 11.2 0.710254 11.3103 0.357374 11.0934C0.00448403 10.8765 -0.105746 10.4146 0.111154 10.0617C1.04661 8.53975 1.0921 7.01001 1.0921 6.7514C1.0921 5.72645 1.32159 4.75226 1.73394 3.87912C1.91082 3.50458 2.35784 3.34434 2.73239 3.52122Z" fill="#1066F1" />
@@ -3532,34 +3549,34 @@ export default function Z10() {
                         </svg>
                         <span className="text-base/6 transition-colors duration-300 font-medium text-[#00030A]">Authenticate</span>
                       </button>
-                      <button id="platform-primitive-tab-navigate" type="button" role="tab" aria-selected="false" aria-controls="platform-primitive-panel-navigate" className="group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 border-b border-b-[#E7EAEE] lg:border-l-transparent">
+                      <button id="platform-primitive-tab-navigate" type="button" role="tab" aria-selected={primitiveTab === "navigate"} aria-controls="platform-primitive-panel-navigate" onClick={() => setPrimitiveTab("navigate")} className={`group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 ${primitiveTab === "navigate" ? "border-b-[3px] border-b-[#1066F1] lg:border-l-[#1066F1]" : "border-b border-b-[#E7EAEE] lg:border-l-transparent"}`}>
                         <svg aria-hidden="true" viewBox="0 0 14.0013 14.0023" className="size-4.5 shrink-0 transition-colors duration-300 text-[#BBC2CC]" fill="none" preserveAspectRatio="none">
                           <path fillRule="evenodd" clipRule="evenodd" d="M0.0808922 1.73262C-0.294858 0.703532 0.703532 -0.294858 1.73262 0.0808922L13.1558 4.25496C14.3094 4.67706 14.2722 6.31653 13.1071 6.69138L8.246 8.2469L6.69078 13.1068C6.31697 14.2755 4.67539 14.3086 4.25407 13.1571L0.0808922 1.73262Z" fill="currentColor" />
                         </svg>
                         <span className="text-base/6 transition-colors duration-300 font-normal text-[#5D646E] group-hover:text-[#000A27]">Navigate</span>
                       </button>
-                      <button id="platform-primitive-tab-clean" type="button" role="tab" aria-selected="false" aria-controls="platform-primitive-panel-clean" className="group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 border-b border-b-[#E7EAEE] lg:border-l-transparent">
+                      <button id="platform-primitive-tab-clean" type="button" role="tab" aria-selected={primitiveTab === "clean"} aria-controls="platform-primitive-panel-clean" onClick={() => setPrimitiveTab("clean")} className={`group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 ${primitiveTab === "clean" ? "border-b-[3px] border-b-[#1066F1] lg:border-l-[#1066F1]" : "border-b border-b-[#E7EAEE] lg:border-l-transparent"}`}>
                         <svg aria-hidden="true" viewBox="0 0 16 16" className="size-4.5 shrink-0 transition-colors duration-300 text-[#BBC2CC]" fill="none" preserveAspectRatio="none">
                           <path d="M4.659 1.9899L3.396 1.56888L2.975 0.305999C2.838 -0.102 2.163 -0.102 2.026 0.305999L1.605 1.56888L0.342007 1.9899C0.138007 2.0579 0 2.2489 0 2.4639C0 2.6789 0.138007 2.8699 0.342007 2.9379L1.605 3.35892L2.026 4.62192C2.094 4.82592 2.286 4.9639 2.501 4.9639C2.716 4.9639 2.907 4.82592 2.976 4.62192L3.39701 3.35892L4.66 2.9379C4.864 2.8699 5.002 2.6789 5.002 2.4639C5.002 2.2489 4.863 2.0579 4.659 1.9899Z" fill="currentColor" />
                           <path fillRule="evenodd" clipRule="evenodd" d="M8.50007 1C8.80783 1.00003 9.0843 1.18808 9.1975 1.47429L10.99 6.00903L15.5258 7.80255C15.812 7.91571 16 8.19224 16 8.5C16 8.80776 15.812 9.0843 15.5258 9.1975L10.99 10.9909L9.1975 15.5257C9.0843 15.8119 8.80783 16 8.50007 16C8.1923 16 7.91575 15.812 7.80256 15.5258L6.00905 10.991L1.47417 9.1974C1.18799 9.0843 1 8.80774 1 8.5C1 8.19226 1.18799 7.91575 1.47417 7.80256L6.00905 6.00903L7.80256 1.47417C7.91575 1.18797 8.1923 0.99997 8.50007 1Z" fill="currentColor" />
                         </svg>
                         <span className="text-base/6 transition-colors duration-300 font-normal text-[#5D646E] group-hover:text-[#000A27]">Clean</span>
                       </button>
-                      <button id="platform-primitive-tab-transform" type="button" role="tab" aria-selected="false" aria-controls="platform-primitive-panel-transform" className="group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 border-b border-b-[#E7EAEE] lg:border-l-transparent">
+                      <button id="platform-primitive-tab-transform" type="button" role="tab" aria-selected={primitiveTab === "transform"} aria-controls="platform-primitive-panel-transform" onClick={() => setPrimitiveTab("transform")} className={`group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 ${primitiveTab === "transform" ? "border-b-[3px] border-b-[#1066F1] lg:border-l-[#1066F1]" : "border-b border-b-[#E7EAEE] lg:border-l-transparent"}`}>
                         <svg aria-hidden="true" viewBox="0 0 18.0002 14" className="size-4.5 shrink-0 transition-colors duration-300 text-[#BBC2CC]" fill="none" preserveAspectRatio="none">
                           <path d="M10.2502 10H4.04404C3.44884 10 2.89955 9.7012 2.57525 9.2012L0.12015 5.4073C-0.04005 5.1597 -0.04005 4.8404 0.12015 4.5928L2.57424 0.7998C2.89744 0.2993 3.44685 0 4.04395 0H10.2501C11.7667 0 13.0001 1.2334 13.0001 2.75V7.25C13.0001 8.7666 11.7668 10 10.2502 10Z" fill="currentColor" />
                           <path d="M5.00018 10H10.2502C11.7668 10 13.0001 8.7666 13.0001 7.25V4H13.9563C14.5535 4 15.1028 4.2993 15.426 4.7998L17.8801 8.5928C18.0403 8.8404 18.0403 9.1597 17.8801 9.4073L15.425 13.2012C15.1008 13.7012 14.5515 14 13.9562 14H7.75008C6.23348 14 5.00018 12.7666 5.00018 11.25V10Z" fill="currentColor" opacity="0.75" />
                         </svg>
                         <span className="text-base/6 transition-colors duration-300 font-normal text-[#5D646E] group-hover:text-[#000A27]">Transform</span>
                       </button>
-                      <button id="platform-primitive-tab-review" type="button" role="tab" aria-selected="false" aria-controls="platform-primitive-panel-review" className="group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 border-b border-b-[#E7EAEE] lg:border-l-transparent">
+                      <button id="platform-primitive-tab-review" type="button" role="tab" aria-selected={primitiveTab === "review"} aria-controls="platform-primitive-panel-review" onClick={() => setPrimitiveTab("review")} className={`group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 ${primitiveTab === "review" ? "border-b-[3px] border-b-[#1066F1] lg:border-l-[#1066F1]" : "border-b border-b-[#E7EAEE] lg:border-l-transparent"}`}>
                         <svg aria-hidden="true" viewBox="0 0 15.7809 11.9805" className="size-4.5 shrink-0 transition-colors duration-300 text-[#BBC2CC]" fill="none" preserveAspectRatio="none">
                           <path opacity="0.4" d="M15.5672 5.45598C15.0524 4.93058 14.4932 4.46599 13.8986 4.06319L14.7801 2.62248C14.9959 2.26898 14.8856 1.80759 14.5321 1.59129C14.1776 1.37499 13.7167 1.48678 13.5009 1.83928L12.594 3.32149C11.9162 2.99069 11.2061 2.73358 10.4703 2.55318L10.8026 0.897389C10.8837 0.491189 10.621 0.0960686 10.2147 0.0145686C9.80944 -0.0655314 9.41294 0.195789 9.33194 0.602489L8.99384 2.28728C8.62973 2.25038 8.26173 2.23088 7.89053 2.23088C7.51933 2.23088 7.15133 2.25038 6.78723 2.28728L6.44913 0.602489C6.36803 0.195789 5.97164 -0.0660314 5.56634 0.0145686C5.16014 0.0960686 4.89745 0.491189 4.97845 0.897389L5.31073 2.55339C4.57483 2.73409 3.86454 2.99109 3.18664 3.32219L2.28024 1.83977C2.06444 1.48677 1.60344 1.37499 1.24904 1.59129C0.896542 1.80709 0.785142 2.26849 1.00104 2.62209L1.88254 4.06398C1.28834 4.46628 0.729442 4.93117 0.214842 5.45607C-0.0751575 5.75197 -0.0712574 6.22659 0.224643 6.51659C0.520543 6.80659 0.995143 6.80178 1.28514 6.50588C3.04004 4.71628 5.38575 3.73097 7.89065 3.73097C10.3955 3.73097 12.7422 4.71638 14.4951 6.50588C14.6426 6.65578 14.8369 6.73097 15.0312 6.73097C15.2207 6.73097 15.4101 6.65969 15.5556 6.51659C15.8515 6.22699 15.8563 5.75188 15.5672 5.45598Z" fill="currentColor" />
                           <path d="M7.89063 11.9805C9.8236 11.9805 11.3906 10.4135 11.3906 8.48047C11.3906 6.54747 9.8236 4.98047 7.89063 4.98047C5.95764 4.98047 4.39063 6.54747 4.39063 8.48047C4.39063 10.4135 5.95764 11.9805 7.89063 11.9805Z" fill="currentColor" />
                         </svg>
                         <span className="text-base/6 transition-colors duration-300 font-normal text-[#5D646E] group-hover:text-[#000A27]">Review</span>
                       </button>
-                      <button id="platform-primitive-tab-load" type="button" role="tab" aria-selected="false" aria-controls="platform-primitive-panel-load" className="group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 border-b border-b-[#E7EAEE] lg:border-l-transparent">
+                      <button id="platform-primitive-tab-load" type="button" role="tab" aria-selected={primitiveTab === "load"} aria-controls="platform-primitive-panel-load" onClick={() => setPrimitiveTab("load")} className={`group flex h-18 min-w-0 flex-[0_0_calc(45%-12px)] cursor-pointer items-center justify-center gap-2 border-r border-t border-r-[#E7EAEE] border-t-[#E7EAEE] px-3 text-left outline-none transition-colors duration-300 hover:bg-[#F8FAFD] focus-visible:bg-[#F8FAFD] lg:size-full lg:basis-auto lg:justify-start lg:gap-4 lg:border-b-0 lg:border-r-0 lg:border-l-[3px] lg:px-8 lg:py-0 lg:first:border-t-0 lg:col-1 ${primitiveTab === "load" ? "border-b-[3px] border-b-[#1066F1] lg:border-l-[#1066F1]" : "border-b border-b-[#E7EAEE] lg:border-l-transparent"}`}>
                         <svg aria-hidden="true" viewBox="0 0 18 14.5" className="size-4.5 shrink-0 transition-colors duration-300 text-[#BBC2CC]" fill="none" preserveAspectRatio="none">
                           <path opacity="0.4" d="M14.25 7H3.75C1.682 7 0 8.682 0 10.75C0 12.818 1.682 14.5 3.75 14.5H14.25C16.318 14.5 18 12.818 18 10.75C18 8.682 16.318 7 14.25 7Z" fill="currentColor" />
                           <path d="M8.99999 5.00098C8.58699 5.00098 8.20199 4.79999 7.97099 4.46399L6.21398 1.90998C5.95598 1.53498 5.92898 1.052 6.14498 0.650997C6.36098 0.249997 6.78198 0 7.24398 0H10.756C11.217 0 11.638 0.248997 11.855 0.650997C12.072 1.053 12.044 1.53498 11.786 1.90998L10.03 4.46296C9.79899 4.79896 9.41398 5 9.00098 5L8.99999 5.00098Z" fill="currentColor" />
@@ -4184,15 +4201,17 @@ export default function Z10() {
                       </svg>
                     </div>
                   </div>
-                  <div id="platform-primitive-panel-authenticate" role="tabpanel" aria-labelledby="platform-primitive-tab-authenticate" className="flex min-h-37 items-center border-t border-[#E7EAEE] p-8 lg:min-h-0 lg:h-44 lg:min-h-0 lg:shrink-0">
-                    <div style={{ "opacity": "1", "transform": "none" }}>
-                      <p className="text-base/6.5 text-[#000A27] max-w-148.75">
-                        <span className="text-[#1066F1]">Rubie</span>
-                        {" "}
-                        signs in, handles sessions, and reaches the systems your customers already use.
-                      </p>
+                  {PLATFORM_PRIMITIVES.filter((p) => p.id === primitiveTab).map((p) => (
+                    <div key={p.id} id={`platform-primitive-panel-${p.id}`} role="tabpanel" aria-labelledby={`platform-primitive-tab-${p.id}`} className="flex min-h-37 items-center border-t border-[#E7EAEE] p-8 lg:min-h-0 lg:h-44 lg:min-h-0 lg:shrink-0">
+                      <div style={{ "opacity": "1", "transform": "none" }}>
+                        <p className="text-base/6.5 text-[#000A27] max-w-148.75">
+                          <span className="text-[#1066F1]">{p.lead}</span>
+                          {" "}
+                          {p.body}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

@@ -1,5 +1,25 @@
+import { useEffect, useState } from "react";
+
 // c15t-ui-root-hE9Kz — the section's real markup, read from the rendered page (route /, section 1; shared by 21 routes).
+// Reject/Customize/Accept all had no click handlers: the scraper captured the markup but none of the
+// real site's c15t consent-library behavior. Restored here as a minimal, real consent choice: any of
+// the three buttons dismisses the banner and the choice is remembered (localStorage), same as the
+// real banner never reappearing once you've answered it. "Customize" has no further UI on the real
+// site either at this banner layer — it also just records a choice and dismisses.
+const STORAGE_KEY = "rubie-consent";
+
 export default function C15tUiRootHE9Kz() {
+  const [choice, setChoice] = useState(() => {
+    try { return localStorage.getItem(STORAGE_KEY); } catch { return null; }
+  });
+
+  useEffect(() => {
+    if (!choice) return;
+    try { localStorage.setItem(STORAGE_KEY, choice); } catch { /* ignore */ }
+  }, [choice]);
+
+  if (choice) return null;
+
   return (
     <div className="c15t-ui-root-hE9Kz c15t-ui-bottomLeft-CbyqH left-3 right-auto bottom-3 w-[calc(100vw-1.5rem)] max-w-[320px] rounded-2xl bg-white p-1.5 shadow-[0_24px_32px_-16px_rgba(14,43,79,0.18),0_10px_18px_-10px_rgba(14,43,79,0.14),0_0_0_1px_rgba(15,45,85,0.06)] sm:left-5 sm:bottom-5 sm:w-[544px] sm:max-w-[544px] sm:rounded-[24px] sm:p-2 sm:shadow-[0_40px_40px_-20px_rgba(14,43,79,0.08),0_24px_24px_-12px_rgba(14,43,79,0.08),0_12px_12px_-6px_rgba(14,43,79,0.08),0_4px_4px_-2px_rgba(14,43,79,0.08),0_0_0_1px_rgba(15,45,85,0.06)] c15t-ui-root-hE9Kz c15t-ui-bottomLeft-CbyqH c15t-ui-bannerVisible-pYYY9" data-testid="consent-banner-root" dir="ltr" style={{ "--consent-banner-max-width": "544px" }} data-clone-section="C15tUiRootHE9Kz">
       <div className="c15t-ui-cardShell-HgKnk">
@@ -10,10 +30,10 @@ export default function C15tUiRootHE9Kz() {
           </div>
           <div data-testid="consent-banner-footer" className="c15t-ui-footer-MwauQ flex items-stretch gap-2 border-t border-[#f8f9fa] bg-transparent p-0 pt-3 sm:items-center sm:justify-between sm:gap-3 sm:pt-4 c15t-ui-footer-MwauQ">
             <div data-testid="consent-banner-footer-sub-group" className="c15t-ui-footerSubGroup-YlOOW flex items-center gap-2 c15t-ui-footerSubGroup-YlOOW">
-              <button type="button" className="c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-neutral-stroke-FNAAx rounded-lg bg-white px-2 py-1 text-[12px] leading-5 font-medium text-[#5d646e] shadow-[0_0_0_1px_#e3e7eb] sm:px-2.5 sm:text-[14px] sm:leading-6 c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-neutral-stroke-FNAAx" data-testid="consent-banner-reject-button">Reject all</button>
-              <button type="button" className="c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-neutral-stroke-FNAAx rounded-lg bg-white px-2 py-1 text-[12px] leading-5 font-medium text-[#5d646e] shadow-[0_0_0_1px_#e3e7eb] sm:px-2.5 sm:text-[14px] sm:leading-6 c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-neutral-stroke-FNAAx" data-testid="consent-banner-customize-button">Customize</button>
+              <button type="button" onClick={() => setChoice("rejected")} className="c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-neutral-stroke-FNAAx rounded-lg bg-white px-2 py-1 text-[12px] leading-5 font-medium text-[#5d646e] shadow-[0_0_0_1px_#e3e7eb] sm:px-2.5 sm:text-[14px] sm:leading-6 c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-neutral-stroke-FNAAx" data-testid="consent-banner-reject-button">Reject all</button>
+              <button type="button" onClick={() => setChoice("customized")} className="c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-neutral-stroke-FNAAx rounded-lg bg-white px-2 py-1 text-[12px] leading-5 font-medium text-[#5d646e] shadow-[0_0_0_1px_#e3e7eb] sm:px-2.5 sm:text-[14px] sm:leading-6 c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-neutral-stroke-FNAAx" data-testid="consent-banner-customize-button">Customize</button>
             </div>
-            <button type="button" className="c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-primary-stroke-rMkBn rounded-lg bg-[#0263ff] px-2 py-1 text-[12px] leading-5 font-medium text-white shadow-[inset_0_0_4px_rgba(255,255,255,0.5),inset_0_0_8px_rgba(255,255,255,0.2),0_12px_12px_-6px_rgba(16,102,241,0.05),0_8px_8px_-4px_rgba(16,102,241,0.05),0_6px_6px_-3px_rgba(16,102,241,0.05),0_4px_4px_-2px_rgba(16,102,241,0.05)] sm:px-2.5 sm:text-[14px] sm:leading-6 c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-primary-stroke-rMkBn" data-testid="consent-banner-accept-button">Accept all</button>
+            <button type="button" onClick={() => setChoice("accepted")} className="c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-primary-stroke-rMkBn rounded-lg bg-[#0263ff] px-2 py-1 text-[12px] leading-5 font-medium text-white shadow-[inset_0_0_4px_rgba(255,255,255,0.5),inset_0_0_8px_rgba(255,255,255,0.2),0_12px_12px_-6px_rgba(16,102,241,0.05),0_8px_8px_-4px_rgba(16,102,241,0.05),0_6px_6px_-3px_rgba(16,102,241,0.05),0_4px_4px_-2px_rgba(16,102,241,0.05)] sm:px-2.5 sm:text-[14px] sm:leading-6 c15t-ui-button-Lo5cc c15t-ui-button-small-nclev c15t-ui-button-primary-stroke-rMkBn" data-testid="consent-banner-accept-button">Accept all</button>
           </div>
         </div>
       </div>

@@ -8,3 +8,6 @@ qa/parity/*.png
 # regenerable, and not part of the deliverable — verify_all.py degrades recon/mirror/
 # specifically to a warning (not a failure) when it's absent.
 recon/
+# The design-repo composition IR: kept on local disk and on the local-only `ir-only`
+# branch, intentionally never tracked/pushed on main.
+ir/

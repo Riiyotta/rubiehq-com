@@ -10,3 +10,6 @@ recon/
 # The design-repo composition IR: kept on local disk and on the local-only `ir-only`
 # branch, intentionally never tracked/pushed on main.
 ir/
+
+# Regenerated from design-repo/ with the CLI zip tool; never committed alongside the live folder.
+*.zip

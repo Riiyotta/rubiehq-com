@@ -41,3 +41,18 @@ a 4391px-tall "hero" absorbed every real block on the page.
 
 ## 0.1.0 — 2026-10-06T07:05:09Z
 - Initial extraction from https://www.rubiehq.com/: 2 sections, 1 templates, 21 routes.
+
+## 0.1.1 — 2026-10-07
+
+- **Asset roles corrected.** 22 third-party company marks moved to `customer-logo`
+  / `must-not-fabricate`; only Rubie's own two marks remain `logo` / `must-reuse-exact`.
+  This included three `customer-hover-*-mark` files previously under `hero-image`
+  (`may-generate-new`) — the wrong policy for a real trademark. Every reclassified
+  record carries an `evidence.roleReason`. `avatar` stays 0 observed: this capture
+  contains no real-person imagery (measured, not omitted).
+- **Motion budget reconciled.** `motion/motion-contract.json` said 2,
+  `compatibility/graph.json` said 9. Recomputed from `templates/templates.json` +
+  `sections/*.json`: the canonical value is **9** (attained by `template.home`,
+  9 animated sections of 11). Both contracts now carry 9.
+- **verify_all.py check 16** recomputes the motion budget and fails if either
+  contract disagrees, so the two cannot drift apart again.

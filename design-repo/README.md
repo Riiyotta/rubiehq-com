@@ -36,9 +36,11 @@ Still heuristic, and worth review before production use: semantic token role **n
 INDEX/FAQ/CTA) is an editorial reading of the site, not a measurement.
 
 Asset **roles** are measured from each file's own path and usage, and the compliance-relevant ones are pinned:
-the site's twelve third-party company logos carry `customer-logo` / `must-not-fabricate`, testimonial portraits
-carry `avatar` / `must-not-fabricate`, and only Rubie's own mark is `logo`. A generator must not reproduce any
-of them — see `assets/asset-roles.json`.
+the site's 22 third-party company marks carry `customer-logo` / `must-not-fabricate`, and only Rubie's own two
+marks carry `logo` / `must-reuse-exact`. `avatar` / `must-not-fabricate` is defined and pinned but has 0 observed
+assets: this capture contains no real-person imagery (the one person-adjacent file is a cityscape testimonial
+background, classified `content-image`). A generator must not reproduce any pinned asset — see
+`assets/asset-roles.json`, where every reclassified record carries an `evidence.roleReason`.
 
 ## Admit this repo
 

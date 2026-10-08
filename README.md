@@ -9,7 +9,7 @@ Offline mirror, information architecture and design repo for **Rubie | Rip and R
 | `src/`, `public/`, `index.html`, `package.json`, `vite.config.js`, `tailwind.config.js` | The runnable Vite + React clone, written from the real rendered DOM (section markup, the site's own CSS, real images / fonts / video, stills for canvas and Rive areas, no trackers). `npm install && npm run dev`. Details and per-section parity: `CLONE.md`, `qa/parity/`. |
 | `ia/` | `ia.json` is the IA source of truth (ia-builder schema) and the **only IA file to hand-edit**. `IA.md` and `matrix.csv` are generated from it by `build.mjs`. |
 | `design-repo/` | Generated design repo (BUILD-GUIDE layout). Start at `design-repo/registry.manifest.json`. |
-| `design-repo.zip` | Clean zip of `design-repo/` (no `.DS_Store` / `__MACOSX`); `verify_all.py` fails if any file is newer than it. |
+| `design-repo.zip` | Clean zip of `design-repo/` (no `.DS_Store` / `__MACOSX`); `verify_all.py` fails if any file is newer than it. **Pinned for N0 IR handoff** — see *Handoff package* below. |
 | `ir/` | Composition IR: base envelope schema, this site's profile schema, the IR document (every captured route composed as a pageSpec), and `validate_ir.py`. |
 | `CLONE_SPEC.md`, `ASSET_MANIFEST.md`, `ROUTES.md` | Recon docs: tokens in hex, every section's geometry at 1440 / 1280 / 390; the font / image / icon / embed inventory; the route list. Generated. |
 | `recon/` | Evidence. `recon/mirror/` is the offline mirror (`public/`, plus `src/` rendered-DOM snapshots that the design repo's `path:line-line` citations point at; serve it with `python3 recon/mirror/_serve.py`). `recon/images/`: screenshots; `recon/meta.json`: scrape metadata. |
@@ -54,3 +54,28 @@ A runnable Vite + React project written from the real rendered DOM: 22 section c
 | Canvas / Rive areas rebuilt as stills | PASS | 3 still(s), 0 empty canvas(es); 1 .riv file(s) left out of the clone |
 | Vite build + every cloned route loads offline | PASS | vite build ok; 21 route(s) loaded: 0 console/network error(s), 0 outside host(s), 0 empty page(s) |
 | Parity vs the original page, per section (gate 80%, every route) | FAIL | average 89.7% over 6 route(s); below the gate: / 56.2%; see `CLONE.md` |
+
+## Handoff package
+
+The immutable package for the N0 IR handoff is `design-repo.zip` at the repository root
+(the path `verify_all.py` checks, and the path this README documents).
+
+| field | value |
+|---|---|
+| path | `design-repo.zip` |
+| sha256 | `aec4d6be349a455891a2921049a43fe345b91ba15ca9f1dde0d539aa47aae77a` |
+| bytes | 88535 |
+| built | 2026-10-07 |
+| design-repo version | 0.1.1 (see `design-repo/CHANGELOG.md`) |
+
+Verify the pinned package before consuming it:
+
+```sh
+shasum -a 256 design-repo.zip
+# must print: aec4d6be349a455891a2921049a43fe345b91ba15ca9f1dde0d539aa47aae77a
+```
+
+If the hash does not match, the package has been rebuilt and this table is stale —
+re-run `python3 design-repo/extraction/verify_all.py`, which fails whenever any file
+under `design-repo/` is newer than the zip, then update this table. The hash is the
+contract: consumers should pin it, not the filename alone.

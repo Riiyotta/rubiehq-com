@@ -21,6 +21,8 @@
  13  no absolute machine paths in any JSON/MD file
  14  schema is valid draft-07; example validates with zero errors; adversarial suite passes
  15  zip hygiene, only if someone creates ../design-repo.zip by hand (the builder does not produce one)
+ 16  motion budget is one canonical measured value: recomputed from templates+sections, and both
+     motion/motion-contract.json and compatibility/graph.json must carry exactly that number
 
 Drift-proofing lives in extraction/prove_drift.py (injects each defect into a scratch copy).
 """
@@ -369,6 +371,42 @@ def main():
         zt = os.path.getmtime(z)
         newer = [os.path.relpath(os.path.join(rt, f), REPO) for rt, _, fs in os.walk(REPO) for f in fs if os.path.getmtime(os.path.join(rt, f)) > zt + 1 and "__pycache__" not in rt]
         if newer: errs.append(f"design-repo.zip is stale: {len(newer)} file(s) changed after it was built (e.g. {newer[0]})")
+
+    # 16  motion budget: one canonical measured value, recomputed then cross-checked in both contracts
+    sec_motion = {}
+    for f in files_in("sections"):
+        d = J(os.path.join("sections", f))
+        for sec in (d if isinstance(d, list) else [d]):
+            if isinstance(sec, dict) and sec.get("id"):
+                pats = [p for p in (sec.get("motion", {}).get("allowedPatterns") or []) if p != "none"]
+                sec_motion[sec["id"]] = bool(pats)
+    tdoc = J("templates/templates.json")
+    tl = tdoc if isinstance(tdoc, list) else tdoc.get("templates", [])
+    per_page, missing = {}, set()
+    for tpl in tl:
+        n = 0
+        for node in tpl.get("nodes", []):
+            sid = node.get("section")
+            if sid not in sec_motion: missing.add(sid)
+            elif sec_motion[sid]: n += 1
+        per_page[tpl.get("id", "?")] = n
+    if missing:
+        errs.append(f"motion budget: {len(missing)} template node(s) reference an unknown section (e.g. {sorted(missing)[0]})")
+    elif per_page:
+        measured = max(per_page.values())
+        attained = [k for k, v in per_page.items() if v == measured]
+        mc = J("motion/motion-contract.json").get("budget", {}).get("maxAnimatedSectionsPerPage")
+        gr = [r for r in J("compatibility/graph.json").get("rules", []) if r.get("id") == "MOTION_BUDGET"]
+        gmax = gr[0].get("max") if gr else None
+        if not gr:
+            errs.append("motion budget: compatibility/graph.json has no MOTION_BUDGET rule")
+        if mc != measured or gmax != measured:
+            errs.append(
+                f"motion budget disagrees with the measurement (recomputed {measured} from templates+sections, "
+                f"attained by {attained[0]}): motion-contract.json says {mc}, graph.json says {gmax}. "
+                f"All three must be the same number.")
+        else:
+            print(f"  motion budget: {measured} animated sections/page (recomputed; {attained[0]}) — both contracts agree")
     return finish()
 
 

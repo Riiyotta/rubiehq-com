@@ -1,0 +1,422 @@
+[
+ {
+  "route": "/",
+  "file": "home",
+  "reference": "home.png",
+  "height": 7219,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z10",
+    "y": 0,
+    "h": 7219
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/product",
+  "file": "product",
+  "reference": "product.png",
+  "height": 3875,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z102",
+    "y": 0,
+    "h": 3875
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/enterprise",
+  "file": "enterprise",
+  "reference": "enterprise.png",
+  "height": 3292,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z103",
+    "y": 0,
+    "h": 3292
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/customers",
+  "file": "customers",
+  "reference": "customers.png",
+  "height": 2865,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z104",
+    "y": 0,
+    "h": 2865
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/blog",
+  "file": "blog",
+  "reference": "blog.png",
+  "height": 1991,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z105",
+    "y": 0,
+    "h": 1991
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/privacy-policy",
+  "file": "privacy-policy",
+  "reference": "privacy_policy.png",
+  "height": 5777,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z106",
+    "y": 0,
+    "h": 5777
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/terms",
+  "file": "terms",
+  "reference": "terms.png",
+  "height": 7535,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z107",
+    "y": 0,
+    "h": 7535
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/solutions/migration-playbooks",
+  "file": "solutions_migration-playbooks",
+  "reference": "solutions_migration_playbooks.png",
+  "height": 4927,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z108",
+    "y": 0,
+    "h": 4927
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/solutions/integration-playbooks",
+  "file": "solutions_integration-playbooks",
+  "reference": "solutions_integration_playbooks.png",
+  "height": 6039,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z109",
+    "y": 0,
+    "h": 6039
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/customers/granum",
+  "file": "customers_granum",
+  "reference": "customers_granum.png",
+  "height": 4391,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1010",
+    "y": 0,
+    "h": 4391
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/customers/brivity",
+  "file": "customers_brivity",
+  "reference": "customers_brivity.png",
+  "height": 4715,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1011",
+    "y": 0,
+    "h": 4715
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/customers/cariina",
+  "file": "customers_cariina",
+  "reference": "customers_cariina.png",
+  "height": 3995,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1012",
+    "y": 0,
+    "h": 3995
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/use-cases/sales",
+  "file": "use-cases_sales",
+  "reference": "use_cases_sales.png",
+  "height": 4416,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1013",
+    "y": 0,
+    "h": 4416
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/use-cases/customer-success",
+  "file": "use-cases_customer-success",
+  "reference": "use_cases_customer_success.png",
+  "height": 4333,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1014",
+    "y": 0,
+    "h": 4333
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/use-cases/product",
+  "file": "use-cases_product",
+  "reference": "use_cases_product.png",
+  "height": 4352,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1015",
+    "y": 0,
+    "h": 4352
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/use-cases/healthcare",
+  "file": "use-cases_healthcare",
+  "reference": "use_cases_healthcare.png",
+  "height": 4328,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1016",
+    "y": 0,
+    "h": 4328
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/use-cases/financial-services",
+  "file": "use-cases_financial-services",
+  "reference": "use_cases_financial_services.png",
+  "height": 4356,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1017",
+    "y": 0,
+    "h": 4356
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/use-cases/education",
+  "file": "use-cases_education",
+  "reference": "use_cases_education.png",
+  "height": 4328,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1018",
+    "y": 0,
+    "h": 4328
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/customers/curbwaste",
+  "file": "customers_curbwaste",
+  "reference": "customers_curbwaste.png",
+  "height": 4569,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1019",
+    "y": 0,
+    "h": 4569
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/customers/bound",
+  "file": "customers_bound",
+  "reference": "customers_bound.png",
+  "height": 4719,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1020",
+    "y": 0,
+    "h": 4719
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ },
+ {
+  "route": "/blog/migration-revenue-killer",
+  "file": "blog_migration-revenue-killer",
+  "reference": "blog_migration_revenue_killer.png",
+  "height": 6326,
+  "overflowX": false,
+  "sections": [
+   {
+    "id": "Z1021",
+    "y": 0,
+    "h": 6326
+   },
+   {
+    "id": "C15tUiRootHE9Kz",
+    "y": 691,
+    "h": 189
+   }
+  ],
+  "pageErrors": []
+ }
+]

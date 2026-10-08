@@ -35,8 +35,10 @@
     "reducedMotionFallback"
   ],
   "budget": {
-    "maxAnimatedSectionsPerPage": 2,
-    "basis": "most animated measured page"
+    "maxAnimatedSectionsPerPage": 9,
+    "basis": "most animated measured page",
+    "derivation": "max over templates/templates.json of the count of nodes whose section has motion.allowedPatterns containing any value other than 'none'. Attained by template.home (9 of 11 sections).",
+    "mustEqual": "compatibility/graph.json rules[id=MOTION_BUDGET].max"
   },
   "tokens": {
     "durations": "tokens/00-foundation/motion.json",

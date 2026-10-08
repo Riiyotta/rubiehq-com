@@ -1,189 +1,725 @@
 {
   "gate": 0.8,
-  "average": 0.897,
+  "tolerance": 26,
+  "routesInApp": 21,
+  "routesScored": 21,
+  "excluded": {},
+  "average": 0.997,
+  "pass": true,
   "rows": [
     {
       "route": "/",
-      "reference": "original crawl screenshot",
+      "reference": "home.png",
       "sections": 2,
-      "compared": 2,
-      "sectionsInClone": 2,
       "mirrorPageHeight": 7219,
-      "clonePageHeight": 8452,
-      "score": 0.562,
-      "below": [
-        "0:Z10 55%"
-      ],
+      "clonePageHeight": 7219,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 0.989,
+      "score": 0.989,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
       "secRows": [
         {
-          "idx": 0,
           "component": "Z10",
           "mirrorHeight": 7219,
-          "cloneHeight": 8452,
-          "pixelMatch": 0.646,
-          "score": 0.552
+          "cloneHeight": 7219,
+          "y": 0,
+          "h": 7219,
+          "pixelMatch": 0.989,
+          "score": 0.989
         },
         {
-          "idx": 1,
           "component": "C15tUiRootHE9Kz",
-          "mirrorHeight": 189,
-          "cloneHeight": 189,
-          "pixelMatch": 0.951,
-          "score": 0.951
+          "mirrorHeight": 7219,
+          "cloneHeight": 7219,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
         }
       ],
-      "pass": false
+      "pass": true
+    },
+    {
+      "route": "/product",
+      "reference": "product.png",
+      "sections": 2,
+      "mirrorPageHeight": 3875,
+      "clonePageHeight": 3875,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z102",
+          "mirrorHeight": 3875,
+          "cloneHeight": 3875,
+          "y": 0,
+          "h": 3875,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 3875,
+          "cloneHeight": 3875,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/enterprise",
+      "reference": "enterprise.png",
+      "sections": 2,
+      "mirrorPageHeight": 3292,
+      "clonePageHeight": 3292,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z103",
+          "mirrorHeight": 3292,
+          "cloneHeight": 3292,
+          "y": 0,
+          "h": 3292,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 3292,
+          "cloneHeight": 3292,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
     },
     {
       "route": "/customers",
-      "reference": "original crawl screenshot",
+      "reference": "customers.png",
       "sections": 2,
-      "compared": 2,
-      "sectionsInClone": 2,
       "mirrorPageHeight": 2865,
       "clonePageHeight": 2865,
-      "score": 0.974,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
       "below": [],
+      "overflowX": false,
+      "pageErrors": [],
       "secRows": [
         {
-          "idx": 0,
           "component": "Z104",
           "mirrorHeight": 2865,
           "cloneHeight": 2865,
-          "pixelMatch": 0.972,
-          "score": 0.972
+          "y": 0,
+          "h": 2865,
+          "pixelMatch": 1.0,
+          "score": 1.0
         },
         {
-          "idx": 1,
           "component": "C15tUiRootHE9Kz",
-          "mirrorHeight": 189,
-          "cloneHeight": 189,
-          "pixelMatch": 0.998,
-          "score": 0.998
+          "mirrorHeight": 2865,
+          "cloneHeight": 2865,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/blog",
+      "reference": "blog.png",
+      "sections": 2,
+      "mirrorPageHeight": 1991,
+      "clonePageHeight": 1991,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z105",
+          "mirrorHeight": 1991,
+          "cloneHeight": 1991,
+          "y": 0,
+          "h": 1991,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 1991,
+          "cloneHeight": 1991,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/privacy-policy",
+      "reference": "privacy_policy.png",
+      "sections": 2,
+      "mirrorPageHeight": 5777,
+      "clonePageHeight": 5777,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z106",
+          "mirrorHeight": 5777,
+          "cloneHeight": 5777,
+          "y": 0,
+          "h": 5777,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 5777,
+          "cloneHeight": 5777,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/terms",
+      "reference": "terms.png",
+      "sections": 2,
+      "mirrorPageHeight": 7535,
+      "clonePageHeight": 7535,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z107",
+          "mirrorHeight": 7535,
+          "cloneHeight": 7535,
+          "y": 0,
+          "h": 7535,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 7535,
+          "cloneHeight": 7535,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
         }
       ],
       "pass": true
     },
     {
       "route": "/solutions/migration-playbooks",
-      "reference": "original crawl screenshot",
+      "reference": "solutions_migration_playbooks.png",
       "sections": 2,
-      "compared": 2,
-      "sectionsInClone": 2,
       "mirrorPageHeight": 4927,
-      "clonePageHeight": 4887,
-      "score": 0.968,
+      "clonePageHeight": 4927,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
       "below": [],
+      "overflowX": false,
+      "pageErrors": [],
       "secRows": [
         {
-          "idx": 0,
           "component": "Z108",
           "mirrorHeight": 4927,
-          "cloneHeight": 4887,
-          "pixelMatch": 0.969,
-          "score": 0.969
+          "cloneHeight": 4927,
+          "y": 0,
+          "h": 4927,
+          "pixelMatch": 1.0,
+          "score": 1.0
         },
         {
-          "idx": 1,
           "component": "C15tUiRootHE9Kz",
-          "mirrorHeight": 189,
-          "cloneHeight": 189,
-          "pixelMatch": 0.93,
-          "score": 0.93
+          "mirrorHeight": 4927,
+          "cloneHeight": 4927,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/solutions/integration-playbooks",
+      "reference": "solutions_integration_playbooks.png",
+      "sections": 2,
+      "mirrorPageHeight": 6039,
+      "clonePageHeight": 6039,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 0.997,
+      "score": 0.997,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z109",
+          "mirrorHeight": 6039,
+          "cloneHeight": 6039,
+          "y": 0,
+          "h": 6039,
+          "pixelMatch": 0.997,
+          "score": 0.997
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 6039,
+          "cloneHeight": 6039,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/customers/granum",
+      "reference": "customers_granum.png",
+      "sections": 2,
+      "mirrorPageHeight": 4391,
+      "clonePageHeight": 4391,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z1010",
+          "mirrorHeight": 4391,
+          "cloneHeight": 4391,
+          "y": 0,
+          "h": 4391,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 4391,
+          "cloneHeight": 4391,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
         }
       ],
       "pass": true
     },
     {
       "route": "/customers/brivity",
-      "reference": "original crawl screenshot",
+      "reference": "customers_brivity.png",
       "sections": 2,
-      "compared": 2,
-      "sectionsInClone": 2,
       "mirrorPageHeight": 4715,
-      "clonePageHeight": 4705,
-      "score": 0.899,
+      "clonePageHeight": 4715,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
       "below": [],
+      "overflowX": false,
+      "pageErrors": [],
       "secRows": [
         {
-          "idx": 0,
           "component": "Z1011",
           "mirrorHeight": 4715,
-          "cloneHeight": 4705,
-          "pixelMatch": 0.897,
-          "score": 0.897
+          "cloneHeight": 4715,
+          "y": 0,
+          "h": 4715,
+          "pixelMatch": 1.0,
+          "score": 1.0
         },
         {
-          "idx": 1,
           "component": "C15tUiRootHE9Kz",
-          "mirrorHeight": 189,
-          "cloneHeight": 189,
-          "pixelMatch": 0.936,
-          "score": 0.936
+          "mirrorHeight": 4715,
+          "cloneHeight": 4715,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/customers/cariina",
+      "reference": "customers_cariina.png",
+      "sections": 2,
+      "mirrorPageHeight": 3995,
+      "clonePageHeight": 3995,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z1012",
+          "mirrorHeight": 3995,
+          "cloneHeight": 3995,
+          "y": 0,
+          "h": 3995,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 3995,
+          "cloneHeight": 3995,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/use-cases/sales",
+      "reference": "use_cases_sales.png",
+      "sections": 2,
+      "mirrorPageHeight": 4416,
+      "clonePageHeight": 4416,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 0.992,
+      "score": 0.992,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z1013",
+          "mirrorHeight": 4416,
+          "cloneHeight": 4416,
+          "y": 0,
+          "h": 4416,
+          "pixelMatch": 0.992,
+          "score": 0.992
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 4416,
+          "cloneHeight": 4416,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/use-cases/customer-success",
+      "reference": "use_cases_customer_success.png",
+      "sections": 2,
+      "mirrorPageHeight": 4333,
+      "clonePageHeight": 4333,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 0.985,
+      "score": 0.985,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z1014",
+          "mirrorHeight": 4333,
+          "cloneHeight": 4333,
+          "y": 0,
+          "h": 4333,
+          "pixelMatch": 0.985,
+          "score": 0.985
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 4333,
+          "cloneHeight": 4333,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
         }
       ],
       "pass": true
     },
     {
       "route": "/use-cases/product",
-      "reference": "original crawl screenshot",
+      "reference": "use_cases_product.png",
       "sections": 2,
-      "compared": 2,
-      "sectionsInClone": 2,
       "mirrorPageHeight": 4352,
       "clonePageHeight": 4352,
-      "score": 0.989,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 0.995,
+      "score": 0.995,
       "below": [],
+      "overflowX": false,
+      "pageErrors": [],
       "secRows": [
         {
-          "idx": 0,
           "component": "Z1015",
           "mirrorHeight": 4352,
           "cloneHeight": 4352,
-          "pixelMatch": 0.989,
-          "score": 0.989
+          "y": 0,
+          "h": 4352,
+          "pixelMatch": 0.995,
+          "score": 0.995
         },
         {
-          "idx": 1,
           "component": "C15tUiRootHE9Kz",
-          "mirrorHeight": 189,
-          "cloneHeight": 189,
-          "pixelMatch": 1,
-          "score": 1
+          "mirrorHeight": 4352,
+          "cloneHeight": 4352,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/use-cases/healthcare",
+      "reference": "use_cases_healthcare.png",
+      "sections": 2,
+      "mirrorPageHeight": 4328,
+      "clonePageHeight": 4328,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 0.994,
+      "score": 0.994,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z1016",
+          "mirrorHeight": 4328,
+          "cloneHeight": 4328,
+          "y": 0,
+          "h": 4328,
+          "pixelMatch": 0.994,
+          "score": 0.994
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 4328,
+          "cloneHeight": 4328,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/use-cases/financial-services",
+      "reference": "use_cases_financial_services.png",
+      "sections": 2,
+      "mirrorPageHeight": 4356,
+      "clonePageHeight": 4356,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 0.996,
+      "score": 0.996,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z1017",
+          "mirrorHeight": 4356,
+          "cloneHeight": 4356,
+          "y": 0,
+          "h": 4356,
+          "pixelMatch": 0.996,
+          "score": 0.996
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 4356,
+          "cloneHeight": 4356,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
         }
       ],
       "pass": true
     },
     {
       "route": "/use-cases/education",
-      "reference": "original crawl screenshot",
+      "reference": "use_cases_education.png",
       "sections": 2,
-      "compared": 2,
-      "sectionsInClone": 2,
       "mirrorPageHeight": 4328,
       "clonePageHeight": 4328,
-      "score": 0.992,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 0.998,
+      "score": 0.998,
       "below": [],
+      "overflowX": false,
+      "pageErrors": [],
       "secRows": [
         {
-          "idx": 0,
           "component": "Z1018",
           "mirrorHeight": 4328,
           "cloneHeight": 4328,
-          "pixelMatch": 0.992,
-          "score": 0.992
+          "y": 0,
+          "h": 4328,
+          "pixelMatch": 0.998,
+          "score": 0.998
         },
         {
-          "idx": 1,
           "component": "C15tUiRootHE9Kz",
-          "mirrorHeight": 189,
-          "cloneHeight": 189,
-          "pixelMatch": 1,
-          "score": 1
+          "mirrorHeight": 4328,
+          "cloneHeight": 4328,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/customers/curbwaste",
+      "reference": "customers_curbwaste.png",
+      "sections": 2,
+      "mirrorPageHeight": 4569,
+      "clonePageHeight": 4569,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z1019",
+          "mirrorHeight": 4569,
+          "cloneHeight": 4569,
+          "y": 0,
+          "h": 4569,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 4569,
+          "cloneHeight": 4569,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/customers/bound",
+      "reference": "customers_bound.png",
+      "sections": 2,
+      "mirrorPageHeight": 4719,
+      "clonePageHeight": 4719,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z1020",
+          "mirrorHeight": 4719,
+          "cloneHeight": 4719,
+          "y": 0,
+          "h": 4719,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 4719,
+          "cloneHeight": 4719,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        }
+      ],
+      "pass": true
+    },
+    {
+      "route": "/blog/migration-revenue-killer",
+      "reference": "blog_migration_revenue_killer.png",
+      "sections": 2,
+      "mirrorPageHeight": 6326,
+      "clonePageHeight": 6326,
+      "heightAgreement": 1.0,
+      "pagePixelMatch": 1.0,
+      "score": 1.0,
+      "below": [],
+      "overflowX": false,
+      "pageErrors": [],
+      "secRows": [
+        {
+          "component": "Z1021",
+          "mirrorHeight": 6326,
+          "cloneHeight": 6326,
+          "y": 0,
+          "h": 6326,
+          "pixelMatch": 1.0,
+          "score": 1.0
+        },
+        {
+          "component": "C15tUiRootHE9Kz",
+          "mirrorHeight": 6326,
+          "cloneHeight": 6326,
+          "y": 691,
+          "h": 189,
+          "pixelMatch": 1.0,
+          "score": 1.0
         }
       ],
       "pass": true
     }
-  ],
-  "pass": false
+  ]
 }

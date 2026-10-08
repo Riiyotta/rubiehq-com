@@ -8,28 +8,29 @@
       "pinned": true,
       "description": "The site's own brand mark.",
       "licensing": "Use the exact supplied file. Never redraw, recolour, or invent a variant.",
-      "observed": 18
+      "observed": 2
     },
     "customer-logo": {
       "generationPolicy": "must-not-fabricate",
       "pinned": true,
       "description": "Third-party company logos shown as social proof.",
       "licensing": "Real trademarks. A generator must never create or reproduce a real company's logo; use an explicit placeholder.",
-      "observed": 0
+      "observed": 22
     },
     "avatar": {
       "generationPolicy": "must-not-fabricate",
       "pinned": true,
       "description": "Photos of real people (customers, team, authors).",
       "licensing": "Real people's likeness. Never generate or reuse a real person's photo; use a neutral placeholder.",
-      "observed": 0
+      "observed": 0,
+      "observedNote": "No real-person imagery found in this capture: the only person-adjacent asset is a cityscape testimonial background, classified content-image. 0 is a measured result, not an omission."
     },
     "icon": {
       "generationPolicy": "may-generate-new",
       "pinned": false,
       "description": "Small glyphs (<=48px) used as UI or feature markers.",
       "licensing": "Generic glyphs may be generated; do not copy a proprietary icon set verbatim.",
-      "observed": 109
+      "observed": 106
     },
     "illustration": {
       "generationPolicy": "may-generate-new",
@@ -50,7 +51,7 @@
       "pinned": false,
       "description": "Large image in the page-opening block.",
       "licensing": "May be regenerated; do not reproduce real product or customer content.",
-      "observed": 4
+      "observed": 1
     },
     "content-image": {
       "generationPolicy": "may-generate-new",
@@ -431,21 +432,23 @@
     {
       "path": "_next/image__3a7d810e",
       "bytes": 7414,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/",
         "section": "hero.main",
-        "rendered": "137x25"
+        "rendered": "137x25",
+        "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
       }
     },
     {
       "path": "images/logos/brivity-logo__0dc0adc0.svg",
       "bytes": 7250,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/customers",
         "section": "hero.main",
-        "rendered": "666x389"
+        "rendered": "666x389",
+        "roleReason": "third-party company mark (named file)"
       }
     },
     {
@@ -483,57 +486,63 @@
     {
       "path": "_next/image__23d4d84e",
       "bytes": 5526,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/",
         "section": "hero.main",
-        "rendered": "132x32"
+        "rendered": "132x32",
+        "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
       }
     },
     {
       "path": "_next/image__c119ed89",
       "bytes": 5470,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/",
         "section": "hero.main",
-        "rendered": "138x19"
+        "rendered": "138x19",
+        "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
       }
     },
     {
       "path": "images/marks/customer-hover-cariina-mark__0dc0adc0.svg",
       "bytes": 4823,
-      "role": "hero-image",
+      "role": "customer-logo",
       "evidence": {
         "route": "/customers",
         "section": "hero.main",
-        "rendered": "623x446"
+        "rendered": "623x446",
+        "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
       }
     },
     {
       "path": "images/marks/customer-hover-cariina-mark.svg",
       "bytes": 4823,
-      "role": "icon",
+      "role": "customer-logo",
       "evidence": {
-        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)",
+        "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
       }
     },
     {
       "path": "images/marks/customer-hover-granum-mark__0dc0adc0.svg",
       "bytes": 4533,
-      "role": "hero-image",
+      "role": "customer-logo",
       "evidence": {
         "route": "/customers",
         "section": "hero.main",
-        "rendered": "512x558"
+        "rendered": "512x558",
+        "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
       }
     },
     {
       "path": "images/marks/customer-hover-granum-mark.svg",
       "bytes": 4533,
-      "role": "icon",
+      "role": "customer-logo",
       "evidence": {
-        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)",
+        "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
       }
     },
     {
@@ -571,49 +580,54 @@
     {
       "path": "_next/image__45ba493b",
       "bytes": 4286,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/customers",
         "section": "hero.main",
-        "rendered": "928x485"
+        "rendered": "928x485",
+        "roleReason": "real mark of uncertain ownership (rotated/inverted decorative brand mark in the /customers section); conservatively pinned must-not-fabricate"
       }
     },
     {
       "path": "_next/image__c0cf0449",
       "bytes": 4126,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/",
         "section": "hero.main",
-        "rendered": "138x27"
+        "rendered": "138x27",
+        "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
       }
     },
     {
       "path": "_next/image__399bddc8",
       "bytes": 4126,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/customers",
         "section": "hero.main",
-        "rendered": "143x28"
+        "rendered": "143x28",
+        "roleReason": "third-party mark, alt=\"Bound\""
       }
     },
     {
       "path": "images/marks/customer-hover-curbwaste-mark__0dc0adc0.svg",
       "bytes": 3695,
-      "role": "hero-image",
+      "role": "customer-logo",
       "evidence": {
         "route": "/customers",
         "section": "hero.main",
-        "rendered": "554x422"
+        "rendered": "554x422",
+        "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
       }
     },
     {
       "path": "images/marks/customer-hover-curbwaste-mark.svg",
       "bytes": 3695,
-      "role": "icon",
+      "role": "customer-logo",
       "evidence": {
-        "note": "not referenced by the rendered DOM (CSS or lazy reference)"
+        "note": "not referenced by the rendered DOM (CSS or lazy reference)",
+        "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
       }
     },
     {
@@ -635,11 +649,12 @@
     {
       "path": "images/logos/curbwaste-black-white-logo__0dc0adc0.svg",
       "bytes": 2811,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/customers",
         "section": "hero.main",
-        "rendered": "115x65"
+        "rendered": "115x65",
+        "roleReason": "third-party company mark (named file)"
       }
     },
     {
@@ -661,11 +676,12 @@
     {
       "path": "_next/image__56d2ada9",
       "bytes": 2756,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/",
         "section": "hero.main",
-        "rendered": "122x24"
+        "rendered": "122x24",
+        "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
       }
     },
     {
@@ -679,31 +695,34 @@
     {
       "path": "_next/image__7925302f",
       "bytes": 2478,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/use-cases/product",
         "section": "hero.main",
-        "rendered": "120x32"
+        "rendered": "120x32",
+        "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
       }
     },
     {
       "path": "_next/image__674b2bfd",
       "bytes": 2422,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/",
         "section": "hero.main",
-        "rendered": "112x28"
+        "rendered": "112x28",
+        "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
       }
     },
     {
       "path": "images/logos/cariina-black-white-logo__0dc0adc0.svg",
       "bytes": 2401,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/customers",
         "section": "hero.main",
-        "rendered": "190x40"
+        "rendered": "190x40",
+        "roleReason": "third-party company mark (named file)"
       }
     },
     {
@@ -721,7 +740,8 @@
       "evidence": {
         "route": "/",
         "section": "hero.main",
-        "rendered": "91x20"
+        "rendered": "91x20",
+        "roleReason": "Rubie's own brand mark"
       }
     },
     {
@@ -801,11 +821,12 @@
     {
       "path": "images/logos/rillet-logo__0dc0adc0.svg",
       "bytes": 1793,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/use-cases/financial-services",
         "section": "hero.main",
-        "rendered": "147x32"
+        "rendered": "147x32",
+        "roleReason": "third-party company mark (named file)"
       }
     },
     {
@@ -835,11 +856,12 @@
     {
       "path": "images/logos/granum-black-white-logo__0dc0adc0.svg",
       "bytes": 1594,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/customers",
         "section": "hero.main",
-        "rendered": "180x33"
+        "rendered": "180x33",
+        "roleReason": "third-party company mark (named file)"
       }
     },
     {
@@ -853,11 +875,12 @@
     {
       "path": "_next/image__13251b03",
       "bytes": 1566,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/",
         "section": "hero.main",
-        "rendered": "102x24"
+        "rendered": "102x24",
+        "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
       }
     },
     {
@@ -985,7 +1008,8 @@
       "evidence": {
         "route": "/customers/granum",
         "section": "hero.main",
-        "rendered": "32x32"
+        "rendered": "32x32",
+        "roleReason": "Rubie's own brand mark"
       }
     },
     {
@@ -1389,11 +1413,12 @@
     {
       "path": "images/golf-live-logo__0dc0adc0.svg",
       "bytes": 462,
-      "role": "logo",
+      "role": "customer-logo",
       "evidence": {
         "route": "/",
         "section": "hero.main",
-        "rendered": "93x24"
+        "rendered": "93x24",
+        "roleReason": "third-party company mark (named file)"
       }
     },
     {

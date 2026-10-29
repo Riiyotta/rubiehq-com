@@ -1,0 +1,109 @@
+{
+  "id": "narrative.legal-clause",
+  "category": "NARRATIVE",
+  "label": "legal-clause",
+  "tag": "h2",
+  "purpose": "One heading-bounded clause of a legal document: the numbered h2 and the paragraphs and nested list items under it, up to the next h2.",
+  "purposeIsInferred": false,
+  "nameSource": "decomposed by real content boundaries from the clone's JSX (extraction/build_source_map.py DECOMPOSE)",
+  "evidence": {
+    "level": "measured",
+    "instances": 32,
+    "routes": 2,
+    "measuredFrom": [
+      "src/sections/Z106.jsx:298-299",
+      "src/sections/Z106.jsx:300-310",
+      "src/sections/Z106.jsx:311-318",
+      "src/sections/Z106.jsx:319-320",
+      "src/sections/Z106.jsx:321-322",
+      "src/sections/Z106.jsx:323-324",
+      "src/sections/Z106.jsx:325-326",
+      "src/sections/Z106.jsx:327-328",
+      "src/sections/Z106.jsx:329-342",
+      "src/sections/Z106.jsx:343-344",
+      "src/sections/Z106.jsx:345-351",
+      "src/sections/Z106.jsx:352-353",
+      "src/sections/Z106.jsx:354-365",
+      "src/sections/Z106.jsx:366-372",
+      "src/sections/Z106.jsx:373-380",
+      "src/sections/Z107.jsx:292-299",
+      "src/sections/Z107.jsx:300-302",
+      "src/sections/Z107.jsx:303-311",
+      "src/sections/Z107.jsx:312-313",
+      "src/sections/Z107.jsx:314-316",
+      "src/sections/Z107.jsx:317-336",
+      "src/sections/Z107.jsx:337-366",
+      "src/sections/Z107.jsx:367-368",
+      "src/sections/Z107.jsx:369-370",
+      "src/sections/Z107.jsx:371-378",
+      "src/sections/Z107.jsx:379-380",
+      "src/sections/Z107.jsx:381-384",
+      "src/sections/Z107.jsx:385-386",
+      "src/sections/Z107.jsx:387-389",
+      "src/sections/Z107.jsx:390-391",
+      "src/sections/Z107.jsx:392-394",
+      "src/sections/Z107.jsx:395-397"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 22
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 10,
+        "maxWords": 410
+      },
+      "listItems": {
+        "type": "string[]",
+        "required": false,
+        "maxItems": 22,
+        "maxWords": 75
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": false,
+        "maxItems": 3,
+        "maxWords": 1
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": false,
+    "maxPerPage": 17
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "founder-contact-email"
+  ],
+  "implementedBy": "src/sections/Z106.jsx > top[1] h2:0..h2:1",
+  "scope": "The 2 legal routes, /privacy-policy and /terms (one per numbered clause heading).",
+  "source": {
+    "id": "Z106:h2@298",
+    "tag": "h2",
+    "file": "src/sections/Z106.jsx",
+    "lines": [
+      298,
+      299
+    ],
+    "route": "/privacy-policy"
+  },
+  "semantic": {
+    "id": "narrative.legal-clause",
+    "category": "NARRATIVE"
+  },
+  "generatedAssetRoles": [
+    "placeholder-url"
+  ],
+  "retrievalEligible": true
+}

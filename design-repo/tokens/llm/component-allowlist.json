@@ -1,7 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "sections": [
     "cta.book-demo-band",
+    "cta.story-email-capture",
     "faq.accordion",
     "features.any-source",
     "features.automation-samples",
@@ -19,16 +20,21 @@
     "hero.page-title",
     "hero.solution",
     "hero.use-case",
+    "index.article-toc",
     "index.blog-roll",
-    "narrative.article-body",
-    "narrative.legal-body",
+    "narrative.article-chapter",
+    "narrative.article-sources",
+    "narrative.legal-clause",
+    "narrative.legal-header",
     "narrative.problem-statement",
     "narrative.result-callout",
     "narrative.solution-statement",
     "narrative.story-beat",
     "proof.compliance-badges",
+    "proof.story-company-facts",
     "proof.story-grid",
     "proof.story-metrics",
+    "proof.story-pull-quote",
     "proof.testimonials",
     "shell.consent-banner-root",
     "shell.footer",
@@ -57,12 +63,19 @@
   "nodeProperties": [
     "content",
     "motion",
+    "style",
     "type"
   ],
   "contentFields": {
     "cta.book-demo-band": [
       "ctas",
       "heading"
+    ],
+    "cta.story-email-capture": [
+      "ctas",
+      "heading",
+      "images",
+      "inputPlaceholder"
     ],
     "faq.accordion": [
       "body",
@@ -149,21 +162,32 @@
       "images",
       "listItems"
     ],
+    "index.article-toc": [
+      "ctas"
+    ],
     "index.blog-roll": [
       "body",
       "heading"
     ],
-    "narrative.article-body": [
+    "narrative.article-chapter": [
       "body",
-      "ctas",
       "heading",
       "items"
     ],
-    "narrative.legal-body": [
+    "narrative.article-sources": [
+      "body",
+      "heading"
+    ],
+    "narrative.legal-clause": [
       "body",
       "ctas",
       "heading",
       "listItems"
+    ],
+    "narrative.legal-header": [
+      "body",
+      "ctas",
+      "heading"
     ],
     "narrative.problem-statement": [
       "body",
@@ -181,15 +205,21 @@
       "items"
     ],
     "narrative.story-beat": [
+      "attribution",
       "body",
-      "ctas",
+      "eyebrow",
       "heading",
-      "images"
+      "quote"
     ],
     "proof.compliance-badges": [
       "body",
       "heading",
       "images"
+    ],
+    "proof.story-company-facts": [
+      "body",
+      "heading",
+      "items"
     ],
     "proof.story-grid": [
       "heading",
@@ -197,6 +227,10 @@
     ],
     "proof.story-metrics": [
       "body"
+    ],
+    "proof.story-pull-quote": [
+      "attribution",
+      "quote"
     ],
     "proof.testimonials": [
       "body",
@@ -219,5 +253,8 @@
       "listItems"
     ],
     "shell.spacer": []
-  }
+  },
+  "retrievalIneligible": [
+    "shell.consent-banner-root"
+  ]
 }

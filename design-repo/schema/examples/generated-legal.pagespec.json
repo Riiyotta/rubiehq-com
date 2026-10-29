@@ -1,0 +1,156 @@
+{
+  "pageSpecVersion": "0.3.0",
+  "mode": "generation",
+  "theme": "light",
+  "brand": {
+    "name": "Fernbrook",
+    "domain": "fernbrook.example"
+  },
+  "template": "template.legal",
+  "route": "/legal",
+  "nodes": [
+    {
+      "type": "shell.header",
+      "content": {
+        "listItems": [
+          "Spreadsheets",
+          "Legacy portals",
+          "Shared drives"
+        ],
+        "ctas": [
+          {
+            "label": "Plan a walkthrough",
+            "href": "/walkthrough"
+          },
+          {
+            "label": "Read the guide",
+            "href": "/guide"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "narrative.legal-header",
+      "content": {
+        "heading": "Stories from teams",
+        "body": [
+          "Your specialists approve each mapping once, and the next customer with the same shape of file starts from that plan.",
+          "Every import keeps a plain trail of what changed, who signed off and which rows still need a human eye."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "narrative.legal-clause",
+      "content": {
+        "heading": "Field notes on careful data moves",
+        "body": [
+          "Every import keeps a plain trail of what changed, who signed off and which rows still need a human eye.",
+          "Spreadsheets, old portals and odd text dumps all land in the same review queue instead of a support inbox."
+        ],
+        "listItems": [
+          "Shared drives",
+          "Email exports",
+          "Form archives"
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "narrative.legal-clause",
+      "content": {
+        "heading": "What happens to your information here",
+        "body": [
+          "Spreadsheets, old portals and odd text dumps all land in the same review queue instead of a support inbox.",
+          "Sales can promise a gentle switch because onboarding no longer waits on a sprint from the platform crew."
+        ],
+        "listItems": [
+          "Email exports",
+          "Form archives",
+          "Ticket histories"
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.footer",
+      "content": {
+        "heading": "What",
+        "items": [
+          {
+            "title": "Shared",
+            "body": "Ops"
+          },
+          {
+            "title": "Quiet",
+            "body": "Only"
+          },
+          {
+            "title": "Preview",
+            "body": "See"
+          }
+        ],
+        "ctas": [
+          {
+            "label": "Start a trial",
+            "href": "/start"
+          },
+          {
+            "label": "Plan a walkthrough",
+            "href": "/walkthrough"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.consent-banner-root",
+      "content": {
+        "ctas": [
+          {
+            "label": "Plan a",
+            "href": "/walkthrough"
+          },
+          {
+            "label": "Read the",
+            "href": "/guide"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    }
+  ]
+}

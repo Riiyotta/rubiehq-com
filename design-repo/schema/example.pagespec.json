@@ -1,5 +1,7 @@
 {
-  "pageSpecVersion": "0.2.0",
+  "pageSpecVersion": "0.3.0",
+  "mode": "clone",
+  "theme": "light",
   "template": "template.home",
   "route": "/",
   "nodes": [

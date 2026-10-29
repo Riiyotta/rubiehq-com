@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "rawValuesAllowed": false,
   "rawValueRestrictions": {
     "color": "forbidden",
@@ -11,10 +11,101 @@
     "layout": "forbidden"
   },
   "overrides": {
-    "perInstance": "none",
-    "note": "PageSpec has no per-instance style or token-override field; styling is owned entirely by section and component contracts. Nothing to validate or mutate at the PageSpec layer; drift is tested at the catalog/policy layer instead."
+    "perInstance": "tokens-only",
+    "note": "A PageSpec node may carry an optional closed `style` object whose values are token ids from token-catalog.json (never raw values). schema/semantic_validate.py enforces the TOKEN_* rules below; everything else about styling stays owned by the section and component contracts."
   },
   "enforcement": {
     "catalogPolicyParity": "machine-checked by extraction/verify_all.py"
-  }
+  },
+  "styleFields": {
+    "surface": {
+      "category": "color",
+      "prefix": "surface."
+    },
+    "textColor": {
+      "category": "color",
+      "prefix": "text."
+    },
+    "accent": {
+      "category": "color",
+      "prefix": "accent."
+    },
+    "typography": {
+      "category": "typography",
+      "prefix": "typography."
+    },
+    "spacingTop": {
+      "category": "layout",
+      "prefix": "layout."
+    },
+    "spacingBottom": {
+      "category": "layout",
+      "prefix": "layout."
+    },
+    "gap": {
+      "category": "layout",
+      "prefix": "layout."
+    },
+    "radius": {
+      "category": "radius",
+      "prefix": "radius."
+    },
+    "fontFamily": {
+      "category": "fontFamily",
+      "values": "supportedFontFamilies"
+    }
+  },
+  "supportedFontFamilies": [
+    "Geist",
+    "ui-monospace",
+    "system-ui"
+  ],
+  "supportedFontFamiliesSource": "tokens/00-foundation/typography.json fontFamily.* values (recomputed by verify_all.py)",
+  "themeCombinations": {
+    "light": {
+      "textOnSurface": {
+        "surface.accent": [],
+        "surface.alt": [
+          "text.accent",
+          "text.primary",
+          "text.secondary"
+        ],
+        "surface.default": [
+          "text.accent",
+          "text.primary",
+          "text.secondary"
+        ],
+        "surface.inverse": [
+          "text.inverse"
+        ]
+      },
+      "basis": "WCAG 2.x contrast ratio >= 4.5 between the theme's resolved surface.* and text.* values (recomputed by verify_all.py). surface.accent admits no semantic text token at 4.5:1; text on the accent surface is component-owned (button.color)."
+    }
+  },
+  "rules": [
+    {
+      "id": "TOKEN_UNKNOWN",
+      "what": "a style value that is not an approved token id for that field's category"
+    },
+    {
+      "id": "TOKEN_RAW_COLOR",
+      "what": "a raw hex / rgb() / rgba() / hsl() colour in any style field"
+    },
+    {
+      "id": "TOKEN_ARBITRARY_SPACING",
+      "what": "a raw length (px, rem, em, %, vh, vw or a bare number) in a spacing/radius field"
+    },
+    {
+      "id": "TOKEN_UNSUPPORTED_FONT",
+      "what": "a fontFamily outside supportedFontFamilies"
+    },
+    {
+      "id": "TOKEN_THEME_UNSUPPORTED",
+      "what": "a PageSpec theme not in registry.manifest.json schemaValidatedThemes"
+    },
+    {
+      "id": "TOKEN_THEME_COMBINATION",
+      "what": "a textColor that fails themeCombinations[theme].textOnSurface for the node's surface"
+    }
+  ]
 }

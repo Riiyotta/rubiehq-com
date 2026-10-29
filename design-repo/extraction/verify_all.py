@@ -10,10 +10,11 @@
   7  templates: every node has a contract; routes assigned exactly once; coverage matches the ledger
   8  constraints + graph recomputed from templates (a rule in prose and in code must agree)
   9  citations: every path:line-line resolves, is in range, and the cited line holds the cited tag.
-     The evidence tree is resolved from measured-values.json's sourceProject.snapshotFolder, never
-     guessed from a generic root src/ (which could be the runnable clone's own source) — a ledger
-     that declares one and finds it missing fails outright; one with none at all (an older ledger)
-     degrades to a warning instead, same as a design-repo shipped without its evidence tree.
+     The evidence tree is the runnable clone's own tracked source (sourceProject.snapshotFolder =
+     "src/", next to design-repo/), so a full git clone of the package checks every citation and asset.
+     Only a design-repo copied out ALONE (no src/, no public/, no package.json beside it) degrades to
+     a warning; a partial tree, or a declared folder that is missing next to a package, is an error.
+     Also: every route src/routes.js serves is in the ledger exactly once (R11).
  10  tokens: every {reference} resolves; theme resolves every semantic token to the recomputed value;
      catalog ids exist; policy categories match catalog keys
  11  assets: closed role vocabulary; PINNED roles hold their exact policy; files exist (warn if no public/)
@@ -24,38 +25,60 @@
  16  motion budget is one canonical measured value: recomputed from templates+sections, and both
      motion/motion-contract.json and compatibility/graph.json must carry exactly that number
 
+ 17  R7 provenance: closed schema/section-contract.schema.json; source {id,tag,file,lines} separate from
+     semantic {id,category}; source range re-read from the real file
+ 18  R8 retrieval: RETRIEVAL_INELIGIBLE pinned here (and in semantic_validate.py), registry/allowlist agree
+ 19  R3 asset availability: PINNED_AVAILABILITY pinned here (and in semantic_validate.py); substitutes are
+     generation-safe; assets reconciled with the clone's public/ (inClone flags, no unregistered file)
+ 20  R9 wrapper gate (extraction/wrapper_gate.py) over measured sectionHeights at 1440px
+ 21  R4/R2 examples: one generation example per template, all examples valid; source-identity, examples,
+     derived layers and ledger are in sync with their generators (when src/ is present)
+ 22  tokens: token-policy themeCombinations / supportedFontFamilies recomputed from the token files
+ 23  common-policy binding: manifest category + designPolicy, policy file present, contentHash matches
+
 Drift-proofing lives in extraction/prove_drift.py (injects each defect into a scratch copy).
 """
-import importlib.util, json, os, re, subprocess, sys, zipfile
+import hashlib, importlib.util, json, os, re, subprocess, sys, zipfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 PKG = os.path.dirname(REPO)
 MIRROR = PKG  # resolved for real at the top of main(), from measured-values.json's sourceProject.snapshotFolder
 errs, warns = [], []
-NOT_SHIPPED = False  # set when the evidence tree is absent because the package's .gitignore leaves it out (a published copy)
-
-
-def gitignored(rel):
-    """True when the package's own .gitignore excludes rel or one of its parent folders (plain folder patterns only)."""
-    gi = os.path.join(PKG, ".gitignore")
-    if not os.path.isfile(gi): return False
-    pats = {l.strip().strip("/") for l in open(gi, encoding="utf-8") if l.strip() and not l.lstrip().startswith("#")}
-    parts = rel.strip("/").split("/")
-    return any("/".join(parts[:i]) in pats for i in range(1, len(parts) + 1))
+ALONE = False  # set when design-repo/ was copied out on its own (no clone source next to it)
 # Pinned generation policies. Kept HERE, independent of assets/asset-roles.json, so that changing a
 # role in the registry to a different-but-still-valid policy is caught (membership alone is not enough).
 PINNED = {"logo": "must-reuse-exact", "customer-logo": "must-not-fabricate", "avatar": "must-not-fabricate",
           "font": "must-reuse-exact", "live-embed": "must-not-reuse-live-endpoint",
           "founder-contact-email": "must-not-reuse-live-endpoint"}
+# Availability pinned in code (same table in schema/semantic_validate.py; verify_all checks the two agree).
+PINNED_AVAILABILITY = {
+    "logo": "clone-only", "customer-logo": "blocked-for-generation", "avatar": "blocked-for-generation",
+    "icon": "generation-safe", "illustration": "generation-safe", "background": "generation-safe", "hero-image": "generation-safe",
+    "content-image": "clone-only", "animation": "clone-only", "animation-still": "clone-only", "video": "clone-only", "font": "clone-only",
+    "live-embed": "blocked-for-generation", "founder-contact-email": "blocked-for-generation",
+    "placeholder-brand-mark": "generation-safe", "user-supplied-asset": "generation-safe", "generated-illustration": "generation-safe",
+    "placeholder-screenshot": "generation-safe", "fictional-avatar": "generation-safe", "placeholder-customer-logo": "generation-safe",
+    "placeholder-url": "generation-safe", "original-copy": "generation-safe",
+}
+REQUIRED_GENERATION_SAFE = ["placeholder-brand-mark", "user-supplied-asset", "generated-illustration", "placeholder-screenshot",
+                            "fictional-avatar", "placeholder-customer-logo", "placeholder-url", "original-copy"]
+# Runtime / utility UI never retrievable as a content example (R8); same pin in semantic_validate.py.
+RETRIEVAL_INELIGIBLE = {"shell.consent-banner-root"}
+RUNTIME_UI = re.compile(r"consent|cookie|modal|dialog|drawer|popup|pop-up|overlay|preloader|toast|cursor", re.I)
+SAAS_POLICY = ("n0-saas-design-constraints-common", "0.1.0")
 REQUIRED = ["registry.manifest.json", "README.md", "CHANGELOG.md", "tokens/themes/light.json",
             "tokens/llm/token-catalog.json", "tokens/llm/token-policy.json", "tokens/llm/component-allowlist.json",
             "templates/templates.json", "compatibility/graph.json", "assets/asset-roles.json", "motion/motion-contract.json",
             "schema/pagespec.schema.json", "schema/example.pagespec.json", "schema/semantic_validate.py",
-            "schema/tests/adversarial_test.py", "extraction/measured-values.json", "extraction/prove_drift.py"]
+            "schema/tests/adversarial_test.py", "extraction/measured-values.json", "extraction/prove_drift.py",
+            "schema/section-contract.schema.json", "schema/source-identity.json", "extraction/wrapper_gate.py",
+            "extraction/measure_sections.mjs", "extraction/build_source_map.py", "extraction/build_source_identity.py",
+            "extraction/build_generation_examples.py", "extraction/sync_contract_layers.py", "policy/design-policy.json"]
 ENTRY_KEYS = ["tokenCatalog", "tokenPolicy", "componentAllowlist", "compatibilityGraph", "assetContract", "motionContract",
               "templates", "pagespecSchema", "examplePageSpec", "semanticValidate", "adversarialSuite", "admission",
-              "driftProof", "measuredValues", "defaultTheme"]
+              "driftProof", "measuredValues", "defaultTheme", "sectionContractSchema", "sourceIdentity", "wrapperGate",
+              "generationExamples", "designPolicy"]
 
 
 def J(rel):
@@ -100,26 +123,20 @@ def main():
     # older package that still keeps its evidence at the root. A ledger with no snapshotFolder at all (written by
     # a builder version that predates this field) falls back to the old recon/mirror-or-root heuristic so it is
     # not treated as a hard failure; a ledger that DOES declare one and the folder is missing is a real defect.
+    global ALONE
     snap = ledger.get("sourceProject", {}).get("snapshotFolder")
-    if snap:
-        mirror = os.path.normpath(os.path.join(PKG, snap, ".."))
-        if not os.path.isdir(mirror):
-            # A published copy of a package (the shipped zip, or a git clone of it) deliberately leaves the evidence out:
-            # recon/ is gigabytes. Such a copy carries neither recon/ nor the package's .gitignore, so the real signal is the
-            # absence of the whole evidence root — .gitignore alone only ever resolves inside the working tree, which is the
-            # one place recon/ is present anyway, so gating on it made the shipped zip fail its own verifier. Kept as an
-            # alternative so an in-tree copy that ignores recon/ still degrades. A declared folder missing while its evidence
-            # root IS present stays a hard failure: that is a typo or a moved tree, not a deliberate omission.
-            global NOT_SHIPPED
-            standard = os.path.normpath(snap) == os.path.normpath("recon/mirror/src")
-            root_absent = not os.path.isdir(os.path.join(PKG, snap.strip("/").split("/")[0]))
-            if standard and (root_absent or gitignored("recon/mirror/src")):
-                NOT_SHIPPED = True
-                warns.append("evidence not shipped with this copy (recon/ is absent): citations and asset files are not checked here; run verify_all.py where recon/mirror/ exists to admit fully")
-            else:
-                errs.append(f"measured-values.json declares sourceProject.snapshotFolder '{snap}' but {os.path.relpath(mirror, PKG)}/ does not exist")
-    else:
-        mirror = os.path.join(PKG, "recon", "mirror") if os.path.isdir(os.path.join(PKG, "recon", "mirror")) else PKG
+    if not snap:
+        errs.append("measured-values.json declares no sourceProject.snapshotFolder (the evidence tree must be named, never guessed)")
+        return finish()
+    mirror = os.path.normpath(os.path.join(PKG, snap, ".."))
+    beside = {k: os.path.exists(os.path.join(PKG, k)) for k in ("src", "public", "package.json")}
+    if not any(beside.values()):
+        ALONE = True
+        warns.append("design-repo/ copied out alone (no src/, public/ or package.json beside it): citations, asset files, route coverage and generator freshness are not checked here; run verify_all.py in a checkout of the package to admit fully")
+    elif not all(beside.values()):
+        errs.append(f"partial package beside design-repo/: {', '.join(k for k, v in beside.items() if not v)} missing (expected the runnable clone: src/, public/, package.json)")
+    elif not os.path.isdir(os.path.join(PKG, snap)):
+        errs.append(f"measured-values.json declares sourceProject.snapshotFolder '{snap}' but {snap} does not exist beside design-repo/")
     global MIRROR
     MIRROR = mirror
     secs = {}
@@ -248,15 +265,23 @@ def main():
     for r in ledger["routes"]:
         for s_ in r["sections"]:
             if s_.get("lines"):
-                ledger_at[f"{r['file']}:{s_['lines'][0]}-{s_['lines'][1]}"] = dict(s_, file=r["file"])
+                f_ = s_.get("file", r["file"])
+                ledger_at[f"{f_}:{s_['lines'][0]}-{s_['lines'][1]}"] = dict(s_, file=f_)
     for sid, c in secs.items():  # a contract may only cite ranges the ledger attributes to THIS section
         for cite in c["evidence"].get("measuredFrom", []):
             e = ledger_at.get(cite)
             if not e: errs.append(f"citation {cite} in sections/{sid}.json is not a measured section range")
             elif e["id"] != sid: errs.append(f"citation {cite} in sections/{sid}.json points at '{e['id']}', not '{sid}'")
-    if not os.path.isdir(src):
-        warns.append(f"no evidence src/ tree at {os.path.relpath(src, PKG)} — {len(ledger_at)} citations not resolved against files (expected when design-repo/ is shipped alone)")
-    else:
+    if ALONE:
+        warns.append(f"{len(ledger_at)} citations not resolved against files (design-repo/ shipped alone)")
+    elif os.path.isdir(src):
+        rj = os.path.join(src, "routes.js")
+        served = re.findall(r'path:\s*"([^"]+)"', open(rj, encoding="utf-8").read()) if os.path.isfile(rj) else None
+        if served is None: errs.append("src/routes.js not found: cannot enumerate the routes the clone serves")
+        else:
+            for x in sorted(set(served) - set(ledger_routes)): errs.append(f"route coverage: src/routes.js serves {x} but no template maps it")
+            for x in sorted(set(ledger_routes) - set(served)): errs.append(f"route coverage: the ledger maps {x} but src/routes.js does not serve it")
+            for x in sorted({x for x in served if served.count(x) > 1}): errs.append(f"route coverage: src/routes.js declares {x} twice")
         cache = {}
         for cite, e in ledger_at.items():
             m = re.match(r"^(.+):(\d+)-(\d+)$", cite)
@@ -305,19 +330,25 @@ def main():
     for r, want in PINNED.items():
         if r not in roles: errs.append(f"pinned asset role '{r}' is missing from the registry")
         elif roles[r]["generationPolicy"] != want or not roles[r].get("pinned"): errs.append(f"pinned asset role '{r}' must be '{want}' (pinned), found '{roles[r]['generationPolicy']}'")
-    pub = os.path.join(MIRROR, "public")
+    pub = os.path.join(PKG, "public")
     # Some asset entries are not a file under public/ at all (e.g. a mailto: contact address) — real
     # evidence worth a pinned contract, but nothing to resolve on disk.
     is_virtual = lambda a: ":" in a["path"].split("/")[0] and not re.match(r"^[A-Za-z]:\\", a["path"])
     for a in assets["assets"]:
         if a["role"] not in roles: errs.append(f"asset {a['path']}: role '{a['role']}' is not in the closed role set")
-    if os.path.isdir(pub):
+    if os.path.isdir(pub) and not ALONE:
+        on_disk = {os.path.relpath(os.path.join(rt, f), pub) for rt, _, fs in os.walk(pub) for f in fs}
         for a in assets["assets"]:
-            if is_virtual(a): continue
-            p = os.path.join(pub, a["path"])
-            if not os.path.isfile(p): errs.append(f"asset missing on disk: public/{a['path']}")
+            if "inClone" not in a: errs.append(f"asset {a['path']}: no inClone flag (reconcile the registry against the clone's public/)"); continue
+            if is_virtual(a):
+                if a["inClone"]: errs.append(f"asset {a['path']}: a virtual (non-file) asset cannot be inClone")
+                continue
+            if a["inClone"] and a["path"] not in on_disk: errs.append(f"asset missing on disk: public/{a['path']} (registry says inClone)")
+            if not a["inClone"] and a["path"] in on_disk: errs.append(f"asset public/{a['path']} is in the clone but the registry says inClone=false")
+        for x in sorted(on_disk - {a["path"] for a in assets["assets"]}): errs.append(f"asset public/{x} ships in the clone but has no registry entry/role")
+        print(f"  assets: {sum(1 for a in assets['assets'] if a.get('inClone'))} registry entries resolved under public/, {len(on_disk)} clone files all registered")
     else:
-        warns.append(f"no evidence public/ mirror at {os.path.relpath(pub, PKG)} — asset files not checked")
+        warns.append("asset files not checked (design-repo/ shipped alone)")
     for sid, c in secs.items():
         for r in c.get("assetRoles", []):
             if r not in roles: errs.append(f"sections/{sid}.json uses unknown asset role '{r}'")
@@ -332,8 +363,11 @@ def main():
             if p not in mc_["patterns"]: errs.append(f"sections/{sid}.json motion pattern '{p}' is not in the motion contract")
 
     # 13  machine paths: every JSON string VALUE that starts with one (site routes like "/home/about" are not paths)
-    leak = re.compile(r"^(/Users/|/home/[^/]+/|/private/|/var/folders/|/tmp/|[A-Za-z]:\\\\)")
-    md_leak = re.compile(r"(?:^|[\s`(\"'])(/Users/|/home/[^/\s]+/|/private/|/var/folders/|/tmp/|[A-Za-z]:\\\\)", re.M)
+    # machine-path prefixes, assembled from parts so this file itself never contains one
+    roots = ["/" + x + "/" for x in ("Us" + "ers", "pri" + "vate", "var/fol" + "ders", "t" + "mp")]
+    alt = "|".join(re.escape(x) for x in roots)
+    leak = re.compile(r"^(" + alt + r"|/home/[^/]+/|[A-Za-z]:\\\\)")
+    md_leak = re.compile(r"(?:^|[\s`(\"'])(" + alt + r"|/home/[^/\s]+/|[A-Za-z]:\\\\)", re.M)
     ROUTE_KEYS = {"route", "routes", "sampleRoute", "routePattern"}
     def walk(v, key=None):
         if isinstance(v, dict):
@@ -352,8 +386,11 @@ def main():
             elif f.endswith(".md"):
                 m = md_leak.search(open(p, encoding="utf-8", errors="ignore").read())
                 if m: errs.append(f"absolute path in {rel}: {m.group(1)}")
-            elif f.endswith(".py") and re.search(r"^(REPO|ROOT|HERE)\s*=\s*['\"]/", open(p, encoding="utf-8").read(), re.M):
-                errs.append(f"hard-coded root path in {rel}")
+            elif f.endswith((".py", ".mjs", ".js")):
+                code_ = open(p, encoding="utf-8").read()
+                if re.search(r"^(REPO|ROOT|HERE)\s*=\s*['\"]/", code_, re.M): errs.append(f"hard-coded root path in {rel}")
+                m = re.search(alt, code_)
+                if m: errs.append(f"absolute path in {rel}: {m.group(0)}")
 
     # 14
     from jsonschema import Draft7Validator
@@ -412,6 +449,130 @@ def main():
                 f"All three must be the same number.")
         else:
             print(f"  motion budget: {measured} animated sections/page (recomputed; {attained[0]}) — both contracts agree")
+
+    # 17  R7 provenance: closed contract schema + source/semantic split, source range re-read
+    from jsonschema import Draft7Validator as _D7
+    csv_ = _D7(J("schema/section-contract.schema.json"))
+    for sid, c in secs.items():
+        for e in csv_.iter_errors(c): errs.append(f"sections/{sid}.json violates section-contract.schema.json: {'/'.join(map(str, e.absolute_path)) or '(root)'}: {e.message[:160]}")
+        so, se = c.get("source", {}), c.get("semantic", {})
+        if se.get("id") != sid: errs.append(f"sections/{sid}.json semantic.id must equal the contract id")
+        if se.get("category") != c.get("category"): errs.append(f"sections/{sid}.json semantic.category differs from category")
+        if so.get("id") == sid: errs.append(f"sections/{sid}.json source.id must not equal the semantic id (provenance is not taxonomy)")
+        cite = f"{so.get('file')}:{(so.get('lines') or [0, 0])[0]}-{(so.get('lines') or [0, 0])[-1]}"
+        if cite not in c["evidence"].get("measuredFrom", []): errs.append(f"sections/{sid}.json source range {cite} is not one of its measuredFrom citations")
+        elif not ALONE:
+            p_ = os.path.join(PKG, so["file"])
+            L_ = open(p_, encoding="utf-8").read().split("\n") if os.path.isfile(p_) else []
+            if not (1 <= so["lines"][0] <= so["lines"][1] <= len(L_)): errs.append(f"sections/{sid}.json source range {cite} is outside {so['file']}")
+            elif f"<{so.get('tag')}" not in L_[so["lines"][0] - 1]: errs.append(f"sections/{sid}.json source: line {so['lines'][0]} of {so['file']} has no <{so.get('tag')}>")
+
+    # 18  R8 retrieval eligibility pinned in code
+    for sid, c in secs.items():
+        want = sid not in RETRIEVAL_INELIGIBLE
+        if c.get("retrievalEligible") is not want: errs.append(f"retrieval pin: sections/{sid}.json retrievalEligible={c.get('retrievalEligible')!r}, pinned {want}")
+        if want and RUNTIME_UI.search(sid + " " + c.get("label", "") + " " + c.get("purpose", "")[:60]): errs.append(f"retrieval pin: {sid} looks like runtime UI but is not in RETRIEVAL_INELIGIBLE")
+    for sid in RETRIEVAL_INELIGIBLE:
+        if sid not in secs: errs.append(f"retrieval pin: {sid} has no contract")
+    if sorted(allow.get("retrievalIneligible", [])) != sorted(RETRIEVAL_INELIGIBLE): errs.append(f"allowlist.retrievalIneligible {allow.get('retrievalIneligible')} differs from the code pin {sorted(RETRIEVAL_INELIGIBLE)}")
+    if set(sv.RETRIEVAL_INELIGIBLE) != RETRIEVAL_INELIGIBLE: errs.append("RETRIEVAL_INELIGIBLE differs between verify_all.py and semantic_validate.py")
+
+    # 19  R3 availability pinned in code
+    if sv.PINNED_AVAILABILITY != PINNED_AVAILABILITY: errs.append("PINNED_AVAILABILITY differs between verify_all.py and semantic_validate.py")
+    av_vals = {"clone-only", "generation-safe", "blocked-for-generation"}
+    for r, v in roles.items():
+        if v.get("availability") not in av_vals: errs.append(f"asset role {r}: availability {v.get('availability')!r} is not one of {sorted(av_vals)}")
+        if PINNED_AVAILABILITY.get(r) != v.get("availability"): errs.append(f"PINNED_AVAILABILITY: asset role '{r}' is '{v.get('availability')}' in the registry, pinned '{PINNED_AVAILABILITY.get(r)}'")
+        if len(v.get("generatedModeGuidance", "")) < 30: errs.append(f"asset role {r}: generatedModeGuidance missing or shorter than 30 characters")
+        subs = v.get("generationSafeSubstitutes")
+        if not isinstance(subs, list): errs.append(f"asset role {r}: no generationSafeSubstitutes list")
+        elif v.get("availability") != "generation-safe" and not subs: errs.append(f"asset role {r} is {v.get('availability')} but names no generationSafeSubstitutes")
+        else:
+            for x in subs:
+                if roles.get(x, {}).get("availability") != "generation-safe": errs.append(f"asset role {r}: substitute '{x}' is not a generation-safe role")
+        if v.get("availability") == "generation-safe" and v.get("generationPolicy") == "must-reuse-exact": errs.append(f"asset role {r}: a must-reuse-exact role cannot be generation-safe")
+    for r in PINNED_AVAILABILITY:
+        if r not in roles: errs.append(f"PINNED_AVAILABILITY names '{r}' but the registry has no such role")
+    for r in REQUIRED_GENERATION_SAFE:
+        if PINNED_AVAILABILITY.get(r) != "generation-safe": errs.append(f"required generation-safe role '{r}' is not pinned generation-safe")
+    for sid, c in secs.items():
+        want = sorted({x for r in c.get("assetRoles", []) for x in ([r] if roles.get(r, {}).get("availability") == "generation-safe" else roles.get(r, {}).get("generationSafeSubstitutes", []))})
+        if sorted(c.get("generatedAssetRoles", [])) != want: errs.append(f"sections/{sid}.json generatedAssetRoles {c.get('generatedAssetRoles')} != derived {want}")
+
+    # 20  R9 wrapper gate over measured heights
+    wg = importlib.util.spec_from_file_location("wrapper_gate", os.path.join(HERE, "wrapper_gate.py"))
+    wgm = importlib.util.module_from_spec(wg); wg.loader.exec_module(wgm)
+    if (wgm.HERO_WARN_PX, wgm.HERO_ERROR_PX, wgm.SHARE_WARN, wgm.SHARE_ERROR) != (1800, 3000, 0.50, 0.60):
+        errs.append("wrapper gate thresholds drifted from the pinned 1800/3000px and 50%/60%")
+    ge, gw = wgm.check(REPO)
+    errs.extend(ge); warns.extend(gw)
+    if not ge: print(f"  wrapper gate: {sum(len(v['sections']) for v in ledger.get('sectionHeights', {}).get('routes', {}).values())} measured sections at 1440px, 0 errors, {len(gw)} warning(s)")
+
+    # 21  examples + generator freshness
+    exdir = os.path.join(REPO, "schema", "examples")
+    exs = sorted(f for f in os.listdir(exdir) if f.endswith(".json")) if os.path.isdir(exdir) else []
+    gen_t = set()
+    for f in exs:
+        ex = J(f"schema/examples/{f}")
+        ee, _ = sv.check(ex)
+        for e in ee: errs.append(f"schema/examples/{f}: {e}")
+        if ex.get("mode") == "generation": gen_t.add(ex.get("template"))
+    for t in templates:
+        if t["id"] not in gen_t: errs.append(f"no mode=generation example PageSpec for {t['id']} (schema/examples/)")
+    if J("schema/example.pagespec.json").get("mode") != "clone": errs.append("schema/example.pagespec.json must be the clone-mode control")
+    probe = "“Rubie’s​ data — moves”"
+    import importlib as _il
+    bs = importlib.util.spec_from_file_location("bsi", os.path.join(HERE, "build_source_identity.py")); bsm = importlib.util.module_from_spec(bs); bs.loader.exec_module(bsm)
+    if bsm.normalize(probe) != sv.normalize(probe) or bsm.words(probe) != sv.norm_words(probe):
+        errs.append("text normalisation differs between build_source_identity.py and semantic_validate.py")
+    if not ALONE and os.environ.get("VERIFY_SKIP_FRESHNESS") != "1":
+        for script in ("build_source_map.py", "sync_contract_layers.py", "build_source_identity.py", "build_generation_examples.py"):
+            r_ = subprocess.run([sys.executable, os.path.join(HERE, script), "--check"], capture_output=True, text=True)
+            if r_.returncode: errs.append(f"{script} --check: generated files are stale: {(r_.stdout + r_.stderr).strip()[-300:]}")
+
+    # 22  token policy recomputed from the token files
+    def _lum(c):
+        r_, g_, b_ = [int(x) / 255 for x in re.findall(r"\d+", c)[:3]]
+        f_ = lambda v: v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4
+        return 0.2126 * f_(r_) + 0.7152 * f_(g_) + 0.0722 * f_(b_)
+    def _cr(a_, b_):
+        x, y = sorted([_lum(a_), _lum(b_)], reverse=True); return (x + 0.05) / (y + 0.05)
+    combos = {s_: sorted(t for t in theme if t.startswith("text.") and _cr(theme[s_], theme[t]) >= 4.5) for s_ in sorted(theme) if s_.startswith("surface.")}
+    if pol.get("themeCombinations", {}).get("light", {}).get("textOnSurface") != combos: errs.append(f"token-policy themeCombinations.light.textOnSurface differs from the contrast recomputed from tokens/themes/light.json: {combos}")
+    fams = [v["$value"] for k, v in F.items() if k.startswith("fontFamily.")]
+    if pol.get("supportedFontFamilies") != fams: errs.append(f"token-policy supportedFontFamilies {pol.get('supportedFontFamilies')} != tokens/00-foundation fontFamily values {fams}")
+    if sorted(pol.get("styleFields", {})) != sorted(schema["definitions"]["style"]["properties"]): errs.append("token-policy styleFields differ from the schema style properties")
+    for k, fs in pol.get("styleFields", {}).items():
+        if fs["category"] != "fontFamily" and fs["category"] not in cat: errs.append(f"token-policy styleFields.{k} names catalog category '{fs['category']}' that does not exist")
+    if "mode" not in schema.get("required", []) or sorted(schema["properties"]["mode"].get("enum", [])) != ["clone", "generation"]: errs.append("schema: mode must be required with enum [clone, generation]")
+
+    # 23  common-policy / category binding
+    dp = man.get("designPolicy", {})
+    for k in ("ref", "policyId", "policyVersion", "commonIrVersion", "enforcementMode", "contentHash"):
+        if k not in dp: errs.append(f"manifest designPolicy.{k} missing")
+    if not man.get("category"): errs.append("manifest category missing")
+    pf = os.path.join(REPO, dp.get("ref", "policy/design-policy.json"))
+    if not os.path.isfile(pf): errs.append(f"designPolicy.ref {dp.get('ref')} does not exist")
+    else:
+        pd = json.load(open(pf, encoding="utf-8"))
+        saas = pd.get("classification", {}).get("isSaaS")
+        if (dp.get("policyId"), dp.get("policyVersion")) != (pd.get("policyId"), pd.get("policyVersion")): errs.append("manifest designPolicy policyId/policyVersion differ from the policy file")
+        if dp.get("commonIrVersion") != "0.5" or pd.get("commonIrVersion") != "0.5": errs.append("designPolicy commonIrVersion must be 0.5")
+        if dp.get("enforcementMode") != "hard-and-soft": errs.append("designPolicy enforcementMode must be hard-and-soft")
+        if saas is True and (dp.get("policyId"), dp.get("policyVersion")) != SAAS_POLICY: errs.append(f"a SaaS repo must bind {SAAS_POLICY[0]} v{SAAS_POLICY[1]}")
+        if saas is False and dp.get("policyId") == SAAS_POLICY[0]: errs.append("a non-SaaS repo must not bind the SaaS common policy")
+        if saas is True and man.get("category") != "saas": errs.append("policy classification isSaaS=true but manifest category is not 'saas'")
+        h = hashlib.sha256()
+        for rel in sorted(pd.get("enforcedBy", [])):
+            fp = os.path.join(REPO, rel)
+            if not os.path.isfile(fp): errs.append(f"policy enforcedBy {rel} does not exist"); continue
+            h.update(rel.encode() + b"\0" + open(fp, "rb").read() + b"\0")
+        if dp.get("contentHash") != "sha256:" + h.hexdigest(): errs.append(f"designPolicy.contentHash is stale: files give sha256:{h.hexdigest()}")
+        if not ALONE:
+            for ev in pd.get("classificationEvidence", []):
+                fp = os.path.join(PKG, ev["file"])
+                L_ = open(fp, encoding="utf-8").read().split("\n") if os.path.isfile(fp) else []
+                if not (0 < ev["line"] <= len(L_)) or ev["needle"] not in L_[ev["line"] - 1]: errs.append(f"policy evidence {ev['file']}:{ev['line']} does not contain {ev['needle']!r}")
     return finish()
 
 
@@ -425,10 +586,10 @@ def finish():
     for w in warns: print("WARN:", w)
     if errs:
         print("REPO NOT ADMITTED:"); [print("  -", e) for e in errs]; sys.exit(1)
-    if NOT_SHIPPED:
-        print("REPO OK (evidence not shipped with this copy: citations and asset files not checked) — structure, entryPoints, versions, counts, parity, templates, graph, tokens, pinned assets, motion, paths, schema and adversarial suite all pass.")
+    if ALONE:
+        print("REPO OK (design-repo copied out alone: citations, asset files, route coverage and generator freshness not checked) — structure, entryPoints, versions, counts, parity, templates, graph, provenance shape, retrieval/availability pins, wrapper gate, tokens, policy binding, motion, paths, schema, examples and adversarial suite all pass.")
     else:
-        print("REPO OK — structure, entryPoints, versions, counts, parity, templates, graph, citations, tokens, pinned assets, motion, paths, schema and adversarial suite all pass.")
+        print("REPO OK — structure, entryPoints, versions, counts, parity, templates, graph, citations, route coverage, assets vs the clone, provenance, retrieval/availability pins, wrapper gate, tokens, policy binding, generator freshness, motion, paths, schema, examples and adversarial suite all pass.")
     sys.exit(0)
 
 

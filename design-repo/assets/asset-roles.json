@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "sourceIsLiveSite": true,
   "defaultPolicy": "Assets are evidence from a real, live site. Do not reuse without licence review; never reproduce real logos, real people's photos or proprietary content.",
   "roles": {
@@ -8,14 +8,25 @@
       "pinned": true,
       "description": "The site's own brand mark.",
       "licensing": "Use the exact supplied file. Never redraw, recolour, or invent a variant.",
-      "observed": 2
+      "observed": 2,
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "placeholder-brand-mark",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Generation mode: never the Rubie mark or wordmark, redrawn or not. Use placeholder-brand-mark or a mark the operator supplies (user-supplied-asset)."
     },
     "customer-logo": {
       "generationPolicy": "must-not-fabricate",
       "pinned": true,
       "description": "Third-party company logos shown as social proof.",
       "licensing": "Real trademarks. A generator must never create or reproduce a real company's logo; use an explicit placeholder.",
-      "observed": 22
+      "observed": 22,
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "placeholder-customer-logo"
+      ],
+      "generatedModeGuidance": "Generation mode: never a real company's logo or name. Use placeholder-customer-logo with fictional company names."
     },
     "avatar": {
       "generationPolicy": "must-not-fabricate",
@@ -23,77 +34,227 @@
       "description": "Photos of real people (customers, team, authors).",
       "licensing": "Real people's likeness. Never generate or reuse a real person's photo; use a neutral placeholder.",
       "observed": 0,
-      "observedNote": "No real-person imagery found in this capture: the only person-adjacent asset is a cityscape testimonial background, classified content-image. 0 is a measured result, not an omission."
+      "observedNote": "No real-person imagery found in this capture: the only person-adjacent asset is a cityscape testimonial background, classified content-image. 0 is a measured result, not an omission.",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "fictional-avatar"
+      ],
+      "generatedModeGuidance": "Generation mode: never a real person's photo. Use fictional-avatar (generated or abstract)."
     },
     "icon": {
       "generationPolicy": "may-generate-new",
       "pinned": false,
       "description": "Small glyphs (<=48px) used as UI or feature markers.",
       "licensing": "Generic glyphs may be generated; do not copy a proprietary icon set verbatim.",
-      "observed": 106
+      "observed": 106,
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generate new generic glyphs; do not reference the source icon files (their paths are rejected by GENERATION_MODE_ASSET)."
     },
     "illustration": {
       "generationPolicy": "may-generate-new",
       "pinned": false,
       "description": "Large vector artwork.",
       "licensing": "May be regenerated in the same style; do not reproduce the original artwork.",
-      "observed": 2
+      "observed": 2,
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generate new artwork in a neutral style; never the source files or the Rubie mascot."
     },
     "background": {
       "generationPolicy": "may-generate-new",
       "pinned": false,
       "description": "Full-bleed or decorative backgrounds.",
       "licensing": "May be regenerated; do not reuse the original file.",
-      "observed": 0
+      "observed": 0,
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generate new backgrounds; do not reuse the source files."
     },
     "hero-image": {
       "generationPolicy": "may-generate-new",
       "pinned": false,
       "description": "Large image in the page-opening block.",
       "licensing": "May be regenerated; do not reproduce real product or customer content.",
-      "observed": 1
+      "observed": 1,
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generate a new hero visual; never a real product UI or customer content, never the source file."
     },
     "content-image": {
       "generationPolicy": "may-generate-new",
       "pinned": false,
       "description": "Other in-page imagery (screenshots, photos, cards).",
       "licensing": "May be regenerated; never include real customer data, names or proprietary UI.",
-      "observed": 39
+      "observed": 39,
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "placeholder-screenshot",
+        "generated-illustration",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Source screenshots and customer imagery are clone-only. Use placeholder-screenshot, generated-illustration or user-supplied-asset."
     },
     "animation": {
       "generationPolicy": "must-reuse-exact",
       "pinned": false,
       "description": "Rive / Lottie animation files that drive canvas animations.",
       "licensing": "The site's own animation assets. Reuse only the supplied file; never recreate or imitate it for a different brand.",
-      "observed": 1
+      "observed": 1,
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "generated-illustration"
+      ],
+      "generatedModeGuidance": "The Rive mascot animation is clone-only (and not even shipped in the clone). Use a generated-illustration or no animation asset."
     },
     "video": {
       "generationPolicy": "must-reuse-exact",
       "pinned": false,
       "description": "Video files or embeds.",
       "licensing": "Reuse only the supplied file; never fabricate footage of real products or people.",
-      "observed": 0
+      "observed": 0,
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Clone-only. Use footage the operator supplies."
     },
     "font": {
       "generationPolicy": "must-reuse-exact",
       "pinned": true,
       "description": "Web font files.",
       "licensing": "Fonts carry their own licence; reuse only as shipped and review the licence before redistribution.",
-      "observed": 4
+      "observed": 4,
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "The shipped font files are clone-only pending licence review; typography tokens (family names) stay usable, files must be operator-supplied."
     },
     "live-embed": {
       "generationPolicy": "must-not-reuse-live-endpoint",
       "pinned": true,
       "description": "Live third-party iframes and form endpoints.",
       "licensing": "Never point generated pages at the original site's live endpoints (forms, widgets).",
-      "observed": 0
+      "observed": 0,
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "placeholder-url"
+      ],
+      "generatedModeGuidance": "Never point at the source site's endpoints. Use placeholder-url (.example / .invalid)."
     },
     "founder-contact-email": {
       "generationPolicy": "must-not-reuse-live-endpoint",
       "pinned": true,
       "description": "A real mailto contact address (e.g. a founder or support email) exposed in page copy.",
       "licensing": "A real, live inbox. Generated pages must not reuse the original address; use a placeholder.",
-      "observed": 3
+      "observed": 3,
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "placeholder-url"
+      ],
+      "generatedModeGuidance": "Never the source inbox. Use a placeholder address on a .example / .invalid domain."
+    },
+    "animation-still": {
+      "generationPolicy": "must-reuse-exact",
+      "pinned": false,
+      "description": "PNG stills the clone captured from the source's Rive canvases (the mascot animation), shipped under public/stills/.",
+      "licensing": "The source's own proprietary artwork. Reuse only for clone fidelity.",
+      "observed": 3,
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "generated-illustration",
+        "placeholder-screenshot"
+      ],
+      "generatedModeGuidance": "Frames of the source's Rive mascot animation. Clone-only; use generated-illustration or placeholder-screenshot."
+    },
+    "placeholder-brand-mark": {
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "A neutral placeholder mark or wordmark for a fictional brand (geometric shape + fictional name).",
+      "licensing": "Generation-safe: contains nothing from the source.",
+      "observed": 0,
+      "observedNote": "Generation-only role: never observed in the source by construction.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generation-safe role: usable in both modes."
+    },
+    "user-supplied-asset": {
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "Any file the operator/user supplies for their own brand (logo, photo, video, font).",
+      "licensing": "Generation-safe: contains nothing from the source.",
+      "observed": 0,
+      "observedNote": "Generation-only role: never observed in the source by construction.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generation-safe role: usable in both modes."
+    },
+    "generated-illustration": {
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "Newly generated illustration or product visual with no source artwork, mascot or customer data.",
+      "licensing": "Generation-safe: contains nothing from the source.",
+      "observed": 0,
+      "observedNote": "Generation-only role: never observed in the source by construction.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generation-safe role: usable in both modes."
+    },
+    "placeholder-screenshot": {
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "A placeholder product screenshot (wireframe or generated UI with fictional data).",
+      "licensing": "Generation-safe: contains nothing from the source.",
+      "observed": 0,
+      "observedNote": "Generation-only role: never observed in the source by construction.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generation-safe role: usable in both modes."
+    },
+    "fictional-avatar": {
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "A generated or abstract avatar for a fictional person; never a real person's likeness.",
+      "licensing": "Generation-safe: contains nothing from the source.",
+      "observed": 0,
+      "observedNote": "Generation-only role: never observed in the source by construction.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generation-safe role: usable in both modes."
+    },
+    "placeholder-customer-logo": {
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "A placeholder logo for a fictional company (generic shape + fictional name).",
+      "licensing": "Generation-safe: contains nothing from the source.",
+      "observed": 0,
+      "observedNote": "Generation-only role: never observed in the source by construction.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generation-safe role: usable in both modes."
+    },
+    "placeholder-url": {
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "A link target on a reserved domain only: *.example or *.invalid (RFC 2606), or a relative path.",
+      "licensing": "Generation-safe: contains nothing from the source.",
+      "observed": 0,
+      "observedNote": "Generation-only role: never observed in the source by construction.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generation-safe role: usable in both modes."
+    },
+    "original-copy": {
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "Copy written fresh for the generated page; none of the source's headings, claims, quotes or statistics.",
+      "licensing": "Generation-safe: contains nothing from the source.",
+      "observed": 0,
+      "observedNote": "Generation-only role: never observed in the source by construction.",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Generation-safe role: usable in both modes."
     }
   },
   "generationPolicies": [
@@ -109,7 +270,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/static/media/customer-testimonials-bg.1po45s9a62gk6.png",
@@ -117,7 +280,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/errors/404-artwork.png",
@@ -125,7 +290,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__3dd6dd88",
@@ -133,7 +300,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__1eb267f7",
@@ -141,7 +309,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__c5efbc63",
@@ -149,7 +318,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__ed20d944",
@@ -157,7 +327,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__f63cf502",
@@ -165,7 +336,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__b5cdfed3",
@@ -173,7 +345,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__16f4d317",
@@ -181,7 +354,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "opengraph-image.png",
@@ -189,7 +363,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/home/rubie-home-animations.riv",
@@ -197,7 +373,8 @@
       "role": "animation",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__81ddc379",
@@ -205,7 +382,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__887b3fee",
@@ -213,7 +391,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "fonts/andale-mono.ttf",
@@ -221,7 +400,8 @@
       "role": "font",
       "evidence": {
         "note": "loaded by the page's CSS"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__7a888e73",
@@ -231,7 +411,8 @@
         "route": "/",
         "section": "hero.main",
         "rendered": "489x497"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__14fe2306",
@@ -239,7 +420,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "fonts/satoshi-bold.otf",
@@ -247,7 +429,8 @@
       "role": "font",
       "evidence": {
         "note": "loaded by the page's CSS"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/static/media/cariina-customer-success-blue.42izqdgmbv-pz.png",
@@ -255,7 +438,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9__0dc0adc0.woff2",
@@ -263,7 +448,8 @@
       "role": "font",
       "evidence": {
         "note": "loaded by the page's CSS"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
@@ -271,7 +457,9 @@
       "role": "font",
       "evidence": {
         "note": "loaded by the page's CSS"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/static/media/orderco-logo.2b76ym9qcviat.png",
@@ -279,7 +467,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/static/media/curbwaste-logo.04g5ue_s48djw.png",
@@ -287,7 +477,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/static/media/granum-logo.1fs9uumwwi4vo.png",
@@ -295,7 +487,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "favicon__f0291b9e.ico",
@@ -303,7 +497,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__3db0fdf6",
@@ -311,7 +506,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/home/migrate-graphic-mobile__0dc0adc0.svg",
@@ -321,7 +517,8 @@
         "route": "/",
         "section": "hero.main",
         "rendered": "0x0"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/home/migrate-graphic-mobile.svg",
@@ -329,7 +526,9 @@
       "role": "illustration",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/home/integrate-graphic-mobile__0dc0adc0.svg",
@@ -339,7 +538,8 @@
         "route": "/",
         "section": "hero.main",
         "rendered": "0x0"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/home/integrate-graphic-mobile.svg",
@@ -347,7 +547,9 @@
       "role": "illustration",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/static/media/arketa-logo.1zxk8k8ikvnsa.png",
@@ -355,7 +557,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/static/media/cariina-logo.02cxjp3gfsn0n.png",
@@ -363,7 +567,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__949274e7",
@@ -371,7 +577,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__9a827f43",
@@ -379,7 +586,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/static/media/bound-logo.35tf5ql66he9y.png",
@@ -387,7 +595,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/bound-logo.png",
@@ -395,7 +605,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/integrations-submenu-gray__0dc0adc0.svg",
@@ -403,7 +615,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/integrations-submenu-gray.svg",
@@ -411,7 +624,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/integrations-submenu-blue__0dc0adc0.svg",
@@ -419,7 +634,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/integrations-submenu-blue.svg",
@@ -427,7 +643,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__3a7d810e",
@@ -438,7 +656,8 @@
         "section": "hero.main",
         "rendered": "137x25",
         "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/brivity-logo__0dc0adc0.svg",
@@ -449,7 +668,8 @@
         "section": "hero.main",
         "rendered": "666x389",
         "roleReason": "third-party company mark (named file)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/brivity-logo.svg",
@@ -457,7 +677,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__4d86610a",
@@ -465,7 +687,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__671b2b6a",
@@ -473,7 +696,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/static/media/brivity-logo.0oe0otbbpg2v0.png",
@@ -481,7 +705,9 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__23d4d84e",
@@ -492,7 +718,8 @@
         "section": "hero.main",
         "rendered": "132x32",
         "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__c119ed89",
@@ -503,7 +730,8 @@
         "section": "hero.main",
         "rendered": "138x19",
         "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/marks/customer-hover-cariina-mark__0dc0adc0.svg",
@@ -514,7 +742,8 @@
         "section": "hero.main",
         "rendered": "623x446",
         "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/marks/customer-hover-cariina-mark.svg",
@@ -523,7 +752,9 @@
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)",
         "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/marks/customer-hover-granum-mark__0dc0adc0.svg",
@@ -534,7 +765,8 @@
         "section": "hero.main",
         "rendered": "512x558",
         "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/marks/customer-hover-granum-mark.svg",
@@ -543,7 +775,9 @@
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)",
         "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/migrations-submenu-gray__0dc0adc0.svg",
@@ -551,7 +785,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/migrations-submenu-gray.svg",
@@ -559,7 +794,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/migrations-submenu-blue__0dc0adc0.svg",
@@ -567,7 +804,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/migrations-submenu-blue.svg",
@@ -575,7 +813,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__45ba493b",
@@ -586,7 +826,8 @@
         "section": "hero.main",
         "rendered": "928x485",
         "roleReason": "real mark of uncertain ownership (rotated/inverted decorative brand mark in the /customers section); conservatively pinned must-not-fabricate"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__c0cf0449",
@@ -597,7 +838,8 @@
         "section": "hero.main",
         "rendered": "138x27",
         "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__399bddc8",
@@ -608,7 +850,8 @@
         "section": "hero.main",
         "rendered": "143x28",
         "roleReason": "third-party mark, alt=\"Bound\""
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/marks/customer-hover-curbwaste-mark__0dc0adc0.svg",
@@ -619,7 +862,8 @@
         "section": "hero.main",
         "rendered": "554x422",
         "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/marks/customer-hover-curbwaste-mark.svg",
@@ -628,7 +872,9 @@
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)",
         "roleReason": "third-party mark (data-hover-mark); was hero-image/may-generate-new, wrong policy for a real trademark"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__2f6ceab4",
@@ -636,7 +882,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__b4d7a361",
@@ -644,7 +891,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/curbwaste-black-white-logo__0dc0adc0.svg",
@@ -655,7 +903,8 @@
         "section": "hero.main",
         "rendered": "115x65",
         "roleReason": "third-party company mark (named file)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/curbwaste-black-white-logo.svg",
@@ -663,7 +912,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__53579f81",
@@ -671,7 +922,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__56d2ada9",
@@ -682,7 +934,8 @@
         "section": "hero.main",
         "rendered": "122x24",
         "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__f466d905",
@@ -690,7 +943,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__7925302f",
@@ -701,7 +955,8 @@
         "section": "hero.main",
         "rendered": "120x32",
         "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__674b2bfd",
@@ -712,7 +967,8 @@
         "section": "hero.main",
         "rendered": "112x28",
         "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/cariina-black-white-logo__0dc0adc0.svg",
@@ -723,7 +979,8 @@
         "section": "hero.main",
         "rendered": "190x40",
         "roleReason": "third-party company mark (named file)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/cariina-black-white-logo.svg",
@@ -731,7 +988,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/logos/rubie-logo__0dc0adc0.svg",
@@ -742,7 +1001,8 @@
         "section": "hero.main",
         "rendered": "91x20",
         "roleReason": "Rubie's own brand mark"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/rubie-logo.svg",
@@ -750,7 +1010,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__8dfaca3d",
@@ -758,7 +1020,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__28388b2d",
@@ -766,7 +1029,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__17c5a0ce",
@@ -774,7 +1038,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__dff1729b",
@@ -782,7 +1047,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "_next/image__9f5f9718",
@@ -790,7 +1056,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/home/three-dots-circle-icon__0dc0adc0.svg",
@@ -800,7 +1067,8 @@
         "route": "/",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/home/three-dots-circle-icon.svg",
@@ -808,7 +1076,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__2e7feff4",
@@ -816,7 +1086,8 @@
       "role": "content-image",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/rillet-logo__0dc0adc0.svg",
@@ -827,7 +1098,8 @@
         "section": "hero.main",
         "rendered": "147x32",
         "roleReason": "third-party company mark (named file)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/rillet-logo.svg",
@@ -835,7 +1107,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "icon__7f084192.svg",
@@ -843,7 +1117,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "icon.svg",
@@ -851,7 +1126,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/logos/granum-black-white-logo__0dc0adc0.svg",
@@ -862,7 +1139,8 @@
         "section": "hero.main",
         "rendered": "180x33",
         "roleReason": "third-party company mark (named file)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/granum-black-white-logo.svg",
@@ -870,7 +1148,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "_next/image__13251b03",
@@ -881,7 +1161,8 @@
         "section": "hero.main",
         "rendered": "102x24",
         "roleReason": "third-party mark in logo-wall markup (grayscale/hover:grayscale-0)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/integration-playbooks/keyboard__0dc0adc0.svg",
@@ -891,7 +1172,8 @@
         "route": "/solutions/integration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/integration-playbooks/keyboard.svg",
@@ -899,7 +1181,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/buoy-blue__0dc0adc0.svg",
@@ -907,7 +1191,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/buoy-gray__0dc0adc0.svg",
@@ -915,7 +1200,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/buoy-gray.svg",
@@ -923,7 +1209,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/buoy-blue.svg",
@@ -931,7 +1219,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/home/stacking-layers-icon__0dc0adc0.svg",
@@ -941,7 +1231,8 @@
         "route": "/",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/home/stacking-layers-icon.svg",
@@ -949,7 +1240,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/spaceship-gray__0dc0adc0.svg",
@@ -957,7 +1250,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/spaceship-blue__0dc0adc0.svg",
@@ -965,7 +1259,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/spaceship-gray.svg",
@@ -973,7 +1268,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/spaceship-blue.svg",
@@ -981,7 +1278,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/home/human-laptop-icon__0dc0adc0.svg",
@@ -991,7 +1290,8 @@
         "route": "/",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/home/human-laptop-icon.svg",
@@ -999,7 +1299,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/logos/rubie-logo-icon__0dc0adc0.svg",
@@ -1010,7 +1312,8 @@
         "section": "hero.main",
         "rendered": "32x32",
         "roleReason": "Rubie's own brand mark"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/logos/rubie-logo-icon.svg",
@@ -1018,7 +1321,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/textbook-blue__0dc0adc0.svg",
@@ -1026,7 +1331,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/textbook-gray__0dc0adc0.svg",
@@ -1034,7 +1340,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/textbook-gray.svg",
@@ -1042,7 +1349,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/textbook-blue.svg",
@@ -1050,7 +1359,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/home/warning-icon__0dc0adc0.svg",
@@ -1060,7 +1371,8 @@
         "route": "/",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/home/warning-icon.svg",
@@ -1068,7 +1380,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/integration-playbooks/hierarchy-tree__0dc0adc0.svg",
@@ -1078,7 +1392,8 @@
         "route": "/solutions/integration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/integration-playbooks/hierarchy-tree.svg",
@@ -1086,7 +1401,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/web-frame-blue__0dc0adc0.svg",
@@ -1094,7 +1411,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/web-frame-gray__0dc0adc0.svg",
@@ -1102,7 +1420,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/web-frame-gray.svg",
@@ -1110,7 +1429,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/web-frame-blue.svg",
@@ -1118,7 +1439,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/migration-playbooks/bar-graph-up__0dc0adc0.svg",
@@ -1128,7 +1451,8 @@
         "route": "/solutions/migration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/migration-playbooks/bar-graph-up.svg",
@@ -1136,7 +1460,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/integration-playbooks/check-shield__0dc0adc0.svg",
@@ -1146,7 +1472,8 @@
         "route": "/solutions/integration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/integration-playbooks/check-shield.svg",
@@ -1154,7 +1481,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/bar-graph-gray__0dc0adc0.svg",
@@ -1162,7 +1491,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/bar-graph-blue__0dc0adc0.svg",
@@ -1170,7 +1500,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/bar-graph-gray.svg",
@@ -1178,7 +1509,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/bar-graph-blue.svg",
@@ -1186,7 +1519,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/integration-playbooks/line-graph-window__0dc0adc0.svg",
@@ -1196,7 +1531,8 @@
         "route": "/solutions/integration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/integration-playbooks/line-graph-window.svg",
@@ -1204,7 +1540,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/integration-playbooks/check-box-with-shadow__0dc0adc0.svg",
@@ -1214,7 +1552,8 @@
         "route": "/solutions/integration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/integration-playbooks/check-box-with-shadow.svg",
@@ -1222,7 +1561,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/integration-playbooks/lock-unlocked__0dc0adc0.svg",
@@ -1232,7 +1573,8 @@
         "route": "/solutions/integration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/integration-playbooks/lock-unlocked.svg",
@@ -1240,7 +1582,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/migration-playbooks/lock__0dc0adc0.svg",
@@ -1250,7 +1594,8 @@
         "route": "/solutions/migration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/migration-playbooks/lock.svg",
@@ -1258,7 +1603,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/book-gray__0dc0adc0.svg",
@@ -1266,7 +1613,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/book-blue__0dc0adc0.svg",
@@ -1274,7 +1622,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/book-gray.svg",
@@ -1282,7 +1631,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/book-blue.svg",
@@ -1290,7 +1641,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/wallet-gray__0dc0adc0.svg",
@@ -1298,7 +1651,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/wallet-blue__0dc0adc0.svg",
@@ -1306,7 +1660,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/wallet-gray.svg",
@@ -1314,7 +1669,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/wallet-blue.svg",
@@ -1322,7 +1679,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/wand-gray__0dc0adc0.svg",
@@ -1330,7 +1689,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/wand-blue__0dc0adc0.svg",
@@ -1338,7 +1698,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/wand-gray.svg",
@@ -1346,7 +1707,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/wand-blue.svg",
@@ -1354,7 +1717,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/migration-playbooks/flame__0dc0adc0.svg",
@@ -1364,7 +1729,8 @@
         "route": "/solutions/migration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/migration-playbooks/flame.svg",
@@ -1372,7 +1738,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/migration-playbooks/minimal-lock__0dc0adc0.svg",
@@ -1382,7 +1750,8 @@
         "route": "/solutions/migration-playbooks",
         "section": "hero.main",
         "rendered": "20x20"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/migration-playbooks/minimal-lock.svg",
@@ -1390,7 +1759,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/enterprise/sparkle__0dc0adc0.svg",
@@ -1400,7 +1771,8 @@
         "route": "/enterprise",
         "section": "hero.main",
         "rendered": "20x20"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/enterprise/sparkle.svg",
@@ -1408,7 +1780,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/golf-live-logo__0dc0adc0.svg",
@@ -1419,7 +1793,8 @@
         "section": "hero.main",
         "rendered": "93x24",
         "roleReason": "third-party company mark (named file)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/golf-live-logo.svg",
@@ -1427,7 +1802,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/migration-playbooks/person__0dc0adc0.svg",
@@ -1437,7 +1814,8 @@
         "route": "/solutions/migration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/migration-playbooks/person.svg",
@@ -1445,7 +1823,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/migration-playbooks/stacked-bar-chart__0dc0adc0.svg",
@@ -1455,7 +1835,8 @@
         "route": "/solutions/migration-playbooks",
         "section": "hero.main",
         "rendered": "20x20"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/migration-playbooks/stacked-bar-chart.svg",
@@ -1463,7 +1844,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/integration-playbooks/dash-in-box__0dc0adc0.svg",
@@ -1473,7 +1856,8 @@
         "route": "/solutions/integration-playbooks",
         "section": "hero.main",
         "rendered": "24x24"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/integration-playbooks/dash-in-box.svg",
@@ -1481,7 +1865,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/enterprise/auto-flash__0dc0adc0.svg",
@@ -1491,7 +1877,8 @@
         "route": "/enterprise",
         "section": "hero.main",
         "rendered": "20x20"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/enterprise/auto-flash.svg",
@@ -1499,7 +1886,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/heart-gray__0dc0adc0.svg",
@@ -1507,7 +1896,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/heart-blue__0dc0adc0.svg",
@@ -1515,7 +1905,8 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/site-header/heart-gray.svg",
@@ -1523,7 +1914,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/site-header/heart-blue.svg",
@@ -1531,7 +1924,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/enterprise/diamond__0dc0adc0.svg",
@@ -1541,7 +1936,8 @@
         "route": "/enterprise",
         "section": "hero.main",
         "rendered": "20x20"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/enterprise/diamond.svg",
@@ -1549,7 +1945,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/migration-playbooks/burst__0dc0adc0.svg",
@@ -1559,7 +1957,8 @@
         "route": "/solutions/migration-playbooks",
         "section": "hero.main",
         "rendered": "20x20"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/migration-playbooks/burst.svg",
@@ -1567,7 +1966,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/migration-playbooks/icon-loading-circle__0dc0adc0.svg",
@@ -1577,7 +1978,8 @@
         "route": "/solutions/migration-playbooks",
         "section": "hero.main",
         "rendered": "20x20"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/migration-playbooks/icon-loading-circle.svg",
@@ -1585,7 +1987,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/enterprise/shield__0dc0adc0.svg",
@@ -1595,7 +1999,8 @@
         "route": "/enterprise",
         "section": "hero.main",
         "rendered": "20x20"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/enterprise/shield.svg",
@@ -1603,7 +2008,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/enterprise/blocks__0dc0adc0.svg",
@@ -1613,7 +2020,8 @@
         "route": "/enterprise",
         "section": "hero.main",
         "rendered": "20x20"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/enterprise/blocks.svg",
@@ -1621,7 +2029,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "images/icons/enterprise/capsule__0dc0adc0.svg",
@@ -1631,7 +2041,8 @@
         "route": "/enterprise",
         "section": "hero.main",
         "rendered": "20x20"
-      }
+      },
+      "inClone": true
     },
     {
       "path": "images/icons/enterprise/capsule.svg",
@@ -1639,7 +2050,9 @@
       "role": "icon",
       "evidence": {
         "note": "not referenced by the rendered DOM (CSS or lazy reference)"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "in the original crawl mirror only; the runnable clone does not ship it (unreferenced, or dropped by the clone builder)"
     },
     {
       "path": "mailto:help@rubiehq.com",
@@ -1649,7 +2062,9 @@
         "route": "/",
         "section": "hero.main",
         "note": "mailto: link found in page content"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "not a file: a live mailto address in page copy"
     },
     {
       "path": "mailto:hello@rubiehq.com",
@@ -1659,7 +2074,9 @@
         "route": "/",
         "section": "hero.main",
         "note": "mailto: link found in page content"
-      }
+      },
+      "inClone": false,
+      "cloneNote": "not a file: a live mailto address in page copy"
     },
     {
       "path": "mailto:admin@rubiehq.com",
@@ -1669,8 +2086,79 @@
         "route": "/privacy-policy",
         "section": "hero.main",
         "note": "mailto: link found in page content"
+      },
+      "inClone": false,
+      "cloneNote": "not a file: a live mailto address in page copy"
+    },
+    {
+      "path": "_next/static/media/53b9e256198e5412-s.390ncx5urfkfu.woff2",
+      "bytes": 7968,
+      "role": "font",
+      "inClone": true,
+      "evidence": {
+        "note": "Geist woff2 the clone ships under public/_next/static/media (clone-manifest.json dropped list names the original CSS url)"
+      }
+    },
+    {
+      "path": "_next/static/media/7178b3e590c64307-s.21jp631_3pja2.woff2",
+      "bytes": 16540,
+      "role": "font",
+      "inClone": true,
+      "evidence": {
+        "note": "Geist woff2 the clone ships under public/_next/static/media (clone-manifest.json dropped list names the original CSS url)"
+      }
+    },
+    {
+      "path": "_next/static/media/8a480f0b521d4e75-s.1qq4vpdcun5oj.woff2",
+      "bytes": 14900,
+      "role": "font",
+      "inClone": true,
+      "evidence": {
+        "note": "Geist woff2 the clone ships under public/_next/static/media (clone-manifest.json dropped list names the original CSS url)"
+      }
+    },
+    {
+      "path": "_next/static/media/fef07dbb0973bf53-s.3p2_lha1f2xer.woff2",
+      "bytes": 7252,
+      "role": "font",
+      "inClone": true,
+      "evidence": {
+        "note": "Geist woff2 the clone ships under public/_next/static/media (clone-manifest.json dropped list names the original CSS url)"
+      }
+    },
+    {
+      "path": "stills/06a3c1bf.png",
+      "bytes": 39913,
+      "role": "animation-still",
+      "inClone": true,
+      "evidence": {
+        "note": "Rive canvas still captured by the clone builder (clone-manifest.json stills)"
+      }
+    },
+    {
+      "path": "stills/1d7e0f32.png",
+      "bytes": 51474,
+      "role": "animation-still",
+      "inClone": true,
+      "evidence": {
+        "note": "Rive canvas still captured by the clone builder (clone-manifest.json stills)"
+      }
+    },
+    {
+      "path": "stills/7f4712aa.png",
+      "bytes": 240747,
+      "role": "animation-still",
+      "inClone": true,
+      "evidence": {
+        "note": "Rive canvas still captured by the clone builder (clone-manifest.json stills)"
       }
     }
   ],
-  "embeds": []
+  "embeds": [],
+  "availabilityValues": [
+    "clone-only",
+    "generation-safe",
+    "blocked-for-generation"
+  ],
+  "availabilityNote": "clone-only: a clone-mode PageSpec may reuse the real asset for fidelity; a generation-mode PageSpec must use a generationSafeSubstitutes role. blocked-for-generation: real third-party identity or live endpoint; rejected in generation mode, substitute required. generation-safe: allowed in both modes. Availability is pinned in code (PINNED_AVAILABILITY in extraction/verify_all.py and schema/semantic_validate.py), so editing this file alone cannot loosen it."
 }

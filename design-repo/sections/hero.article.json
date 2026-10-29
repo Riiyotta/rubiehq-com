@@ -11,7 +11,7 @@
     "instances": 1,
     "routes": 1,
     "measuredFrom": [
-      "src/blog/migration-revenue-killer/index.html:285-404"
+      "src/sections/Z1021.jsx:288-385"
     ]
   },
   "content": {
@@ -47,6 +47,22 @@
     "reducedMotionFallback": "instant-state"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z1021.jsx > section[0]",
-  "scope": "The 1 /blog/<slug> route."
+  "implementedBy": "src/sections/Z1021.jsx > top[1]",
+  "scope": "The 1 /blog/<slug> route.",
+  "source": {
+    "id": "Z1021:section@288",
+    "tag": "section",
+    "file": "src/sections/Z1021.jsx",
+    "lines": [
+      288,
+      385
+    ],
+    "route": "/blog/migration-revenue-killer"
+  },
+  "semantic": {
+    "id": "hero.article",
+    "category": "HERO"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

@@ -1,0 +1,72 @@
+{
+  "id": "narrative.legal-header",
+  "category": "NARRATIVE",
+  "label": "legal-header",
+  "tag": "h1",
+  "purpose": "Opening of a legal document: the h1 title, the effective / last-updated date line and the preamble paragraph that names the parties and scope.",
+  "purposeIsInferred": false,
+  "nameSource": "decomposed by real content boundaries from the clone's JSX (extraction/build_source_map.py DECOMPOSE)",
+  "evidence": {
+    "level": "measured",
+    "instances": 2,
+    "routes": 2,
+    "measuredFrom": [
+      "src/sections/Z106.jsx:289-297",
+      "src/sections/Z107.jsx:289-291"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 3
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 2,
+        "maxWords": 194
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": false,
+        "maxItems": 1,
+        "maxWords": 1
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [
+    "founder-contact-email"
+  ],
+  "implementedBy": "src/sections/Z106.jsx > top[1] @start..h2:0",
+  "scope": "The 2 legal routes, /privacy-policy and /terms (one per page).",
+  "source": {
+    "id": "Z106:h1@289",
+    "tag": "h1",
+    "file": "src/sections/Z106.jsx",
+    "lines": [
+      289,
+      297
+    ],
+    "route": "/privacy-policy"
+  },
+  "semantic": {
+    "id": "narrative.legal-header",
+    "category": "NARRATIVE"
+  },
+  "generatedAssetRoles": [
+    "placeholder-url"
+  ],
+  "retrievalEligible": true
+}

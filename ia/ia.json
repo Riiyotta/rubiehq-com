@@ -1,5 +1,5 @@
 {
-  "$comment": "Hand-reconciled 2026-10-06 against the real rendered HTML snapshots in recon/mirror/src/*.html — the same evidence tree the design-repo's ledger cites. The prior generated version collapsed all 21 routes into one template with 2 sections because the extractor classified <main> itself as a single hero and never descended into its children. Edit this file, then re-run `node validate.mjs && node build.mjs`.",
+  "$comment": "Reconciled 2026-10-29 against the runnable clone's own source (src/routes.js -> src/pages -> src/sections JSX), the same tree the design-repo ledger now cites. Whole-document blocks (legal body, article body, customer-story body) are decomposed into heading-bounded semantic units, matching design-repo/templates/templates.json. Edit this file, then re-run `node validate.mjs && node build.mjs`.",
   "meta": {
     "source": "https://www.rubiehq.com/",
     "status": "measured-from-mirror",
@@ -24,199 +24,235 @@
       "category": "CTA",
       "description": "Full-bleed dark-navy conversion band: the arced 'rubie' wordmark, the headline 'Your customers are waiting on data that lives behind a login.' and one Book a Demo button.",
       "scope": "19 routes — all but /privacy-policy and /terms, which end at their legal body.",
-      "implementedBy": "src/sections/Z10.jsx > section[7]"
+      "implementedBy": "src/sections/Z10.jsx > top[8]"
+    },
+    "cta.story-email-capture": {
+      "category": "CTA",
+      "description": "The story sidebar's conversion card: the site mark, one line of copy, a work-email input and a 'Get started' submit button (submit is prevented in the clone).",
+      "scope": "The 5 /customers/<name> routes (sticky sidebar, under the company facts).",
+      "implementedBy": "src/sections/Z1010.jsx > top[3] aside form[0]"
     },
     "faq.accordion": {
       "category": "FAQ",
       "description": "'Your questions answered' — a question-and-answer accordion. Byte-identical on all six use-case routes, so the same questions are asked regardless of vertical.",
       "scope": "The 6 /use-cases/* routes.",
-      "implementedBy": "src/sections/Z1013.jsx > section[3]"
+      "implementedBy": "src/sections/Z1013.jsx > top[4]"
     },
     "features.any-source": {
       "category": "FEATURES",
       "description": "'Any source. Your platform.' — the source-connector capability block with its animated source-to-target diagram.",
       "scope": "The / route only.",
-      "implementedBy": "src/sections/Z10.jsx > section[2]"
+      "implementedBy": "src/sections/Z10.jsx > top[3]"
     },
     "features.automation-samples": {
       "category": "FEATURES",
       "description": "'A sampling of what Integration Playbooks automate today' — a list of concrete automations shipped.",
       "scope": "The /solutions/integration-playbooks route only.",
-      "implementedBy": "src/sections/Z109.jsx > section[6]"
+      "implementedBy": "src/sections/Z109.jsx > top[7]"
     },
     "features.capability-grid": {
       "category": "FEATURES",
       "description": "A heading plus a three-item capability grid with supporting icons — the 'what you get' block.",
       "scope": "The 2 /solutions/* routes.",
-      "implementedBy": "src/sections/Z108.jsx > section[3]"
+      "implementedBy": "src/sections/Z108.jsx > top[4]"
     },
     "features.enterprise-pillars": {
       "category": "FEATURES",
       "description": "'Security & Compliance First' — the enterprise assurance block covering compliance, residency, access control and audit, over a large animated backdrop.",
       "scope": "The /enterprise route only.",
-      "implementedBy": "src/sections/Z103.jsx > section[2]"
+      "implementedBy": "src/sections/Z103.jsx > top[3]"
     },
     "features.pipeline-steps": {
       "category": "FEATURES",
       "description": "A numbered walkthrough of the data pipeline ('01 — Authenticate' through Load), one stage per heading with an illustration each.",
       "scope": "The /product route only.",
-      "implementedBy": "src/sections/Z102.jsx > section[1]"
+      "implementedBy": "src/sections/Z102.jsx > top[2]"
     },
     "features.platform-primitives": {
       "category": "FEATURES",
       "description": "'Platform primitives' — an interactive tabbed showcase of the core platform capabilities, with an animated panel per tab.",
       "scope": "The / route only.",
-      "implementedBy": "src/sections/Z10.jsx > section[3]"
+      "implementedBy": "src/sections/Z10.jsx > top[4]"
     },
     "features.playbook-cta-cards": {
       "category": "FEATURES",
       "description": "'Build data playbooks with Rubie' — two linked cards routing to Migration Playbooks and Integration Playbooks.",
       "scope": "The / route only.",
-      "implementedBy": "src/sections/Z10.jsx > section[4]"
+      "implementedBy": "src/sections/Z10.jsx > top[5]"
     },
     "features.solution-anatomy": {
       "category": "FEATURES",
       "description": "An interactive stepped anatomy of a Rubie migration — buttons stepping through the pipeline stages.",
       "scope": "The 2 /solutions/* routes.",
-      "implementedBy": "src/sections/Z108.jsx > section[5]"
+      "implementedBy": "src/sections/Z108.jsx > top[6]"
     },
     "features.solution-outcomes": {
       "category": "FEATURES",
       "description": "The long outcome-explainer block ('What changes when migrations just work' / 'Engineering-grade infrastructure, no engineering required') with an animated supporting visual.",
       "scope": "The 2 /solutions/* routes.",
-      "implementedBy": "src/sections/Z108.jsx > section[4]"
+      "implementedBy": "src/sections/Z108.jsx > top[5]"
     },
     "features.use-case-teasers": {
       "category": "FEATURES",
       "description": "'How teams are using Rubie today' — a grid teasing the six /use-cases/* routes.",
       "scope": "The / route only.",
-      "implementedBy": "src/sections/Z10.jsx > section[5]"
+      "implementedBy": "src/sections/Z10.jsx > top[6]"
     },
     "hero.article": {
       "category": "HERO",
       "description": "Blog-post masthead: the article h1, byline/date and hero illustration.",
       "scope": "The 1 /blog/<slug> route.",
-      "implementedBy": "src/sections/Z1021.jsx > section[0]"
+      "implementedBy": "src/sections/Z1021.jsx > top[1]"
     },
     "hero.customer-story": {
       "category": "HERO",
       "description": "Customer-story hero: one long outcome-metric h1 ('X cuts Y by Z% with Rubie'), the customer's logo and a back-link to /customers.",
       "scope": "The 5 /customers/<name> routes.",
-      "implementedBy": "src/sections/Z1010.jsx > section[0]"
+      "implementedBy": "src/sections/Z1010.jsx > top[1]"
     },
     "hero.home": {
       "category": "HERO",
       "description": "Homepage hero: h1 'Rip and Replace your Competition', the zero-effort-migrations sub-paragraph, dual CTAs, the Rive product animation and the 58-logo customer plate.",
       "scope": "The / route only.",
-      "implementedBy": "src/sections/Z10.jsx > section[0]"
+      "implementedBy": "src/sections/Z10.jsx > top[1]"
     },
     "hero.page-title": {
       "category": "HERO",
       "description": "Minimal title-only hero — an h1 and a short standfirst, for pages whose value is the body below rather than the opening pitch.",
       "scope": "4 routes: /product, /enterprise, /customers and /blog.",
-      "implementedBy": "src/sections/Z102.jsx > section[0]"
+      "implementedBy": "src/sections/Z102.jsx > top[1]"
     },
     "hero.solution": {
       "category": "HERO",
       "description": "Solutions hero: h1 naming the playbook family, supporting copy, CTA and a large inline animated diagram of the playbook pipeline.",
       "scope": "The 2 /solutions/* routes.",
-      "implementedBy": "src/sections/Z108.jsx > section[0]"
+      "implementedBy": "src/sections/Z108.jsx > top[1]"
     },
     "hero.use-case": {
       "category": "HERO",
       "description": "Use-case hero: a two-part h1 (a bold claim plus a lighter 'without ...' qualifier), supporting paragraph, CTA and the 54-logo customer plate. Identical structure on all six routes; only copy changes.",
       "scope": "The 6 /use-cases/* routes.",
-      "implementedBy": "src/sections/Z1013.jsx > section[0]"
+      "implementedBy": "src/sections/Z1013.jsx > top[1]"
+    },
+    "index.article-toc": {
+      "category": "INDEX",
+      "description": "The article's in-page table of contents: one anchor link per chapter, pointing at that chapter's #id.",
+      "scope": "The 1 /blog/<slug> route.",
+      "implementedBy": "src/sections/Z1021.jsx > top[2] article > nav[0]"
     },
     "index.blog-roll": {
       "category": "INDEX",
       "description": "The blog index listing — a linked card per post with title, excerpt and date.",
       "scope": "The /blog route only.",
-      "implementedBy": "src/sections/Z105.jsx > section[1]"
+      "implementedBy": "src/sections/Z105.jsx > top[2]"
     },
-    "narrative.article-body": {
+    "narrative.article-chapter": {
       "category": "NARRATIVE",
-      "description": "The long-form article body — all prose, subheadings, lists, pull-quotes and the sources list, in one section.",
+      "description": "One chapter of a long-form article: an h2 with its #id anchor, prose paragraphs and bullet points, and optional h3 cards (timeline stages, principles).",
+      "scope": "The 1 /blog/<slug> route (one per chapter with an #id anchor).",
+      "implementedBy": "src/sections/Z1021.jsx > top[2] article > section[id][0]"
+    },
+    "narrative.article-sources": {
+      "category": "NARRATIVE",
+      "description": "The article's closing sources list: an h2 'Sources' and one line per cited report.",
       "scope": "The 1 /blog/<slug> route.",
-      "implementedBy": "src/sections/Z1021.jsx > section[1]"
+      "implementedBy": "src/sections/Z1021.jsx > top[2] article > section:not([id])[0]"
     },
-    "narrative.legal-body": {
+    "narrative.legal-clause": {
       "category": "NARRATIVE",
-      "description": "The full legal document body — an h1 followed by numbered clauses with nested lists.",
-      "scope": "The 2 legal routes, /privacy-policy and /terms.",
-      "implementedBy": "src/sections/Z106.jsx > section[0]"
+      "description": "One heading-bounded clause of a legal document: the numbered h2 and the paragraphs and nested list items under it, up to the next h2.",
+      "scope": "The 2 legal routes, /privacy-policy and /terms (one per numbered clause heading).",
+      "implementedBy": "src/sections/Z106.jsx > top[1] h2:0..h2:1"
+    },
+    "narrative.legal-header": {
+      "category": "NARRATIVE",
+      "description": "Opening of a legal document: the h1 title, the effective / last-updated date line and the preamble paragraph that names the parties and scope.",
+      "scope": "The 2 legal routes, /privacy-policy and /terms (one per page).",
+      "implementedBy": "src/sections/Z106.jsx > top[1] @start..h2:0"
     },
     "narrative.problem-statement": {
       "category": "NARRATIVE",
       "description": "A short, punchy problem framing under the hero — one h2 claim ('Your customers' data is locked up in legacy systems.', 'Onboarding is your bottleneck.') with brief elaborations.",
       "scope": "9 routes: /, the six /use-cases/* routes and the two /solutions/* routes.",
-      "implementedBy": "src/sections/Z10.jsx > section[1]"
+      "implementedBy": "src/sections/Z10.jsx > top[2]"
     },
     "narrative.result-callout": {
       "category": "NARRATIVE",
       "description": "A kicker-labelled callout ('// The Result //') above one summarising sentence of at most 13 words.",
       "scope": "The 2 /solutions/* routes.",
-      "implementedBy": "src/sections/Z108.jsx > section[2]"
+      "implementedBy": "src/sections/Z108.jsx > top[3]"
     },
     "narrative.solution-statement": {
       "category": "NARRATIVE",
       "description": "The paired answer to narrative.problem-statement — an h2 resolution plus a large supporting animated visual.",
       "scope": "The 6 /use-cases/* routes.",
-      "implementedBy": "src/sections/Z1013.jsx > section[2]"
+      "implementedBy": "src/sections/Z1013.jsx > top[3]"
     },
     "narrative.story-beat": {
       "category": "NARRATIVE",
-      "description": "The customer-story body — the problem, the solution and the results told as one continuous block under a single h2.",
-      "scope": "The 5 /customers/<name> routes.",
-      "implementedBy": "src/sections/Z1010.jsx > section[2]"
+      "description": "One chapter of a customer story (Challenge, Solution or Results): a mono eyebrow label, an h2, prose paragraphs and an optional inline customer quote.",
+      "scope": "The 5 /customers/<name> routes (the Challenge, Solution and Results beats).",
+      "implementedBy": "src/sections/Z1010.jsx > top[3] article > div > section[0]"
     },
     "proof.compliance-badges": {
       "category": "PROOF",
       "description": "A row of compliance and security badges (SOC 2 Type II and peers) under a short assurance heading.",
       "scope": "The /enterprise route only.",
-      "implementedBy": "src/sections/Z103.jsx > section[1]"
+      "implementedBy": "src/sections/Z103.jsx > top[2]"
+    },
+    "proof.story-company-facts": {
+      "category": "PROOF",
+      "description": "The story sidebar's company profile: the customer's name, a one-line description and labelled facts (headquarters, employees, industry, previous solution) shown as pills.",
+      "scope": "The 5 /customers/<name> routes (sticky sidebar, beside the story beats at >= lg).",
+      "implementedBy": "src/sections/Z1010.jsx > top[3] aside > div > div[0]"
     },
     "proof.story-grid": {
       "category": "PROOF",
       "description": "A grid of customer-story cards linking to each /customers/<name> route, each carrying the customer logo and its headline outcome metric.",
       "scope": "The /customers route only.",
-      "implementedBy": "src/sections/Z104.jsx > section[1]"
+      "implementedBy": "src/sections/Z104.jsx > top[2]"
     },
     "proof.story-metrics": {
       "category": "PROOF",
       "description": "The customer-story metric strip — three named outcome numbers with a caption each (e.g. '3 min / Per account data entry (down from 2+ hrs)'). No heading of its own.",
       "scope": "The 5 /customers/<name> routes.",
-      "implementedBy": "src/sections/Z1010.jsx > section[1]"
+      "implementedBy": "src/sections/Z1010.jsx > top[2]"
+    },
+    "proof.story-pull-quote": {
+      "category": "PROOF",
+      "description": "The customer story's opening pull quote: one italic customer quote with the speaker's name and title.",
+      "scope": "The 5 /customers/<name> routes.",
+      "implementedBy": "src/sections/Z1010.jsx > top[3] article blockquote[0]"
     },
     "proof.testimonials": {
       "category": "PROOF",
       "description": "'What our customers are saying' — a grid of quote cards, each with an avatar, a name, a role and the customer's logo.",
       "scope": "The / route only.",
-      "implementedBy": "src/sections/Z10.jsx > section[6]"
-    },
-    "shell.footer": {
-      "category": "SHELL",
-      "description": "Site footer: four link columns (Product, Solutions, Company, Legal), the arced 'rubie' SVG wordmark and the copyright line.",
-      "scope": "All 21 routes. Identical apart from generated SVG arc ids.",
-      "implementedBy": "src/sections/Z10.jsx > footer"
-    },
-    "shell.header": {
-      "category": "SHELL",
-      "description": "Fixed top header: Rubie wordmark, primary nav (Product, Solutions, Use Cases, Resources) with hover mega-panels, and a Book a Demo button.",
-      "scope": "All 21 routes. Byte-identical on every one.",
-      "implementedBy": "src/sections/Z10.jsx > header"
-    },
-    "shell.spacer": {
-      "category": "SHELL",
-      "description": "A decorative aria-hidden=\"true\" band with no content at all — a bordered gap the layout uses as a rule between sections. Measured copy on both instances is zero words; it must never be given any.",
-      "scope": "2 routes: /blog and /solutions/migration-playbooks. Each sits in its own template now, so template membership and real route count agree.",
-      "implementedBy": "src/sections/Z105.jsx > section[2]"
+      "implementedBy": "src/sections/Z10.jsx > top[7]"
     },
     "shell.consent-banner-root": {
       "category": "SHELL",
       "description": "The c15t cookie-consent banner mount point and its Accept/Reject card. Third-party vendor UI mounted outside <main>, not Rubie design surface.",
       "scope": "All 21 routes.",
-      "implementedBy": "src/sections/C15tUiRootHE9Kz.jsx"
+      "implementedBy": "src/sections/C15tUiRootHE9Kz.jsx > consent root"
+    },
+    "shell.footer": {
+      "category": "SHELL",
+      "description": "Site footer: four link columns (Product, Solutions, Company, Legal), the arced 'rubie' SVG wordmark and the copyright line.",
+      "scope": "All 21 routes. Identical apart from generated SVG arc ids.",
+      "implementedBy": "src/sections/Z10.jsx > top[9]"
+    },
+    "shell.header": {
+      "category": "SHELL",
+      "description": "Fixed top header: Rubie wordmark, primary nav (Product, Solutions, Use Cases, Resources) with hover mega-panels, and a Book a Demo button.",
+      "scope": "All 21 routes. Byte-identical on every one.",
+      "implementedBy": "src/sections/Z10.jsx > top[0]"
+    },
+    "shell.spacer": {
+      "category": "SHELL",
+      "description": "A decorative aria-hidden=\"true\" band with no content at all — a bordered gap the layout uses as a rule between sections. Measured copy on both instances is zero words; it must never be given any.",
+      "scope": "2 routes: /blog and /solutions/migration-playbooks. Each sits in its own template now, so template membership and real route count agree.",
+      "implementedBy": "src/sections/Z105.jsx > top[3]"
     }
   },
   "templates": [
@@ -289,7 +325,10 @@
         "shell.header",
         "hero.customer-story",
         "proof.story-metrics",
+        "proof.story-pull-quote",
         "narrative.story-beat",
+        "proof.story-company-facts",
+        "cta.story-email-capture",
         "cta.book-demo-band",
         "shell.footer",
         "shell.consent-banner-root"
@@ -441,7 +480,9 @@
       "sections": [
         "shell.header",
         "hero.article",
-        "narrative.article-body",
+        "index.article-toc",
+        "narrative.article-chapter",
+        "narrative.article-sources",
         "cta.book-demo-band",
         "shell.footer",
         "shell.consent-banner-root"
@@ -461,7 +502,8 @@
       "chrome": "full",
       "sections": [
         "shell.header",
-        "narrative.legal-body",
+        "narrative.legal-header",
+        "narrative.legal-clause",
         "shell.footer",
         "shell.consent-banner-root"
       ],

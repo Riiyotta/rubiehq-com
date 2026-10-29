@@ -24,17 +24,26 @@ NONE = {"pattern": "none", "reducedMotionFallback": "disable-animation"}
 def minimal_node(sid, motion=None):
     f = SECS[sid]["content"]["fields"]
     content = {}
-    if f.get("heading", {}).get("required"): content["heading"] = "Sample"
-    if f.get("subheading", {}).get("required"): content["subheading"] = "Sample"
-    if f.get("body", {}).get("required"): content["body"] = ["Sample"]
-    if f.get("ctas", {}).get("required"): content["ctas"] = [{"label": "Go"}]
-    if f.get("items", {}).get("required"): content["items"] = [{"title": "Sample"}]
+    for k, spec in f.items():
+        if not spec.get("required"): continue
+        t = spec["type"]
+        content[k] = {"string": "Sample", "string[]": ["Sample"], "cta[]": [{"label": "Go"}], "item[]": [{"title": "Sample"}], "image[]": []}[t]
     return {"type": sid, "content": content, "motion": dict(motion or NONE)}
 
 
-def control_for(t):
-    return {"pageSpecVersion": VERSION, "template": t["id"], "route": (t.get("routes") or ["/sample"])[0],
+def control_for(t, mode="clone"):
+    return {"pageSpecVersion": VERSION, "mode": mode, "template": t["id"], "route": (t.get("routes") or ["/sample"])[0],
             "nodes": [minimal_node(n["section"]) for n in t["nodes"]]}
+
+
+EXDIR = os.path.join(SCHEMA, "examples")
+GEN = {}
+for f in sorted(os.listdir(EXDIR)) if os.path.isdir(EXDIR) else []:
+    d = json.load(open(os.path.join(EXDIR, f), encoding="utf-8"))
+    if d.get("mode") == "generation": GEN[d["template"]] = d
+IDENT = sv.load("schema/source-identity.json")
+sys.path.insert(0, os.path.join(REPO, "extraction"))
+import wrapper_gate  # noqa: E402
 
 
 def main():
@@ -60,8 +69,23 @@ def main():
     mut("invented section type", lambda s: s["nodes"][0].__setitem__("type", "hero.invented-type"), "schema: nodes/0/type")
     mut("missing reducedMotionFallback", lambda s: s["nodes"][0]["motion"].pop("reducedMotionFallback"), "reducedMotionFallback")
     mut("invented motion field", lambda s: s["nodes"][0]["motion"].__setitem__("inventedAnimation", True), "inventedAnimation")
-    mut("per-instance style override on a node", lambda s: s["nodes"][0].__setitem__("style", {"color": "#ff0000"}), "'style' was unexpected")
-    mut("raw theme override at page level", lambda s: s.__setitem__("theme", {"color.text.primary": "#ff0000"}), "'theme' was unexpected")
+    mut("style object with an invented key", lambda s: s["nodes"][0].__setitem__("style", {"color": "#ff0000"}), "'color' was unexpected")
+    mut("raw theme override object at page level", lambda s: s.__setitem__("theme", {"color.text.primary": "#ff0000"}), "TOKEN_THEME_UNSUPPORTED")
+    mut("missing mode", lambda s: s.pop("mode"), "'mode' is a required property")
+    mut("mode outside the closed enum", lambda s: s.__setitem__("mode", "reference"), "schema: mode")
+
+    # ---- token layer (R10): node style may only name approved tokens
+    def st(**kw): return lambda s: s["nodes"][1].__setitem__("style", kw)
+    mut("TOKEN_UNKNOWN: invented token", st(surface="surface.neon"), "TOKEN_UNKNOWN")
+    mut("TOKEN_UNKNOWN: real token in the wrong field", st(surface="text.primary"), "TOKEN_UNKNOWN")
+    mut("TOKEN_RAW_COLOR: hex", st(textColor="#FF0000"), "TOKEN_RAW_COLOR")
+    mut("TOKEN_RAW_COLOR: rgb()", st(surface="rgb(2, 99, 255)"), "TOKEN_RAW_COLOR")
+    mut("TOKEN_ARBITRARY_SPACING: px", st(spacingTop="37px"), "TOKEN_ARBITRARY_SPACING")
+    mut("TOKEN_ARBITRARY_SPACING: rem radius", st(radius="1.5rem"), "TOKEN_ARBITRARY_SPACING")
+    mut("TOKEN_UNSUPPORTED_FONT", st(fontFamily="Comic Sans MS"), "TOKEN_UNSUPPORTED_FONT")
+    mut("TOKEN_THEME_UNSUPPORTED: dark theme", lambda s: s.__setitem__("theme", "dark"), "TOKEN_THEME_UNSUPPORTED")
+    mut("TOKEN_THEME_COMBINATION: inverse text on the default surface", st(surface="surface.default", textColor="text.inverse"), "TOKEN_THEME_COMBINATION")
+    cases.append(("control: approved tokens on a node", (lambda s: (s["nodes"][1].__setitem__("style", {"surface": "surface.inverse", "textColor": "text.inverse", "typography": "typography.heading", "fontFamily": "Geist", "spacingTop": "layout.sectionPaddingTop", "radius": "radius.surface"}), s)[1])(copy.deepcopy(example)), "pass", None))
     mut("wrong pageSpecVersion", lambda s: s.__setitem__("pageSpecVersion", "9.9.9"), "schema: pageSpecVersion")
     mut("unknown content field", lambda s: s["nodes"][0]["content"].__setitem__("inventedField", "x"), "'inventedField' was unexpected")
     cta = first_idx(lambda n: "ctas" in SECS[n["type"]]["content"]["fields"])
@@ -102,7 +126,7 @@ def main():
     nc = GRAPH["NO_CONSECUTIVE_SAME_SECTION"]["sections"]; ni = first_idx(lambda n: n["type"] in nc)
     mut("NO_CONSECUTIVE_SAME_SECTION (warn)", lambda s: s["nodes"].insert(ni + 1, copy.deepcopy(s["nodes"][ni])), "NO_CONSECUTIVE_SAME_SECTION", "warn",
         why_not=None if ni is not None else "no section is restricted from repeating back-to-back")
-    allowed = {tuple(p) for p in GRAPH["NO_ADJACENT_SAME_CATEGORY"].get("exceptions", [])}
+    allowed = {tuple(p.split("+", 1)) for p in GRAPH["NO_ADJACENT_SAME_CATEGORY"].get("exceptions", [])}
     pair = next(((a, b) for a in sorted(SECS) for b in sorted(SECS) if a != b and SECS[a]["category"] == SECS[b]["category"] and (a, b) not in allowed), None)
     mut("NO_ADJACENT_SAME_CATEGORY (warn)", lambda s: s["nodes"].extend([minimal_node(pair[0]), minimal_node(pair[1])]), "NO_ADJACENT_SAME_CATEGORY", "warn",
         why_not=None if pair else "no two sections share a category")
@@ -135,7 +159,109 @@ def main():
     mut("motion pattern not allowed for its section", lambda s: s["nodes"][noanim]["motion"].__setitem__("pattern", "scroll-linked"), "not allowed",
         why_not=None if noanim is not None else "every section allows animation")
 
+
+    # ---- generation mode (R1/R2/R4/R5): the generated examples are controls; each mutation injects source identity
+    for tid, g in sorted(GEN.items()):
+        cases.append((f"control: generation example {tid}", g, "pass", None))
+    cases.append(("control: clone example keeps real brand, copy and assets", example, "pass", None))
+    g0 = GEN.get("template.home")
+    def gmut(label, fn, needle):
+        if not g0: skipped.append(f"{label}: no generation example for template.home"); return
+        s = copy.deepcopy(g0); fn(s); cases.append((label, s, "error", needle))
+    def set_heading(text, i=1):
+        return lambda s: s["nodes"][i]["content"].__setitem__("heading", text)
+    def set_body(text, i=2):
+        return lambda s: s["nodes"][i]["content"].__setitem__("body", [text])
+    hero_i = next(i for i, n in enumerate(g0["nodes"]) if n["type"] == "hero.home") if g0 else 1
+    real_sentence = next(p for n in example["nodes"] for p in n["content"].get("body", []) if len(p.split()) > 12)
+    real_claim = next((p for n in example["nodes"] for p in n["content"].get("body", []) if any(ch.isdigit() for ch in p)), None)
+    gmut("GENERATION_MODE_BRAND: source brand in a heading", set_heading("Rubie for teams", hero_i), "GENERATION_MODE_BRAND")
+    gmut("GENERATION_MODE_BRAND: upper-case + zero-width obfuscation", set_heading("RU​BIE moves data", hero_i), "GENERATION_MODE_BRAND")
+    gmut("GENERATION_MODE_BRAND: legal entity", set_body("Operated by Nightly Data, Inc. for its customers."), "GENERATION_MODE_BRAND")
+    gmut("GENERATION_MODE_BRAND: source CTA", lambda s: s["nodes"][hero_i]["content"].__setitem__("ctas", [{"label": "See Rubie in action", "href": "/demo"}]), "GENERATION_MODE_BRAND")
+    gmut("GENERATION_MODE_BRAND: brand field reuses the source", lambda s: s.__setitem__("brand", {"name": "RubieHQ"}), "GENERATION_MODE_BRAND")
+    gmut("GENERATION_MODE_CUSTOMER: real customer name", set_body("Teams at Granum switched in a week."), "GENERATION_MODE_CUSTOMER")
+    gmut("GENERATION_MODE_CUSTOMER: spelling variant", set_body("Our partner Order co loves it."), "GENERATION_MODE_CUSTOMER")
+    gmut("GENERATION_MODE_PERSON: real person", set_body("Says Hannah Wion, who runs onboarding."), "GENERATION_MODE_PERSON")
+    gmut("GENERATION_MODE_URL: source domain", lambda s: s["nodes"][hero_i]["content"].__setitem__("body", ["Visit rubiehq.com today for details."]), "GENERATION_MODE_URL")
+    gmut("GENERATION_MODE_URL: non-placeholder host", set_body("Read more at www.acme-real-company.com about this."), "GENERATION_MODE_URL")
+    gmut("GENERATION_MODE_URL: source third-party URL", set_body("See http://www.allaboutcookies.org/ for cookies."), "GENERATION_MODE_URL")
+    gmut("GENERATION_MODE_EMBED: live source inbox", set_body("Write to help@rubiehq.com any time."), "GENERATION_MODE_EMBED")
+    gmut("GENERATION_MODE_COPY: verbatim source sentence", set_body(real_sentence), "GENERATION_MODE_COPY")
+    gmut("GENERATION_MODE_COPY: curly quotes / dashes / NFKC variant", set_body(real_sentence.replace("'", "’").replace(" - ", " — ").replace("fi", "ﬁ")), "GENERATION_MODE_COPY")
+    if real_claim: gmut("GENERATION_MODE_CLAIM: source statistic", set_body(real_claim), "GENERATION_MODE_CLAIM")
+    else: skipped.append("GENERATION_MODE_CLAIM: clone example has no numeric claim")
+    img_i = next((i for i, n in enumerate(g0["nodes"]) if n["content"].get("images")), None) if g0 else None
+    if img_i is not None:
+        def img(**kw): return lambda s: s["nodes"][img_i]["content"].__setitem__("images", [dict({"assetRole": s["nodes"][img_i]["content"]["images"][0]["assetRole"], "alt": "x"}, **kw)])
+        gmut("GENERATION_MODE_ASSET: real logo role", img(assetRole="logo"), "GENERATION_MODE_ASSET")
+        gmut("GENERATION_MODE_ASSET: real customer-logo role", img(assetRole="customer-logo"), "GENERATION_MODE_ASSET")
+        gmut("GENERATION_MODE_ASSET: source file path", img(src=next(p for p in IDENT["assetPaths"] if p.startswith("/images/logos/"))), "GENERATION_MODE_ASSET")
+        gmut("GENERATION_MODE_SCREENSHOT: source canvas still / product image", img(src=IDENT["screenshotPaths"][0]), "GENERATION_MODE_SCREENSHOT")
+    else:
+        skipped.append("GENERATION_MODE_ASSET/SCREENSHOT: the home generation example has no image")
+    ts = GEN.get("template.home")
+    st_i = next((i for i, n in enumerate(example["nodes"]) if n["type"] == "proof.testimonials"), None)
+    if st_i is not None:
+        s_ = copy.deepcopy(g0); s_["nodes"][st_i]["content"]["images"] = [{"assetRole": "avatar", "alt": "x"}]
+        cases.append(("GENERATION_MODE_ASSET: real-person avatar role", s_, "error", "GENERATION_MODE_ASSET"))
+
+    # ---- pins (R3/R8): editing the registry or a contract alone cannot loosen them
+    def with_cache(label, rel, edit, needle):
+        orig = copy.deepcopy(sv._CACHE.get(rel) if rel in sv._CACHE else sv.load(rel))
+        mod = copy.deepcopy(orig); edit(mod); sv._CACHE[rel] = mod
+        try:
+            e, _ = sv.check(copy.deepcopy(example)); good = any(needle in x for x in e)
+        finally:
+            sv._CACHE[rel] = orig
+        pin_results.append((label, good, needle))
+    pin_results = []
+    with_cache("PINNED_AVAILABILITY: registry flips logo to generation-safe", "assets/asset-roles.json", lambda d: d["roles"]["logo"].__setitem__("availability", "generation-safe"), "PINNED_AVAILABILITY")
+    with_cache("PINNED_AVAILABILITY: registry flips customer-logo to clone-only", "assets/asset-roles.json", lambda d: d["roles"]["customer-logo"].__setitem__("availability", "clone-only"), "PINNED_AVAILABILITY")
+    with_cache("RETRIEVAL_INELIGIBLE: consent banner flipped to eligible", "__sections__", lambda d: d["shell.consent-banner-root"].__setitem__("retrievalEligible", True), "RETRIEVAL_INELIGIBLE")
+    with_cache("RETRIEVAL_INELIGIBLE: a content section marked ineligible", "__sections__", lambda d: d["hero.home"].__setitem__("retrievalEligible", False), "RETRIEVAL_INELIGIBLE")
+    with_cache("RETRIEVAL_INELIGIBLE: runtime-UI section not pinned", "__sections__", lambda d: d.__setitem__("shell.cookie-modal", dict(d["shell.spacer"], id="shell.cookie-modal", label="cookie-modal", retrievalEligible=True)), "RETRIEVAL_INELIGIBLE")
+
+    # ---- wrapper gate (R9) on synthetic measurements
+    led0 = sv.load("extraction/measured-values.json")
+    def gate(label, edit, expect, needle, whitelist=None):
+        led = copy.deepcopy(led0); edit(led)
+        e, w = wrapper_gate.check(REPO, led=led, whitelist=whitelist)
+        good = any(needle in x for x in (e if expect == "error" else w)) and (expect != "warn" or not e)
+        gate_results.append((label, good, needle))
+    gate_results = []
+    hp = led0["sectionHeights"]["routes"]["/"]
+    hidx = next(i for i, s in enumerate(hp["sections"]) if s["id"] == "hero.home")
+    def hero_h(px):
+        def f(led):
+            r = led["sectionHeights"]["routes"]["/"]; r["sections"][hidx]["heightPx"] = px; r["pageHeightPx"] = max(r["pageHeightPx"], px * 3)
+        return f
+    gate("HERO 1900px warns", hero_h(1900), "warn", "HERO hero.home")
+    gate("HERO 3100px fails", hero_h(3100), "error", "HERO hero.home")
+    gate("HERO 3100px whitelisted still warns", hero_h(3100), "warn", "[whitelisted]",
+         {"/#hero.home": {"reviewedBy": "agent attestation, not a human sign-off", "justification": "synthetic adversarial case for the whitelist path", "maxHeightPx": 3200}})
+    def share(px):
+        def f(led):
+            r = led["sectionHeights"]["routes"]["/"]; r["sections"][hidx]["heightPx"] = px; r["pageHeightPx"] = 4000
+        return f
+    gate("one section holds 65% of a page", share(2600), "error", "holds 65%")
+    gate("one section holds 55% of a page (warn)", share(2200), "warn", "holds 55%")
+    gate("missing measurement", lambda led: led["sectionHeights"]["routes"]["/"]["sections"][hidx].pop("heightPx"), "error", "missing measurement")
+    gate("route with no measurement", lambda led: led["sectionHeights"]["routes"].pop("/terms"), "error", "no height measurement for route /terms")
+    gate("measured at the wrong viewport", lambda led: led["sectionHeights"].update(viewport="1280x800", viewportWidthPx=1280), "error", "requires 1440px")
+    gate("whitelist without justification", hero_h(3100), "error", "justification shorter",
+         {"/#hero.home": {"reviewedBy": "agent attestation, not a human sign-off", "justification": "short", "maxHeightPx": 3200}})
+    gate("whitelist by an agent not labelled as attestation", hero_h(3100), "error", "reviewedBy must say",
+         {"/#hero.home": {"reviewedBy": "review agent", "justification": "synthetic adversarial case for the whitelist path", "maxHeightPx": 3200}})
+    gate("whitelist cap below the measured height", hero_h(3100), "error", "cap 3000px exceeded",
+         {"/#hero.home": {"reviewedBy": "agent attestation, not a human sign-off", "justification": "synthetic adversarial case for the whitelist path", "maxHeightPx": 3000}})
+    gate("stale whitelist entry", lambda led: None, "error", "is stale",
+         {"/nowhere#hero.home": {"reviewedBy": "agent attestation, not a human sign-off", "justification": "synthetic adversarial case for a stale entry", "maxHeightPx": 3000}})
+
     ok = fail = 0
+    for label, good, needle in pin_results + gate_results:
+        if good: ok += 1
+        else: fail += 1; print(f"FAIL: {label}: expected a finding containing '{needle}'")
     for label, spec, expect, needle in cases:
         errors, warnings = sv.check(spec)
         if expect == "pass": good = not errors
@@ -147,7 +273,8 @@ def main():
             print(f"FAIL: {label}: expected {expect}" + (f" containing '{needle}'" if needle else "") + f"; errors={errors[:3]} warnings={warnings[:3]}")
     for s_ in skipped: print("SKIPPED:", s_)
     n_ctrl = sum(1 for c in cases if c[2] == "pass")
-    print(f"adversarial: {ok} passed, {fail} failed ({n_ctrl} controls, {len(cases) - n_ctrl} mutations, {len(skipped)} skipped as not applicable)")
+    n_mut = len(cases) - n_ctrl + len(pin_results) + len(gate_results)
+    print(f"adversarial: {ok} passed, {fail} failed ({n_ctrl} controls, {n_mut} mutations incl. {len(pin_results)} pin and {len(gate_results)} wrapper-gate cases, {len(skipped)} skipped as not applicable)")
     sys.exit(1 if fail else 0)
 
 

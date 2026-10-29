@@ -11,7 +11,7 @@
     "instances": 1,
     "routes": 1,
     "measuredFrom": [
-      "src/index.html:4883-5652"
+      "src/sections/Z10.jsx:3066-3527"
     ]
   },
   "content": {
@@ -43,6 +43,24 @@
   "assetRoles": [
     "animation"
   ],
-  "implementedBy": "src/sections/Z10.jsx > section[2]",
-  "scope": "The / route only."
+  "implementedBy": "src/sections/Z10.jsx > top[3]",
+  "scope": "The / route only.",
+  "source": {
+    "id": "Z10:section@3066",
+    "tag": "section",
+    "file": "src/sections/Z10.jsx",
+    "lines": [
+      3066,
+      3527
+    ],
+    "route": "/"
+  },
+  "semantic": {
+    "id": "features.any-source",
+    "category": "FEATURES"
+  },
+  "generatedAssetRoles": [
+    "generated-illustration"
+  ],
+  "retrievalEligible": true
 }

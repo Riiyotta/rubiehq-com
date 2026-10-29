@@ -3,9 +3,8 @@ dist/
 __pycache__/
 .DS_Store
 qa/parity/*.png
-# Build evidence: rendered-HTML snapshots, screen mirror, crawl preview video. Large,
-# regenerable, and not part of the deliverable — verify_all.py degrades recon/mirror/
-# specifically to a warning (not a failure) when it's absent.
+# Crawl evidence (rendered-HTML snapshots, screen mirror, preview video): large, regenerable, not
+# part of the deliverable. design-repo/ no longer cites it: its ledger cites the tracked src/ JSX.
 recon/
 # The design-repo composition IR: kept on local disk and on the local-only `ir-only`
 # branch, intentionally never tracked/pushed on main.

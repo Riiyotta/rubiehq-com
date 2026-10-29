@@ -11,11 +11,15 @@
     "instances": 9,
     "routes": 9,
     "measuredFrom": [
-      "src/index.html:4698-4882",
-      "src/solutions/migration-playbooks/index.html:1032-1073",
-      "src/solutions/integration-playbooks/index.html:1421-1456",
-      "src/use-cases/sales/index.html:571-615",
-      "src/use-cases/customer-success/index.html:571-615"
+      "src/sections/Z10.jsx:2931-3065",
+      "src/sections/Z108.jsx:714-763",
+      "src/sections/Z109.jsx:973-1016",
+      "src/sections/Z1013.jsx:541-591",
+      "src/sections/Z1014.jsx:541-591",
+      "src/sections/Z1015.jsx:541-591",
+      "src/sections/Z1016.jsx:541-591",
+      "src/sections/Z1017.jsx:541-591",
+      "src/sections/Z1018.jsx:541-591"
     ]
   },
   "content": {
@@ -45,6 +49,9 @@
         "maxItems": 4,
         "assetRoles": [
           "icon"
+        ],
+        "generatedAssetRoles": [
+          "icon"
         ]
       }
     }
@@ -61,6 +68,24 @@
   "assetRoles": [
     "icon"
   ],
-  "implementedBy": "src/sections/Z10.jsx > section[1]",
-  "scope": "9 routes: /, the six /use-cases/* routes and the two /solutions/* routes."
+  "implementedBy": "src/sections/Z10.jsx > top[2]",
+  "scope": "9 routes: /, the six /use-cases/* routes and the two /solutions/* routes.",
+  "source": {
+    "id": "Z10:section@2931",
+    "tag": "section",
+    "file": "src/sections/Z10.jsx",
+    "lines": [
+      2931,
+      3065
+    ],
+    "route": "/"
+  },
+  "semantic": {
+    "id": "narrative.problem-statement",
+    "category": "NARRATIVE"
+  },
+  "generatedAssetRoles": [
+    "icon"
+  ],
+  "retrievalEligible": true
 }

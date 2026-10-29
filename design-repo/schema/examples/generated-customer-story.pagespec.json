@@ -1,0 +1,257 @@
+{
+  "pageSpecVersion": "0.3.0",
+  "mode": "generation",
+  "theme": "light",
+  "brand": {
+    "name": "Fernbrook",
+    "domain": "fernbrook.example"
+  },
+  "template": "template.customer-story",
+  "route": "/customer-story",
+  "nodes": [
+    {
+      "type": "shell.header",
+      "content": {
+        "listItems": [
+          "Spreadsheets",
+          "Legacy portals",
+          "Shared drives"
+        ],
+        "ctas": [
+          {
+            "label": "Plan a walkthrough",
+            "href": "/walkthrough"
+          },
+          {
+            "label": "Read the guide",
+            "href": "/guide"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "hero.customer-story",
+      "content": {
+        "heading": "Clean imports from whatever your customers keep",
+        "body": [
+          "Your specialists approve each mapping once, and the next customer with the same shape of file starts from that plan.",
+          "Every import keeps a plain trail of what changed, who signed off and which rows still need a human eye."
+        ],
+        "ctas": [
+          {
+            "label": "Read the guide",
+            "href": "/guide"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      },
+      "style": {
+        "surface": "surface.default",
+        "textColor": "text.primary",
+        "typography": "typography.display",
+        "fontFamily": "Geist",
+        "spacingTop": "layout.sectionPaddingTop",
+        "spacingBottom": "layout.sectionPaddingBottom"
+      }
+    },
+    {
+      "type": "proof.story-metrics",
+      "content": {
+        "body": [
+          "Every import keeps a plain trail of what",
+          "Spreadsheets, old portals and odd text dumps all"
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "proof.story-pull-quote",
+      "content": {
+        "quote": "Our onboarding queue finally feels calm and the team trusts every preview.",
+        "attribution": "Morgan Ellery, Head of Onboarding, Tidewell"
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "narrative.story-beat",
+      "content": {
+        "eyebrow": "During",
+        "heading": "Field notes on careful data moves",
+        "quote": "Our onboarding queue finally feels calm and the team trusts every preview.",
+        "attribution": "Priya Castellan, Operations Lead, Northmarsh",
+        "body": [
+          "Sales can promise a gentle switch because onboarding no longer waits on a sprint from the platform crew.",
+          "When a file arrives with surprises, Fernbrook flags the odd columns and suggests a fix you can accept or reject."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "narrative.story-beat",
+      "content": {
+        "eyebrow": "After",
+        "heading": "What happens to your information here",
+        "quote": "Our onboarding queue finally feels calm and the team trusts every preview.",
+        "attribution": "Jonah Vale, Support Director, Quillfield",
+        "body": [
+          "When a file arrives with surprises, Fernbrook flags the odd columns and suggests a fix you can accept or reject.",
+          "Teams keep their own vocabulary, so a lead stays a lead and a ticket stays a ticket after the move."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "proof.story-company-facts",
+      "content": {
+        "heading": "Tidewell",
+        "body": [
+          "A fictional property-services company used to show the story layout."
+        ],
+        "items": [
+          {
+            "title": "Preview first",
+            "body": "See the cleaned rows before they reach"
+          },
+          {
+            "title": "Reusable plans",
+            "body": "Save a mapping once and apply it"
+          },
+          {
+            "title": "Plain audit",
+            "body": "Every change carries a name and a"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "cta.story-email-capture",
+      "content": {
+        "heading": "Plans that teams reuse every week",
+        "inputPlaceholder": "Your work email",
+        "ctas": [
+          {
+            "label": "Talk to",
+            "href": "/contact"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "cta.book-demo-band",
+      "content": {
+        "heading": "How Fernbrook keeps each step visible",
+        "ctas": [
+          {
+            "label": "See pricing notes",
+            "href": "/notes"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.footer",
+      "content": {
+        "heading": "Plans",
+        "items": [
+          {
+            "title": "Gentle",
+            "body": "Fix"
+          },
+          {
+            "title": "Shared",
+            "body": "Ops"
+          },
+          {
+            "title": "Quiet",
+            "body": "Only"
+          }
+        ],
+        "ctas": [
+          {
+            "label": "Start a trial",
+            "href": "/start"
+          },
+          {
+            "label": "Plan a walkthrough",
+            "href": "/walkthrough"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.consent-banner-root",
+      "content": {
+        "ctas": [
+          {
+            "label": "Plan a",
+            "href": "/walkthrough"
+          },
+          {
+            "label": "Read the",
+            "href": "/guide"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    }
+  ]
+}

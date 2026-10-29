@@ -1,15 +1,18 @@
 section,category,templates,routes,Homepage,Use case,Customer story,Migration Playbooks,Integration Playbooks,Product,Enterprise,Customer story index,Blog index,Article (long-form),Legal document
+shell.consent-banner-root,SHELL,11,21,x,x,x,x,x,x,x,x,x,x,x
 shell.footer,SHELL,11,21,x,x,x,x,x,x,x,x,x,x,x
 shell.header,SHELL,11,21,x,x,x,x,x,x,x,x,x,x,x
-shell.consent-banner-root,SHELL,11,21,x,x,x,x,x,x,x,x,x,x,x
 cta.book-demo-band,CTA,10,19,x,x,x,x,x,x,x,x,x,x,
 narrative.problem-statement,NARRATIVE,4,9,x,x,,x,x,,,,,,
 faq.accordion,FAQ,1,6,,x,,,,,,,,,
 hero.use-case,HERO,1,6,,x,,,,,,,,,
 narrative.solution-statement,NARRATIVE,1,6,,x,,,,,,,,,
+cta.story-email-capture,CTA,1,5,,,x,,,,,,,,
 hero.customer-story,HERO,1,5,,,x,,,,,,,,
 narrative.story-beat,NARRATIVE,1,5,,,x,,,,,,,,
+proof.story-company-facts,PROOF,1,5,,,x,,,,,,,,
 proof.story-metrics,PROOF,1,5,,,x,,,,,,,,
+proof.story-pull-quote,PROOF,1,5,,,x,,,,,,,,
 hero.page-title,HERO,4,4,,,,,,x,x,x,x,,
 features.capability-grid,FEATURES,2,2,,,,x,x,,,,,,
 features.solution-anatomy,FEATURES,2,2,,,,x,x,,,,,,
@@ -17,7 +20,8 @@ features.solution-outcomes,FEATURES,2,2,,,,x,x,,,,,,
 hero.solution,HERO,2,2,,,,x,x,,,,,,
 narrative.result-callout,NARRATIVE,2,2,,,,x,x,,,,,,
 shell.spacer,SHELL,2,2,,,,x,,,,,x,,
-narrative.legal-body,NARRATIVE,1,2,,,,,,,,,,,x
+narrative.legal-clause,NARRATIVE,1,2,,,,,,,,,,,x
+narrative.legal-header,NARRATIVE,1,2,,,,,,,,,,,x
 features.any-source,FEATURES,1,1,x,,,,,,,,,,
 features.automation-samples,FEATURES,1,1,,,,,x,,,,,,
 features.enterprise-pillars,FEATURES,1,1,,,,,,,x,,,,
@@ -27,8 +31,10 @@ features.playbook-cta-cards,FEATURES,1,1,x,,,,,,,,,,
 features.use-case-teasers,FEATURES,1,1,x,,,,,,,,,,
 hero.article,HERO,1,1,,,,,,,,,,x,
 hero.home,HERO,1,1,x,,,,,,,,,,
+index.article-toc,INDEX,1,1,,,,,,,,,,x,
 index.blog-roll,INDEX,1,1,,,,,,,,,x,,
-narrative.article-body,NARRATIVE,1,1,,,,,,,,,,x,
+narrative.article-chapter,NARRATIVE,1,1,,,,,,,,,,x,
+narrative.article-sources,NARRATIVE,1,1,,,,,,,,,,x,
 proof.compliance-badges,PROOF,1,1,,,,,,,x,,,,
 proof.story-grid,PROOF,1,1,,,,,,,,x,,,
 proof.testimonials,PROOF,1,1,x,,,,,,,,,,

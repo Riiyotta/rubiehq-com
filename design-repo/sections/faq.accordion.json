@@ -11,11 +11,12 @@
     "instances": 6,
     "routes": 6,
     "measuredFrom": [
-      "src/use-cases/sales/index.html:741-811",
-      "src/use-cases/customer-success/index.html:741-811",
-      "src/use-cases/product/index.html:741-811",
-      "src/use-cases/healthcare/index.html:739-809",
-      "src/use-cases/financial-services/index.html:740-810"
+      "src/sections/Z1013.jsx:697-761",
+      "src/sections/Z1014.jsx:697-761",
+      "src/sections/Z1015.jsx:697-761",
+      "src/sections/Z1016.jsx:690-754",
+      "src/sections/Z1017.jsx:692-756",
+      "src/sections/Z1018.jsx:697-761"
     ]
   },
   "content": {
@@ -45,6 +46,22 @@
     "reducedMotionFallback": "instant-state"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z1013.jsx > section[3]",
-  "scope": "The 6 /use-cases/* routes."
+  "implementedBy": "src/sections/Z1013.jsx > top[4]",
+  "scope": "The 6 /use-cases/* routes.",
+  "source": {
+    "id": "Z1013:section@697",
+    "tag": "section",
+    "file": "src/sections/Z1013.jsx",
+    "lines": [
+      697,
+      761
+    ],
+    "route": "/use-cases/sales"
+  },
+  "semantic": {
+    "id": "faq.accordion",
+    "category": "FAQ"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

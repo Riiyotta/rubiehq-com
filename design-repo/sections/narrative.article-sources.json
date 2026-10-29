@@ -1,0 +1,61 @@
+{
+  "id": "narrative.article-sources",
+  "category": "NARRATIVE",
+  "label": "article-sources",
+  "tag": "section",
+  "purpose": "The article's closing sources list: an h2 'Sources' and one line per cited report.",
+  "purposeIsInferred": false,
+  "nameSource": "decomposed by real content boundaries from the clone's JSX (extraction/build_source_map.py DECOMPOSE)",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/sections/Z1021.jsx:570-575"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 1
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 11
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1021.jsx > top[2] article > section:not([id])[0]",
+  "scope": "The 1 /blog/<slug> route.",
+  "source": {
+    "id": "Z1021:section@570",
+    "tag": "section",
+    "file": "src/sections/Z1021.jsx",
+    "lines": [
+      570,
+      575
+    ],
+    "route": "/blog/migration-revenue-killer"
+  },
+  "semantic": {
+    "id": "narrative.article-sources",
+    "category": "NARRATIVE"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
+}

@@ -11,11 +11,11 @@
     "instances": 5,
     "routes": 5,
     "measuredFrom": [
-      "src/customers/granum/index.html:395-412",
-      "src/customers/brivity/index.html:395-412",
-      "src/customers/cariina/index.html:395-412",
-      "src/customers/curbwaste/index.html:395-412",
-      "src/customers/bound/index.html:395-412"
+      "src/sections/Z1010.jsx:378-395",
+      "src/sections/Z1011.jsx:378-395",
+      "src/sections/Z1012.jsx:378-395",
+      "src/sections/Z1019.jsx:378-395",
+      "src/sections/Z1020.jsx:378-395"
     ]
   },
   "content": {
@@ -39,6 +39,22 @@
     "reducedMotionFallback": "instant-state"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z1010.jsx > section[1]",
-  "scope": "The 5 /customers/<name> routes."
+  "implementedBy": "src/sections/Z1010.jsx > top[2]",
+  "scope": "The 5 /customers/<name> routes.",
+  "source": {
+    "id": "Z1010:section@378",
+    "tag": "section",
+    "file": "src/sections/Z1010.jsx",
+    "lines": [
+      378,
+      395
+    ],
+    "route": "/customers/granum"
+  },
+  "semantic": {
+    "id": "proof.story-metrics",
+    "category": "PROOF"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

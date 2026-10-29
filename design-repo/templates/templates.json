@@ -160,7 +160,23 @@
           "repeatable": false
         },
         {
+          "section": "proof.story-pull-quote",
+          "required": true,
+          "repeatable": false
+        },
+        {
           "section": "narrative.story-beat",
+          "required": true,
+          "repeatable": true,
+          "maxCount": 3
+        },
+        {
+          "section": "proof.story-company-facts",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "cta.story-email-capture",
           "required": true,
           "repeatable": false
         },
@@ -535,7 +551,18 @@
           "repeatable": false
         },
         {
-          "section": "narrative.article-body",
+          "section": "index.article-toc",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.article-chapter",
+          "required": true,
+          "repeatable": true,
+          "maxCount": 5
+        },
+        {
+          "section": "narrative.article-sources",
           "required": true,
           "repeatable": false
         },
@@ -576,9 +603,15 @@
           "repeatable": false
         },
         {
-          "section": "narrative.legal-body",
+          "section": "narrative.legal-header",
           "required": true,
           "repeatable": false
+        },
+        {
+          "section": "narrative.legal-clause",
+          "required": true,
+          "repeatable": true,
+          "maxCount": 17
         },
         {
           "section": "shell.footer",

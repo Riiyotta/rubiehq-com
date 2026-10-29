@@ -11,7 +11,7 @@
     "instances": 1,
     "routes": 1,
     "measuredFrom": [
-      "src/solutions/integration-playbooks/index.html:2647-2972"
+      "src/sections/Z109.jsx:1764-2091"
     ]
   },
   "content": {
@@ -35,6 +35,22 @@
     "reducedMotionFallback": "disable-animation"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z109.jsx > section[6]",
-  "scope": "The /solutions/integration-playbooks route only."
+  "implementedBy": "src/sections/Z109.jsx > top[7]",
+  "scope": "The /solutions/integration-playbooks route only.",
+  "source": {
+    "id": "Z109:section@1764",
+    "tag": "section",
+    "file": "src/sections/Z109.jsx",
+    "lines": [
+      1764,
+      2091
+    ],
+    "route": "/solutions/integration-playbooks"
+  },
+  "semantic": {
+    "id": "features.automation-samples",
+    "category": "FEATURES"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

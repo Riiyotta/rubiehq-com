@@ -11,10 +11,10 @@
     "instances": 4,
     "routes": 4,
     "measuredFrom": [
-      "src/product/index.html:283-340",
-      "src/enterprise/index.html:284-349",
-      "src/customers/index.html:284-293",
-      "src/blog/index.html:283-287"
+      "src/sections/Z102.jsx:288-337",
+      "src/sections/Z103.jsx:288-345",
+      "src/sections/Z104.jsx:288-297",
+      "src/sections/Z105.jsx:288-292"
     ]
   },
   "content": {
@@ -50,6 +50,22 @@
     "reducedMotionFallback": "instant-state"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z102.jsx > section[0]",
-  "scope": "4 routes: /product, /enterprise, /customers and /blog."
+  "implementedBy": "src/sections/Z102.jsx > top[1]",
+  "scope": "4 routes: /product, /enterprise, /customers and /blog.",
+  "source": {
+    "id": "Z102:section@288",
+    "tag": "section",
+    "file": "src/sections/Z102.jsx",
+    "lines": [
+      288,
+      337
+    ],
+    "route": "/product"
+  },
+  "semantic": {
+    "id": "hero.page-title",
+    "category": "HERO"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

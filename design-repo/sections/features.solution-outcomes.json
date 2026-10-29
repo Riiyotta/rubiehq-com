@@ -11,8 +11,8 @@
     "instances": 2,
     "routes": 2,
     "measuredFrom": [
-      "src/solutions/migration-playbooks/index.html:1222-1746",
-      "src/solutions/integration-playbooks/index.html:1981-2011"
+      "src/sections/Z108.jsx:889-1198",
+      "src/sections/Z109.jsx:1360-1398"
     ]
   },
   "content": {
@@ -42,6 +42,9 @@
         "maxItems": 3,
         "assetRoles": [
           "icon"
+        ],
+        "generatedAssetRoles": [
+          "icon"
         ]
       }
     }
@@ -58,6 +61,24 @@
   "assetRoles": [
     "icon"
   ],
-  "implementedBy": "src/sections/Z108.jsx > section[4]",
-  "scope": "The 2 /solutions/* routes."
+  "implementedBy": "src/sections/Z108.jsx > top[5]",
+  "scope": "The 2 /solutions/* routes.",
+  "source": {
+    "id": "Z108:section@889",
+    "tag": "section",
+    "file": "src/sections/Z108.jsx",
+    "lines": [
+      889,
+      1198
+    ],
+    "route": "/solutions/migration-playbooks"
+  },
+  "semantic": {
+    "id": "features.solution-outcomes",
+    "category": "FEATURES"
+  },
+  "generatedAssetRoles": [
+    "icon"
+  ],
+  "retrievalEligible": true
 }

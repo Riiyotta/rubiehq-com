@@ -11,11 +11,25 @@
     "instances": 19,
     "routes": 19,
     "measuredFrom": [
-      "src/index.html:7299-8445",
-      "src/product/index.html:744-1890",
-      "src/enterprise/index.html:1307-2453",
-      "src/customers/index.html:370-1516",
-      "src/blog/index.html:320-1466"
+      "src/sections/Z10.jsx:4771-5407",
+      "src/sections/Z102.jsx:715-1351",
+      "src/sections/Z103.jsx:983-1619",
+      "src/sections/Z104.jsx:369-1005",
+      "src/sections/Z105.jsx:323-959",
+      "src/sections/Z108.jsx:1313-1949",
+      "src/sections/Z109.jsx:2093-2729",
+      "src/sections/Z1010.jsx:549-1185",
+      "src/sections/Z1011.jsx:547-1183",
+      "src/sections/Z1012.jsx:540-1176",
+      "src/sections/Z1013.jsx:763-1399",
+      "src/sections/Z1014.jsx:763-1399",
+      "src/sections/Z1015.jsx:763-1399",
+      "src/sections/Z1016.jsx:756-1392",
+      "src/sections/Z1017.jsx:758-1394",
+      "src/sections/Z1018.jsx:763-1399",
+      "src/sections/Z1019.jsx:542-1178",
+      "src/sections/Z1020.jsx:542-1178",
+      "src/sections/Z1021.jsx:580-1216"
     ]
   },
   "content": {
@@ -45,6 +59,22 @@
     "reducedMotionFallback": "instant-state"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z10.jsx > section[7]",
-  "scope": "19 routes — all but /privacy-policy and /terms, which end at their legal body."
+  "implementedBy": "src/sections/Z10.jsx > top[8]",
+  "scope": "19 routes — all but /privacy-policy and /terms, which end at their legal body.",
+  "source": {
+    "id": "Z10:section@4771",
+    "tag": "section",
+    "file": "src/sections/Z10.jsx",
+    "lines": [
+      4771,
+      5407
+    ],
+    "route": "/"
+  },
+  "semantic": {
+    "id": "cta.book-demo-band",
+    "category": "CTA"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

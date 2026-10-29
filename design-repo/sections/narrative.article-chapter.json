@@ -1,0 +1,73 @@
+{
+  "id": "narrative.article-chapter",
+  "category": "NARRATIVE",
+  "label": "article-chapter",
+  "tag": "section",
+  "purpose": "One chapter of a long-form article: an h2 with its #id anchor, prose paragraphs and bullet points, and optional h3 cards (timeline stages, principles).",
+  "purposeIsInferred": false,
+  "nameSource": "decomposed by real content boundaries from the clone's JSX (extraction/build_source_map.py DECOMPOSE)",
+  "evidence": {
+    "level": "measured",
+    "instances": 5,
+    "routes": 1,
+    "measuredFrom": [
+      "src/sections/Z1021.jsx:423-442",
+      "src/sections/Z1021.jsx:443-463",
+      "src/sections/Z1021.jsx:464-512",
+      "src/sections/Z1021.jsx:513-560",
+      "src/sections/Z1021.jsx:561-569"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 7
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 6,
+        "maxWords": 58
+      },
+      "items": {
+        "type": "item[]",
+        "required": false,
+        "maxItems": 5,
+        "titleMaxWords": 8,
+        "bodyMaxWords": 50
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": false,
+    "maxPerPage": 5
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1021.jsx > top[2] article > section[id][0]",
+  "scope": "The 1 /blog/<slug> route (one per chapter with an #id anchor).",
+  "source": {
+    "id": "Z1021:section@423",
+    "tag": "section",
+    "file": "src/sections/Z1021.jsx",
+    "lines": [
+      423,
+      442
+    ],
+    "route": "/blog/migration-revenue-killer"
+  },
+  "semantic": {
+    "id": "narrative.article-chapter",
+    "category": "NARRATIVE"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
+}

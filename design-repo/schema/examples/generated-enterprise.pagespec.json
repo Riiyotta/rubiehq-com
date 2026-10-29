@@ -1,0 +1,199 @@
+{
+  "pageSpecVersion": "0.3.0",
+  "mode": "generation",
+  "theme": "light",
+  "brand": {
+    "name": "Fernbrook",
+    "domain": "fernbrook.example"
+  },
+  "template": "template.enterprise",
+  "route": "/enterprise",
+  "nodes": [
+    {
+      "type": "shell.header",
+      "content": {
+        "listItems": [
+          "Spreadsheets",
+          "Legacy portals",
+          "Shared drives"
+        ],
+        "ctas": [
+          {
+            "label": "Plan a walkthrough",
+            "href": "/walkthrough"
+          },
+          {
+            "label": "Read the guide",
+            "href": "/guide"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "hero.page-title",
+      "content": {
+        "heading": "What happens",
+        "body": [
+          "Your specialists approve each mapping once, and the next customer with the same shape of file starts from that plan."
+        ],
+        "ctas": [
+          {
+            "label": "Read the guide",
+            "href": "/guide"
+          },
+          {
+            "label": "Talk to us",
+            "href": "/contact"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      },
+      "style": {
+        "surface": "surface.default",
+        "textColor": "text.primary",
+        "typography": "typography.display",
+        "fontFamily": "Geist",
+        "spacingTop": "layout.sectionPaddingTop",
+        "spacingBottom": "layout.sectionPaddingBottom"
+      }
+    },
+    {
+      "type": "proof.compliance-badges",
+      "content": {
+        "heading": "What happens to your information",
+        "body": [
+          "Every import keeps a plain trail of what changed, who signed off and which rows still need a human eye.",
+          "Spreadsheets, old portals and odd text dumps all land in the same review queue instead of a support inbox."
+        ],
+        "images": [
+          {
+            "assetRole": "icon",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/icon.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "features.enterprise-pillars",
+      "content": {
+        "heading": "Plans that teams reuse",
+        "body": [
+          "Spreadsheets, old portals and odd text dumps all land in the same review queue instead of a support inbox."
+        ],
+        "items": [
+          {
+            "title": "Gentle retries",
+            "body": "Fix one odd row without restarting the whole batch."
+          },
+          {
+            "title": "Shared review",
+            "body": "Ops and success look at the same queue."
+          },
+          {
+            "title": "Quiet alerts",
+            "body": "Only the rows that need a person raise a flag."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "cta.book-demo-band",
+      "content": {
+        "heading": "Questions buyers ask before they switch",
+        "ctas": [
+          {
+            "label": "Start a trial",
+            "href": "/start"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.footer",
+      "content": {
+        "heading": "How",
+        "items": [
+          {
+            "title": "Quiet",
+            "body": "Only"
+          },
+          {
+            "title": "Preview",
+            "body": "See"
+          },
+          {
+            "title": "Reusable",
+            "body": "Save"
+          }
+        ],
+        "ctas": [
+          {
+            "label": "Plan a walkthrough",
+            "href": "/walkthrough"
+          },
+          {
+            "label": "Read the guide",
+            "href": "/guide"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.consent-banner-root",
+      "content": {
+        "ctas": [
+          {
+            "label": "Read the",
+            "href": "/guide"
+          },
+          {
+            "label": "Talk to",
+            "href": "/contact"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    }
+  ]
+}

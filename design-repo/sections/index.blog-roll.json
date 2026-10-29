@@ -11,7 +11,7 @@
     "instances": 1,
     "routes": 1,
     "measuredFrom": [
-      "src/blog/index.html:288-313"
+      "src/sections/Z105.jsx:293-317"
     ]
   },
   "content": {
@@ -41,6 +41,22 @@
     "reducedMotionFallback": "instant-state"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z105.jsx > section[1]",
-  "scope": "The /blog route only."
+  "implementedBy": "src/sections/Z105.jsx > top[2]",
+  "scope": "The /blog route only.",
+  "source": {
+    "id": "Z105:section@293",
+    "tag": "section",
+    "file": "src/sections/Z105.jsx",
+    "lines": [
+      293,
+      317
+    ],
+    "route": "/blog"
+  },
+  "semantic": {
+    "id": "index.blog-roll",
+    "category": "INDEX"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

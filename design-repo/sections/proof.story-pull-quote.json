@@ -1,0 +1,64 @@
+{
+  "id": "proof.story-pull-quote",
+  "category": "PROOF",
+  "label": "story-pull-quote",
+  "tag": "blockquote",
+  "purpose": "The customer story's opening pull quote: one italic customer quote with the speaker's name and title.",
+  "purposeIsInferred": false,
+  "nameSource": "decomposed by real content boundaries from the clone's JSX (extraction/build_source_map.py DECOMPOSE)",
+  "evidence": {
+    "level": "measured",
+    "instances": 5,
+    "routes": 5,
+    "measuredFrom": [
+      "src/sections/Z1010.jsx:402-408",
+      "src/sections/Z1011.jsx:402-408",
+      "src/sections/Z1012.jsx:402-408",
+      "src/sections/Z1019.jsx:402-408",
+      "src/sections/Z1020.jsx:402-408"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "quote": {
+        "type": "string",
+        "required": true,
+        "maxWords": 35
+      },
+      "attribution": {
+        "type": "string",
+        "required": true,
+        "maxWords": 6
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1010.jsx > top[3] article blockquote[0]",
+  "scope": "The 5 /customers/<name> routes.",
+  "source": {
+    "id": "Z1010:blockquote@402",
+    "tag": "blockquote",
+    "file": "src/sections/Z1010.jsx",
+    "lines": [
+      402,
+      408
+    ],
+    "route": "/customers/granum"
+  },
+  "semantic": {
+    "id": "proof.story-pull-quote",
+    "category": "PROOF"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
+}

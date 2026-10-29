@@ -1,0 +1,236 @@
+{
+  "pageSpecVersion": "0.3.0",
+  "mode": "generation",
+  "theme": "light",
+  "brand": {
+    "name": "Fernbrook",
+    "domain": "fernbrook.example"
+  },
+  "template": "template.article",
+  "route": "/article",
+  "nodes": [
+    {
+      "type": "shell.header",
+      "content": {
+        "listItems": [
+          "Spreadsheets",
+          "Legacy portals",
+          "Shared drives"
+        ],
+        "ctas": [
+          {
+            "label": "Plan a walkthrough",
+            "href": "/walkthrough"
+          },
+          {
+            "label": "Read the guide",
+            "href": "/guide"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "hero.article",
+      "content": {
+        "heading": "Questions buyers ask before they switch",
+        "body": [
+          "Your specialists approve each mapping once, and the next customer with the same shape of file starts from that plan.",
+          "Every import keeps a plain trail of what changed, who signed off and which rows still need a human eye."
+        ],
+        "ctas": [
+          {
+            "label": "Read the",
+            "href": "/guide"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      },
+      "style": {
+        "surface": "surface.default",
+        "textColor": "text.primary",
+        "typography": "typography.display",
+        "fontFamily": "Geist",
+        "spacingTop": "layout.sectionPaddingTop",
+        "spacingBottom": "layout.sectionPaddingBottom"
+      }
+    },
+    {
+      "type": "index.article-toc",
+      "content": {
+        "ctas": [
+          {
+            "label": "Move every record without the late nights",
+            "href": "#chapter-a"
+          },
+          {
+            "label": "Onboarding that feels like a quiet handoff",
+            "href": "#chapter-b"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "narrative.article-chapter",
+      "content": {
+        "heading": "Onboarding that feels like a quiet handoff",
+        "body": [
+          "Spreadsheets, old portals and odd text dumps all land in the same review queue instead of a support inbox.",
+          "Sales can promise a gentle switch because onboarding no longer waits on a sprint from the platform crew."
+        ],
+        "items": [
+          {
+            "title": "Gentle retries",
+            "body": "Fix one odd row without restarting the whole batch."
+          },
+          {
+            "title": "Shared review",
+            "body": "Ops and success look at the same queue."
+          },
+          {
+            "title": "Quiet alerts",
+            "body": "Only the rows that need a person raise a flag."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "narrative.article-chapter",
+      "content": {
+        "heading": "Clean imports from whatever your customers keep",
+        "body": [
+          "Sales can promise a gentle switch because onboarding no longer waits on a sprint from the platform crew.",
+          "When a file arrives with surprises, Fernbrook flags the odd columns and suggests a fix you can accept or reject."
+        ],
+        "items": [
+          {
+            "title": "Shared review",
+            "body": "Ops and success look at the same queue."
+          },
+          {
+            "title": "Quiet alerts",
+            "body": "Only the rows that need a person raise a flag."
+          },
+          {
+            "title": "Preview first",
+            "body": "See the cleaned rows before they reach your workspace."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "narrative.article-sources",
+      "content": {
+        "heading": "Plans",
+        "body": [
+          "When a file arrives with surprises, Fernbrook flags the odd columns"
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "cta.book-demo-band",
+      "content": {
+        "heading": "Field notes on careful data moves",
+        "ctas": [
+          {
+            "label": "Read the guide",
+            "href": "/guide"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.footer",
+      "content": {
+        "heading": "Onboarding",
+        "items": [
+          {
+            "title": "Reusable",
+            "body": "Save"
+          },
+          {
+            "title": "Plain",
+            "body": "Every"
+          },
+          {
+            "title": "Gentle",
+            "body": "Fix"
+          }
+        ],
+        "ctas": [
+          {
+            "label": "Talk to us",
+            "href": "/contact"
+          },
+          {
+            "label": "See pricing notes",
+            "href": "/notes"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.consent-banner-root",
+      "content": {
+        "ctas": [
+          {
+            "label": "See pricing",
+            "href": "/notes"
+          },
+          {
+            "label": "Start a",
+            "href": "/start"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    }
+  ]
+}

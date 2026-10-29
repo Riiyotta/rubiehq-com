@@ -11,11 +11,7 @@
     "instances": 21,
     "routes": 21,
     "measuredFrom": [
-      "src/index.html:8833-8849",
-      "src/product/index.html:2278-2294",
-      "src/enterprise/index.html:2842-2858",
-      "src/customers/index.html:1904-1920",
-      "src/blog/index.html:1854-1870"
+      "src/sections/C15tUiRootHE9Kz.jsx:24-40"
     ]
   },
   "content": {
@@ -40,6 +36,23 @@
     "reducedMotionFallback": "instant-state"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/C15tUiRootHE9Kz.jsx",
-  "scope": "All 21 routes."
+  "implementedBy": "src/sections/C15tUiRootHE9Kz.jsx > consent root",
+  "scope": "All 21 routes.",
+  "source": {
+    "id": "C15tUiRootHE9Kz:div@24",
+    "tag": "div",
+    "file": "src/sections/C15tUiRootHE9Kz.jsx",
+    "lines": [
+      24,
+      40
+    ],
+    "route": "/"
+  },
+  "semantic": {
+    "id": "shell.consent-banner-root",
+    "category": "SHELL"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": false,
+  "retrievalReason": "Cookie-consent banner: runtime utility UI fixed over the page, not page content; a generator must never retrieve it as a section example."
 }

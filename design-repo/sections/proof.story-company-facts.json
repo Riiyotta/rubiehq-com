@@ -1,0 +1,73 @@
+{
+  "id": "proof.story-company-facts",
+  "category": "PROOF",
+  "label": "story-company-facts",
+  "tag": "div",
+  "purpose": "The story sidebar's company profile: the customer's name, a one-line description and labelled facts (headquarters, employees, industry, previous solution) shown as pills.",
+  "purposeIsInferred": false,
+  "nameSource": "decomposed by real content boundaries from the clone's JSX (extraction/build_source_map.py DECOMPOSE)",
+  "evidence": {
+    "level": "measured",
+    "instances": 5,
+    "routes": 5,
+    "measuredFrom": [
+      "src/sections/Z1010.jsx:476-522",
+      "src/sections/Z1011.jsx:474-520",
+      "src/sections/Z1012.jsx:467-513",
+      "src/sections/Z1019.jsx:469-515",
+      "src/sections/Z1020.jsx:469-515"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 1
+      },
+      "body": {
+        "type": "string[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 24
+      },
+      "items": {
+        "type": "item[]",
+        "required": true,
+        "maxItems": 4,
+        "titleMaxWords": 2,
+        "bodyMaxWords": 7
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none",
+      "scroll-linked"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1010.jsx > top[3] aside > div > div[0]",
+  "scope": "The 5 /customers/<name> routes (sticky sidebar, beside the story beats at >= lg).",
+  "source": {
+    "id": "Z1010:div@476",
+    "tag": "div",
+    "file": "src/sections/Z1010.jsx",
+    "lines": [
+      476,
+      522
+    ],
+    "route": "/customers/granum"
+  },
+  "semantic": {
+    "id": "proof.story-company-facts",
+    "category": "PROOF"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
+}

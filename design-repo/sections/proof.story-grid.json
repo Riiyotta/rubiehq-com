@@ -11,7 +11,7 @@
     "instances": 1,
     "routes": 1,
     "measuredFrom": [
-      "src/customers/index.html:294-369"
+      "src/sections/Z104.jsx:298-368"
     ]
   },
   "content": {
@@ -29,6 +29,12 @@
         "assetRoles": [
           "content-image",
           "customer-logo"
+        ],
+        "generatedAssetRoles": [
+          "generated-illustration",
+          "placeholder-customer-logo",
+          "placeholder-screenshot",
+          "user-supplied-asset"
         ]
       }
     }
@@ -47,6 +53,27 @@
     "content-image",
     "customer-logo"
   ],
-  "implementedBy": "src/sections/Z104.jsx > section[1]",
-  "scope": "The /customers route only."
+  "implementedBy": "src/sections/Z104.jsx > top[2]",
+  "scope": "The /customers route only.",
+  "source": {
+    "id": "Z104:section@298",
+    "tag": "section",
+    "file": "src/sections/Z104.jsx",
+    "lines": [
+      298,
+      368
+    ],
+    "route": "/customers"
+  },
+  "semantic": {
+    "id": "proof.story-grid",
+    "category": "PROOF"
+  },
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "placeholder-customer-logo",
+    "placeholder-screenshot",
+    "user-supplied-asset"
+  ],
+  "retrievalEligible": true
 }

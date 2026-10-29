@@ -11,11 +11,27 @@
     "instances": 21,
     "routes": 21,
     "measuredFrom": [
-      "src/index.html:8450-8829",
-      "src/product/index.html:1895-2274",
-      "src/enterprise/index.html:2459-2838",
-      "src/customers/index.html:1521-1900",
-      "src/blog/index.html:1471-1850"
+      "src/sections/Z10.jsx:5410-5708",
+      "src/sections/Z102.jsx:1354-1652",
+      "src/sections/Z103.jsx:1623-1921",
+      "src/sections/Z104.jsx:1008-1306",
+      "src/sections/Z105.jsx:962-1260",
+      "src/sections/Z106.jsx:385-683",
+      "src/sections/Z107.jsx:402-700",
+      "src/sections/Z108.jsx:1952-2250",
+      "src/sections/Z109.jsx:2732-3030",
+      "src/sections/Z1010.jsx:1189-1487",
+      "src/sections/Z1011.jsx:1187-1485",
+      "src/sections/Z1012.jsx:1180-1478",
+      "src/sections/Z1013.jsx:1402-1700",
+      "src/sections/Z1014.jsx:1402-1700",
+      "src/sections/Z1015.jsx:1402-1700",
+      "src/sections/Z1016.jsx:1395-1693",
+      "src/sections/Z1017.jsx:1397-1695",
+      "src/sections/Z1018.jsx:1402-1700",
+      "src/sections/Z1019.jsx:1182-1480",
+      "src/sections/Z1020.jsx:1182-1480",
+      "src/sections/Z1021.jsx:1220-1518"
     ]
   },
   "content": {
@@ -45,6 +61,10 @@
         "maxItems": 1,
         "assetRoles": [
           "logo"
+        ],
+        "generatedAssetRoles": [
+          "placeholder-brand-mark",
+          "user-supplied-asset"
         ]
       }
     }
@@ -62,6 +82,25 @@
   "assetRoles": [
     "logo"
   ],
-  "implementedBy": "src/sections/Z10.jsx > footer",
-  "scope": "All 21 routes. Identical apart from generated SVG arc ids."
+  "implementedBy": "src/sections/Z10.jsx > top[9]",
+  "scope": "All 21 routes. Identical apart from generated SVG arc ids.",
+  "source": {
+    "id": "Z10:footer@5410",
+    "tag": "footer",
+    "file": "src/sections/Z10.jsx",
+    "lines": [
+      5410,
+      5708
+    ],
+    "route": "/"
+  },
+  "semantic": {
+    "id": "shell.footer",
+    "category": "SHELL"
+  },
+  "generatedAssetRoles": [
+    "placeholder-brand-mark",
+    "user-supplied-asset"
+  ],
+  "retrievalEligible": true
 }

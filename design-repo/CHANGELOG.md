@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.3.0 — 2026-10-29
+Baseline revision (R1-R14). Baseline audit before: 6 pass / 15 fail; after: all pass.
+
+- **Evidence now ships with a full clone.** The ledger cited `recon/mirror/src/*.html`, which `.gitignore` excludes, so
+  `verify_all.py` in a fresh `git clone` reported "evidence not shipped" and checked no citation or asset file even though
+  the runnable clone's `src/` and `public/` were right there. `extraction/build_source_map.py` re-derives every range from the
+  tracked JSX (`snapshotFolder: "src/"`, 219 ranges); assets are reconciled with `public/` (`inClone`; 7 clone files that were
+  unregistered — 4 Geist woff2, 3 Rive stills — added, the stills as new role `animation-still`). Only a design-repo copied
+  out alone degrades to warnings. Route coverage is checked against `src/routes.js`.
+- **R1/R2** required `mode: clone | generation` (pageSpecVersion 0.3.0); nine `GENERATION_MODE_*` rules backed by
+  `schema/source-identity.json` (generated from src/ with file:line evidence; copy as hashed 5-word shingles).
+- **R3** availability + substitutes + guidance on every role, 8 generation-safe roles added, `PINNED_AVAILABILITY` in both
+  validators. **R4** one generation example per template (11, fictional brand "Fernbrook").
+- **R6** legal / article / customer-story bodies decomposed (sections 33 -> 39); the story sidebar form is CTA-classed.
+- **R7** closed `source` / `semantic` objects + `schema/section-contract.schema.json`. **R8** `retrievalEligible` (consent banner
+  false), pinned in both validators. **R9** `extraction/wrapper_gate.py` + `sectionHeights` measured at 1440px from the built clone.
+- **R10** optional token-only node `style` with six `TOKEN_*` rules; theme combinations derived from contrast.
+- **Common policy**: `category: saas`, bound to `n0-saas-design-constraints-common` 0.1.0 with a recomputed `contentHash`.
+- Fixed: `NO_ADJACENT_SAME_CATEGORY` exceptions were `"a+b"` strings compared as character tuples, so no exception ever matched.
+- Fixed: `extraction/prove_drift.py` held an absolute machine path (the leak probe); it is now built at run time. `--scratch DIR` added.
+- Honesty: patterns not human-reviewed; detection string-based; SaaS binding and any whitelist are agent attestation, not a human
+  sign-off; visual parity not re-measured.
+
 ## 0.2.0 — 2026-10-06
 Re-extracted the section tree. The 0.1.0 pass classified each page's `<main>`
 element as a single hero section and never descended into its children, so all

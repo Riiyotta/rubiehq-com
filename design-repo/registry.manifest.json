@@ -3,10 +3,10 @@
   "site": "rubiehq-com",
   "status": "design-review-pending",
   "productionApproved": false,
-  "repositoryVersion": "0.2.0",
-  "pageSpecVersion": "0.2.0",
-  "allowlistVersion": 2,
-  "versionFieldNote": "allowlistVersion is machine-checked (verify_all.py fails if it differs from tokens/llm/component-allowlist.json). repositoryVersion and pageSpecVersion are documentation-only markers; pageSpecVersion is additionally pinned as a const in the schema.",
+  "repositoryVersion": "0.3.0",
+  "pageSpecVersion": "0.3.0",
+  "allowlistVersion": 3,
+  "versionFieldNote": "allowlistVersion is machine-checked (verify_all.py fails if it differs from tokens/llm/component-allowlist.json). repositoryVersion and pageSpecVersion are documentation-only markers; pageSpecVersion is additionally pinned as a const in the schema. Bumped to 0.3.0 for the required `mode` field (pageSpecVersion const in the schema).",
   "defaultTheme": "light",
   "schemaValidatedThemes": [
     "light"
@@ -17,17 +17,16 @@
   },
   "sourceProject": {
     "url": "https://www.rubiehq.com/",
-    "framework": "React+Next.js+Rive",
     "scrapedAt": "2026-10-06T07:05:09Z"
   },
   "generatedBy": "website-builder (heuristic extraction; see README)",
   "counts": {
-    "sections": 33,
+    "sections": 39,
     "templates": 11,
     "routes": 21,
     "primitives": 10,
     "components": 5,
-    "assets": 180,
+    "assets": 187,
     "themes": 1,
     "rules": 7,
     "tokens": {
@@ -35,7 +34,8 @@
       "semantic": 18,
       "component": 23,
       "layout": 6
-    }
+    },
+    "generationExamples": 11
   },
   "entryPoints": {
     "tokenCatalog": "tokens/llm/token-catalog.json",
@@ -52,6 +52,35 @@
     "admission": "extraction/verify_all.py",
     "driftProof": "extraction/prove_drift.py",
     "measuredValues": "extraction/measured-values.json",
-    "defaultTheme": "tokens/themes/light.json"
+    "defaultTheme": "tokens/themes/light.json",
+    "sectionContractSchema": "schema/section-contract.schema.json",
+    "sourceIdentity": "schema/source-identity.json",
+    "wrapperGate": "extraction/wrapper_gate.py",
+    "generationExamples": "schema/examples/generated-home.pagespec.json",
+    "designPolicy": "policy/design-policy.json",
+    "measureSections": "extraction/measure_sections.mjs",
+    "buildSourceMap": "extraction/build_source_map.py",
+    "buildSourceIdentity": "extraction/build_source_identity.py",
+    "syncContractLayers": "extraction/sync_contract_layers.py",
+    "buildGenerationExamples": "extraction/build_generation_examples.py",
+    "policyHash": "extraction/policy_hash.py"
+  },
+  "category": "saas",
+  "designPolicy": {
+    "ref": "policy/design-policy.json",
+    "policyId": "n0-saas-design-constraints-common",
+    "policyVersion": "0.1.0",
+    "commonIrVersion": "0.5",
+    "enforcementMode": "hard-and-soft",
+    "contentHash": "sha256:b0709aa93239223ca78517665701c3ed655922a835879fee93c2d3318db7aacd"
+  },
+  "modes": {
+    "clone": "faithful reconstruction; real source assets/copy may be reused for fidelity",
+    "generation": "new page for another brand; zero source identity or content (schema/source-identity.json + GENERATION_MODE_* rules)"
+  },
+  "sourceStack": {
+    "note": "documentation only",
+    "clone": "Vite + React + react-router + Tailwind v3 (package.json)",
+    "original": "React+Next.js+Rive"
   }
 }

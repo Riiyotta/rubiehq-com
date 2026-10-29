@@ -1,0 +1,294 @@
+{
+  "pageSpecVersion": "0.3.0",
+  "mode": "generation",
+  "theme": "light",
+  "brand": {
+    "name": "Fernbrook",
+    "domain": "fernbrook.example"
+  },
+  "template": "template.home",
+  "route": "/",
+  "nodes": [
+    {
+      "type": "shell.header",
+      "content": {
+        "listItems": [
+          "Spreadsheets",
+          "Legacy portals",
+          "Shared drives"
+        ],
+        "ctas": [
+          {
+            "label": "Plan a walkthrough",
+            "href": "/walkthrough"
+          },
+          {
+            "label": "Read the guide",
+            "href": "/guide"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "hero.home",
+      "content": {
+        "heading": "Onboarding that feels like a",
+        "body": [
+          "Your specialists approve each mapping once, and the next customer with the same shape of file starts from that plan."
+        ],
+        "listItems": [
+          "Legacy portals",
+          "Shared drives",
+          "Email exports"
+        ],
+        "ctas": [
+          {
+            "label": "Read the guide",
+            "href": "/guide"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "generated-illustration",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/generated-illustration.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "disable-animation"
+      },
+      "style": {
+        "surface": "surface.default",
+        "textColor": "text.primary",
+        "typography": "typography.display",
+        "fontFamily": "Geist",
+        "spacingTop": "layout.sectionPaddingTop",
+        "spacingBottom": "layout.sectionPaddingBottom"
+      }
+    },
+    {
+      "type": "narrative.problem-statement",
+      "content": {
+        "heading": "Clean imports from whatever your customers keep",
+        "body": [
+          "Every import keeps a plain trail of what changed, who signed off and which rows still need a human eye.",
+          "Spreadsheets, old portals and odd text dumps all land in the same review queue instead of a support inbox."
+        ],
+        "items": [
+          {
+            "title": "Plain audit trail",
+            "body": "Every change carries a name and a reason."
+          },
+          {
+            "title": "Gentle retries",
+            "body": "Fix one odd row without restarting the whole batch."
+          },
+          {
+            "title": "Shared review",
+            "body": "Ops and success look at the same queue."
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "icon",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/icon.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "features.any-source",
+      "content": {
+        "heading": "Questions buyers ask before",
+        "body": [
+          "Spreadsheets, old portals and odd text dumps all land in the same review queue instead of a support inbox."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "features.platform-primitives",
+      "content": {
+        "heading": "Stories from",
+        "body": [
+          "Sales can promise a gentle switch because onboarding no longer waits on a sprint from the platform crew."
+        ],
+        "ctas": [
+          {
+            "label": "Start",
+            "href": "/start"
+          },
+          {
+            "label": "Plan",
+            "href": "/walkthrough"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "features.playbook-cta-cards",
+      "content": {
+        "heading": "Stories from teams who switched",
+        "body": [
+          "When a file arrives with surprises, Fernbrook flags the odd columns and suggests a fix you can accept or reject.",
+          "Teams keep their own vocabulary, so a lead stays a lead and a ticket stays a ticket after the move."
+        ],
+        "ctas": [
+          {
+            "label": "Plan a",
+            "href": "/walkthrough"
+          },
+          {
+            "label": "Read the",
+            "href": "/guide"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "features.use-case-teasers",
+      "content": {
+        "heading": "Questions buyers ask before they switch"
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "disable-animation"
+      }
+    },
+    {
+      "type": "proof.testimonials",
+      "content": {
+        "heading": "What happens to your information",
+        "body": [
+          "Nothing is written to production until a person on"
+        ],
+        "ctas": [
+          {
+            "label": "Talk to us",
+            "href": "/contact"
+          },
+          {
+            "label": "See pricing notes",
+            "href": "/notes"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "fictional-avatar",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/fictional-avatar.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "cta.book-demo-band",
+      "content": {
+        "heading": "How Fernbrook keeps each step visible",
+        "ctas": [
+          {
+            "label": "See pricing notes",
+            "href": "/notes"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.footer",
+      "content": {
+        "heading": "Plans",
+        "items": [
+          {
+            "title": "Gentle",
+            "body": "Fix"
+          },
+          {
+            "title": "Shared",
+            "body": "Ops"
+          },
+          {
+            "title": "Quiet",
+            "body": "Only"
+          }
+        ],
+        "ctas": [
+          {
+            "label": "Start a trial",
+            "href": "/start"
+          },
+          {
+            "label": "Plan a walkthrough",
+            "href": "/walkthrough"
+          }
+        ],
+        "images": [
+          {
+            "assetRole": "placeholder-brand-mark",
+            "alt": "Placeholder visual for a fictional brand",
+            "src": "/placeholder/placeholder-brand-mark.svg"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    },
+    {
+      "type": "shell.consent-banner-root",
+      "content": {
+        "ctas": [
+          {
+            "label": "Plan a",
+            "href": "/walkthrough"
+          },
+          {
+            "label": "Read the",
+            "href": "/guide"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "reducedMotionFallback": "instant-state"
+      }
+    }
+  ]
+}

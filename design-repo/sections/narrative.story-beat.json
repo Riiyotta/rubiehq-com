@@ -3,65 +3,89 @@
   "category": "NARRATIVE",
   "label": "story-beat",
   "tag": "section",
-  "purpose": "The customer-story body — the problem, the solution and the results told as one continuous block under a single h2.",
+  "purpose": "One chapter of a customer story (Challenge, Solution or Results): a mono eyebrow label, an h2, prose paragraphs and an optional inline customer quote.",
   "purposeIsInferred": false,
-  "nameSource": "hand-reconciled from the rendered HTML section tree",
+  "nameSource": "decomposed by real content boundaries from the clone's JSX (extraction/build_source_map.py DECOMPOSE)",
   "evidence": {
     "level": "measured",
-    "instances": 5,
+    "instances": 15,
     "routes": 5,
     "measuredFrom": [
-      "src/customers/granum/index.html:413-575",
-      "src/customers/brivity/index.html:413-575",
-      "src/customers/cariina/index.html:413-570",
-      "src/customers/curbwaste/index.html:413-572",
-      "src/customers/bound/index.html:413-572"
+      "src/sections/Z1010.jsx:410-427",
+      "src/sections/Z1010.jsx:428-449",
+      "src/sections/Z1010.jsx:450-471",
+      "src/sections/Z1011.jsx:410-427",
+      "src/sections/Z1011.jsx:428-450",
+      "src/sections/Z1011.jsx:451-469",
+      "src/sections/Z1012.jsx:410-427",
+      "src/sections/Z1012.jsx:428-444",
+      "src/sections/Z1012.jsx:445-462",
+      "src/sections/Z1019.jsx:410-427",
+      "src/sections/Z1019.jsx:428-445",
+      "src/sections/Z1019.jsx:446-464",
+      "src/sections/Z1020.jsx:410-427",
+      "src/sections/Z1020.jsx:428-446",
+      "src/sections/Z1020.jsx:447-464"
     ]
   },
   "content": {
     "additionalProperties": false,
     "fields": {
+      "eyebrow": {
+        "type": "string",
+        "required": true,
+        "maxWords": 1
+      },
       "heading": {
         "type": "string",
         "required": true,
         "maxWords": 19
       },
+      "quote": {
+        "type": "string",
+        "required": false,
+        "maxWords": 58
+      },
+      "attribution": {
+        "type": "string",
+        "required": false,
+        "maxWords": 8
+      },
       "body": {
         "type": "string[]",
         "required": true,
-        "maxItems": 24,
+        "maxItems": 4,
         "maxWords": 95
-      },
-      "ctas": {
-        "type": "cta[]",
-        "required": true,
-        "maxItems": 1,
-        "maxWords": 2
-      },
-      "images": {
-        "type": "image[]",
-        "required": false,
-        "maxItems": 1,
-        "assetRoles": [
-          "logo"
-        ]
       }
     }
   },
   "constraints": {
-    "onePerPage": true
+    "onePerPage": false,
+    "maxPerPage": 3
   },
   "motion": {
     "allowedPatterns": [
-      "css-transition",
-      "none",
-      "scroll-linked"
+      "none"
     ],
-    "reducedMotionFallback": "disable-animation"
+    "reducedMotionFallback": "instant-state"
   },
-  "assetRoles": [
-    "logo"
-  ],
-  "implementedBy": "src/sections/Z1010.jsx > section[2]",
-  "scope": "The 5 /customers/<name> routes."
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1010.jsx > top[3] article > div > section[0]",
+  "scope": "The 5 /customers/<name> routes (the Challenge, Solution and Results beats).",
+  "source": {
+    "id": "Z1010:section@410",
+    "tag": "section",
+    "file": "src/sections/Z1010.jsx",
+    "lines": [
+      410,
+      427
+    ],
+    "route": "/customers/granum"
+  },
+  "semantic": {
+    "id": "narrative.story-beat",
+    "category": "NARRATIVE"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

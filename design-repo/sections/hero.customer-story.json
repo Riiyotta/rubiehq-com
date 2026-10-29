@@ -11,11 +11,11 @@
     "instances": 5,
     "routes": 5,
     "measuredFrom": [
-      "src/customers/granum/index.html:283-394",
-      "src/customers/brivity/index.html:283-394",
-      "src/customers/cariina/index.html:283-394",
-      "src/customers/curbwaste/index.html:283-394",
-      "src/customers/bound/index.html:283-394"
+      "src/sections/Z1010.jsx:288-377",
+      "src/sections/Z1011.jsx:288-377",
+      "src/sections/Z1012.jsx:288-377",
+      "src/sections/Z1019.jsx:288-377",
+      "src/sections/Z1020.jsx:288-377"
     ]
   },
   "content": {
@@ -51,6 +51,22 @@
     "reducedMotionFallback": "instant-state"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z1010.jsx > section[0]",
-  "scope": "The 5 /customers/<name> routes."
+  "implementedBy": "src/sections/Z1010.jsx > top[1]",
+  "scope": "The 5 /customers/<name> routes.",
+  "source": {
+    "id": "Z1010:section@288",
+    "tag": "section",
+    "file": "src/sections/Z1010.jsx",
+    "lines": [
+      288,
+      377
+    ],
+    "route": "/customers/granum"
+  },
+  "semantic": {
+    "id": "hero.customer-story",
+    "category": "HERO"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

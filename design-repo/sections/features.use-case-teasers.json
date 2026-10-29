@@ -11,7 +11,7 @@
     "instances": 1,
     "routes": 1,
     "measuredFrom": [
-      "src/index.html:6815-7184"
+      "src/sections/Z10.jsx:4299-4645"
     ]
   },
   "content": {
@@ -35,6 +35,22 @@
     "reducedMotionFallback": "disable-animation"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z10.jsx > section[5]",
-  "scope": "The / route only."
+  "implementedBy": "src/sections/Z10.jsx > top[6]",
+  "scope": "The / route only.",
+  "source": {
+    "id": "Z10:section@4299",
+    "tag": "section",
+    "file": "src/sections/Z10.jsx",
+    "lines": [
+      4299,
+      4645
+    ],
+    "route": "/"
+  },
+  "semantic": {
+    "id": "features.use-case-teasers",
+    "category": "FEATURES"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

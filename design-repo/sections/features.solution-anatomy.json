@@ -11,8 +11,8 @@
     "instances": 2,
     "routes": 2,
     "measuredFrom": [
-      "src/solutions/migration-playbooks/index.html:1747-1874",
-      "src/solutions/integration-playbooks/index.html:2012-2646"
+      "src/sections/Z108.jsx:1199-1311",
+      "src/sections/Z109.jsx:1399-1763"
     ]
   },
   "content": {
@@ -56,6 +56,22 @@
     "reducedMotionFallback": "disable-animation"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z108.jsx > section[5]",
-  "scope": "The 2 /solutions/* routes."
+  "implementedBy": "src/sections/Z108.jsx > top[6]",
+  "scope": "The 2 /solutions/* routes.",
+  "source": {
+    "id": "Z108:section@1199",
+    "tag": "section",
+    "file": "src/sections/Z108.jsx",
+    "lines": [
+      1199,
+      1311
+    ],
+    "route": "/solutions/migration-playbooks"
+  },
+  "semantic": {
+    "id": "features.solution-anatomy",
+    "category": "FEATURES"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

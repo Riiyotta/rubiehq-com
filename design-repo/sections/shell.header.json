@@ -11,11 +11,27 @@
     "instances": 21,
     "routes": 21,
     "measuredFrom": [
-      "src/index.html:150-281",
-      "src/product/index.html:149-280",
-      "src/enterprise/index.html:150-281",
-      "src/customers/index.html:150-281",
-      "src/blog/index.html:149-280"
+      "src/sections/Z10.jsx:25-303",
+      "src/sections/Z102.jsx:7-285",
+      "src/sections/Z103.jsx:7-285",
+      "src/sections/Z104.jsx:7-285",
+      "src/sections/Z105.jsx:7-285",
+      "src/sections/Z106.jsx:7-285",
+      "src/sections/Z107.jsx:7-285",
+      "src/sections/Z108.jsx:7-285",
+      "src/sections/Z109.jsx:7-285",
+      "src/sections/Z1010.jsx:7-285",
+      "src/sections/Z1011.jsx:7-285",
+      "src/sections/Z1012.jsx:7-285",
+      "src/sections/Z1013.jsx:7-285",
+      "src/sections/Z1014.jsx:7-285",
+      "src/sections/Z1015.jsx:7-285",
+      "src/sections/Z1016.jsx:7-285",
+      "src/sections/Z1017.jsx:7-285",
+      "src/sections/Z1018.jsx:7-285",
+      "src/sections/Z1019.jsx:7-285",
+      "src/sections/Z1020.jsx:7-285",
+      "src/sections/Z1021.jsx:7-285"
     ]
   },
   "content": {
@@ -39,6 +55,10 @@
         "maxItems": 1,
         "assetRoles": [
           "logo"
+        ],
+        "generatedAssetRoles": [
+          "placeholder-brand-mark",
+          "user-supplied-asset"
         ]
       }
     }
@@ -57,6 +77,25 @@
   "assetRoles": [
     "logo"
   ],
-  "implementedBy": "src/sections/Z10.jsx > header",
-  "scope": "All 21 routes. Byte-identical on every one."
+  "implementedBy": "src/sections/Z10.jsx > top[0]",
+  "scope": "All 21 routes. Byte-identical on every one.",
+  "source": {
+    "id": "Z10:header@25",
+    "tag": "header",
+    "file": "src/sections/Z10.jsx",
+    "lines": [
+      25,
+      303
+    ],
+    "route": "/"
+  },
+  "semantic": {
+    "id": "shell.header",
+    "category": "SHELL"
+  },
+  "generatedAssetRoles": [
+    "placeholder-brand-mark",
+    "user-supplied-asset"
+  ],
+  "retrievalEligible": true
 }

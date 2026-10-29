@@ -1,10 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "PageSpec",
-  "description": "A page composition. Styling is owned by section/component contracts; a PageSpec carries no style or token-override field.",
+  "description": "A page composition. `mode` is required: \"clone\" = faithful reconstruction of the source (real brand, copy and assets may be reused for fidelity); \"generation\" = a new page for someone else, which must contain nothing that identifies or reproduces the source (enforced by schema/semantic_validate.py GENERATION_MODE_* rules). Styling is owned by section/component contracts; the optional node `style` may only name approved tokens from tokens/llm/token-catalog.json (TOKEN_* rules).",
   "type": "object",
   "required": [
     "pageSpecVersion",
+    "mode",
     "template",
     "route",
     "nodes"
@@ -13,7 +14,35 @@
   "properties": {
     "pageSpecVersion": {
       "type": "string",
-      "const": "0.2.0"
+      "const": "0.3.0"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "clone",
+        "generation"
+      ],
+      "description": "clone = source reconstruction; generation = new page with zero source identity or content."
+    },
+    "theme": {
+      "type": "string",
+      "description": "Theme id; must be one of registry.manifest.json schemaValidatedThemes (TOKEN_THEME_UNSUPPORTED)."
+    },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        }
+      },
+      "description": "Generation mode: the fictional / operator brand the page is for. Checked against the source identity like any other text."
     },
     "template": {
       "type": "string",
@@ -47,17 +76,26 @@
       "type": "string",
       "enum": [
         "animation",
+        "animation-still",
         "avatar",
         "background",
         "content-image",
         "customer-logo",
+        "fictional-avatar",
         "font",
         "founder-contact-email",
+        "generated-illustration",
         "hero-image",
         "icon",
         "illustration",
         "live-embed",
         "logo",
+        "original-copy",
+        "placeholder-brand-mark",
+        "placeholder-customer-logo",
+        "placeholder-screenshot",
+        "placeholder-url",
+        "user-supplied-asset",
         "video"
       ]
     },
@@ -86,6 +124,847 @@
             "disable-animation",
             "instant-state"
           ]
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "type",
+        "content",
+        "motion"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "cta.book-demo-band",
+            "cta.story-email-capture",
+            "faq.accordion",
+            "features.any-source",
+            "features.automation-samples",
+            "features.capability-grid",
+            "features.enterprise-pillars",
+            "features.pipeline-steps",
+            "features.platform-primitives",
+            "features.playbook-cta-cards",
+            "features.solution-anatomy",
+            "features.solution-outcomes",
+            "features.use-case-teasers",
+            "hero.article",
+            "hero.customer-story",
+            "hero.home",
+            "hero.page-title",
+            "hero.solution",
+            "hero.use-case",
+            "index.article-toc",
+            "index.blog-roll",
+            "narrative.article-chapter",
+            "narrative.article-sources",
+            "narrative.legal-clause",
+            "narrative.legal-header",
+            "narrative.problem-statement",
+            "narrative.result-callout",
+            "narrative.solution-statement",
+            "narrative.story-beat",
+            "proof.compliance-badges",
+            "proof.story-company-facts",
+            "proof.story-grid",
+            "proof.story-metrics",
+            "proof.story-pull-quote",
+            "proof.testimonials",
+            "shell.consent-banner-root",
+            "shell.footer",
+            "shell.header",
+            "shell.spacer"
+          ]
+        },
+        "content": {
+          "type": "object"
+        },
+        "motion": {
+          "$ref": "#/definitions/motion"
+        },
+        "style": {
+          "$ref": "#/definitions/style"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "cta.book-demo-band"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.cta.book-demo-band"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "cta.story-email-capture"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.cta.story-email-capture"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "faq.accordion"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.faq.accordion"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "features.any-source"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.features.any-source"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "features.automation-samples"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.features.automation-samples"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "features.capability-grid"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.features.capability-grid"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "features.enterprise-pillars"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.features.enterprise-pillars"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "features.pipeline-steps"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.features.pipeline-steps"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "features.platform-primitives"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.features.platform-primitives"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "features.playbook-cta-cards"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.features.playbook-cta-cards"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "features.solution-anatomy"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.features.solution-anatomy"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "features.solution-outcomes"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.features.solution-outcomes"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "features.use-case-teasers"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.features.use-case-teasers"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.article"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.article"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.customer-story"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.customer-story"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.home"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.home"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.page-title"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.page-title"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.solution"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.solution"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero.use-case"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.hero.use-case"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "index.article-toc"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.index.article-toc"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "index.blog-roll"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.index.blog-roll"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "narrative.article-chapter"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.narrative.article-chapter"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "narrative.article-sources"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.narrative.article-sources"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "narrative.legal-clause"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.narrative.legal-clause"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "narrative.legal-header"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.narrative.legal-header"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "narrative.problem-statement"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.narrative.problem-statement"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "narrative.result-callout"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.narrative.result-callout"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "narrative.solution-statement"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.narrative.solution-statement"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "narrative.story-beat"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.narrative.story-beat"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.compliance-badges"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.compliance-badges"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.story-company-facts"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.story-company-facts"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.story-grid"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.story-grid"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.story-metrics"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.story-metrics"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.story-pull-quote"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.story-pull-quote"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "proof.testimonials"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.proof.testimonials"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "shell.consent-banner-root"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.shell.consent-banner-root"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "shell.footer"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.shell.footer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "shell.header"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.shell.header"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "shell.spacer"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "content": {
+                "$ref": "#/definitions/content.shell.spacer"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Optional per-node token choices. Values are token ids from tokens/llm/token-catalog.json, never raw values.",
+      "properties": {
+        "surface": {
+          "type": "string"
+        },
+        "textColor": {
+          "type": "string"
+        },
+        "accent": {
+          "type": "string"
+        },
+        "typography": {
+          "type": "string"
+        },
+        "fontFamily": {
+          "type": "string"
+        },
+        "spacingTop": {
+          "type": "string"
+        },
+        "spacingBottom": {
+          "type": "string"
+        },
+        "gap": {
+          "type": "string"
+        },
+        "radius": {
+          "type": "string"
         }
       }
     },
@@ -121,6 +1000,73 @@
       "required": [
         "ctas",
         "heading"
+      ]
+    },
+    "content.cta.story-email-capture": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "inputPlaceholder": {
+          "type": "string"
+        },
+        "ctas": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#)",
+                "description": "Relative path or #anchor only: generated pages must not link to the original site's live URLs."
+              }
+            }
+          }
+        },
+        "images": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "assetRole"
+            ],
+            "properties": {
+              "assetRole": {
+                "type": "string",
+                "enum": [
+                  "logo",
+                  "placeholder-brand-mark",
+                  "user-supplied-asset"
+                ]
+              },
+              "alt": {
+                "type": "string"
+              },
+              "src": {
+                "type": "string",
+                "pattern": "^(/|#)",
+                "description": "Relative path only: generated pages must not hotlink the original site's live assets."
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "ctas",
+        "heading",
+        "inputPlaceholder"
       ]
     },
     "content.faq.accordion": {
@@ -667,7 +1613,11 @@
                 "type": "string",
                 "enum": [
                   "content-image",
-                  "customer-logo"
+                  "customer-logo",
+                  "generated-illustration",
+                  "placeholder-customer-logo",
+                  "placeholder-screenshot",
+                  "user-supplied-asset"
                 ]
               },
               "alt": {
@@ -827,7 +1777,8 @@
               "assetRole": {
                 "type": "string",
                 "enum": [
-                  "customer-logo"
+                  "customer-logo",
+                  "placeholder-customer-logo"
                 ]
               },
               "alt": {
@@ -848,59 +1799,10 @@
         "heading"
       ]
     },
-    "content.index.blog-roll": {
+    "content.index.article-toc": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "heading": {
-          "type": "string"
-        },
-        "body": {
-          "type": "array",
-          "maxItems": 2,
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "body",
-        "heading"
-      ]
-    },
-    "content.narrative.article-body": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "heading": {
-          "type": "string"
-        },
-        "body": {
-          "type": "array",
-          "maxItems": 29,
-          "items": {
-            "type": "string"
-          }
-        },
-        "items": {
-          "type": "array",
-          "maxItems": 10,
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "title"
-            ],
-            "properties": {
-              "title": {
-                "type": "string"
-              },
-              "body": {
-                "type": "string"
-              }
-            }
-          }
-        },
         "ctas": {
           "type": "array",
           "maxItems": 5,
@@ -924,13 +1826,10 @@
         }
       },
       "required": [
-        "body",
-        "ctas",
-        "heading",
-        "items"
+        "ctas"
       ]
     },
-    "content.narrative.legal-body": {
+    "content.index.blog-roll": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -939,21 +1838,100 @@
         },
         "body": {
           "type": "array",
-          "maxItems": 37,
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "body",
+        "heading"
+      ]
+    },
+    "content.narrative.article-chapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "body": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "string"
+          }
+        },
+        "items": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "body",
+        "heading"
+      ]
+    },
+    "content.narrative.article-sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "body": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "body",
+        "heading"
+      ]
+    },
+    "content.narrative.legal-clause": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "body": {
+          "type": "array",
+          "maxItems": 10,
           "items": {
             "type": "string"
           }
         },
         "listItems": {
           "type": "array",
-          "maxItems": 28,
+          "maxItems": 22,
           "items": {
             "type": "string"
           }
         },
         "ctas": {
           "type": "array",
-          "maxItems": 9,
+          "maxItems": 3,
           "items": {
             "type": "object",
             "additionalProperties": false,
@@ -975,7 +1953,47 @@
       },
       "required": [
         "body",
-        "ctas",
+        "heading"
+      ]
+    },
+    "content.narrative.legal-header": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "body": {
+          "type": "array",
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "ctas": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string",
+                "pattern": "^(/|#)",
+                "description": "Relative path or #anchor only: generated pages must not link to the original site's live URLs."
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "body",
         "heading"
       ]
     },
@@ -1108,7 +2126,8 @@
               "assetRole": {
                 "type": "string",
                 "enum": [
-                  "customer-logo"
+                  "customer-logo",
+                  "placeholder-customer-logo"
                 ]
               },
               "alt": {
@@ -1133,68 +2152,29 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "eyebrow": {
+          "type": "string"
+        },
         "heading": {
+          "type": "string"
+        },
+        "quote": {
+          "type": "string"
+        },
+        "attribution": {
           "type": "string"
         },
         "body": {
           "type": "array",
-          "maxItems": 24,
+          "maxItems": 4,
           "items": {
             "type": "string"
-          }
-        },
-        "ctas": {
-          "type": "array",
-          "maxItems": 1,
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "label"
-            ],
-            "properties": {
-              "label": {
-                "type": "string"
-              },
-              "href": {
-                "type": "string",
-                "pattern": "^(/|#)",
-                "description": "Relative path or #anchor only: generated pages must not link to the original site's live URLs."
-              }
-            }
-          }
-        },
-        "images": {
-          "type": "array",
-          "maxItems": 1,
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "assetRole"
-            ],
-            "properties": {
-              "assetRole": {
-                "type": "string",
-                "enum": [
-                  "logo"
-                ]
-              },
-              "alt": {
-                "type": "string"
-              },
-              "src": {
-                "type": "string",
-                "pattern": "^(/|#)",
-                "description": "Relative path only: generated pages must not hotlink the original site's live assets."
-              }
-            }
           }
         }
       },
       "required": [
         "body",
-        "ctas",
+        "eyebrow",
         "heading"
       ]
     },
@@ -1245,6 +2225,46 @@
         "heading"
       ]
     },
+    "content.proof.story-company-facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string"
+        },
+        "body": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "items": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "body",
+        "heading",
+        "items"
+      ]
+    },
     "content.proof.story-grid": {
       "type": "object",
       "additionalProperties": false,
@@ -1266,7 +2286,11 @@
                 "type": "string",
                 "enum": [
                   "content-image",
-                  "customer-logo"
+                  "customer-logo",
+                  "generated-illustration",
+                  "placeholder-customer-logo",
+                  "placeholder-screenshot",
+                  "user-supplied-asset"
                 ]
               },
               "alt": {
@@ -1299,6 +2323,22 @@
       },
       "required": [
         "body"
+      ]
+    },
+    "content.proof.story-pull-quote": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "quote": {
+          "type": "string"
+        },
+        "attribution": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "attribution",
+        "quote"
       ]
     },
     "content.proof.testimonials": {
@@ -1350,7 +2390,9 @@
                 "type": "string",
                 "enum": [
                   "avatar",
-                  "customer-logo"
+                  "customer-logo",
+                  "fictional-avatar",
+                  "placeholder-customer-logo"
                 ]
               },
               "alt": {
@@ -1461,7 +2503,9 @@
               "assetRole": {
                 "type": "string",
                 "enum": [
-                  "logo"
+                  "logo",
+                  "placeholder-brand-mark",
+                  "user-supplied-asset"
                 ]
               },
               "alt": {
@@ -1527,7 +2571,9 @@
               "assetRole": {
                 "type": "string",
                 "enum": [
-                  "logo"
+                  "logo",
+                  "placeholder-brand-mark",
+                  "user-supplied-asset"
                 ]
               },
               "alt": {
@@ -1550,690 +2596,6 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {}
-    },
-    "node": {
-      "type": "object",
-      "required": [
-        "type",
-        "content",
-        "motion"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "type": {
-          "type": "string",
-          "enum": [
-            "cta.book-demo-band",
-            "faq.accordion",
-            "features.any-source",
-            "features.automation-samples",
-            "features.capability-grid",
-            "features.enterprise-pillars",
-            "features.pipeline-steps",
-            "features.platform-primitives",
-            "features.playbook-cta-cards",
-            "features.solution-anatomy",
-            "features.solution-outcomes",
-            "features.use-case-teasers",
-            "hero.article",
-            "hero.customer-story",
-            "hero.home",
-            "hero.page-title",
-            "hero.solution",
-            "hero.use-case",
-            "index.blog-roll",
-            "narrative.article-body",
-            "narrative.legal-body",
-            "narrative.problem-statement",
-            "narrative.result-callout",
-            "narrative.solution-statement",
-            "narrative.story-beat",
-            "proof.compliance-badges",
-            "proof.story-grid",
-            "proof.story-metrics",
-            "proof.testimonials",
-            "shell.consent-banner-root",
-            "shell.footer",
-            "shell.header",
-            "shell.spacer"
-          ]
-        },
-        "content": {
-          "type": "object"
-        },
-        "motion": {
-          "$ref": "#/definitions/motion"
-        }
-      },
-      "allOf": [
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "cta.book-demo-band"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.cta.book-demo-band"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "faq.accordion"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.faq.accordion"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "features.any-source"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.features.any-source"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "features.automation-samples"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.features.automation-samples"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "features.capability-grid"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.features.capability-grid"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "features.enterprise-pillars"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.features.enterprise-pillars"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "features.pipeline-steps"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.features.pipeline-steps"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "features.platform-primitives"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.features.platform-primitives"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "features.playbook-cta-cards"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.features.playbook-cta-cards"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "features.solution-anatomy"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.features.solution-anatomy"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "features.solution-outcomes"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.features.solution-outcomes"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "features.use-case-teasers"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.features.use-case-teasers"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "hero.article"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.hero.article"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "hero.customer-story"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.hero.customer-story"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "hero.home"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.hero.home"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "hero.page-title"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.hero.page-title"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "hero.solution"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.hero.solution"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "hero.use-case"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.hero.use-case"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "index.blog-roll"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.index.blog-roll"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "narrative.article-body"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.narrative.article-body"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "narrative.legal-body"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.narrative.legal-body"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "narrative.problem-statement"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.narrative.problem-statement"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "narrative.result-callout"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.narrative.result-callout"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "narrative.solution-statement"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.narrative.solution-statement"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "narrative.story-beat"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.narrative.story-beat"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "proof.compliance-badges"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.proof.compliance-badges"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "proof.story-grid"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.proof.story-grid"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "proof.story-metrics"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.proof.story-metrics"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "proof.testimonials"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.proof.testimonials"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "shell.consent-banner-root"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.shell.consent-banner-root"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "shell.footer"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.shell.footer"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "shell.header"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.shell.header"
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "type": {
-                "const": "shell.spacer"
-              }
-            },
-            "required": [
-              "type"
-            ]
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/definitions/content.shell.spacer"
-              }
-            }
-          }
-        }
-      ]
     }
   }
 }

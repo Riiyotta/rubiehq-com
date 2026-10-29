@@ -11,7 +11,7 @@
     "instances": 1,
     "routes": 1,
     "measuredFrom": [
-      "src/enterprise/index.html:350-397"
+      "src/sections/Z103.jsx:346-393"
     ]
   },
   "content": {
@@ -34,6 +34,9 @@
         "maxItems": 6,
         "assetRoles": [
           "icon"
+        ],
+        "generatedAssetRoles": [
+          "icon"
         ]
       }
     }
@@ -50,6 +53,24 @@
   "assetRoles": [
     "icon"
   ],
-  "implementedBy": "src/sections/Z103.jsx > section[1]",
-  "scope": "The /enterprise route only."
+  "implementedBy": "src/sections/Z103.jsx > top[2]",
+  "scope": "The /enterprise route only.",
+  "source": {
+    "id": "Z103:section@346",
+    "tag": "section",
+    "file": "src/sections/Z103.jsx",
+    "lines": [
+      346,
+      393
+    ],
+    "route": "/enterprise"
+  },
+  "semantic": {
+    "id": "proof.compliance-badges",
+    "category": "PROOF"
+  },
+  "generatedAssetRoles": [
+    "icon"
+  ],
+  "retrievalEligible": true
 }

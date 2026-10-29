@@ -1,0 +1,57 @@
+{
+  "id": "index.article-toc",
+  "category": "INDEX",
+  "label": "article-toc",
+  "tag": "nav",
+  "purpose": "The article's in-page table of contents: one anchor link per chapter, pointing at that chapter's #id.",
+  "purposeIsInferred": false,
+  "nameSource": "decomposed by real content boundaries from the clone's JSX (extraction/build_source_map.py DECOMPOSE)",
+  "evidence": {
+    "level": "measured",
+    "instances": 1,
+    "routes": 1,
+    "measuredFrom": [
+      "src/sections/Z1021.jsx:389-422"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 5,
+        "maxWords": 7
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none"
+    ],
+    "reducedMotionFallback": "instant-state"
+  },
+  "assetRoles": [],
+  "implementedBy": "src/sections/Z1021.jsx > top[2] article > nav[0]",
+  "scope": "The 1 /blog/<slug> route.",
+  "source": {
+    "id": "Z1021:nav@389",
+    "tag": "nav",
+    "file": "src/sections/Z1021.jsx",
+    "lines": [
+      389,
+      422
+    ],
+    "route": "/blog/migration-revenue-killer"
+  },
+  "semantic": {
+    "id": "index.article-toc",
+    "category": "INDEX"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
+}

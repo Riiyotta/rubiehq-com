@@ -11,7 +11,7 @@
     "instances": 1,
     "routes": 1,
     "measuredFrom": [
-      "src/enterprise/index.html:398-1305"
+      "src/sections/Z103.jsx:394-981"
     ]
   },
   "content": {
@@ -48,6 +48,22 @@
     "reducedMotionFallback": "instant-state"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z103.jsx > section[2]",
-  "scope": "The /enterprise route only."
+  "implementedBy": "src/sections/Z103.jsx > top[3]",
+  "scope": "The /enterprise route only.",
+  "source": {
+    "id": "Z103:section@394",
+    "tag": "section",
+    "file": "src/sections/Z103.jsx",
+    "lines": [
+      394,
+      981
+    ],
+    "route": "/enterprise"
+  },
+  "semantic": {
+    "id": "features.enterprise-pillars",
+    "category": "FEATURES"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

@@ -11,7 +11,7 @@
     "instances": 1,
     "routes": 1,
     "measuredFrom": [
-      "src/index.html:6725-6814"
+      "src/sections/Z10.jsx:4219-4298"
     ]
   },
   "content": {
@@ -50,6 +50,24 @@
   "assetRoles": [
     "animation"
   ],
-  "implementedBy": "src/sections/Z10.jsx > section[4]",
-  "scope": "The / route only."
+  "implementedBy": "src/sections/Z10.jsx > top[5]",
+  "scope": "The / route only.",
+  "source": {
+    "id": "Z10:section@4219",
+    "tag": "section",
+    "file": "src/sections/Z10.jsx",
+    "lines": [
+      4219,
+      4298
+    ],
+    "route": "/"
+  },
+  "semantic": {
+    "id": "features.playbook-cta-cards",
+    "category": "FEATURES"
+  },
+  "generatedAssetRoles": [
+    "generated-illustration"
+  ],
+  "retrievalEligible": true
 }

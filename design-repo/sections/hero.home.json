@@ -11,7 +11,7 @@
     "instances": 1,
     "routes": 1,
     "measuredFrom": [
-      "src/index.html:283-4697"
+      "src/sections/Z10.jsx:306-2930"
     ]
   },
   "content": {
@@ -47,6 +47,12 @@
         "assetRoles": [
           "content-image",
           "customer-logo"
+        ],
+        "generatedAssetRoles": [
+          "generated-illustration",
+          "placeholder-customer-logo",
+          "placeholder-screenshot",
+          "user-supplied-asset"
         ]
       }
     }
@@ -66,6 +72,27 @@
     "content-image",
     "customer-logo"
   ],
-  "implementedBy": "src/sections/Z10.jsx > section[0]",
-  "scope": "The / route only."
+  "implementedBy": "src/sections/Z10.jsx > top[1]",
+  "scope": "The / route only.",
+  "source": {
+    "id": "Z10:section@306",
+    "tag": "section",
+    "file": "src/sections/Z10.jsx",
+    "lines": [
+      306,
+      2930
+    ],
+    "route": "/"
+  },
+  "semantic": {
+    "id": "hero.home",
+    "category": "HERO"
+  },
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "placeholder-customer-logo",
+    "placeholder-screenshot",
+    "user-supplied-asset"
+  ],
+  "retrievalEligible": true
 }

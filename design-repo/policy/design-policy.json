@@ -1,0 +1,102 @@
+{
+  "policyId": "n0-saas-design-constraints-common",
+  "policyVersion": "0.1.0",
+  "commonIrVersion": "0.5",
+  "title": "Binding record: rubiehq-com design repo -> N0 common SaaS design constraints",
+  "bindingKind": "binds-common-policy",
+  "note": "This file records WHY this repo binds the common SaaS policy and which local files enforce it. The common policy text itself is owned by N0 and is not copied here.",
+  "classification": {
+    "productCategory": "saas",
+    "productDomain": "customer-data-migration-and-onboarding",
+    "marketModel": "B2B, sales-led (book a demo)",
+    "isSaaS": true,
+    "surfaces": [
+      "marketing-site"
+    ],
+    "audiences": [
+      "sales teams",
+      "customer-success teams",
+      "product teams",
+      "enterprise buyers (security / compliance)",
+      "vertical SaaS operators (healthcare, financial services, education)"
+    ]
+  },
+  "classificationEvidence": [
+    {
+      "claim": "B2B buyer: sales-led 'Book a demo' conversion in the header of every route",
+      "file": "src/sections/Z1014.jsx",
+      "line": 218,
+      "needle": "Book a demo"
+    },
+    {
+      "claim": "Product login for existing customer accounts (a hosted product, not a brochure)",
+      "file": "src/sections/Z1014.jsx",
+      "line": 212,
+      "needle": ">Login<"
+    },
+    {
+      "claim": "Enterprise route with compliance claims aimed at business buyers",
+      "file": "src/sections/Z103.jsx",
+      "line": 353,
+      "needle": "SOC 2 Type II Compliant"
+    },
+    {
+      "claim": "HIPAA compliance claim for regulated business customers",
+      "file": "src/sections/Z103.jsx",
+      "line": 388,
+      "needle": "HIPAA Compliant"
+    },
+    {
+      "claim": "Audience is business teams: a use-case route per team",
+      "file": "src/routes.js",
+      "line": 17,
+      "needle": "Sales Teams | Rubie"
+    },
+    {
+      "claim": "Product page for the platform itself",
+      "file": "src/routes.js",
+      "line": 6,
+      "needle": "path: \"/product\""
+    },
+    {
+      "claim": "Customers are themselves software companies (SaaS-to-SaaS data migration)",
+      "file": "src/sections/Z1011.jsx",
+      "line": 418,
+      "needle": "real estate SaaS platform"
+    },
+    {
+      "claim": "Integration playbooks: a B2B integrations construct",
+      "file": "src/routes.js",
+      "line": 13,
+      "needle": "Integration Playbooks | Rubie"
+    }
+  ],
+  "evidenceAgainst": [
+    "No pricing-tier page is served by the clone (src/routes.js has no /pricing); pricing constructs must not be invented by a generator.",
+    "No app-store / consumer download surface anywhere in src/ (grep 'App Store' returns nothing)."
+  ],
+  "generationRules": [
+    "Pages are drawn only from the 11 templates and their section contracts; no pricing-table or dashboard sections (the clone has none).",
+    "Primary conversion is sales-led: cta.book-demo-band closes every marketing template; cta.story-email-capture only on customer stories.",
+    "Proof content (customer logos, quotes, metrics, compliance badges) uses pinned asset roles and is blocked or clone-only in generation mode; never fabricate real companies, people or certifications.",
+    "mode=generation pages carry zero source identity (schema/source-identity.json, GENERATION_MODE_* rules)."
+  ],
+  "enforcementMode": "hard-and-soft",
+  "enforcedBy": [
+    "schema/pagespec.schema.json",
+    "schema/semantic_validate.py",
+    "schema/source-identity.json",
+    "schema/section-contract.schema.json",
+    "templates/templates.json",
+    "compatibility/graph.json",
+    "assets/asset-roles.json",
+    "tokens/llm/token-catalog.json",
+    "tokens/llm/token-policy.json",
+    "extraction/wrapper_gate.py"
+  ],
+  "approval": {
+    "policyDecision": "bound-pending-architecture-review",
+    "architectureDecisionRecorded": false,
+    "note": "The SaaS classification was made by an agent from the evidence above (agent attestation, not a human sign-off). A human architecture owner must ratify the binding."
+  }
+}

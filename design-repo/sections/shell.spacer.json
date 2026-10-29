@@ -11,8 +11,8 @@
     "instances": 2,
     "routes": 2,
     "measuredFrom": [
-      "src/blog/index.html:314-319",
-      "src/solutions/migration-playbooks/index.html:1875-1876"
+      "src/sections/Z105.jsx:318-322",
+      "src/sections/Z108.jsx:1312-1312"
     ]
   },
   "content": {
@@ -29,6 +29,22 @@
     "reducedMotionFallback": "instant-state"
   },
   "assetRoles": [],
-  "implementedBy": "src/sections/Z105.jsx > section[2]",
-  "scope": "2 routes: /blog and /solutions/migration-playbooks. Each sits in its own template now, so template membership and real route count agree."
+  "implementedBy": "src/sections/Z105.jsx > top[3]",
+  "scope": "2 routes: /blog and /solutions/migration-playbooks. Each sits in its own template now, so template membership and real route count agree.",
+  "source": {
+    "id": "Z105:section@318",
+    "tag": "section",
+    "file": "src/sections/Z105.jsx",
+    "lines": [
+      318,
+      322
+    ],
+    "route": "/blog"
+  },
+  "semantic": {
+    "id": "shell.spacer",
+    "category": "SHELL"
+  },
+  "generatedAssetRoles": [],
+  "retrievalEligible": true
 }

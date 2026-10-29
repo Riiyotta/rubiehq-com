@@ -1,0 +1,89 @@
+{
+  "id": "cta.story-email-capture",
+  "category": "CTA",
+  "label": "story-email-capture",
+  "tag": "form",
+  "purpose": "The story sidebar's conversion card: the site mark, one line of copy, a work-email input and a 'Get started' submit button (submit is prevented in the clone).",
+  "purposeIsInferred": false,
+  "nameSource": "decomposed by real content boundaries from the clone's JSX (extraction/build_source_map.py DECOMPOSE)",
+  "evidence": {
+    "level": "measured",
+    "instances": 5,
+    "routes": 5,
+    "measuredFrom": [
+      "src/sections/Z1010.jsx:523-542",
+      "src/sections/Z1011.jsx:521-540",
+      "src/sections/Z1012.jsx:514-533",
+      "src/sections/Z1019.jsx:516-535",
+      "src/sections/Z1020.jsx:516-535"
+    ]
+  },
+  "content": {
+    "additionalProperties": false,
+    "fields": {
+      "heading": {
+        "type": "string",
+        "required": true,
+        "maxWords": 9
+      },
+      "inputPlaceholder": {
+        "type": "string",
+        "required": true,
+        "maxWords": 4
+      },
+      "ctas": {
+        "type": "cta[]",
+        "required": true,
+        "maxItems": 1,
+        "maxWords": 2
+      },
+      "images": {
+        "type": "image[]",
+        "required": false,
+        "maxItems": 1,
+        "assetRoles": [
+          "logo"
+        ],
+        "generatedAssetRoles": [
+          "placeholder-brand-mark",
+          "user-supplied-asset"
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "css-transition",
+      "none",
+      "scroll-linked"
+    ],
+    "reducedMotionFallback": "disable-animation"
+  },
+  "assetRoles": [
+    "logo"
+  ],
+  "implementedBy": "src/sections/Z1010.jsx > top[3] aside form[0]",
+  "scope": "The 5 /customers/<name> routes (sticky sidebar, under the company facts).",
+  "source": {
+    "id": "Z1010:form@523",
+    "tag": "form",
+    "file": "src/sections/Z1010.jsx",
+    "lines": [
+      523,
+      542
+    ],
+    "route": "/customers/granum"
+  },
+  "semantic": {
+    "id": "cta.story-email-capture",
+    "category": "CTA"
+  },
+  "generatedAssetRoles": [
+    "placeholder-brand-mark",
+    "user-supplied-asset"
+  ],
+  "retrievalEligible": true
+}
